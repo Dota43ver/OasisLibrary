@@ -162,7 +162,7 @@
         "Idioma": "Español",
         "Saga": "Harry Potter",
         "Stock": true,
-        "imagen":https://http2.mlstatic.com/D_NQ_NP_638650-MLA47558980875_092021-O.jpg
+        "imagen":"https://http2.mlstatic.com/D_NQ_NP_638650-MLA47558980875_092021-O.jpg"
     },
     {
         "Nombre": "Harry Potter y el prisionero de Azkaban",

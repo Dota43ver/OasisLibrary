@@ -1,9 +1,10 @@
 
-function juani(){
+function Lara(){
     return {
-        nombre: "Milagros Dziuban",
+        nombre: "Lara Moyano",
         edad: 23,
-        nacionalidad: "Santa Fe"
+        nacionalidad: "Argentina"}
+    }
 
 function laCajaDePandora(numero){
 
@@ -55,6 +56,12 @@ function mati(){
 
     }
 }
+function Santi(){
+    return {
+        nombre: "Santiago",
+        edad: 22,
+        nacionalidad: "Argentina"}
+    }
 
 
 
