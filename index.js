@@ -1,21 +1,74 @@
+
+function juani(){
+    return {
+        nombre: "Milagros Dziuban",
+        edad: 23,
+        nacionalidad: "Santa Fe"
+
 function laCajaDePandora(numero){
-    if(numero%2){
 
-        var dec = numero.toString(2)
-        return dec
-    } else{
-        let sum = 0;
-
-    for (let i = 0; i < num.length; i++) {
-       sum += +num[i] * 2 ** (num.length - 1 - i);
+        let resultado;
+        if (numero % 2 === 0) {
+            resultado = numero.toString(2);
+        } else {
+            resultado = numero.toString(16);
+        }
+        return resultado;
     }
-    return sum;
+function franco(){
+    return {
+        nombre: "Franco",
+        edad: 18,
+        nacionalidad: "Argentina"
+    }
+}
+function facu(){
+    return {
+        nombre: "Facundo",
+        edad: 29,
+        nacionalidad: "Argentina"
+    }
+}
+function juani(){
+    return {
+        nombre: "Juan Ignacio Camus",
+        edad: 21,
+        nacionalidad: "Argentina"
+    }
+}
+
+  function mili(){
+    return {
+        nombre: "Milagros",
+        edad: 23,
+        nacionalidad: "Argentina"
     }
 
+    
+}
+
+function mati(){
+    return {
+        nombre: "Matias",
+        edad: 20,
+        nacionalidad: "Argentina"
+
+    }
+}
+
+
+
+// como parámetro un número entero. Si es un número par, debe convertirlo a binario y retornarlo, y si es impar, convertirlo a hexadecimal y retornarlo.
+
+function Gaston(){
+    return {
+        nombre: "Gaston",
+        edad: 22,
+        nacionalidad: "Argentina"
     }
 
+    
+}
 
-    function Nombre(nombre){
-        const obj = {nombre: nombre, edad: 29, nacionalidad: "argentina" }
-        return obj
-      }
+
+
