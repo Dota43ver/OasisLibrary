@@ -97,5 +97,51 @@
         "Idioma": "Español",
         "Stock": true,
         "Imagen": "https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/lrg/9786/0755/9786075507712.jpg"
+    },
+    {
+        "Nombre": "Una breve historia de casi todo",
+        "Año": 2016,
+        "Género": [
+            "No ficción"
+        ],
+        "Autor": "Bill Bryson",
+        "Precio": 4378,
+        "Puntuación": 4.2,
+        "Descripción": "UNO DE LOS MEJORES LIBROS DE DIVULGACIÓN CIENTÍFICA DE TODOS LOS TIEMPOS. MÁS DE 120.000 EJEMPLARES VENDIDOS EN ESPAÑA ¿Puede un solo libro convertirse en la perfecta introducción para adentrarse en disciplinas tan dispares como la astronomía, la geología, la física, la química y la biología? ¿Puede un trabajo de divulgación científica ofrecer razonamientos y datos precisos, y al mismo tiempo ser tremendamente entretenido? ¿Puede una única obra narrar la historia de los grandes descubrimientos de la ciencia y contarnos también divertidas anécdotas relacionadas con estos extraordinarios logros? Con Una breve historia de casi todo, Bill Bryson nos propone un fascinante recorrido por la historia del universo que nos rodea y los conocimientos que nos han llevado a comprenderlo un poco mejor.",
+        "Idioma": "Español",
+        "Stock": true,
+        "Imagen": "https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/lrg/9788/4929/9788492966790.jpg"
+    },
+    {
+        "Nombre": "La canción de Aquiles",
+        "Año": 2021,
+        "Género": [
+            "Ficción",
+            "Fantasía",
+            "Contemporaneo"
+        ],
+        "Autor": "Madeline Miller",
+        "Precio": 6527,
+        "Puntuación": 4.2,
+        "Descripción": "De la autora de Circe, una epopeya inolvidableGrecia en la era de los héroes. Patroclo, un príncipe joven y torpe, ha sido exiliado al reino de Ftía, donde vive a la sombra del rey Peleo y su hijo divino, Aquiles.Aquiles, el mejor de los griegos, es todo lo que no es Patroclo: fuerte, apuesto, hijo de una diosa. Un día Aquiles toma bajo su protección al lastimoso príncipe y ese vínculo provisional da paso a una sólida amistad mientras ambos se convierten en jóvenes habilidosos en las artes de la guerra.Pero el destino nunca está lejos de los talones de Aquiles. Cuando se extiende la noticia del rapto de Helena de Esparta, se convoca a los hombres de Grecia para asediar la ciudad de Troya. Aquiles, seducido por la promesa de un destino glorioso, se une a la causa, y Patroclo, dividido entre el amor y el miedo por su compañero, lo sigue a la guerra. Poco podía imaginar que los años siguientes iban a poner a prueba todo cuanto habían aprendido y todo cuanto valoraban profundamente.",
+        "Idioma": "Español",
+        "Stock": true,
+        "Imagen": "https://images.cdn3.buscalibre.com/fit-in/360x360/a2/4e/a24e1d213892418e4ba12d4edceb8a96.jpg"
+    },
+    {
+        "Nombre": "Romper el Circulo",
+        "Año": 2022,
+        "Género": [
+            "Romance",
+            "Contemporaneo",
+            "Novela"
+        ],
+        "Autor": "Colleen Hoover",
+        "Precio": 4320,
+        "Puntuación": 4.6,
+        "Descripción": "Colleen Hoover te romperá el corazón. A veces, quien más te quiere es quién más daño te hace. Lily no siempre lo ha tenido fácil. Por eso, su idílica relación con un magnífico neurocirujano llamado Ryle Kincaid, parece demasiado buena para ser verdad. Cuando Atlas, su primer amor, reaparece repentinamente y Ryle comienza a mostrar su verdadera cara, todo lo que Lily ha construido con él se ve amenazado. «Nadie escribe sobre sentimientos como Colleen Hoover.» Anna Todd El gran fenómeno de TikTok. Colleen Hoover te romperá el corazón.",
+        "Idioma": "Español",
+        "Stock": true,
+        "Imagen": "https://images.cdn1.buscalibre.com/fit-in/360x360/3e/0e/3e0eb9a4b7e8a9dd71da87615def899e.jpg"
     }
 ]
