@@ -10,17 +10,47 @@
         "Idioma": "Español",
         "Stock": true,
         "Imagen": "https://contentv2.tap-commerce.com/cover/large/9789874777737_1.jpg?id_com=1113"
-    }
+
+    },
     {
-        "Nombre": "Los siete maridos de Evelin Hugo",
-        "Año" : 2017,
-        "Género": ["Novela", "Ficción"],
-        "Autor": "Taylor Jenkins Reid",
-        "Precio": 3500,
+        "Nombre": "Harry Potter y la camara secreta",
+        "Año" : 1998,
+        "Género": ["Novela", "Ficción", "Fantasía"],
+        "Autor": "J K Rowling",
+        "Precio": 3419,
         "Puntuación": 4.8,
-        "Descripción": "Evelyn Hugo, el ícono de Hollywood que se ha recluido en su edad madura, decide al fin contar la verdad sobre su vida llena de glamour y de escándalos. Pero cuando elige para ello a Monique Grant, una periodista desconocida, nadie se sorprende más que la misma Monique. ¿Por qué ella ? ¿Por qué ahora ? Monique no está precisamente en su mejor momento. Su marido la abandonó, y su vida profesional no avanza. Aún ignorando por qué Evelyn la ha elegido para escribir su biografía. Monique está decidida a aprovechar esa oportunidad para dar impulso a su carrera. Convocada al lujoso apartamento de Evelyn, Monique escucha fascinada mientras la actriz le cuenta su historia. Desde su llegada a Los Ángeles en los años 50 hasta su decisión de abandonar su carrera en el espectáculo en los 80 - y desde luego, los siete maridos que tuvo en ese tiempo - Evelyn narra una historia de ambición implacable, amistad inesperada y un gran amor prohibido.",
+        "Descripción": "Sin saber que alguien ha abierto la Cámara de los Secretos, dejando escapar una serie de monstruos peligrosos, Harry y sus amigos Ron y Hermione tendrán que enfrentarse con arañas gigantes, serpientes encantadas, fantasmas enfurecidos y, sobre todo, con la mismísima reencarnación de su más temible adversario..",
         "Idioma": "Español",
         "Stock": true,
-        "Imagen": "https://contentv2.tap-commerce.com/cover/large/9789874777737_1.jpg?id_com=1113"
+        "Imagen": "https://http2.mlstatic.com/D_NQ_NP_638650-MLA47558980875_092021-O.jpg",
+        "Saga":"Harry Potter"
+    },
+    {
+        "Nombre": "Harry Potter y el cáliz de fuego",
+        "Año" : 2000,
+        "Género": ["Novela", "Ficción", "Fantasía"],
+        "Autor": "J K Rowling",
+        "Precio": 4140,
+        "Puntuación": 4.7,
+        "Descripción": "Tras otro abominable verano con los Dursley, Harry se dispo ne a iniciar el cuarto curso en Hogwarts, la famosa escuela de magia y hechicería. A sus catorce años, a Harry le gust aría ser un joven mago como los demás y dedicarse a aprend er nuevos sortilegios, encontrarse con sus amigos Ron y Herm ione y asistir con ellos a los Mundiales de quidditch. Sin e mbargo, al llegar al colegio le espera una gran sorpresa que lo obligará a enfrentarse a los desafíos más temibles de toda su vida. Si logra superarlos, habrá demostrado que ya no es un niño y que está preparado para vivir las nuevas y emocionantes experiencias que el futuro le depara.",
+        "Idioma": "Español",
+        "Stock": true,
+        "Imagen": "https://images.cdn3.buscalibre.com/fit-in/360x360/ad/66/ad6612443362bc3bd1c6973d87fc3d90.jpg",
+        "Saga":"Harry Potter"
+    },
+    {
+        "Nombre": "Harry Potter y las reliquias de la muerte",
+        "Año" : 2007,
+        "Género": ["Novela", "Ficción", "Fantasía"],
+        "Autor": "J K Rowling",
+        "Precio": 2840,
+        "Puntuación": 4.7,
+        "Descripción": "Mientras se sube al sidecar de la motocicleta de Hagrid y surca los cielos, dejando Privet Drive por última vez, Harry Potter sabe que Lord Voldemort y los Mortífagos no se quedan atrás. El encanto protector que ha mantenido a Harry a salvo hasta ahora se ha roto, pero no puede seguir escondiéndose. El Señor Oscuro está infundiendo miedo en todo lo que Harry ama, y ​​para detenerlo, Harry tendrá... Ver más Ocultar Mientras se sube al sidecar de la motocicleta de Hagrid y se eleva por los cielos, dejando Privet Drive por última vez, Harry Potter sabe que Lord Voldemort y los Mortífagos no se quedan atrás.",
+        "Idioma": "Español",
+        "Stock": true,
+        "Imagen": "https://images.cdn3.buscalibre.com/fit-in/360x360/bb/b2/bbb26eb07bfdcfde9d11253cac5878f4.jpg",
+        "Saga":"Harry Potter"
+
     }
+
 ]
