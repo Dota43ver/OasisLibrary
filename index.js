@@ -36,7 +36,10 @@ function juani(){
         edad: 23,
         nacionalidad: "Argentina"
     }
+
+    
 }
+
 function mati(){
     return {
         nombre: "Matias",
@@ -44,3 +47,17 @@ function mati(){
         nacionalidad: "Argentina"
     }
 }
+
+
+function Gaston(){
+    return {
+        nombre: "Gaston",
+        edad: 22,
+        nacionalidad: "Argentina"
+    }
+
+    
+}
+
+
+
