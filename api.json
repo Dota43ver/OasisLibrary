@@ -1,0 +1,100 @@
+[
+    {
+        "Nombre": "Los siete maridos de Evelin Hugo",
+        "Año" : 2017,
+        "Género": ["Novela", "Ficción"],
+        "Autor": "Taylor Jenkins Reid",
+        "Precio": 3500,
+        "Puntuación": 4.8,
+        "Descripción": "Evelyn Hugo, el ícono de Hollywood que se ha recluido en su edad madura, decide al fin contar la verdad sobre su vida llena de glamour y de escándalos. Pero cuando elige para ello a Monique Grant, una periodista desconocida, nadie se sorprende más que la misma Monique. ¿Por qué ella ? ¿Por qué ahora ? Monique no está precisamente en su mejor momento. Su marido la abandonó, y su vida profesional no avanza. Aún ignorando por qué Evelyn la ha elegido para escribir su biografía. Monique está decidida a aprovechar esa oportunidad para dar impulso a su carrera. Convocada al lujoso apartamento de Evelyn, Monique escucha fascinada mientras la actriz le cuenta su historia. Desde su llegada a Los Ángeles en los años 50 hasta su decisión de abandonar su carrera en el espectáculo en los 80 - y desde luego, los siete maridos que tuvo en ese tiempo - Evelyn narra una historia de ambición implacable, amistad inesperada y un gran amor prohibido.",
+        "Idioma": "Español",
+        "Stock": true,
+        "Imagen": "https://contentv2.tap-commerce.com/cover/large/9789874777737_1.jpg?id_com=1113"
+    },
+    {
+        "Nombre": "Los siete maridos de Evelin Hugo",
+        "Año" : 2017,
+        "Género": ["Novela", "Ficción"],
+        "Autor": "Taylor Jenkins Reid",
+        "Precio": 3500,
+        "Puntuación": 4.8,
+        "Descripción": "Evelyn Hugo, el ícono de Hollywood que se ha recluido en su edad madura, decide al fin contar la verdad sobre su vida llena de glamour y de escándalos. Pero cuando elige para ello a Monique Grant, una periodista desconocida, nadie se sorprende más que la misma Monique. ¿Por qué ella ? ¿Por qué ahora ? Monique no está precisamente en su mejor momento. Su marido la abandonó, y su vida profesional no avanza. Aún ignorando por qué Evelyn la ha elegido para escribir su biografía. Monique está decidida a aprovechar esa oportunidad para dar impulso a su carrera. Convocada al lujoso apartamento de Evelyn, Monique escucha fascinada mientras la actriz le cuenta su historia. Desde su llegada a Los Ángeles en los años 50 hasta su decisión de abandonar su carrera en el espectáculo en los 80 - y desde luego, los siete maridos que tuvo en ese tiempo - Evelyn narra una historia de ambición implacable, amistad inesperada y un gran amor prohibido.",
+        "Idioma": "Español",
+        "Stock": true,
+        "Imagen": "https://contentv2.tap-commerce.com/cover/large/9789874777737_1.jpg?id_com=1113"
+    },
+    {
+        "Nombre": "Vendo Todo, Me Voy A La Mierda",
+        "Año" : 2020,
+        "Género": ["Viajes y turismo"],
+        "Autor": "Gonzalo Velazquez",
+        "Precio": 4200,
+        "Puntuación": 4.2,
+        "Descripción": "Estudiar una carrera, conseguir un buen trabajo, escalar posiciones, adquirir más y más responsabilidades, endeudarse para comprar una casa, tener un auto moderno, dedicarle casi todo el tiempo de nuestra vida a una rutina gris para poder darnos el “lujo” de escaparnos de ella durante quince días al año. Intenté seguir esta receta de vida, de verdad que sí, pero algo no funcionaba. Y es que simplemente no era feliz. Este libro trata sobre eso, sobre la persecución de aquello que nos haga sentir vivos, sobre una persona que dejó toda la seguridad que su vida aburrida le otorgaba y se fue en busca de una aventura.",
+        "Idioma": "Español",
+        "Stock": true,
+        "Imagen": "https://http2.mlstatic.com/D_NQ_NP_703794-MLA51878415093_102022-O.webp"
+    },
+    {
+        "Nombre": "Los Extrañamientos",
+        "Año" : 2013,
+        "Género": ["Educación", "Literatura y Ficción"],
+        "Autor": "Loqueleo",
+        "Precio": 2150,
+        "Puntuación": 4.4,
+        "Descripción": "Martín es nuevo en la Casa, un espacio comunitario donde viven muchas familias diferentes. Allí encuentra un mundo nuevo, distinto de todo lo que él conocía. Se hace amigo de Vladi, un chico huérfano que está construyendo un karting para competir en una carrera en la plaza.",
+        "Idioma": "Español",
+        "Stock": true,
+        "Imagen": "https://d3wo5wojvuv7l.cloudfront.net/t_square_limited_720/images.spreaker.com/original/962a805ae5e7be064349259d37d20fe1.jpg"
+    },
+    {
+        "Nombre": "Lecturas En El Tejado 3 Antologia Con Garra Puerto De Palos",
+        "Año" : 2022,
+        "Género": ["Educación"],
+        "Autor": "Anabella Talpone",
+        "Precio": 2900,
+        "Puntuación": 4.5,
+        "Descripción": "Lecturas en el tejado, Antología con garra es un libro para disfrutar a lo largo de todo el año. En compañía de tres simpáticos gatos (Pelu, Teo y Feli) y sus aventuras como puerta de entrada a cada estación del año, se abordan caminos lectores de distintos géneros literarios y no literarios,actividades de comprensión y escritura, talleres de producción escrita y una variedad de cuentos especialmente pensados para trabajar con las emociones",
+        "Idioma": "Español",
+        "Stock": true,
+        "Imagen": "https://http2.mlstatic.com/D_NQ_NP_619679-MLA48810170916_012022-O.jpg",
+        "Saga": "Lecturas en el tejado"
+    },
+    {
+        "Nombre": "Biografía Del Silencio",
+        "Año" : 2012,
+        "Género": ["Literatura Cristiana"],
+        "Autor": "Pablo D'Ors",
+        "Precio": 2850,
+        "Puntuación": 4,
+        "Descripción": "Un libro es una fuente de aprendizaje e imaginación. Permite conocer, descubrir y explorar el mundo que nos rodea. Aumenta nuestra curiosidad y nos mantiene entretenidos. Los libros nos permiten conectar con historias, personajes y sentimientos ayudando a nuestra comprensión, vocabulario y escritura.",
+        "Idioma": "Español",
+        "Stock": false,
+        "Imagen": "https://http2.mlstatic.com/D_NQ_NP_745290-MLA51664668223_092022-O.webp"
+    },
+    {
+        "Nombre": "El Príncipe",
+        "Año" : 2010,
+        "Género": ["Política"],
+        "Autor": "Nicolas Maquiavelo",
+        "Precio": 600,
+        "Puntuación": 4.7,
+        "Descripción": "En los duros momentos de su reclusión en San Casciano, acusado de conspiración contra los Médici, Maquiavelo compuso este tratado de doctrina política con la finalidad tanto de alcanzar el favor de aquellos que le habían privado de la libertad y recuperar su antiguo empleo de canciller como de ser útil a Florencia. En El Príncipe recogió sus reflexiones, experiencias personales y ejemplos históricos destinados a cimentar sobre bases sólidas el poder del futuro gobernante, un príncipe que llevase a cabo el sueño de Julio II: la liberación de Italia de los bárbaros. Y lo dedicó a Lorenzo de Médici. Su fama de libro perverso, de manual de déspotas, y la polémica interpretación todavía no cerrada sobre el verdadero fin y significado de sus palabras explican la fascinación que esta obra sigue causando siglos después de su publicación.",
+        "Idioma": "Español",
+        "Stock": true,
+        "Imagen": "https://planetalibro.net/biblioteca/m/a/maquiavelo/maquiavelo-nicolas-el-principe/maquiavelo-nicolas-el-principe.jpg"
+    },
+    {
+        "Nombre": "Rompecabezas",
+        "Año" : 2014,
+        "Género": ["Escuela", "Ficción"],
+        "Autor": "Loqueleo",
+        "Precio": 2390,
+        "Puntuación": 4.4,
+        "Descripción": "Mora es una chica de once años que vive con su abuela y su gata. Tiene un grupo de amigas llamadas “Las Chicas de Siberia” con las que comparte horas de clase, juegos y charlas. También están Juan, su primo inseparable, y Dani, el chico de sus sueños, con quienes ella descubre la aventura y el rock. Pero su historia se ve atravesada por secretos y ausencias. Algunas piezas no encajan en el rompecabezas de su vida.",
+        "Idioma": "Español",
+        "Stock": true,
+        "Imagen": "https://www.loqueleo.com/co/uploads/2019/07/resized/360_9789589002292.jpg"
+    }
+    
+]
