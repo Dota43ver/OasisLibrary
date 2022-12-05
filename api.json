@@ -15,15 +15,6 @@
         "Imagen": "https://contentv2.tap-commerce.com/cover/large/9789873952005_1.jpg?id_com=1113"
     },
     {
-        "Nombre": "Don quijote de la mancha",
-        "Año": 2016,
-        "Género": [
-            "Ficción",
-            "Clásicos"
-        ],
-        "Autor": "De Cervantes Saavedra, Miguel",
-        "Precio": 2600,
-
         "Nombre": "El poder de las palabras",
         "Año" : 2022,
         "Género": ["Educación", "psicología"],
