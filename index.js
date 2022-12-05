@@ -1,12 +1,4 @@
-function Lara(){
 
-    return {
-        nombre: "Lara Moyano",
-        edad: 23,
-        nacionalidad: "Santa Fe"
-        nacionalidad: "Argentina"}
-
-    }
 
     function laCajaDePandora(numero) {
 
@@ -39,26 +31,20 @@ function Lara(){
             nacionalidad: "Argentina"
         }
     }
-
     function mili() {
         return {
             nombre: "Milagros",
             edad: 23,
             nacionalidad: "Argentina"
         }
-
-
     }
-
     function mati() {
         return {
             nombre: "Matias",
             edad: 20,
             nacionalidad: "Argentina"
-
         }
     }
-}
 function Santi(){
     return {
         nombre: "Santiago",
@@ -66,7 +52,13 @@ function Santi(){
         nacionalidad: "Argentina"}
     }
 
-
+function Lara(){
+    return {
+        nombre: "Lara Moyano",
+        edad: 23,
+        nacionalidad: "Santa Fe"
+        nacionalidad: "Argentina"}
+    }
 
 
     // como parámetro un número entero. Si es un número par, debe convertirlo a binario y retornarlo, y si es impar, convertirlo a hexadecimal y retornarlo.
@@ -78,9 +70,6 @@ function Santi(){
             nacionalidad: "Argentina"
         }
 
-
-    }
-}
 
 
 
