@@ -46,5 +46,78 @@
         "Idioma":"Español",
         "Stock":true,
         "Imagen":"https://catalogos.libooks.com/9789879097458_md.jpg"  
+    },
+    {
+        "Nombre":"Vivir de viaje",
+        "Año": 2022,
+        "Genero": ["Estilos de vida","aficiones y ocio"],
+        "Autor": "Sara, Gallardo",
+        "Precio":3780,
+        "Puntuacion": 3.0,
+        "Descripcion":"Los textos reunidos en Vivir de viaje presentan un rasgo peculiar y definitorio de Sara Gallardo: el desplazamiento como modo de vida, ya sea a causa de los viajes realizados por elección o necesidad personal, ya sea por los que emprende como enviada de los diarios o las revistas en los que trabaja. Siempre en movimiento, Sara recorre Europa, donde se instala largas temporadas, y desde allí escribe numerosas notas de actualidad sobre moda, política y cine, o acerca de la fama de Maradona o el entierro de Borges. También en América su mirada capta lo nuevo y lo entrega a sus lectores en una versión propia, muchas veces desafiante y otras tantas, irónica. Así, se ocupa de los líderes de la Revolución cubana o de la inmigración latina en Nueva York o de las temporadas veraniegas en Punta del Este. Además, Sara va y viene por Argentina, de donde extrae material para sus novelas a la vez que redacta su columna periodística. Con sus ojos, su oído y su escritura, Sara Gallardo no solo redescubre cada lugar recorrido o habitado, sino que se redescubre a sí misma. Como afirma Lucía De Leone en el prólogo: “Sara sabe que afincarse es apartarse del misterio, y frente al encierro o la permanencia en un lugar siempre elegirá la otra vía: escaparse",
+        "Idioma":"Español",
+        "Stock":true,
+        "Imagen":"https://catalogos.libooks.com/9789877193787_md.jpg"  
+    },
+    {
+        "Nombre":"Martín Fierro",
+        "Año": 2020,
+        "Genero": ["Biografías","literatura y estudios literarios"],
+        "Autor": "Jose Hernandez",
+        "Precio":2160,
+        "Puntuacion": 4.0,
+        "Descripcion":"A través de la narración de las peripecias del héroe -el gaucho Fierro, uno de los personajes más vitales, brutales y contradictorios de las letras nacionales-, José Hernández pone en evidencia la cruda realidad a la que se veían enfrentados los hombres del siglo XIX enviados a la frontera a luchar contra los indios y denuncia los abusos de poder por parte de un Estado corrupto y arbitrario. «El Martín Fierro se ha entrelazado hasta tal punto con su mundo, que es el nuestro; con nuestra literatura anterior y posterior, nuestra lengua, nuestro pensamiento, nuestra política, nuestros valores y maneras de vivir y sentir y mirar ese mundo.",
+        "Idioma":"Español",
+        "Stock":true,
+        "Imagen":"https://catalogos.libooks.com/9789878304724_md.jpg"  
+    },
+    {
+        "Nombre":"Calvin y hobbes 4",
+        "Año": 2022,
+        "Genero": ["Comics","novelas gráficas","manga"],
+        "Autor": "Watterson Bill",
+        "Precio":2511,
+        "Puntuacion": 2.3,
+        "Descripcion":"Desde su aparición, en 1985, Calvin y Hobbes se convirtió en una de las tiras cómicas preferidas en Estados Unidos. Pero no sólo en dicho país, pues los personajes creados por Bill Watterson han alcanzado gran popularidad en numerosos lugares. ¿Cuál es su secreto? El éxito de esta caricatura radica no sólo en la gracia de los protagonistas y en el humor que derrochan, sino también en el valor del mensaje que transmiten. Dicho mensaje no es obvio ni se manifiesta mediante moralejas, sino a través de sutiles comentarios que lanzan una mirada irónica a la realidad y que destacan valores como la amistad, la felicidad y la imaginación. La tira cuenta las andanzas de un niño y de su tigre. Este último es, a los ojos del mundo, una figura de peluche, pero para Calvin (y los lectores de la serie) se trata de un ser vivo inteligente, simpático y ocurrente. Ambos enfrentan distintas situaciones que van desde problemas familiares hasta viajes en el tiempo (a bordo de una caja de cartón). Ahora estas aventuras pueden ser disfrutadas por los lectores en las cuidadas ediciones que ofrece Editorial Océano.",
+        "Idioma":"Español",
+        "Stock":true,
+        "Imagen":"https://catalogos.libooks.com/9786075270111_md.jpg"  
+    },
+    {
+        "Nombre":"Big data",
+        "Año": 2019,
+        "Genero": ["Ciencias"],
+        "Autor": "Sosa Escudero, Walter",
+        "Precio":1935,
+        "Puntuacion": 3.9,
+        "Descripcion":"Cada vez que deslizamos nuestros dedos por una pantalla e ingresamos a una página web para hacer una compra o buscar una dirección, cada vez que hacemos un posteo, damos un like o subimos una foto a las redes sociales, cada vez que usamos la tarjeta de crédito, el GPS, cada vez que? estamos generando datos, ¡cantidades espeluznantes de datos espontáneos! (de hecho, en los últimos dos años la humanidad produjo más datos que en toda su historia previa). ¿Adónde van parar? ¿Quién los analiza, los procesa, los usa y para qué? ¿Acaso nos espían? ¿Cómo afectan nuestra vida? Ante este tsunami, el gran Walter Sosa Escudero nos inicia en el revolucionario mundo de big data, la explosión originada por la masividad de internet, que provee información instantánea acerca del comportamiento de miles de millones de usuarios. Pero tan importantes como los datos son los algoritmos, las técnicas estadísticas y computacionales que permiten procesarlos; por eso este libro nos presenta la nueva ciencia de datos, una disciplina que involucra la estadística, la matemática, la computación, el diseño y todas las áreas de la vida cotidiana que dependen de los datos: desde la política y la sociología hasta la medicina o la física, desde la empresa hasta el Estado. Además de presentar interesantes casos y métodos -el escándalo de los porno impuestos en Noruega, el garrafal error del Literary Digest en la elección de Roosevelt, la app para generar un mapa con los baches de la ciudad de Boston, o el famoso padre que se entera por un algoritmo de que su hija está embarazada- y ante el optimismo a ultranza de algunos gurúes de big data, nuestro autor también se pregunta si esta catarata de información será capaz de cambiar radicalmente nuestra forma de ver y vivir en el mundo. En un tono coloquial pero con máximo rigor científico, este libro ofrece un paseo guiado por el aguacero de datos y algoritmos. No presupone ninguna formación técnica, tan solo la curiosidad de saber qué promete esta batalla, que unos ven como el comienzo de una nueva era y otros, como el mal que viene a destruir nuestra vida cotidiana.",
+        "Idioma":"Español",
+        "Stock":false,
+        "Imagen":"https://catalogos.libooks.com/9789876298995_md.jpg"    
+    },
+    {
+        "Nombre":"Borges, big data y yo",
+        "Año": 2020,
+        "Genero": ["Ciencias"],
+        "Autor": "Sosa Escudero, Walter",
+        "Precio":1737,
+        "Puntuacion": 4.1,
+        "Descripcion":"Ya se dijo todo sobre Borges. ¿Ya se dijo todo sobre Borges? Pues no. A su obra vasta y generosa no se accede por una sola puerta de entrada, sino por una infinidad de ventanas, pasadizos y claraboyas hacia un universo que, una vez conocido, ya no se puede ni se quiere abandonar. En este libro fascinante y adictivo, Walter Sosa Escudero propone una de esas entradas: la ciencia de datos. En efecto, los números, infinitos, mapas, algoritmos, chances y corazonadas, ficciones y realidades están tan presentes en la obra de Borges como en la práctica estadística y el uso hoy omnipresente de big data. De la mano de un relato cómplice en el que la admiración no impide el juego con la obra, los datos y algoritmos se revelan como guías privilegiados para descubrir a un Borges humano, complejo pero accesible, siempre desafiante. Literatura, ciencia, poesía, estadística y computación se entrelazan y se bifurcan en estas páginas para iluminar nuestro tiempo de manera particularmente apropiada: en medio de la revolución de big data y algoritmos, ciertos fenómenos cruciales siguen siendo esquivos a la predicción. Son esas incertidumbres y azares los que la obra de Borges el escritor que científicas y científicos idolatran sin grietas nos ayuda a entender (e incluso, a veces, a disfrutar). Entre su propia experiencia como lector (y sobre todo re-lector) de la obra borgeana, y el conocimiento más actualizado sobre datos y estadística, Sosa Escudero tiende un puente irresistible, tan apto para que transiten por él los recién llegados como quienes buscan una mirada renovada sobre una obra que conocen bien. Encontrarán aquí referencias a sus cuentos más celebrados pero también fragmentos del Borges poeta, ensayista y gran conversador, consejos para armar o completar una biblioteca borgeana y sugerencias para encarar primeras, segundas y terceras lecturas. Prepárense para una travesía asombrosa y larga, quizás infinita.",
+        "Idioma":"Español",
+        "Stock":false,
+        "Imagen":"https://catalogos.libooks.com/9789878010410_md.jgp"   
+    },
+    {
+        "Nombre":"Rusia",
+        "Año": 2022,
+        "Genero": ["Historia"],
+        "Autor": "Antony Beevor",
+        "Precio":5940,
+        "Puntuacion": 3.7,
+        "Descripcion":"Tras el colapso del imperio zarista, entre 1917 y 1921 tuvo lugar en Rusia una lucha devastadora: una incompatible alianza blanca de socialistas moderados y monárquicos reaccionarios tenía pocas posibilidades contra el Ejército Rojo de Trotsky y la dictadura comunista de Lenin. El terror engendró el terror, que a su vez condujo a una crueldad aún mayor sobre hombres, mujeres y niños. La lucha se convirtió en una guerra mundial por delegación, ya que Churchill desplegó armamento y tropas del imperio británico, mientras las fuerzas armadas de Estados Unidos, Francia, Italia, Japón, Polonia y Checoslovaquia desempeñaron papeles rivales. Utilizando los estudios más actualizados y la investigación de archivos, Antony Beevor reúne la imagen completa en una narración apasionante que transmite el conflicto a través de los ojos de todos, desde el trabajador en las calles de Petrogrado hasta el oficial de caballería en el campo de batalla o la mujer médico en un hospital improvisado.",
+        "Idioma":"Español",
+        "Stock":false,
+        "Imagen":"https://catalogos.libooks.com/9789874479518_md.jpg"   
     }
+    
 ]
