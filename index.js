@@ -40,6 +40,15 @@ function juani(){
     
 }
 
+function mati(){
+    return {
+        nombre: "Matias",
+        edad: 20,
+        nacionalidad: "Argentina"
+    }
+}
+
+
 function Gaston(){
     return {
         nombre: "Gaston",
@@ -49,5 +58,6 @@ function Gaston(){
 
     
 }
+
 
 
