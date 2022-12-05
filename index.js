@@ -1,21 +1,5 @@
 function laCajaDePandora(numero){
 
-function juani(){
-    return {
-        nombre: "Juan Ignacio Camus",
-        edad: 21,
-        nacionalidad: "Santiago del Estero"
-    }
-}
-
-  function mili(){
-    return {
-        nombre: "Milagros",
-        edad: 23,
-        nacionalidad: "Argentina"
-    }
-}
-  
         let resultado;
         if (numero % 2 === 0) {
             resultado = numero.toString(2);
@@ -38,4 +22,18 @@ function facu(){
         nacionalidad: "Argentina"
     }
 }
+function juani(){
+    return {
+        nombre: "Juan Ignacio Camus",
+        edad: 21,
+        nacionalidad: "Santiago del Estero"
+    }
+}
 
+  function mili(){
+    return {
+        nombre: "Milagros",
+        edad: 23,
+        nacionalidad: "Argentina"
+    }
+}
