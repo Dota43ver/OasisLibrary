@@ -1,26 +1,153 @@
 [
     {
-        "Nombre": "Los siete maridos de Evelin Hugo",
-        "Año" : 2017,
-        "Género": ["Novela", "Ficción"],
-        "Autor": "Taylor Jenkins Reid",
-        "Precio": 3500,
-        "Puntuación": 4.8,
-        "Descripción": "Evelyn Hugo, el ícono de Hollywood que se ha recluido en su edad madura, decide al fin contar la verdad sobre su vida llena de glamour y de escándalos. Pero cuando elige para ello a Monique Grant, una periodista desconocida, nadie se sorprende más que la misma Monique. ¿Por qué ella ? ¿Por qué ahora ? Monique no está precisamente en su mejor momento. Su marido la abandonó, y su vida profesional no avanza. Aún ignorando por qué Evelyn la ha elegido para escribir su biografía. Monique está decidida a aprovechar esa oportunidad para dar impulso a su carrera. Convocada al lujoso apartamento de Evelyn, Monique escucha fascinada mientras la actriz le cuenta su historia. Desde su llegada a Los Ángeles en los años 50 hasta su decisión de abandonar su carrera en el espectáculo en los 80 - y desde luego, los siete maridos que tuvo en ese tiempo - Evelyn narra una historia de ambición implacable, amistad inesperada y un gran amor prohibido.",
+        "Nombre": "Cumbres Borrascosas",
+        "Año": 2015,
+        "Género": [
+            "Ficción"
+        ],
+        "Autor": "Bronte, Emily",
+        "Precio": 3650,
+        "Puntuación": 4,
+        "Descripción": "Cumbres borrascosas; situada en los sombríos páramos de Yorkshire; constituye una visión metafísica del destino; la obsesión; la pasión y la venganza. Emily Brontë; que se vio obligada a publicar sus obras bajo seudónimo; rompió por completo con los cánones de la literatura victoriana. La singularidad de su estructura narrativa y la fuerza de su lenguaje convirtieron de inmediato a esta novela en una de las más influyentes de la historia de la literatura universal. Lucasta Miller analiza en el prólogo varias interpretaciones en torno a esta poliédrica obra. A su vez; la introducción de Pauline Nestor da cuenta de las influencias y los orígenes de la escritora. Por último; se recuperan aquí la nota biográfica y el prólogo; escrito por Charlotte Brontë; en el que revelaba la identidad de su hermana como autora de la novela; además de un árbol genealógico de los diversos protagonistas.",
         "Idioma": "Español",
         "Stock": true,
-        "Imagen": "https://contentv2.tap-commerce.com/cover/large/9789874777737_1.jpg?id_com=1113"
-    }
+        "Imagen": "https://contentv2.tap-commerce.com/cover/large/9789873952005_1.jpg?id_com=1113"
+    },
     {
-        "Nombre": "Los siete maridos de Evelin Hugo",
-        "Año" : 2017,
-        "Género": ["Novela", "Ficción"],
-        "Autor": "Taylor Jenkins Reid",
-        "Precio": 3500,
+        "Nombre": "Don quijote de la mancha",
+        "Año": 2016,
+        "Género": [
+            "Ficción",
+            "Clásicos"
+        ],
+        "Autor": "De Cervantes Saavedra, Miguel",
+        "Precio": 2600,
         "Puntuación": 4.8,
-        "Descripción": "Evelyn Hugo, el ícono de Hollywood que se ha recluido en su edad madura, decide al fin contar la verdad sobre su vida llena de glamour y de escándalos. Pero cuando elige para ello a Monique Grant, una periodista desconocida, nadie se sorprende más que la misma Monique. ¿Por qué ella ? ¿Por qué ahora ? Monique no está precisamente en su mejor momento. Su marido la abandonó, y su vida profesional no avanza. Aún ignorando por qué Evelyn la ha elegido para escribir su biografía. Monique está decidida a aprovechar esa oportunidad para dar impulso a su carrera. Convocada al lujoso apartamento de Evelyn, Monique escucha fascinada mientras la actriz le cuenta su historia. Desde su llegada a Los Ángeles en los años 50 hasta su decisión de abandonar su carrera en el espectáculo en los 80 - y desde luego, los siete maridos que tuvo en ese tiempo - Evelyn narra una historia de ambición implacable, amistad inesperada y un gran amor prohibido.",
+        "Descripción": "El ingenioso hidalgo don Quijote de la Mancha narra las aventuras de Alonso Quijano, un hidalgo pobre que de tanto leer novelas de caballería acaba enloqueciendo y creyendo ser un caballero andante, nombrándose a sí mismo como don Quijote de la Mancha. Sus intenciones son ayudar a los pobres y desfavorecidos, y lograr el amor de la supuesta Dulcinea del Toboso, que es en realidad es una campesina llamada Aldonza Lorenzo. Decide nombrar a Sancho Panza, un empleado suyo, su escudero. Juntos viven muchas aventuras y tras ser vencido por el Caballero de la Blanca Luna se retira a su hogar, donde, tras adquirir de nuevo la cordura, fallece.",
         "Idioma": "Español",
         "Stock": true,
-        "Imagen": "https://contentv2.tap-commerce.com/cover/large/9789874777737_1.jpg?id_com=1113"
+        "Imagen": "https://lalibretadenani.files.wordpress.com/2020/07/don-quijote.jpg?w=333"
+    },
+    {
+        "Nombre": "Odisea",
+        "Año": 2019,
+        "Género": [
+            "Ficción",
+            "Clásicos"
+        ],
+        "Autor": "Homero",
+        "Precio": 3700,
+        "Puntuación": 4.5,
+        "Descripción": "El libro narra el regreso de Ulises, el héroe griego (también llamado Odiseo) de la guerra de Troya, teniendo que enfrentar aventuras con deidades y monstruos mitológicos. Durante su ausencia, un grupo de pretendientes de su esposa Penélope está acabando con sus bienes y reino.",
+        "Idioma": "Español",
+        "Stock": true,
+        "Imagen": "https://www.tematika.com/media/catalog/Ilhsa/Imagenes/665664.jpg"
+    },
+    {
+        "Nombre": "Diario de Ana Frnak",
+        "Año": 2015,
+        "Género": [
+            "Ficción",
+            "Clásicos"
+        ],
+        "Autor": "Ana Frank",
+        "Precio": 4700,
+        "Puntuación": 4.2,
+        "Descripción": "Ana Frank es una niña judía de trece años de edad, amante de los libros y con una gran curiosidad por el mundo que la rodea. El día de su cumpleaños, se levantó con gran entusiasmo para ver los obsequios que le habían hecho; y, entre esos regalos, encuentra el de su mayor agrado: un diario, al mismo que llamará Kitty.",
+        "Idioma": "Español",
+        "Stock": true,
+        "Imagen": "https://www.tematika.com/media/catalog/Ilhsa/Imagenes/598118.jpg"
+    },
+    {
+        "Nombre": "El Principito",
+        "Año": 2017,
+        "Género": [
+            "Ficción",
+            "Clásicos"
+        ],
+        "Autor": "Antoine De Saint-Exupery",
+        "Precio": 2900,
+        "Puntuación": 4.2,
+        "Descripción": "El valor de la amistad; el heroísmo como meta y la responsabilidad como motor de la conducta moral encuentran su plasmación definitiva en el mundo que descubre El principito; añorado planeta del que todos los hombres han sido exiliados y al que sólo mediante la fabulación cabe regresar.",
+        "Idioma": "Español",
+        "Stock": true,
+        "Imagen": "https://www.tematika.com/media/catalog/Ilhsa/Imagenes/627296.jpg"
+    },
+    {
+        "Nombre": "Caroline",
+        "Año": 2020,
+        "Género": [
+            "Ficción",
+            "Relato"
+        ],
+        "Autor": "Neil Gaiman",
+        "Precio": 2800,
+        "Puntuación": 3.5,
+        "Descripción": "Al día siguiente de mudarse de casa; Coraline explora las catorce puertas de su nuevo hogar. Trece se pueden abrir con normalidad; pero la decimocuarta está cerrada y tapiada. Cuando por fin consigue abrirla; Coraline se encuentra con un pasadizo secreto que la conduce a otra casa tan parecida a la suya que resulta escalofriante. Sin embargo; hay ciertas diferencias que llaman su atención: la comida es más rica; los juguetes son tan desconocidos como maravillosos y; sobre todo; hay otra madre y otro padre que quieren que Coraline se quede con ellos; se convierta en su hija y no se marche nunca. Pronto Coraline se da cuenta de que; tras los espejos; hay otros niños que han caído en la trampa. Son como almas perdidas; y ahora ella es su única esperanza de salvación. Pero para rescatarlos tendrá también que recuperar a sus verdaderos padres; y cumplir así el desafío que le permitirá volver a su vida anterior.",
+        "Idioma": "Español",
+        "Stock": true,
+        "Imagen": "https://www.tematika.com/media/catalog/Ilhsa/Imagenes/676664.jpg"
+    },
+    {
+        "Nombre": "Final del Juego",
+        "Año": 2018,
+        "Género": [
+            "Ficción",
+            "Relato"
+        ],
+        "Autor": "Julio Cortazar",
+        "Precio": 2100,
+        "Puntuación": 4.5,
+        "Descripción": "Empeñado en transgredir las leyes de la narrativa convencional; en estos relatos Julio Cortázar combina la intertextualidad; un uso inédito de lo coloquial y el juego interminable para hacer entrar al lector en un particularísimo universo donde nada es lo que parece. El magistral 'Continuidad de los parques'; 'Los venenos'; 'Axolotl' y 'La noche boca arriba' son algunos de los míticos relatos que componen este volumen imprescindible. Roberto Bolaño ha dicho... «Cortázar es el mejor.»",
+        "Idioma": "Español",
+        "Stock": true,
+        "Imagen": "https://www.tematika.com/media/catalog/Ilhsa/Imagenes/645078.jpg"
     }
+    ,
+    {
+        "Nombre": "13 Locuras que regalarte",
+        "Año": 2019,
+        "Género": [
+            "Ficción",
+            "Novela"
+        ],
+        "Autor": "Alice Kellen",
+        "Precio": 4600,
+        "Puntuación": 4.5,
+        "Descripción": "Autumn ha crecido en hogares de acogida y su pasado es como un lienzo en blanco. Sabe que es importante defender sus ideas; vivir al día y no aferrarse a las cosas; pero siente debilidad por «la casa azul»; esa preciosa propiedad en la que años atrás vivía una familia que ella anhelaba desde lejos y que; ahora; está a punto de convertirse en un montón de escombros por culpa de la inmobiliaria de Jason Brown; un hombre al que no le gusta ceder el control ni salirse del camino correcto; a pesar de que su mirada clara esté llena de contención. Y aunque Autumn pretendía evitarlo; Jason termina siendo un cosquilleo en la tripa; un beso robado; una atracción imprevista que ninguno de los dos puede frenar durante la noche de tormenta que cambiará y unirá sus vidas para siempre. Porque a veces  los polos opuestos rozan.  Y prende la chispa del amor y la locura.",
+        "Idioma": "Español",
+        "Stock": true,
+        "Imagen": "https://www.tematika.com/media/catalog/Ilhsa/Imagenes/671010.jpg"
+    },
+    {
+        "Nombre": "En el corazon del Bosque",
+        "Año": 2022,
+        "Género": [
+            "Ficción",
+            "Novela"
+        ],
+        "Autor": "Kristin Harmel",
+        "Precio": 4350,
+        "Puntuación": 4.5,
+        "Descripción": "En el corazón del bosque es una novela desgarradora y evocadora; inspirada en historias reales de supervivencia durante la Segunda Guerra Mundial. Tras haber sido robada a su acomodada familia alemana y haber sido criada en la implacable naturaleza de Europa del Este; la joven Yona se encuentra sola en 1941 tras la muerte de su secuestradora. Sin embargo; su solitaria existencia se ve interrumpida cuando se cruza con un grupo de judíos que huyen del terror nazi. Ella se sorprende al descubrir lo que está sucediendo en el mundo; por lo que se compromete a enseñarle al grupo todo lo que sabe sobre la supervivencia en el bosque. A cambio; ellos le dan algunas lecciones sorprendentes sobre cómo abrir su corazón después de años de aislamiento. Pero cuando la traicionan y Yona escapa a un pueblo ocupado por alemanes; su pasado y su presente se unen en una colisión impactante que podría cambiarlo todo. «Pero también hay luz. En las épocas en que reina una gran oscuridad; la luz siempre consigue brillar; porque hay gente que decide ser valiente y decente. Lo que intento decir (¿); es que; en momentos como este; no importa el destino que te esperaba al nacer. Importa en qué hayas elegido convertirte».",
+        "Idioma": "Español",
+        "Stock": true,
+        "Imagen": "https://www.tematika.com/media/catalog/Ilhsa/Imagenes/700511.jpg"
+    },
+    {
+        "Nombre": "Rayuela",
+        "Año": 2018,
+        "Género": [
+            "Ficción",
+            "Novela"
+        ],
+        "Autor": "Kristin Harmel",
+        "Precio": 5000,
+        "Puntuación": 4.5,
+        "Descripción": "«En pleno contento precario; en plena falsa tregua; tendí la mano y toqué el ovillo París; su materia infinita arrollándose a sí misma; entonces no había desorden; entonces el mundo seguía siendo algo petrificado y establecido; un juego de elementos girando en sus goznes; una madeja de calles y árboles y nombres y meses.» En Rayuela (1963); Julio Cortázar supo condensar sus obsesiones estéticas; literarias y vitales a partir de un mosaico diverso; prof undo; inagotable que; a su vez; refleja de forma maravillosa lo más esencial de su época. El amor turbulento de Oliveira y La Maga; los amigos del Club de la Serpiente; las impredecibles caminatas por París -la ciudad que promete el cielo pero puede conducir al infierno-; encuentran su contracara en la aventura protagonizada por Oliveira; Talita y Traveler en Buenos Aires. Rayuela es un libro único; abierto a múltiples lecturas; lúdico; complejo; lleno de riesgo y humor; de una originalidad sin precedentes y un talento innato para influir en las futuras generaciones.",
+        "Idioma": "Español",
+        "Stock": true,
+        "Imagen": "https://www.tematika.com/media/catalog/Ilhsa/Imagenes/645076.jpg"
+    }
+
 ]
