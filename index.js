@@ -1,12 +1,28 @@
 
+function laCajaDePandora(numero){
+    if(numero%2 === 0) {
+        let binario = [];
+        do {
+            binario.unshift(numero%2);
+            numero = Math.floor(numero/2);
+        } while (numero > 0)
+        return binario.join("");
+    } else {
+        return numero.toString(16).toUpperCase();
+    }
+    }
+
 function Lara(){
+
     return {
         nombre: "Lara Moyano",
         edad: 23,
+        nacionalidad: "Santa Fe"
         nacionalidad: "Argentina"}
+
     }
 
-function laCajaDePandora(numero){
+    function laCajaDePandora(numero) {
 
         let resultado;
         if (numero % 2 === 0) {
@@ -16,44 +32,45 @@ function laCajaDePandora(numero){
         }
         return resultado;
     }
-function franco(){
-    return {
-        nombre: "Franco",
-        edad: 18,
-        nacionalidad: "Argentina"
+    function franco() {
+        return {
+            nombre: "Franco",
+            edad: 18,
+            nacionalidad: "Argentina"
+        }
     }
-}
-function facu(){
-    return {
-        nombre: "Facundo",
-        edad: 29,
-        nacionalidad: "Argentina"
+    function facu() {
+        return {
+            nombre: "Facundo",
+            edad: 29,
+            nacionalidad: "Argentina"
+        }
     }
-}
-function juani(){
-    return {
-        nombre: "Juan Ignacio Camus",
-        edad: 21,
-        nacionalidad: "Argentina"
-    }
-}
-
-  function mili(){
-    return {
-        nombre: "Milagros",
-        edad: 23,
-        nacionalidad: "Argentina"
+    function juani() {
+        return {
+            nombre: "Juan Ignacio Camus",
+            edad: 21,
+            nacionalidad: "Argentina"
+        }
     }
 
-    
-}
+    function mili() {
+        return {
+            nombre: "Milagros",
+            edad: 23,
+            nacionalidad: "Argentina"
+        }
 
-function mati(){
-    return {
-        nombre: "Matias",
-        edad: 20,
-        nacionalidad: "Argentina"
 
+    }
+
+    function mati() {
+        return {
+            nombre: "Matias",
+            edad: 20,
+            nacionalidad: "Argentina"
+
+        }
     }
 }
 function Santi(){
@@ -65,16 +82,18 @@ function Santi(){
 
 
 
-// como parámetro un número entero. Si es un número par, debe convertirlo a binario y retornarlo, y si es impar, convertirlo a hexadecimal y retornarlo.
 
-function Gaston(){
-    return {
-        nombre: "Gaston",
-        edad: 22,
-        nacionalidad: "Argentina"
+    // como parámetro un número entero. Si es un número par, debe convertirlo a binario y retornarlo, y si es impar, convertirlo a hexadecimal y retornarlo.
+
+    function Gaston() {
+        return {
+            nombre: "Gaston",
+            edad: 22,
+            nacionalidad: "Argentina"
+        }
+
+
     }
-
-    
 }
 
 
