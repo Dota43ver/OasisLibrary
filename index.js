@@ -26,7 +26,7 @@ function juani(){
     return {
         nombre: "Juan Ignacio Camus",
         edad: 21,
-        nacionalidad: "Santiago del Estero"
+        nacionalidad: "Argentina"
     }
 }
 
