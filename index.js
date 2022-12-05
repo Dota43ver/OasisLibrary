@@ -1,9 +1,21 @@
 function laCajaDePandora(numero){
 
-    
+function juani(){
+    return {
+        nombre: "Juan Ignacio Camus",
+        edad: 21,
+        nacionalidad: "Santiago del Estero"
     }
+}
 
-    // proximamente escribiremos codigo aqui
+  function mili(){
+    return {
+        nombre: "Milagros",
+        edad: 23,
+        nacionalidad: "Argentina"
+    }
+}
+  
         let resultado;
         if (numero % 2 === 0) {
             resultado = numero.toString(2);
@@ -12,9 +24,18 @@ function laCajaDePandora(numero){
         }
         return resultado;
     }
-
-    function Nombre(nombre){
-        const obj = {nombre: nombre, edad: 29, nacionalidad: "argentina" }
-        return obj
-      }
+function franco(){
+    return {
+        nombre: "Franco",
+        edad: 18,
+        nacionalidad: "Argentina"
+    }
+}
+function facu(){
+    return {
+        nombre: "Facundo",
+        edad: 29,
+        nacionalidad: "Argentina"
+    }
+}
 
