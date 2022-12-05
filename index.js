@@ -13,5 +13,4 @@ function laCajaDePandora(numero){
     }
 }
 
-console.log(laCajaDePandora(2))
   
