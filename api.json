@@ -1,5 +1,17 @@
 [
     {
+        "Nombre": "Los siete maridos de Evelin Hugo",
+        "Año" : 2017,
+        "Género": ["Novela", "Ficción"],
+          "Autor": "Taylor Jenkins Reid",
+        "Precio": 3500,
+        "Puntuación": 4.8,
+        "Descripción": "Evelyn Hugo, el ícono de Hollywood que se ha recluido en su edad madura, decide al fin contar la verdad sobre su vida llena de glamour y de escándalos. Pero cuando elige para ello a Monique Grant, una periodista desconocida, nadie se sorprende más que la misma Monique. ¿Por qué ella ? ¿Por qué ahora ? Monique no está precisamente en su mejor momento. Su marido la abandonó, y su vida profesional no avanza. Aún ignorando por qué Evelyn la ha elegido para escribir su biografía. Monique está decidida a aprovechar esa oportunidad para dar impulso a su carrera. Convocada al lujoso apartamento de Evelyn, Monique escucha fascinada mientras la actriz le cuenta su historia. Desde su llegada a Los Ángeles en los años 50 hasta su decisión de abandonar su carrera en el espectáculo en los 80 - y desde luego, los siete maridos que tuvo en ese tiempo - Evelyn narra una historia de ambición implacable, amistad inesperada y un gran amor prohibido.",
+        "Idioma": "Español",
+        "Stock": true,
+        "Imagen": "https://contentv2.tap-commerce.com/cover/large/9789874777737_1.jpg?id_com=1113"
+
+    },
 
         "Nombre":"El bosque infinitesimal",
         "Año": 2022,
@@ -120,23 +132,7 @@
         "Stock":false,
         "Imagen":"https://catalogos.libooks.com/9789874479518_md.jpg"   
     },
-    {
-        "Nombre": "Los siete maridos de Evelin Hugo",
-        "Año": 2017,
-        "Género": [
-            "Novela",
-            "Ficción"
-        ],
-        "Autor": "Taylor Jenkins Reid",
-        "Precio": 3500,
-        "Puntuación": 4.8,
-        "Descripción": "Evelyn Hugo, el ícono de Hollywood que se ha recluido en su edad madura, decide al fin contar la verdad sobre su vida llena de glamour y de escándalos. Pero cuando elige para ello a Monique Grant, una periodista desconocida, nadie se sorprende más que la misma Monique. ¿Por qué ella ? ¿Por qué ahora ? Monique no está precisamente en su mejor momento. Su marido la abandonó, y su vida profesional no avanza. Aún ignorando por qué Evelyn la ha elegido para escribir su biografía. Monique está decidida a aprovechar esa oportunidad para dar impulso a su carrera. Convocada al lujoso apartamento de Evelyn, Monique escucha fascinada mientras la actriz le cuenta su historia. Desde su llegada a Los Ángeles en los años 50 hasta su decisión de abandonar su carrera en el espectáculo en los 80 - y desde luego, los siete maridos que tuvo en ese tiempo - Evelyn narra una historia de ambición implacable, amistad inesperada y un gran amor prohibido.",
-        "Idioma": "Español",
-        "Stock": true,
-        "Imagen": "https://contentv2.tap-commerce.com/cover/large/9789874777737_1.jpg?id_com=1113"
-
-    },
-    {
+{
         "Nombre": "Harry Potter y la Piedra Filosofal",
         "Año": 1997,
         "Género": [
@@ -160,9 +156,132 @@
         "Puntuación": 4.8,
         "Descripción": "Sin saber que alguien ha abierto la Cámara de los Secretos, dejando escapar una serie de monstruos peligrosos, Harry y sus amigos Ron y Hermione tendrán que enfrentarse con arañas gigantes, serpientes encantadas, fantasmas enfurecidos y, sobre todo, con la mismísima reencarnación de su más temible adversario..",
         "Idioma": "Español",
-        "Saga": "Harry Potter",
         "Stock": true,
-        "imagen":"https://http2.mlstatic.com/D_NQ_NP_638650-MLA47558980875_092021-O.jpg"
+        "Imagen": "https://http2.mlstatic.com/D_NQ_NP_638650-MLA47558980875_092021-O.jpg",
+        "Saga":"Harry Potter"
+    },
+    {
+        "Nombre": "Harry Potter y el cáliz de fuego",
+        "Año" : 2000,
+        "Género": ["Novela", "Ficción", "Fantasía"],
+        "Autor": "J K Rowling",
+        "Precio": 4140,
+        "Puntuación": 4.7,
+        "Descripción": "Tras otro abominable verano con los Dursley, Harry se dispo ne a iniciar el cuarto curso en Hogwarts, la famosa escuela de magia y hechicería. A sus catorce años, a Harry le gust aría ser un joven mago como los demás y dedicarse a aprend er nuevos sortilegios, encontrarse con sus amigos Ron y Herm ione y asistir con ellos a los Mundiales de quidditch. Sin e mbargo, al llegar al colegio le espera una gran sorpresa que lo obligará a enfrentarse a los desafíos más temibles de toda su vida. Si logra superarlos, habrá demostrado que ya no es un niño y que está preparado para vivir las nuevas y emocionantes experiencias que el futuro le depara.",
+        "Idioma": "Español",
+        "Stock": true,
+        "Imagen": "https://images.cdn3.buscalibre.com/fit-in/360x360/ad/66/ad6612443362bc3bd1c6973d87fc3d90.jpg",
+        "Saga":"Harry Potter"
+    },
+    {
+        "Nombre": "Harry Potter y las reliquias de la muerte",
+        "Año" : 2007,
+        "Género": ["Novela", "Ficción", "Fantasía"],
+        "Autor": "J K Rowling",
+        "Precio": 2840,
+        "Puntuación": 4.7,
+        "Descripción": "Mientras se sube al sidecar de la motocicleta de Hagrid y surca los cielos, dejando Privet Drive por última vez, Harry Potter sabe que Lord Voldemort y los Mortífagos no se quedan atrás. El encanto protector que ha mantenido a Harry a salvo hasta ahora se ha roto, pero no puede seguir escondiéndose. El Señor Oscuro está infundiendo miedo en todo lo que Harry ama, y ​​para detenerlo, Harry tendrá... Ver más Ocultar Mientras se sube al sidecar de la motocicleta de Hagrid y se eleva por los cielos, dejando Privet Drive por última vez, Harry Potter sabe que Lord Voldemort y los Mortífagos no se quedan atrás.",
+        "Idioma": "Español",
+        "Stock": true,
+        "Imagen": "https://images.cdn3.buscalibre.com/fit-in/360x360/bb/b2/bbb26eb07bfdcfde9d11253cac5878f4.jpg",
+        "Saga":"Harry Potter"
+
+    },
+    {
+        "Nombre": "Juego de Tronos(cancion de Hielo y Fuego I)",
+        "Año" : 1996,
+        "Género": ["Novela", "Ficción politica", "Fantasía"],
+        "Autor": "George R. R. Martin",
+        "Precio": 5120,
+        "Puntuación": 4.9,
+        "Descripción": "Juego de tronos (en inglés, A Game of Thrones) es una novela de fantasía escrita por el autor estadounidense George R. R. Martin en 1996 y ganadora del premio Locus a la mejor novela de fantasía en 1997. Se trata de la primera entrega de la serie de gran popularidad Canción de hielo y fuego. La novela se caracteriza por su estética medieval, la descripción de numerosos personajes bien detallados, la contraposición de puntos de vista de los múltiples protagonistas, su trama con giros inesperados y un uso sutil y moderado de los aspectos mágicos tan comunes en otras obras de fantasía heroica.",
+        "Idioma": "Español",
+        "Stock": true,
+        "Imagen": "https://images.cdn1.buscalibre.com/fit-in/360x360/3d/76/3d76043985ab3665f9bbbaa4fdf4deaa.jpg",
+        "Saga":"Juego de Tronos"
+
+    },
+    {
+        "Nombre": "Choque de Reyes(cancion de Hielo y Fuego II)",
+        "Año" : 1998,
+        "Género": ["Novela", "Ficción politica", "Fantasía"],
+        "Autor": "George R. R. Martin",
+        "Precio": 5350,
+        "Puntuación": 4.8,
+        "Descripción": "Choque de reyes continúa donde acabó Juego de tronos. El libro se plantea en un comienzo con el prólogo, en el cual se nos da a conocer más de cerca a personajes que van a ser determinantes para la historia de este libro, como Davos Seaworth, Melisandre y el propio Stannis Baratheon y también se plantea la cuestión del cometa rojo que es interpretado por todas las facciones que forman parte de la guerra civil la cual se ha extendido por Poniente y pasa a conocerse como la Guerra de los Cinco Reyes. Mientras, la Guardia de la Noche envía un grupo de reconocimiento al norte en la Gran Exploración de Mormont, más allá del muro. A su vez, en el lejano este, Daenerys Targaryen dirige a su khalasar para volver a los Siete Reinos para conquistarlos, pero en el camino se encuentra con tres personajes misteriosos.",
+        "Idioma": "Español",
+        "Stock": true,
+        "Imagen": "https://images.cdn2.buscalibre.com/fit-in/360x360/1d/18/1d18287dbc8c35da55595f045483183f.jpg",
+        "Saga":"Juego de Tronos"
+
+    },
+    {
+        "Nombre": "Tormenta de Espadas(cancion de Hielo y Fuego III)",
+        "Año" : 2000,
+        "Género": ["Novela", "Ficción politica", "Fantasía"],
+        "Autor": "George R. R. Martin",
+        "Precio": 5450,
+        "Puntuación": 5,
+        "Descripción": "Tormenta de espadas retoma la historia dónde acaba su predecesora Choque de reyes. Los Siete Reinos están inmersos en la llamada Guerra de los Cinco Reyes, con Robb Stark, Renly Baratheon, Joffrey Baratheon, y Stannis Baratheon luchando por afianzar sus coronas. El intento de Stannis Baratheon de tomar la ciudad de Desembarco del Rey fracasa debido a la nueva alianza entre la casa Lannister, la casa Tyrell y la casa Martell, aunque los ejércitos de esta última no toman partido en la lucha. Mientras, en el Muro, un gran ejército de salvajes liderados por Mance Rayder avanza hacia el sur, con las reducidas fuerzas de la Guardia de la Noche como única resistencia. En el lejano este, Daenerys Targaryen va a la Bahía de los Esclavos con la esperanza de encontrar y movilizar fuerzas suficientes para retomar el Trono de Hierro.",
+        "Idioma": "Español",
+        "Stock": true,
+        "Imagen": "https://images.cdn3.buscalibre.com/fit-in/360x360/be/2f/be2fab9a1200f881ebc391f6caa49524.jpg",
+        "Saga":"Juego de Tronos"
+
+    },
+    {
+        "Nombre": "Festin de Cuervos(cancion de Hielo y Fuego IV)",
+        "Año" : 2005,
+        "Género": ["Novela", "Ficción politica", "Fantasía"],
+        "Autor": "George R. R. Martin",
+        "Precio": 5400,
+        "Puntuación": 4.8,
+        "Descripción": "Festín de cuervos empieza donde terminó Tormenta de espadas y los hechos que en ella ocurren son simultáneos a los de la siguiente novela, Danza de dragones. La Guerra de los Cinco Reyes empieza a decaer. Robb Stark, Joffrey Baratheon, Renly Baratheon y Balon Greyjoy están muertos y el rey Stannis Baratheon se encuentra en el Muro ayudando la Guardia de la Noche y su lord Comandante, Jon Nieve. El hermano de Joffrey, Tommen Baratheon, con tan solo ocho años es ahora el rey de Poniente y gobierna desde Desembarco del Rey bajo la atenta mirada de su madre, la reina regente, Cersei Lannister. Tywin Lannister también está muerto, asesinado por su propio hijo, Tyrion, antes de huir de la ciudad. Sansa Stark se encuentra escondida en el Valle, protegida por Petyr Baelish quien, después de asesinar a su esposa Lysa Arryn, se autoproclama lord Protector del Valle y guardián de su hijastro lord Robert Arryn, ahora Señor del Valle.",
+        "Idioma": "Español",
+        "Stock": true,
+        "Imagen": "https://images.cdn2.buscalibre.com/fit-in/360x360/ee/3a/ee3a7e9d9eb76f26c981947ca8e15e70.jpg",
+        "Saga":"Juego de Tronos"
+
+    },
+    {
+        "Nombre": "Danza de dragones(cancion de Hielo y Fuego V)",
+        "Año" : 2011,
+        "Género": ["Novela", "Ficción politica", "Fantasía"],
+        "Autor": "George R. R. Martin",
+        "Precio": 5700,
+        "Puntuación": 4.9,
+        "Descripción": "Danza de dragones es el quinto libro de la saga Canción de hielo y fuego. Narra los acontecimientos posteriores al tercer libro Tormenta de espadas, simultáneos a los acaecidos en el cuarto, Festín de cuervos. La Guerra de los Cinco Reyes parece que decae. En el Norte, el Rey Stannis Baratheon se ha instalado en el Muro y ha jurado ganarse la lealtad de los norteños para continuar su lucha para reclamar el Trono de Hierro, aunque esto se complica porque la mayoría de la costa oeste está ocupada por los Hijos del Hierro. En el propio Muro Jon Nieve ha sido elegido 998 Lord Comandante de la Guardia de la Noche, pero tiene enemigos tanto en la Guardia como más allá del Muro. Tyrion Lannister ha sido llevado en barco al otro lado del Mar Angosto a la Ciudad Libre de Pentos, pero su destino final es desconocido incluso para él. En el lejano este, Daenerys Targaryen ha conquistado la ciudad de Meereen, pero ha decidido quedarse y gobernarla, perfeccionando sus habilidades como dirigente que serán necesarias cuando viaje a Poniente. Pero la existencia de Daenerys ya es conocida por muchos en Poniente y desde las islas del Hierro y Dorne, desde Antigua y las Ciudades Libres se mandan emisarios para encontrarla y usar su causa para sus propios beneficios.",
+        "Idioma": "Español",
+        "Stock": true,
+        "Imagen": "https://http2.mlstatic.com/D_NQ_NP_904197-MLA30102288065_042019-O.jpg",
+        "Saga":"Juego de Tronos"
+
+    },
+    {
+        "Nombre": "Diario de Ana Frank",
+        "Año" : 1947,
+        "Género": ["Guerra", "Diario Personal", "Segunda Guerra Mundial", "Relatos"],
+        "Autor": "Ana Frank",
+        "Precio": 8500,
+        "Puntuación": 4.7,
+        "Descripción": "Con el título de El diario de Ana Frank (título original en neerlandés: Het Achterhuis) se conoce la edición de los diarios personales escritos por la joven holandesa Ana Frank entre el 12 de junio de 1942 y el 1 de agosto de 1944, en un total de tres cuadernos conservados en la actualidad. En los relatos, se cuenta la historia y vida de Ana Frank como adolescente y los dos años en que permaneció oculta junto a su familia de origen judío de los nazis en Ámsterdam, en plena Segunda Guerra Mundial, hasta que fueron descubiertos.",
+        "Idioma": "Español",
+        "Stock": true,
+        "Imagen": "https://www.penguinlibros.com/ar/1597151/diario-de-anne-frank.jpg"
+
+    },
+    {
+        "Nombre": "Don Quijote de la Mancha",
+        "Año" : 1605,
+        "Género": ["Novela", "Aventura"],
+        "Autor": "Miguel de Cervantes Saavedra",
+        "Precio": 3150,
+        "Puntuación": 4.5,
+        "Descripción": "En Don Quijote de la Mancha se narra la historia de un hidalgo maduro que, por la excesiva lectura de libros de caballería, se vuelve loco y concibe la idea de hacerse caballero andante y así recrear la antigua caballería. Pertrechado de armas y caballo, Rocinante, y, desde la segunda salida acompañado por un paisano llamado Sancho Panza, que le sirve de escudero, corre mil aventuras de las que generalmente sale malparado. La tercera vez que vuelve, vencido por el Caballero de la Blanca Luna, es ya para morir. En la primera parte se entrecruzan con la línea argumental novelas cortas de diferentes tipos.",
+        "Idioma": "Español",
+        "Stock": true,
+        "Imagen": "http://4.bp.blogspot.com/-3r54wAeI7-4/U2EskXv98wI/AAAAAAAAVvw/V6BM8PkP1N0/s1600/El+Ingenioso+Hidalgo+Don+Quijote+de+la+Mancha.jpg"
+
     },
     {
         "Nombre": "Harry Potter y el prisionero de Azkaban",
