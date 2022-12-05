@@ -10,6 +10,7 @@
         "Idioma": "Español",
         "Stock": true,
         "Imagen": "https://contentv2.tap-commerce.com/cover/large/9789874777737_1.jpg?id_com=1113"
+
     },
     {
         "Nombre": "Harry Potter y la camara secreta",
@@ -49,5 +50,7 @@
         "Stock": true,
         "Imagen": "https://images.cdn3.buscalibre.com/fit-in/360x360/bb/b2/bbb26eb07bfdcfde9d11253cac5878f4.jpg",
         "Saga":"Harry Potter"
+
     }
+
 ]
