@@ -3,7 +3,7 @@
         "Nombre": "Los siete maridos de Evelin Hugo",
         "Año" : 2017,
         "Género": ["Novela", "Ficción"],
-        "Autor": "Taylor Jenkins Reid",
+          "Autor": "Taylor Jenkins Reid",
         "Precio": 3500,
         "Puntuación": 4.8,
         "Descripción": "Evelyn Hugo, el ícono de Hollywood que se ha recluido en su edad madura, decide al fin contar la verdad sobre su vida llena de glamour y de escándalos. Pero cuando elige para ello a Monique Grant, una periodista desconocida, nadie se sorprende más que la misma Monique. ¿Por qué ella ? ¿Por qué ahora ? Monique no está precisamente en su mejor momento. Su marido la abandonó, y su vida profesional no avanza. Aún ignorando por qué Evelyn la ha elegido para escribir su biografía. Monique está decidida a aprovechar esa oportunidad para dar impulso a su carrera. Convocada al lujoso apartamento de Evelyn, Monique escucha fascinada mientras la actriz le cuenta su historia. Desde su llegada a Los Ángeles en los años 50 hasta su decisión de abandonar su carrera en el espectáculo en los 80 - y desde luego, los siete maridos que tuvo en ese tiempo - Evelyn narra una historia de ambición implacable, amistad inesperada y un gran amor prohibido.",
@@ -11,6 +11,141 @@
         "Stock": true,
         "Imagen": "https://contentv2.tap-commerce.com/cover/large/9789874777737_1.jpg?id_com=1113"
 
+    },
+
+        "Nombre":"El bosque infinitesimal",
+        "Año": 2022,
+        "Genero": ["Narrativa", "Ficcion"],
+        "Autor": "Lopez, Julian",
+        "Precio":3499,
+        "Puntuacion": 3.8,
+        "Descripcion":"La escritura de Julián López habla y brilla y saca la lengua en una lengua siempre nueva.Roque Larraquy En una lúgubre ciudad de Europa del Este, que cubren al ocaso las brumas del río y enfrían las nieves nocturnas, un joven médico y su viejo mentor capturan a un vagabundo de porte monumental. Lo retienen en un sótano donde, ayudados por una sumisa asistente, han montado su laboratorio. Acorazado en un espléndido guardapolvo, el aspirante a galeno emprende su viril empresa sacrificial en favor de la ciencia. Se trata, ni más ni menos, de ampliar los horizontes intelectuales de la época: ¡Descular los secretos anatómicos! ¡Perfeccionar las máquinas! ¡Elevar el espíritu! ¡Eliminar la pútrida pobreza! Pero entre los efectos de los vapores químicos, las drogas y el orgullo, las percepciones se alteran y el destino luminoso que la Humanidad ha puesto en sus manos puede torcerse... Con un idioma que ya le es propio, Julián López se mofa del espejismo positivista: desdeña cualquier corrección para dedicarse a adorar las formas fantásticas en las que suele travestirse el deseo.",
+        "Idioma":"Español",
+        "Stock":true,
+        "Imagen":"https://contentv2.tap-commerce.com/cover/original/9789877692563_1.jpg?id_com=1162&back=fad2e1"
+    },
+    {
+        "Nombre":"Los cuatro acuerdos",
+        "Año": 2007,
+        "Genero": ["Autoayuda", "Salud Popular", "Desarrollo personal"],
+        "Autor": "Ruiz, Miguel",
+        "Precio":3950,
+        "Puntuacion": 4.0,
+        "Descripcion":"Una guía práctica para la libertad personal. El conocimiento tolteca surge de la misma unidad esencial de la verdad de la que parten todas las tradiciones esotéricas sagradas del mundo. Aunque no es una religión, respeta a todos los maestros espirituales que han enseñado en la tierra, y si bien abraza el espíritu, resulta más preciso describirlo como una manera de vivir que se distingue por su fácil acceso a la felicidad y el amor. El doctor Miguel Ruiz nos propone en este libro un sencillo procedimiento para eliminar todas aquellas creencias heredadas que nos limitan y substituirlas por otras que responden a nuestra realidad interior y nos conducen a la libertad. Hace miles de años los toltecas eran conocidos en todo el sur de México como mujeres y hombres de conocimiento. Los antropólogos han definido a los toltecas como una nación o una raza, pero de hecho, eran científicos y artistas que formaron una sociedad para estudiar y conservar el conocimiento espiritual y las prácticas de sus antepasados. La conquista europea, unida a un agresivo abuso del poder personal por parte de algunos aprendices, hizo que los naguales se vieran forzados a esconder su sabiduría ancestral y a mantener su existencia en la oscuridad. Por fortuna, el conocimiento esotérico tolteca fue conservado y transmitido de una generación a otra por distintos linajes de naguales. Ahora, el doctor Miguel Ruiz, un nagual del linaje de los Guerreros del Águila, comparte con nosotros las profundas enseñanzas de los toltecas. No hay razón para sufrir. La única razón por la que sufres es porque tú así lo eliges. Si observas tu vida encontrarás muchas excusas para sufrir, pero ninguna razón válida. Lo mismo es aplicable a la felicidad. La única razón por la que eres feliz es porque tú decides ser feliz. La felicidad es una elección, como también lo es el sufrimiento.",
+        "Idioma":"Español",
+        "Stock":true,
+        "Imagen":"https://contentv2.tap-commerce.com/cover/original/9789507880223_1.jpg?id_com=1162&back=fad2e1"  
+    },
+    {
+        "Nombre":"Fontanarrosa continuará?",
+        "Año": 2013,
+        "Genero": ["Humor"],
+        "Autor": "Fontanarrosa, Roberto",
+        "Precio":1000,
+        "Puntuacion": 4.5,
+        "Descripcion":"En esta colección de humor gráfico, el lector se encontrará con el genial estilo del Negro Fontanarrosa al servicio de algunos temas inevitables a la hora de reir: los políticos, los médicos, el sexo, la inseguridad...",
+        "Idioma":"Español",
+        "Stock":true,
+        "Imagen":"https://contentv2.tap-commerce.com/cover/original/9789504936183_1.jpg?id_com=1162&back=fad2e1"  
+    },
+    {
+        "Nombre":"Recetas faciles para dias de frio",
+        "Año": 2009,
+        "Genero": ["Comidas y bebidas"],
+        "Autor": "Mary C., Tornes",
+        "Precio":495,
+        "Puntuacion": 3.2,
+        "Descripcion":"Más de treinta recetas diseñadas para combatir el frío, llevando a la mesa familiar todo tipo de deliciosas cazuelas, sopas, guisos y estofados. El libro incluye un completo glosario de términos y las fórmulas para convertir unidades de peso.",
+        "Idioma":"Español",
+        "Stock":true,
+        "Imagen":"https://catalogos.libooks.com/9789879097458_md.jpg"  
+    },
+    {
+        "Nombre":"Vivir de viaje",
+        "Año": 2022,
+        "Genero": ["Estilos de vida","aficiones y ocio"],
+        "Autor": "Sara, Gallardo",
+        "Precio":3780,
+        "Puntuacion": 3.0,
+        "Descripcion":"Los textos reunidos en Vivir de viaje presentan un rasgo peculiar y definitorio de Sara Gallardo: el desplazamiento como modo de vida, ya sea a causa de los viajes realizados por elección o necesidad personal, ya sea por los que emprende como enviada de los diarios o las revistas en los que trabaja. Siempre en movimiento, Sara recorre Europa, donde se instala largas temporadas, y desde allí escribe numerosas notas de actualidad sobre moda, política y cine, o acerca de la fama de Maradona o el entierro de Borges. También en América su mirada capta lo nuevo y lo entrega a sus lectores en una versión propia, muchas veces desafiante y otras tantas, irónica. Así, se ocupa de los líderes de la Revolución cubana o de la inmigración latina en Nueva York o de las temporadas veraniegas en Punta del Este. Además, Sara va y viene por Argentina, de donde extrae material para sus novelas a la vez que redacta su columna periodística. Con sus ojos, su oído y su escritura, Sara Gallardo no solo redescubre cada lugar recorrido o habitado, sino que se redescubre a sí misma. Como afirma Lucía De Leone en el prólogo: “Sara sabe que afincarse es apartarse del misterio, y frente al encierro o la permanencia en un lugar siempre elegirá la otra vía: escaparse",
+        "Idioma":"Español",
+        "Stock":true,
+        "Imagen":"https://catalogos.libooks.com/9789877193787_md.jpg"  
+    },
+    {
+        "Nombre":"Martín Fierro",
+        "Año": 2020,
+        "Genero": ["Biografías","literatura y estudios literarios"],
+        "Autor": "Jose Hernandez",
+        "Precio":2160,
+        "Puntuacion": 4.0,
+        "Descripcion":"A través de la narración de las peripecias del héroe -el gaucho Fierro, uno de los personajes más vitales, brutales y contradictorios de las letras nacionales-, José Hernández pone en evidencia la cruda realidad a la que se veían enfrentados los hombres del siglo XIX enviados a la frontera a luchar contra los indios y denuncia los abusos de poder por parte de un Estado corrupto y arbitrario. «El Martín Fierro se ha entrelazado hasta tal punto con su mundo, que es el nuestro; con nuestra literatura anterior y posterior, nuestra lengua, nuestro pensamiento, nuestra política, nuestros valores y maneras de vivir y sentir y mirar ese mundo.",
+        "Idioma":"Español",
+        "Stock":true,
+        "Imagen":"https://catalogos.libooks.com/9789878304724_md.jpg"  
+    },
+    {
+        "Nombre":"Calvin y hobbes 4",
+        "Año": 2022,
+        "Genero": ["Comics","novelas gráficas","manga"],
+        "Autor": "Watterson Bill",
+        "Precio":2511,
+        "Puntuacion": 2.3,
+        "Descripcion":"Desde su aparición, en 1985, Calvin y Hobbes se convirtió en una de las tiras cómicas preferidas en Estados Unidos. Pero no sólo en dicho país, pues los personajes creados por Bill Watterson han alcanzado gran popularidad en numerosos lugares. ¿Cuál es su secreto? El éxito de esta caricatura radica no sólo en la gracia de los protagonistas y en el humor que derrochan, sino también en el valor del mensaje que transmiten. Dicho mensaje no es obvio ni se manifiesta mediante moralejas, sino a través de sutiles comentarios que lanzan una mirada irónica a la realidad y que destacan valores como la amistad, la felicidad y la imaginación. La tira cuenta las andanzas de un niño y de su tigre. Este último es, a los ojos del mundo, una figura de peluche, pero para Calvin (y los lectores de la serie) se trata de un ser vivo inteligente, simpático y ocurrente. Ambos enfrentan distintas situaciones que van desde problemas familiares hasta viajes en el tiempo (a bordo de una caja de cartón). Ahora estas aventuras pueden ser disfrutadas por los lectores en las cuidadas ediciones que ofrece Editorial Océano.",
+        "Idioma":"Español",
+        "Stock":true,
+        "Imagen":"https://catalogos.libooks.com/9786075270111_md.jpg"  
+    },
+    {
+        "Nombre":"Big data",
+        "Año": 2019,
+        "Genero": ["Ciencias"],
+        "Autor": "Sosa Escudero, Walter",
+        "Precio":1935,
+        "Puntuacion": 3.9,
+        "Descripcion":"Cada vez que deslizamos nuestros dedos por una pantalla e ingresamos a una página web para hacer una compra o buscar una dirección, cada vez que hacemos un posteo, damos un like o subimos una foto a las redes sociales, cada vez que usamos la tarjeta de crédito, el GPS, cada vez que? estamos generando datos, ¡cantidades espeluznantes de datos espontáneos! (de hecho, en los últimos dos años la humanidad produjo más datos que en toda su historia previa). ¿Adónde van parar? ¿Quién los analiza, los procesa, los usa y para qué? ¿Acaso nos espían? ¿Cómo afectan nuestra vida? Ante este tsunami, el gran Walter Sosa Escudero nos inicia en el revolucionario mundo de big data, la explosión originada por la masividad de internet, que provee información instantánea acerca del comportamiento de miles de millones de usuarios. Pero tan importantes como los datos son los algoritmos, las técnicas estadísticas y computacionales que permiten procesarlos; por eso este libro nos presenta la nueva ciencia de datos, una disciplina que involucra la estadística, la matemática, la computación, el diseño y todas las áreas de la vida cotidiana que dependen de los datos: desde la política y la sociología hasta la medicina o la física, desde la empresa hasta el Estado. Además de presentar interesantes casos y métodos -el escándalo de los porno impuestos en Noruega, el garrafal error del Literary Digest en la elección de Roosevelt, la app para generar un mapa con los baches de la ciudad de Boston, o el famoso padre que se entera por un algoritmo de que su hija está embarazada- y ante el optimismo a ultranza de algunos gurúes de big data, nuestro autor también se pregunta si esta catarata de información será capaz de cambiar radicalmente nuestra forma de ver y vivir en el mundo. En un tono coloquial pero con máximo rigor científico, este libro ofrece un paseo guiado por el aguacero de datos y algoritmos. No presupone ninguna formación técnica, tan solo la curiosidad de saber qué promete esta batalla, que unos ven como el comienzo de una nueva era y otros, como el mal que viene a destruir nuestra vida cotidiana.",
+        "Idioma":"Español",
+        "Stock":false,
+        "Imagen":"https://catalogos.libooks.com/9789876298995_md.jpg"    
+    },
+    {
+        "Nombre":"Borges, big data y yo",
+        "Año": 2020,
+        "Genero": ["Ciencias"],
+        "Autor": "Sosa Escudero, Walter",
+        "Precio":1737,
+        "Puntuacion": 4.1,
+        "Descripcion":"Ya se dijo todo sobre Borges. ¿Ya se dijo todo sobre Borges? Pues no. A su obra vasta y generosa no se accede por una sola puerta de entrada, sino por una infinidad de ventanas, pasadizos y claraboyas hacia un universo que, una vez conocido, ya no se puede ni se quiere abandonar. En este libro fascinante y adictivo, Walter Sosa Escudero propone una de esas entradas: la ciencia de datos. En efecto, los números, infinitos, mapas, algoritmos, chances y corazonadas, ficciones y realidades están tan presentes en la obra de Borges como en la práctica estadística y el uso hoy omnipresente de big data. De la mano de un relato cómplice en el que la admiración no impide el juego con la obra, los datos y algoritmos se revelan como guías privilegiados para descubrir a un Borges humano, complejo pero accesible, siempre desafiante. Literatura, ciencia, poesía, estadística y computación se entrelazan y se bifurcan en estas páginas para iluminar nuestro tiempo de manera particularmente apropiada: en medio de la revolución de big data y algoritmos, ciertos fenómenos cruciales siguen siendo esquivos a la predicción. Son esas incertidumbres y azares los que la obra de Borges el escritor que científicas y científicos idolatran sin grietas nos ayuda a entender (e incluso, a veces, a disfrutar). Entre su propia experiencia como lector (y sobre todo re-lector) de la obra borgeana, y el conocimiento más actualizado sobre datos y estadística, Sosa Escudero tiende un puente irresistible, tan apto para que transiten por él los recién llegados como quienes buscan una mirada renovada sobre una obra que conocen bien. Encontrarán aquí referencias a sus cuentos más celebrados pero también fragmentos del Borges poeta, ensayista y gran conversador, consejos para armar o completar una biblioteca borgeana y sugerencias para encarar primeras, segundas y terceras lecturas. Prepárense para una travesía asombrosa y larga, quizás infinita.",
+        "Idioma":"Español",
+        "Stock":false,
+        "Imagen":"https://catalogos.libooks.com/9789878010410_md.jgp"   
+    },
+    {
+        "Nombre":"Rusia",
+        "Año": 2022,
+        "Genero": ["Historia"],
+        "Autor": "Antony Beevor",
+        "Precio":5940,
+        "Puntuacion": 3.7,
+        "Descripcion":"Tras el colapso del imperio zarista, entre 1917 y 1921 tuvo lugar en Rusia una lucha devastadora: una incompatible alianza blanca de socialistas moderados y monárquicos reaccionarios tenía pocas posibilidades contra el Ejército Rojo de Trotsky y la dictadura comunista de Lenin. El terror engendró el terror, que a su vez condujo a una crueldad aún mayor sobre hombres, mujeres y niños. La lucha se convirtió en una guerra mundial por delegación, ya que Churchill desplegó armamento y tropas del imperio británico, mientras las fuerzas armadas de Estados Unidos, Francia, Italia, Japón, Polonia y Checoslovaquia desempeñaron papeles rivales. Utilizando los estudios más actualizados y la investigación de archivos, Antony Beevor reúne la imagen completa en una narración apasionante que transmite el conflicto a través de los ojos de todos, desde el trabajador en las calles de Petrogrado hasta el oficial de caballería en el campo de batalla o la mujer médico en un hospital improvisado.",
+        "Idioma":"Español",
+        "Stock":false,
+        "Imagen":"https://catalogos.libooks.com/9789874479518_md.jpg"   
+    },
+{
+        "Nombre": "Harry Potter y la Piedra Filosofal",
+        "Año": 1997,
+        "Género": [
+            "Novela",
+            "Ficción",
+            "Fantasía"
+        ],
+        "Autor": "JK Rowling",
+        "Precio": 3476,
+        "Puntuación": 4.4,
+        "Descripción": "Harry Potter y la piedra filosofal es el primer volumen de la ya clásica serie de novelas fantásticas de la autora británica J.K. Rowling. Con las manos temblorosas, Harry le dio la vuelta al sobre y vio un sello de lacre púrpura con un escudo de armas: un león, un águila, un tejón y una serpiente, que rodeaban una gran letra H. Harry Potter nunca ha oído hablar de Hogwarts hasta que empiezan a caer cartas en el felpudo del número 4 de Privet Drive. Llevan la dirección escrita con tinta verde en un sobre de pergamino amarillento con un sello de lacre púrpura, y sus horripilantes tíos se apresuran a confiscarlas. Más tarde, el día que Harry cumple once años, Rubeus Hagrid, un hombre gigantesco cuyos ojos brillan como escarabajos negros, irrumpe con una noticia extraordinaria: Harry Potter es un mago, y le han concedido una plaza en el Colegio Hogwarts de Magia y Hechicería. ¡Está a punto de comenzar una aventura increíble!",
+        "Imagen": "https://static.wikia.nocookie.net/esharrypotter/images/9/9a/Harry_Potter_y_la_Piedra_Filosofal_Portada_Espa%C3%B1ol.PNG/revision/latest?cb=20151020165725",
+        "Saga":"Harry Potter"
     },
     {
         "Nombre": "Harry Potter y la camara secreta",
@@ -147,7 +282,145 @@
         "Stock": true,
         "Imagen": "http://4.bp.blogspot.com/-3r54wAeI7-4/U2EskXv98wI/AAAAAAAAVvw/V6BM8PkP1N0/s1600/El+Ingenioso+Hidalgo+Don+Quijote+de+la+Mancha.jpg"
 
+    },
+    {
+        "Nombre": "Harry Potter y el prisionero de Azkaban",
+        "Año": 1999,
+        "Género": [
+            "Novela",
+            "Ficción",
+            "Fantasía"
+        ],
+        "Autor": "JK Rowling",
+        "Precio": 3715,
+        "Puntuación": 4.5,
+        "Descripción": "Igual que en las dos primeras partes de la serie, Harry aguarda con impaciencia el inicio del tercer curso en el Colegio Hogwarts de Magia. Tras haber cumplido los trece años, solo y lejos de sus amigos, Harry se pelea con su bigotuda tía Marge, a la que convierte en globo, y debe huir en un autobús mágico. Mientras tanto, de la prisión de Azkaban se ha escapado un terrible villano, Sirius Black, un asesino en serie con poderes mágicos que fue cómplice de lord Voldemort y que parece dispuesto a borrar a Harry del mapa. Y por si esto fuera poco, Harry deberá enfrentarse también a unos terribles monstruos, los dementores , seres abominables capaces de robarles la felicidad a los magos y de eliminar todo recuerdo hermoso de aquellos que osan mirarlos. Lo que ninguno de estos malvados personajes sabe es que Harry, con la ayuda de sus fieles amigos Ron y Hermione, es capaz de todo y mucho más.",
+        "Idioma": "Español",
+        "Saga": "Harry Potter",
+        "Stock": true,
+        "Imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5xC5BJDd_srmQlVTiLs8m49ptvyWbDvrZwDW0grl4PsxbbFpwZ2IyV2pJCNbyhSey4fM&usqp=CAU"
+    },
+    {
+        "Nombre": "Harry Potter y la Orden del Fénix",
+        "Año": 2003,
+        "Género": [
+            "Novela",
+            "Ficción",
+            "Fantasía"
+        ],
+        "Autor": "JK Rowling",
+        "Precio": 6171,
+        "Puntuación": 4.5,
+        "Descripción": "Las tediosas vacaciones de verano en casa de sus tíos todavía no han acabado y Harry se encuentra más inquieto que nunca. Apenas ha tenido noticias de Ron y Hermione, y presiente que algo extraño está sucediendo en Hogwarts. En efecto, cuando por fin comienza otro curso en el famoso colegio de magia y hechicería, sus temores se vuelven realidad. El Ministerio de Magia niega que Voldemort haya regresado y ha iniciado una campaña de desprestigio contra Harry y Dumbledore, para lo cual ha asignado a la horrible profesora Dolores Umbridge la tarea de vigilar todos sus movimientos. Así pues, además de sentirse solo e incomprendido, Harry sospecha que Voldemort puede adivinar sus pensamientos, e intuye que el temible mago trata de apoderarse de un objeto secreto que le permitiría recuperar su poder destructivo.",
+        "Idioma": "Español",
+        "Saga": "Harry Potter",
+        "Stock": true,
+        "Imagen": "https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/lrg/9788/4983/9788498383621.jpg"
+    },
+    {
+        "Nombre": "Harry Potter y el misterio del principe",
+        "Año": 2005,
+        "Género": [
+            "Novela",
+            "Ficción",
+            "Fantasía"
+        ],
+        "Autor": "JK Rowling",
+        "Precio": 5099,
+        "Puntuación": 4.6,
+        "Descripción": "Con dieciséis años cumplidos, Harry inicia el sexto curso en Hogwarts en medio de terribles acontecimientos que asolan Inglaterra. Elegido capitán del equipo de quidditch, los ensayos, los exámenes y las chicas ocupan todo su tiempo, pero la tranquilidad dura poco. A pesar de los férreos controles de seguridad que protegen la escuela, dos alumnos son brutalmente atacados. Dumbledore sabe que se acerca el momento, anunciado por la Profecía, en que Harry y Voldemort se enfrentarán a muerte: «El único con poder para vencer al Señor Tenebroso se acerca... Uno de los dos debe morir a manos del otro, pues ninguno de los dos podrá vivir mientras siga el otro con vida.»",
+        "Idioma": "Español",
+        "Saga": "Harry Potter",
+        "Stock": true,
+        "Imagen": "https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/lrg/9788/4983/9788498383638.jpg"
+    },
+    {
+        "Nombre": "La biblioteca de la media noche",
+        "Año": 2021,
+        "Género": [
+            "Novela",
+            "Ficción",
+            "Fantasía"
+        ],
+        "Autor": "Matt Haig",
+        "Precio": 5399,
+        "Puntuación": 4.1,
+        "Descripción": "Entre la vida y la muerte hay una biblioteca. Y los estantes de esa biblioteca son infinitos. Cada libro da la oportunidad de probar otra vida que podrías haber vivido y de comprobar cómo habrían cambiado las cosas si hubieras tomado otras decisiones... ¿Habrías hecho algo de manera diferente si hubieras tenido la oportunidad?. Nora Seed aparece, sin saber cómo, en la Biblioteca de la Medianoche, donde se le ofrece una nueva oportunidad para hacer las cosas bien. Hasta ese momento, su vida ha estado marcada por la infelicidad y el arrepentimiento. Nora siente que ha defraudado a todos, y también a ella misma. Pero esto está a punto de cambiar. Los libros de la Biblioteca de la Medianoche permitirán a Nora vivir como si hubiera hecho las cosas de otra manera. Con la ayuda de una vieja amiga, tendrá la opción de esquivar todo aquello que se arrepiente de haber hecho (o no haber hecho), en pos de la vida perfecta. Pero las cosas no siempre serán como imaginó que serían, y pronto sus decis",
+        "Idioma": "Español",
+        "Stock": true,
+        "Imagen": "https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/lrg/9786/0755/9786075507712.jpg"
+    },
+    {
+        "Nombre": "Una breve historia de casi todo",
+        "Año": 2016,
+        "Género": [
+            "No ficción"
+        ],
+        "Autor": "Bill Bryson",
+        "Precio": 4378,
+        "Puntuación": 4.2,
+        "Descripción": "UNO DE LOS MEJORES LIBROS DE DIVULGACIÓN CIENTÍFICA DE TODOS LOS TIEMPOS. MÁS DE 120.000 EJEMPLARES VENDIDOS EN ESPAÑA ¿Puede un solo libro convertirse en la perfecta introducción para adentrarse en disciplinas tan dispares como la astronomía, la geología, la física, la química y la biología? ¿Puede un trabajo de divulgación científica ofrecer razonamientos y datos precisos, y al mismo tiempo ser tremendamente entretenido? ¿Puede una única obra narrar la historia de los grandes descubrimientos de la ciencia y contarnos también divertidas anécdotas relacionadas con estos extraordinarios logros? Con Una breve historia de casi todo, Bill Bryson nos propone un fascinante recorrido por la historia del universo que nos rodea y los conocimientos que nos han llevado a comprenderlo un poco mejor.",
+        "Idioma": "Español",
+        "Stock": true,
+        "Imagen": "https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/lrg/9788/4929/9788492966790.jpg"
+    },
+    {
+        "Nombre": "La canción de Aquiles",
+        "Año": 2021,
+        "Género": [
+            "Ficción",
+            "Fantasía",
+            "Contemporaneo"
+        ],
+        "Autor": "Madeline Miller",
+        "Precio": 6527,
+        "Puntuación": 4.2,
+        "Descripción": "De la autora de Circe, una epopeya inolvidableGrecia en la era de los héroes. Patroclo, un príncipe joven y torpe, ha sido exiliado al reino de Ftía, donde vive a la sombra del rey Peleo y su hijo divino, Aquiles.Aquiles, el mejor de los griegos, es todo lo que no es Patroclo: fuerte, apuesto, hijo de una diosa. Un día Aquiles toma bajo su protección al lastimoso príncipe y ese vínculo provisional da paso a una sólida amistad mientras ambos se convierten en jóvenes habilidosos en las artes de la guerra.Pero el destino nunca está lejos de los talones de Aquiles. Cuando se extiende la noticia del rapto de Helena de Esparta, se convoca a los hombres de Grecia para asediar la ciudad de Troya. Aquiles, seducido por la promesa de un destino glorioso, se une a la causa, y Patroclo, dividido entre el amor y el miedo por su compañero, lo sigue a la guerra. Poco podía imaginar que los años siguientes iban a poner a prueba todo cuanto habían aprendido y todo cuanto valoraban profundamente.",
+        "Idioma": "Español",
+        "Stock": true,
+        "Imagen": "https://images.cdn3.buscalibre.com/fit-in/360x360/a2/4e/a24e1d213892418e4ba12d4edceb8a96.jpg"
+    },
+    {
+        "Nombre": "Romper el Circulo",
+        "Año": 2022,
+        "Género": [
+            "Romance",
+            "Contemporaneo",
+            "Novela"
+        ],
+        "Autor": "Colleen Hoover",
+        "Precio": 4320,
+        "Puntuación": 4.6,
+        "Descripción": "Colleen Hoover te romperá el corazón. A veces, quien más te quiere es quién más daño te hace. Lily no siempre lo ha tenido fácil. Por eso, su idílica relación con un magnífico neurocirujano llamado Ryle Kincaid, parece demasiado buena para ser verdad. Cuando Atlas, su primer amor, reaparece repentinamente y Ryle comienza a mostrar su verdadera cara, todo lo que Lily ha construido con él se ve amenazado. «Nadie escribe sobre sentimientos como Colleen Hoover.» Anna Todd El gran fenómeno de TikTok. Colleen Hoover te romperá el corazón.",
+        "Idioma": "Español",
+        "Stock": true,
+        "Imagen": "https://images.cdn1.buscalibre.com/fit-in/360x360/3e/0e/3e0eb9a4b7e8a9dd71da87615def899e.jpg"
+    },
+    {
+        "Nombre": "Harry Potter y el cáliz de fuego",
+        "Año" : 2000,
+        "Género": ["Novela", "Ficción", "Fantasía"],
+        "Autor": "J K Rowling",
+        "Precio": 4140,
+        "Puntuación": 4.7,
+        "Descripción": "Tras otro abominable verano con los Dursley, Harry se dispo ne a iniciar el cuarto curso en Hogwarts, la famosa escuela de magia y hechicería. A sus catorce años, a Harry le gust aría ser un joven mago como los demás y dedicarse a aprend er nuevos sortilegios, encontrarse con sus amigos Ron y Herm ione y asistir con ellos a los Mundiales de quidditch. Sin e mbargo, al llegar al colegio le espera una gran sorpresa que lo obligará a enfrentarse a los desafíos más temibles de toda su vida. Si logra superarlos, habrá demostrado que ya no es un niño y que está preparado para vivir las nuevas y emocionantes experiencias que el futuro le depara.",
+        "Idioma": "Español",
+        "Stock": true,
+        "Imagen": "https://images.cdn3.buscalibre.com/fit-in/360x360/ad/66/ad6612443362bc3bd1c6973d87fc3d90.jpg",
+        "Saga":"Harry Potter"
+    },
+    {
+        "Nombre": "Harry Potter y las reliquias de la muerte",
+        "Año" : 2007,
+        "Género": ["Novela", "Ficción", "Fantasía"],
+        "Autor": "J K Rowling",
+        "Precio": 2840,
+        "Puntuación": 4.7,
+        "Descripción": "Mientras se sube al sidecar de la motocicleta de Hagrid y surca los cielos, dejando Privet Drive por última vez, Harry Potter sabe que Lord Voldemort y los Mortífagos no se quedan atrás. El encanto protector que ha mantenido a Harry a salvo hasta ahora se ha roto, pero no puede seguir escondiéndose. El Señor Oscuro está infundiendo miedo en todo lo que Harry ama, y ​​para detenerlo, Harry tendrá... Ver más Ocultar Mientras se sube al sidecar de la motocicleta de Hagrid y se eleva por los cielos, dejando Privet Drive por última vez, Harry Potter sabe que Lord Voldemort y los Mortífagos no se quedan atrás.",
+        "Idioma": "Español",
+        "Stock": true,
+        "Imagen": "https://images.cdn3.buscalibre.com/fit-in/360x360/bb/b2/bbb26eb07bfdcfde9d11253cac5878f4.jpg",
+        "Saga":"Harry Potter"
     }
-    
 
 ]
