@@ -1,2 +1,3 @@
 function laCajaDePandora(numero){
+    
     }
