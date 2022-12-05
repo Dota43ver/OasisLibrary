@@ -1,0 +1,50 @@
+[
+    {
+        "Nombre":"El bosque infinitesimal",
+        "Año": 2022,
+        "Genero": ["Narrativa", "Ficcion"],
+        "Autor": "Lopez, Julian",
+        "Precio":3499,
+        "Puntuacion": 3.8,
+        "Descripcion":"La escritura de Julián López habla y brilla y saca la lengua en una lengua siempre nueva.Roque Larraquy En una lúgubre ciudad de Europa del Este, que cubren al ocaso las brumas del río y enfrían las nieves nocturnas, un joven médico y su viejo mentor capturan a un vagabundo de porte monumental. Lo retienen en un sótano donde, ayudados por una sumisa asistente, han montado su laboratorio. Acorazado en un espléndido guardapolvo, el aspirante a galeno emprende su viril empresa sacrificial en favor de la ciencia. Se trata, ni más ni menos, de ampliar los horizontes intelectuales de la época: ¡Descular los secretos anatómicos! ¡Perfeccionar las máquinas! ¡Elevar el espíritu! ¡Eliminar la pútrida pobreza! Pero entre los efectos de los vapores químicos, las drogas y el orgullo, las percepciones se alteran y el destino luminoso que la Humanidad ha puesto en sus manos puede torcerse... Con un idioma que ya le es propio, Julián López se mofa del espejismo positivista: desdeña cualquier corrección para dedicarse a adorar las formas fantásticas en las que suele travestirse el deseo.",
+        "Idioma":"Español",
+        "Stock":true,
+        "Imagen":"https://contentv2.tap-commerce.com/cover/original/9789877692563_1.jpg?id_com=1162&back=fad2e1"
+    },
+    {
+        "Nombre":"Los cuatro acuerdos",
+        "Año": 2007,
+        "Genero": ["Autoayuda", "Salud Popular", "Desarrollo personal"],
+        "Autor": "Ruiz, Miguel",
+        "Precio":3950,
+        "Puntuacion": 4.0,
+        "Descripcion":"Una guía práctica para la libertad personal. El conocimiento tolteca surge de la misma unidad esencial de la verdad de la que parten todas las tradiciones esotéricas sagradas del mundo. Aunque no es una religión, respeta a todos los maestros espirituales que han enseñado en la tierra, y si bien abraza el espíritu, resulta más preciso describirlo como una manera de vivir que se distingue por su fácil acceso a la felicidad y el amor. El doctor Miguel Ruiz nos propone en este libro un sencillo procedimiento para eliminar todas aquellas creencias heredadas que nos limitan y substituirlas por otras que responden a nuestra realidad interior y nos conducen a la libertad. Hace miles de años los toltecas eran conocidos en todo el sur de México como mujeres y hombres de conocimiento. Los antropólogos han definido a los toltecas como una nación o una raza, pero de hecho, eran científicos y artistas que formaron una sociedad para estudiar y conservar el conocimiento espiritual y las prácticas de sus antepasados. La conquista europea, unida a un agresivo abuso del poder personal por parte de algunos aprendices, hizo que los naguales se vieran forzados a esconder su sabiduría ancestral y a mantener su existencia en la oscuridad. Por fortuna, el conocimiento esotérico tolteca fue conservado y transmitido de una generación a otra por distintos linajes de naguales. Ahora, el doctor Miguel Ruiz, un nagual del linaje de los Guerreros del Águila, comparte con nosotros las profundas enseñanzas de los toltecas. No hay razón para sufrir. La única razón por la que sufres es porque tú así lo eliges. Si observas tu vida encontrarás muchas excusas para sufrir, pero ninguna razón válida. Lo mismo es aplicable a la felicidad. La única razón por la que eres feliz es porque tú decides ser feliz. La felicidad es una elección, como también lo es el sufrimiento.",
+        "Idioma":"Español",
+        "Stock":true,
+        "Imagen":"https://contentv2.tap-commerce.com/cover/original/9789507880223_1.jpg?id_com=1162&back=fad2e1"  
+    },
+    {
+        "Nombre":"Fontanarrosa continuará?",
+        "Año": 2013,
+        "Genero": ["Humor"],
+        "Autor": "Fontanarrosa, Roberto",
+        "Precio":1000,
+        "Puntuacion": 4.5,
+        "Descripcion":"En esta colección de humor gráfico, el lector se encontrará con el genial estilo del Negro Fontanarrosa al servicio de algunos temas inevitables a la hora de reir: los políticos, los médicos, el sexo, la inseguridad...",
+        "Idioma":"Español",
+        "Stock":true,
+        "Imagen":"https://contentv2.tap-commerce.com/cover/original/9789504936183_1.jpg?id_com=1162&back=fad2e1"  
+    },
+    {
+        "Nombre":"Recetas faciles para dias de frio",
+        "Año": 2009,
+        "Genero": ["Comidas y bebidas"],
+        "Autor": "Mary C., Tornes",
+        "Precio":495,
+        "Puntuacion": 3.2,
+        "Descripcion":"Más de treinta recetas diseñadas para combatir el frío, llevando a la mesa familiar todo tipo de deliciosas cazuelas, sopas, guisos y estofados. El libro incluye un completo glosario de términos y las fórmulas para convertir unidades de peso.",
+        "Idioma":"Español",
+        "Stock":true,
+        "Imagen":"https://catalogos.libooks.com/9789879097458_md.jpg"  
+    }
+]
