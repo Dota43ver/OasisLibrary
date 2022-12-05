@@ -11,5 +11,11 @@ function laCajaDePandora(numero){
     }
     return sum;
     }
-    
+
     }
+
+
+    function Nombre(nombre){
+        const obj = {nombre: nombre, edad: 29, nacionalidad: "argentina" }
+        return obj
+      }
