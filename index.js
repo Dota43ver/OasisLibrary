@@ -1,17 +1,4 @@
 function laCajaDePandora(numero){
-    if(numero%2){
-    var dec = numero.toString(2)
-    return dec
-    } 
-    else{
-    let sum = 0;
-    
-    for (let i = 0; i < num.length; i++) {
-        sum += +num[i] * 2 ** (num.length - 1 - i);
-     }
-      return sum;
-    }
-}
 
 function juani(){
     return {
@@ -21,4 +8,34 @@ function juani(){
     }
 }
 
+  function mili(){
+    return {
+        nombre: "Milagros",
+        edad: 23,
+        nacionalidad: "Argentina"
+    }
+}
   
+        let resultado;
+        if (numero % 2 === 0) {
+            resultado = numero.toString(2);
+        } else {
+            resultado = numero.toString(16);
+        }
+        return resultado;
+    }
+function franco(){
+    return {
+        nombre: "Franco",
+        edad: 18,
+        nacionalidad: "Argentina"
+    }
+}
+function facu(){
+    return {
+        nombre: "Facundo",
+        edad: 29,
+        nacionalidad: "Argentina"
+    }
+}
+
