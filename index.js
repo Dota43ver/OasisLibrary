@@ -17,7 +17,7 @@ function Lara(){
     return {
         nombre: "Lara Moyano",
         edad: 23,
-        nacionalidad: "Santa Fe"
+        nacionalidad: "Santa Fe",
         nacionalidad: "Argentina"}
 
     }
@@ -72,7 +72,7 @@ function Lara(){
 
         }
     }
-}
+
 function Santi(){
     return {
         nombre: "Santiago",
@@ -94,7 +94,7 @@ function Santi(){
 
 
     }
-}
+
 
 
 
