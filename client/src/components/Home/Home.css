@@ -1,0 +1,14 @@
+.home {
+    display: grid;
+    
+    grid-template-columns: repeat(4, 1fr);
+    margin: 20px;
+}
+
+.cards {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+}
