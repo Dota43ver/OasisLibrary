@@ -17,10 +17,9 @@ function Lara(){
     return {
         nombre: "Lara Moyano",
         edad: 23,
-        nacionalidad: "Santa Fe"
-        nacionalidad: "Argentina"}
-
+        nacionalidad: "Argentina"
     }
+}
 
     function laCajaDePandora(numero) {
 
@@ -72,7 +71,7 @@ function Lara(){
 
         }
     }
-}
+
 function Santi(){
     return {
         nombre: "Santiago",
@@ -94,7 +93,7 @@ function Santi(){
 
 
     }
-}
+
 
 
 
