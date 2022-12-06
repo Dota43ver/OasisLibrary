@@ -20,9 +20,9 @@ export default function Home() {
                     return (
                         <div className="cards">
                             {el.Nombre}
-                            <br/>
+                            <br />
                             ${el.Precio}
-                            <br/>
+                            <br />
                             {el.Puntuación}
                             <img src={el.Imagen} alt='img not found' width="175"></img>
                         </div>
