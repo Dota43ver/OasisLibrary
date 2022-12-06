@@ -1,0 +1,69 @@
+.main_container{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    gap: 40px;
+    background-color: #D9D9D9;
+    height:198px;
+    justify-content: space-around;
+}
+
+.button {
+    background-color: #1C555E;
+    color: white;
+    font-size: 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 163px;
+    height: 43px;
+}
+
+.micuenta {
+border: 0;
+outline:none;
+padding: 0;
+background: none;
+cursor: pointer;
+font-size: 25px;
+}
+
+.micuenta:hover{
+    cursor:pointer
+}
+
+.misfavoritos {
+    border: 0;
+outline:none;
+padding: 0;
+background: none;
+cursor: pointer;
+font-size: 25px;
+display: flex;
+  align-items: center;
+}
+
+.micarrito{
+    border: 0;
+outline:none;
+padding: 0;
+background: none;
+cursor: pointer;
+font-size: 25px;
+display: flex;
+  align-items: center;
+}
+
+.container_favs{
+ align-items: center;
+}
+
+.input{
+height: 43px;
+width: 311px;
+}
+
+.buscar{     
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
