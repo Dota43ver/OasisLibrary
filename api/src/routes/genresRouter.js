@@ -18,24 +18,19 @@ router.get('/',async (req, res) => {
         })
         const genreReady = genre.flat();
         
-        
-        const genreGo = genreReady.forEach(async g => {
-            await Genre.findOrCreate({
+        const filter = [... new Set (genreReady)];
+
+        filter.forEach( g => {
+            Genre.findOrCreate({
                 where: {
                     name: g
-                    
                 }
             })
         })
-        const genresDb = await Genre.findAll();
-        if (genresDb.length) return res.json(genresDb)
+      
+        const allGenres = await Genre.findAll();
+        res.status(200).send(allGenres)
         
-        console.log(genres);
-        
-
-        
-        res.json(genreGo)
-        // Si no los busco al json
         
     } catch (error) {
         console.log(error.message);
