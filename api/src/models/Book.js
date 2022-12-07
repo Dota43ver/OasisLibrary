@@ -22,11 +22,11 @@ module.exports = (sequelize) => {
       },
       genre: {
         type: DataTypes.STRING,
-        allowNull: false,
+        // allowNull: false,
       },
       author: {
         type: DataTypes.STRING,
-        allowNull: false,
+        // allowNull: false,
       },
       price: {
         type: DataTypes.INTEGER,
@@ -34,10 +34,11 @@ module.exports = (sequelize) => {
       },
       score: {
         type: DataTypes.FLOAT,
-        allowNull: false,
+        // allowNull: false,                 //Algunos libros no tienen score.
       },
       description: {
-        type: DataTypes.STRING,
+        // type: DataTypes.STRING,           //Algunas descripciones sobrepasan los 255 char.
+        type: DataTypes.TEXT,
         allowNull: false,
       },
       language: {
