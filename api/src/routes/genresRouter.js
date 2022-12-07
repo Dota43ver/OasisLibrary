@@ -2,8 +2,8 @@ require('dotenv').config();
 const {Router} = require('express');
 const {Genre,Book} = require ('../db');
 
-const jsonData = require('../api.json')
-console.log(jsonData);
+/* const jsonData = require('../api.json')
+console.log(jsonData); */
 const router = Router()
 
 router.get('/',async (req, res) => {

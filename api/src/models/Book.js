@@ -33,7 +33,7 @@ module.exports = (sequelize) => {
         allowNull: false,
       },
       score: {
-        type: DataTypes.NUMBER,
+        type: DataTypes.FLOAT,
         allowNull: false,
       },
       description: {
