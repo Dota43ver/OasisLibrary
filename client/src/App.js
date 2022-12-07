@@ -14,8 +14,7 @@ function App() {
         <div>
           <Switch>
             <Route exact path='/' component={Landing} />
-            {/* <Route path= "/home" component={Home} /> */}
-            <Route exact path='/a' component={NavBar}/>    
+            {/* <Route path= "/home" component={Home} /> */}    
             <Route path= "/home" component={Home} />
             </Switch>
         </div>
