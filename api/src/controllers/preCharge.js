@@ -12,7 +12,7 @@ function preCharge () {
                 genre: book.genre.map(e => e).join(", "),
                 author: book.author,
                 price: book.price,
-                score: book.score? book.score : 0,
+                score: book.score? book.score : 0.1,
                 description: book.description? book.description : "Sin descripcion",
                 language: book.language? book.language : "No especificado",
                 stock: book.stock? book.stock : false,
