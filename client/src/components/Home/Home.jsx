@@ -3,7 +3,9 @@ import { getBooks } from '../../actions';
 import { useDispatch, useSelector } from "react-redux"
 import { useEffect } from 'react';
 import './Home.css'
-
+import NavBar from '../NavBar/NavBar'
+import Card from '../Card/Card';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
     const allBooks = useSelector((state) => state.books);
@@ -15,16 +17,12 @@ export default function Home() {
 
     return (
         <div>
+            <NavBar />
             <h3 className='home'>
                 {allBooks && Array.isArray(allBooks) && allBooks.length !== 0 ? allBooks.map(el => {
                     return (
                         <div className="cards">
-                            {el.Nombre}
-                            <br />
-                            ${el.Precio}
-                            <br />
-                            {el.Puntuación}
-                            <img src={el.Imagen} alt='img not found' width="175"></img>
+                            <Card Nombre={el.Nombre} Precio={el.Precio} Puntuación={el.Puntuación} Imagen={el.Imagen} />
                         </div>
                     )
                 })

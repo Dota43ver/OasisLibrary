@@ -1,0 +1,100 @@
+a:link {
+    text-decoration: none;
+}
+
+.card {
+    color: black;
+    width: min-content;
+    height: min-content;
+}
+
+.name {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 29px;
+    margin: 1px;
+}
+
+.datos {
+    display: flex;
+    justify-content: space-between;
+}
+
+.price {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 29px;
+    margin: 1px;
+}
+
+.score {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 29px;
+    margin: 1px;
+}
+
+.div-imagen {
+    display: inline-block;
+    position: relative;
+}
+
+.div-imagen>div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    padding: 10px;
+    margin: 0;
+}
+
+.text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 29px;
+}
+
+.botones {
+    display: flex;
+    margin-top: 120px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttoncarro {
+    width: 150px;
+    height: 28px;
+
+    background: #AA7446;
+    border-radius: 4px;
+    border: none;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+
+    color: #FFFFFF;
+}
+
+.buttondetalle {
+    width: 150px;
+    height: 28px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+
+    color: #AA7446;
+    box-sizing: border-box;
+
+    background: #ECEBEB;
+    border: 1px solid #AA7446;
+    border-radius: 4px;
+
+    margin-top: 5px;
+}
+
+.cardimagen:hover {
+    opacity: 0.10;
+    transition: 500ms;
+}
