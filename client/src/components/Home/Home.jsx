@@ -7,6 +7,7 @@ import NavBar from '../NavBar/NavBar'
 import Card from '../Card/Card';
 import { Link } from 'react-router-dom';
 
+
 export default function Home() {
     const allBooks = useSelector((state) => state.books);
     const dispatch = useDispatch();
@@ -17,7 +18,7 @@ export default function Home() {
 
     return (
         <div>
-            <NavBar />
+            <NavBar/>
             <h3 className='home'>
                 {allBooks && Array.isArray(allBooks) && allBooks.length !== 0 ? allBooks.map(el => {
                     return (
