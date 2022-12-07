@@ -11,6 +11,7 @@ router.get('/', async (req, res) => {
     
     try{
 
+        //get de autores por query (A SOLUCIONAR)
         const {name} = req.query;
 
         if(name) {
@@ -36,6 +37,7 @@ router.get('/', async (req, res) => {
             }
         }
         
+        //get de todos los autores
         else {
 
             const author = jsonData.map(g => {
