@@ -32,7 +32,7 @@ router.get('/', async (req, res) => {
         
     }
     catch (error) {
-        console.log(error.message);
+        res.status(400).send({error: error.message})
     }
 })
 
