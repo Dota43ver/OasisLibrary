@@ -3,6 +3,7 @@ import { getBooks } from '../../actions';
 import { useDispatch, useSelector } from "react-redux"
 import { useEffect } from 'react';
 import './Home.css'
+import NavBar from '../NavBar/NavBar';
 
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
 
     return (
         <div>
+            <NavBar/>
             <h3 className='home'>
                 {allBooks && Array.isArray(allBooks) && allBooks.length !== 0 ? allBooks.map(el => {
                     return (
