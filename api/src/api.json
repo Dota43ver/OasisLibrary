@@ -2,7 +2,7 @@
   {
     "name": "Los siete maridos de Evelin Hugo",
     "year": 2017,
-    "genre": ["Novela", "Ficción"],
+    "genre": ["Novela", "Ficcion"],
     "author": "Taylor Jenkins Reid",
     "price": 3500,
     "score": 4.8,
@@ -14,7 +14,7 @@
   {
     "name": "Cumbres Borrascosas",
     "year": 2015,
-    "genre": ["Ficción"],
+    "genre": ["Ficcion"],
     "author": "Bronte, Emily",
     "price": 3650,
     "score": 4,
@@ -26,7 +26,7 @@
   {
     "name": "El poder de las palabras",
     "year": 2022,
-    "genre": ["Educación", "psicología"],
+    "genre": ["Educacion", "Psicologia"],
     "author": "Mariano Sigman",
     "price": 4349,
     "score": 4.1,
@@ -38,7 +38,7 @@
   {
     "name": "Cuento de Hadas",
     "year": 2022,
-    "genre": ["Ciencia ficción", "Fantasía"],
+    "genre": ["Ciencia Ficcion", "Fantasia"],
     "author": "Stephen King",
     "price": 8999,
     "score": 4.6,
@@ -50,7 +50,7 @@
   {
     "name": "Revolución",
     "year": 2022,
-    "genre": ["Ficción", "Historia"],
+    "genre": ["Ficcion", "Historia"],
     "author": "Arturo Perez Reverte",
     "price": 8999,
     "score": 3.2,
@@ -62,7 +62,7 @@
   {
     "name": "Nuestra parte de Noche",
     "year": 2019,
-    "genre": ["Ficción", "Historia"],
+    "genre": ["Ficcion", "Historia"],
     "author": "Mariana Enriquez",
     "price": 6450,
     "score": 2.3,
@@ -74,7 +74,7 @@
   {
     "name": "Hackear la Argentina",
     "year": 2022,
-    "genre": ["Computación", "Internet"],
+    "genre": ["Computacion", "Internet"],
     "author": "Carolina Amoroso",
     "price": 3390,
     "score": 4,
@@ -110,7 +110,7 @@
   {
     "name": "Vendo Todo, Me Voy A La Mierda",
     "year": 2020,
-    "genre": ["Viajes y turismo"],
+    "genre": ["Viajes y Turismo"],
     "author": "Gonzalo Velazquez",
     "price": 4200,
     "score": 4.2,
@@ -122,7 +122,7 @@
   {
     "name": "Los Extrañamientos",
     "year": 2013,
-    "genre": ["Educación", "Literatura y Ficción"],
+    "genre": ["Educacion", "Literatura y Ficcion"],
     "author": "Loqueleo",
     "price": 2150,
     "score": 4.4,
@@ -134,7 +134,7 @@
   {
     "name": "Lecturas En El Tejado 3 Antologia Con Garra Puerto De Palos",
     "year": 2022,
-    "genre": ["Educación"],
+    "genre": ["Educacion"],
     "author": "Anabella Talpone",
     "price": 2900,
     "score": 4.5,
@@ -159,7 +159,7 @@
   {
     "name": "El Príncipe",
     "year": 2010,
-    "genre": ["Política"],
+    "genre": ["Politica"],
     "author": "Nicolas Maquiavelo",
     "price": 600,
     "score": 4.7,
@@ -171,7 +171,7 @@
   {
     "name": "Rompecabezas",
     "year": 2014,
-    "genre": ["Escuela", "Ficción"],
+    "genre": ["Escuela", "Ficcion"],
     "author": "Loqueleo",
     "price": 2390,
     "score": 4.4,
@@ -184,7 +184,7 @@
   {
     "name": "Odisea",
     "year": 2019,
-    "genre": ["Ficción", "Clásicos"],
+    "genre": ["Ficcion", "Clasicos"],
     "author": "Homero",
     "price": 3700,
     "score": 4.5,
@@ -196,7 +196,7 @@
   {
     "name": "El Principito",
     "year": 2017,
-    "genre": ["Ficción", "Clásicos"],
+    "genre": ["Ficcion", "Clasicos"],
     "author": "Antoine De Saint-Exupery",
     "price": 2900,
     "score": 4.2,
@@ -208,7 +208,7 @@
   {
     "name": "Caroline",
     "year": 2020,
-    "genre": ["Ficción", "Relato"],
+    "genre": ["Ficcion", "Relato"],
     "author": "Neil Gaiman",
     "price": 2800,
     "score": 3.5,
@@ -220,7 +220,7 @@
   {
     "name": "Final del Juego",
     "year": 2018,
-    "genre": ["Ficción", "Relato"],
+    "genre": ["Ficcion", "Relato"],
     "author": "Julio Cortazar",
     "price": 2100,
     "score": 4.5,
@@ -232,7 +232,7 @@
   {
     "name": "13 Locuras que regalarte",
     "year": 2019,
-    "genre": ["Ficción", "Novela"],
+    "genre": ["Ficcion", "Novela"],
     "author": "Alice Kellen",
     "price": 4600,
     "score": 4.5,
@@ -244,7 +244,7 @@
   {
     "name": "En el corazon del Bosque",
     "year": 2022,
-    "genre": ["Ficción", "Novela"],
+    "genre": ["Ficcion", "Novela"],
     "author": "Kristin Harmel",
     "price": 4350,
     "score": 4.5,
@@ -256,7 +256,7 @@
   {
     "name": "Rayuela",
     "year": 2018,
-    "genre": ["Ficción", "Novela"],
+    "genre": ["Ficcion", "Novela"],
     "author": "Kristin Harmel",
     "price": 5000,
     "score": 4.5,
@@ -304,7 +304,7 @@
   {
     "name": "Recetas faciles para dias de frio",
     "year": 2009,
-    "genre": ["Comidas y bebidas"],
+    "genre": ["Comidas y Bebidas"],
     "author": "Mary C., Tornes",
     "price": 495,
     "Puntuacion": 3.2,
@@ -316,7 +316,7 @@
   {
     "name": "Vivir de viaje",
     "year": 2022,
-    "genre": ["Estilos de vida", "aficiones y ocio"],
+    "genre": ["Estilos de vida", "Aficiones y Ocio"],
     "author": "Sara, Gallardo",
     "price": 3780,
     "Puntuacion": 3.0,
@@ -328,7 +328,7 @@
   {
     "name": "Martín Fierro",
     "year": 2020,
-    "genre": ["Biografías", "literatura y estudios literarios"],
+    "genre": ["Biografías", "Literatura y Estudios Literarios"],
     "author": "Jose Hernandez",
     "price": 2160,
     "Puntuacion": 4.0,
@@ -340,7 +340,7 @@
   {
     "name": "Calvin y hobbes 4",
     "year": 2022,
-    "genre": ["Comics", "novelas gráficas", "manga"],
+    "genre": ["Comics", "Novelas Graficas", "Manga"],
     "author": "Watterson Bill",
     "price": 2511,
     "Puntuacion": 2.3,
@@ -388,7 +388,7 @@
   {
     "name": "Harry Potter y la Piedra Filosofal",
     "year": 1997,
-    "genre": ["Novela", "Ficción", "Fantasía"],
+    "genre": ["Novela", "Ficcion", "Fantasia"],
     "author": "JK Rowling",
     "price": 3476,
     "score": 4.4,
@@ -399,7 +399,7 @@
   {
     "name": "Harry Potter y la camara secreta",
     "year": 1998,
-    "genre": ["Novela", "Ficción", "Fantasía"],
+    "genre": ["Novela", "Ficcion", "Fantasia"],
     "author": "J K Rowling",
     "price": 3419,
     "score": 4.8,
@@ -412,7 +412,7 @@
   {
     "name": "Harry Potter y el cáliz de fuego",
     "year": 2000,
-    "genre": ["Novela", "Ficción", "Fantasía"],
+    "genre": ["Novela", "Ficcion", "Fantasia"],
     "author": "J K Rowling",
     "price": 4140,
     "score": 4.7,
@@ -425,7 +425,7 @@
   {
     "name": "Harry Potter y las reliquias de la muerte",
     "year": 2007,
-    "genre": ["Novela", "Ficción", "Fantasía"],
+    "genre": ["Novela", "Ficcion", "Fantasia"],
     "author": "J K Rowling",
     "price": 2840,
     "score": 4.7,
@@ -438,7 +438,7 @@
   {
     "name": "Juego de Tronos(cancion de Hielo y Fuego I)",
     "year": 1996,
-    "genre": ["Novela", "Ficción politica", "Fantasía"],
+    "genre": ["Novela", "Ficcion politica", "Fantasia"],
     "author": "George R. R. Martin",
     "price": 5120,
     "score": 4.9,
@@ -451,7 +451,7 @@
   {
     "name": "Choque de Reyes(cancion de Hielo y Fuego II)",
     "year": 1998,
-    "genre": ["Novela", "Ficción politica", "Fantasía"],
+    "genre": ["Novela", "Ficcion politica", "Fantasia"],
     "author": "George R. R. Martin",
     "price": 5350,
     "score": 4.8,
@@ -464,7 +464,7 @@
   {
     "name": "Tormenta de Espadas(cancion de Hielo y Fuego III)",
     "year": 2000,
-    "genre": ["Novela", "Ficción politica", "Fantasía"],
+    "genre": ["Novela", "Ficcion politica", "Fantasia"],
     "author": "George R. R. Martin",
     "price": 5450,
     "score": 5,
@@ -477,7 +477,7 @@
   {
     "name": "Festin de Cuervos(cancion de Hielo y Fuego IV)",
     "year": 2005,
-    "genre": ["Novela", "Ficción politica", "Fantasía"],
+    "genre": ["Novela", "Ficcion politica", "Fantasia"],
     "author": "George R. R. Martin",
     "price": 5400,
     "score": 4.8,
@@ -490,7 +490,7 @@
   {
     "name": "Danza de dragones(cancion de Hielo y Fuego V)",
     "year": 2011,
-    "genre": ["Novela", "Ficción politica", "Fantasía"],
+    "genre": ["Novela", "Ficcion politica", "Fantasia"],
     "author": "George R. R. Martin",
     "price": 5700,
     "score": 4.9,
@@ -527,7 +527,7 @@
   {
     "name": "Harry Potter y el prisionero de Azkaban",
     "year": 1999,
-    "genre": ["Novela", "Ficción", "Fantasía"],
+    "genre": ["Novela", "Ficcion", "Fantasia"],
     "author": "JK Rowling",
     "price": 3715,
     "score": 4.5,
@@ -540,7 +540,7 @@
   {
     "name": "Harry Potter y la Orden del Fénix",
     "year": 2003,
-    "genre": ["Novela", "Ficción", "Fantasía"],
+    "genre": ["Novela", "Ficcion", "Fantasia"],
     "author": "JK Rowling",
     "price": 6171,
     "score": 4.5,
@@ -553,7 +553,7 @@
   {
     "name": "Harry Potter y el misterio del principe",
     "year": 2005,
-    "genre": ["Novela", "Ficción", "Fantasía"],
+    "genre": ["Novela", "Ficcion", "Fantasia"],
     "author": "JK Rowling",
     "price": 5099,
     "score": 4.6,
@@ -566,7 +566,7 @@
   {
     "name": "La biblioteca de la media noche",
     "year": 2021,
-    "genre": ["Novela", "Ficción", "Fantasía"],
+    "genre": ["Novela", "Ficcion", "Fantasia"],
     "author": "Matt Haig",
     "price": 5399,
     "score": 4.1,
@@ -578,7 +578,7 @@
   {
     "name": "Una breve historia de casi todo",
     "year": 2016,
-    "genre": ["No ficción"],
+    "genre": ["No Ficcion"],
     "author": "Bill Bryson",
     "price": 4378,
     "score": 4.2,
@@ -590,7 +590,7 @@
   {
     "name": "La canción de Aquiles",
     "year": 2021,
-    "genre": ["Ficción", "Fantasía", "Contemporaneo"],
+    "genre": ["Ficcion", "Fantasia", "Contemporaneo"],
     "author": "Madeline Miller",
     "price": 6527,
     "score": 4.2,
@@ -614,7 +614,7 @@
   {
     "name": "Harry Potter y el cáliz de fuego",
     "year": 2000,
-    "genre": ["Novela", "Ficción", "Fantasía"],
+    "genre": ["Novela", "Ficcion", "Fantasia"],
     "author": "J K Rowling",
     "price": 4140,
     "score": 4.7,
@@ -627,7 +627,7 @@
   {
     "name": "Harry Potter y las reliquias de la muerte",
     "year": 2007,
-    "genre": ["Novela", "Ficción", "Fantasía"],
+    "genre": ["Novela", "Ficcion", "Fantasia"],
     "author": "J K Rowling",
     "price": 2840,
     "score": 4.7,
