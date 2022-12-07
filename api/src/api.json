@@ -268,7 +268,7 @@
   {
     "name": "El bosque infinitesimal",
     "year": 2022,
-    "Genero": ["Narrativa", "Ficcion"],
+    "genre": ["Narrativa", "Ficcion"],
     "author": "Lopez, Julian",
     "price": 3499,
     "Puntuacion": 3.8,
@@ -280,7 +280,7 @@
   {
     "name": "Los cuatro acuerdos",
     "year": 2007,
-    "Genero": ["Autoayuda", "Salud Popular", "Desarrollo personal"],
+    "genre": ["Autoayuda", "Salud Popular", "Desarrollo personal"],
     "author": "Ruiz, Miguel",
     "price": 3950,
     "Puntuacion": 4.0,
@@ -292,7 +292,7 @@
   {
     "name": "Fontanarrosa continuará?",
     "year": 2013,
-    "Genero": ["Humor"],
+    "genre": ["Humor"],
     "author": "Fontanarrosa, Roberto",
     "price": 1000,
     "Puntuacion": 4.5,
@@ -304,7 +304,7 @@
   {
     "name": "Recetas faciles para dias de frio",
     "year": 2009,
-    "Genero": ["Comidas y bebidas"],
+    "genre": ["Comidas y bebidas"],
     "author": "Mary C., Tornes",
     "price": 495,
     "Puntuacion": 3.2,
@@ -316,7 +316,7 @@
   {
     "name": "Vivir de viaje",
     "year": 2022,
-    "Genero": ["Estilos de vida", "aficiones y ocio"],
+    "genre": ["Estilos de vida", "aficiones y ocio"],
     "author": "Sara, Gallardo",
     "price": 3780,
     "Puntuacion": 3.0,
@@ -328,7 +328,7 @@
   {
     "name": "Martín Fierro",
     "year": 2020,
-    "Genero": ["Biografías", "literatura y estudios literarios"],
+    "genre": ["Biografías", "literatura y estudios literarios"],
     "author": "Jose Hernandez",
     "price": 2160,
     "Puntuacion": 4.0,
@@ -340,7 +340,7 @@
   {
     "name": "Calvin y hobbes 4",
     "year": 2022,
-    "Genero": ["Comics", "novelas gráficas", "manga"],
+    "genre": ["Comics", "novelas gráficas", "manga"],
     "author": "Watterson Bill",
     "price": 2511,
     "Puntuacion": 2.3,
@@ -352,7 +352,7 @@
   {
     "name": "Big data",
     "year": 2019,
-    "Genero": ["Ciencias"],
+    "genre": ["Ciencias"],
     "author": "Sosa Escudero, Walter",
     "price": 1935,
     "Puntuacion": 3.9,
@@ -364,7 +364,7 @@
   {
     "name": "Borges, big data y yo",
     "year": 2020,
-    "Genero": ["Ciencias"],
+    "genre": ["Ciencias"],
     "author": "Sosa Escudero, Walter",
     "price": 1737,
     "Puntuacion": 4.1,
@@ -376,7 +376,7 @@
   {
     "name": "Rusia",
     "year": 2022,
-    "Genero": ["Historia"],
+    "genre": ["Historia"],
     "author": "Antony Beevor",
     "price": 5940,
     "Puntuacion": 3.7,
