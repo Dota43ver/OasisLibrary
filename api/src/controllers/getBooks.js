@@ -29,15 +29,7 @@ async function getBooks() {
         // Las siguientes lineas corresponden a una manera de resolver en caso de separar en nuestra API los libros de los demas models
     // })
 
-    const allBooks = await Book.findAll({
-            include: {
-                model: Genre,
-                attributes: ["name"],
-                through: {
-                    attributes: [],
-                }
-            }
-    });
+    const allBooks = await Book.findAll();
     return allBooks;
 }
 

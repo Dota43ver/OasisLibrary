@@ -43,11 +43,11 @@ module.exports = (sequelize) => {
       },
       language: {
         type: DataTypes.STRING,
-        allowNull: false,
+        // allowNull: false,                  //Algunos libros no tienen language.
       },
       stock: {
         type: DataTypes.BOOLEAN,
-        allowNull: false,
+        // allowNull: false,                  //Algunos libros no tienen score.
       },
       image: {
         type: DataTypes.STRING,
