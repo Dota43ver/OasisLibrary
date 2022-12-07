@@ -44,7 +44,7 @@ const { Book, Author, Genre } = sequelize.models;
 Book.belongsToMany(Genre, {through: 'BookGenre'})
 Genre.belongsToMany(Book,{through: 'BookGenre'})
 // Product.hasMany(Reviews);
-
+//.
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
   conn: sequelize, // para importart la conexión { conn } = require('./db.js');
