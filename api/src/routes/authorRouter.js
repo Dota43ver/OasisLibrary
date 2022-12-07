@@ -10,7 +10,7 @@ const router = Router()
 router.get('/', async (req, res) => {
     
     try{
-
+//CORREGIIIIIIIIIIIIIIRRRRRRRRRRRRRRRRR
         //get de autores por query (A SOLUCIONAR)
         const {name} = req.query;
 
