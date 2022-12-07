@@ -5,6 +5,7 @@ const { Router } = require('express');
 
 const booksRouter = require('./booksRouter.js')
 const genresRouter = require('./genresRouter')
+const authorRouter = require('./authorRouter')
 
 const router = Router();
 
@@ -13,5 +14,6 @@ const router = Router();
 
 router.use("/books", booksRouter)
 router.use("/genres", genresRouter)
+router.use("/authors", authorRouter)
 
 module.exports = router;
