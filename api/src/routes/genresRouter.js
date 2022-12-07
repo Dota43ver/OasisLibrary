@@ -37,4 +37,20 @@ router.get('/',async (req, res) => {
     }
 })
 
+router.post('/', async (req, res) => {
+    try {
+        let {name} = req.body;
+
+        const createGenre = await Genre.create({
+            name
+        })
+
+        return res.status(200).send({message: "Libro creado con exito",createGenre })
+
+    } catch (error) {
+        res.status(400).send({error: error.message})
+        console.log(error);
+    }
+})
+
 module.exports = router;
