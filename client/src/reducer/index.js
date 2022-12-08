@@ -1,18 +1,29 @@
-import { GET_BOOKS } from "../actions";
+import { CLEAN_CACHE, GET_BOOKS, GET_BOOK_DETAILS } from "../actions";
 
 const initialState = {
-    books: [],
-}
+  books: [],
+  bookDetails: [],
+};
 
 export default function reducer(state = initialState, action) {
-    switch (action.type) {
+  switch (action.type) {
+    case GET_BOOKS:
+      return {
+        ...state,
+        books: action.payload.data,
+      };
+    case GET_BOOK_DETAILS:
+      return {
+        ...state,
+        bookDetails: action.payload,
+      };
+    case CLEAN_CACHE:
+      return {
+        ...state,
+        bookDetails: initialState.bookDetails,
+      };
 
-        case GET_BOOKS: 
-        return {
-            ...state,
-            books: action.payload.data,
-        };
-        default:
-            return state;
-    }
+    default:
+      return state;
+  }
 }
