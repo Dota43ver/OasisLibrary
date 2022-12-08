@@ -67,5 +67,19 @@ router.get('/', async (req, res) => {
     }
 })
 
+router.post('/', async (req, res) => {
+    
+    try {
+        let {name} = req.body;
+        
+        const createAuthor = await Author.create({
+            name
+        });
+
+        return res.status(200).send({message: "Autor creado con exito", createAuthor})
+    } catch (error) {
+        res.status(400).send({error: error.message})
+    }
+})
 
 module.exports = router;
