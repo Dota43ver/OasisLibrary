@@ -46,9 +46,9 @@ router.get('/', async (req, res) => {
               )
             })
 
-            const filter = [... new Set (author)];
+            // const filter = [... new Set (author)];
 
-            filter.forEach( a => {
+            author.forEach( a => {
                 Author.findOrCreate({
                     where: {
                         name: a
