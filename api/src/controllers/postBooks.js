@@ -11,7 +11,8 @@ const postBooks = async (body) => {
         description,
         language,
         stock,
-        image
+        image,
+        saga
     } = body;
 
     const book = await Book.create({
@@ -24,7 +25,8 @@ const postBooks = async (body) => {
         description,
         language,
         stock,
-        image
+        image,
+        saga
     });
 
     await Genre.findOrCreate({
