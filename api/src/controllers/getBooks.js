@@ -33,6 +33,22 @@ async function getBooks() {
     return allBooks;
 }
 
+const getByName = async (name) => {
+    const query = name.toLowerCase()
+    const books = await Book.findAll();
+    const filteredBooks = books.filter(el => el.name.toLowerCase().includes(query));
+    return filteredBooks;
+
+}
+
+async function getBookById(id) {
+    const book = await Book.findByPk(id)
+    return book;
+}
+
+
 module.exports = {
-    getBooks
+    getBooks,
+    getBookById,
+    getByName
 }
