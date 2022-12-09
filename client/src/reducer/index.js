@@ -1,4 +1,4 @@
-import { CLEAN_CACHE, GET_BOOKS, GET_BOOK_DETAILS } from "../actions";
+import { CLEAN_CACHE, GET_BOOKS, GET_BOOK_DETAILS } from "../actions/types";
 
 const initialState = {
   books: [],

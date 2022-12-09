@@ -1,12 +1,9 @@
 import axios from "axios";
-
-export const GET_BOOKS = "GET_BOOKS";
-export const CLEAN_CACHE = "CLEAN_CACHE";
-export const GET_BOOK_DETAILS = "GET_BOOK_DETAILS";
+import { CLEAN_CACHE, GET_BOOKS, GET_BOOK_DETAILS, LOCAL_HOST } from "./types";
 
 export const getBooks = () => (dispatch) => {
   return axios
-    .get("https://6390e9b265ff418311227edc.mockapi.io/api/oasis/books")
+    .get(`${LOCAL_HOST}/books`)
     .then((books) => {
       dispatch({
         type: GET_BOOKS,
@@ -27,6 +24,7 @@ export function getBookDetails(id) {
     try {
       var response = await axios.get(
         `https://6390e9b265ff418311227edc.mockapi.io/api/oasis/books/${id}`
+        // `${LOCAL_HOST}/books/${id}` no conecta con el endpoint
       );
       return dispatch({ type: GET_BOOK_DETAILS, payload: response.data });
     } catch (error) {
