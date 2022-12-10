@@ -5,3 +5,6 @@ export const LOCAL_HOST = "http://localhost:3001";
 export const ALPHABETICAL_SORT = "ALPHABETICAL_SORT";
 export const SCORE_SORT = "SCORE_SORT";
 export const PRICE_SORT = "PRICE_SORT";
+export const GENRE_FILTER = "GENRE_FILTER";
+export const GET_GENRES = "GET_GENRES";
+export const POST_BOOK = "POST_BOOK";

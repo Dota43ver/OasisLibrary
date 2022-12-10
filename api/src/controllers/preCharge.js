@@ -11,7 +11,7 @@ function preCharge () {
                 where: {
                     name: book.name,
                     year: book.year,
-                    genre: book.genre.map(e => e).join(", "),
+                    genre: book.genre.map(e => e),
                     author: book.author,
                     price: book.price,
                     score: book.score? book.score : 0.1,

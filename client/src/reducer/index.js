@@ -1,8 +1,11 @@
 import {
   ALPHABETICAL_SORT,
   CLEAN_CACHE,
+  GENRE_FILTER,
   GET_BOOKS,
   GET_BOOK_DETAILS,
+  GET_GENRES,
+  POST_BOOK,
   PRICE_SORT,
   SCORE_SORT,
 } from "../actions/types";
@@ -25,11 +28,11 @@ export default function reducer(state = initialState, action) {
         ...state,
         bookDetails: action.payload,
       };
-    case "POST_BOOK":
+    case POST_BOOK:
       return {
         ...state,
       };
-    case "GET_GENRES":
+    case GET_GENRES:
       return {
         ...state,
         genres: action.payload.data,
@@ -98,6 +101,35 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
         recipes: sortedBooksByPrice,
+      };
+    case GENRE_FILTER:
+      // const allBooks = state.books;
+      // const filteredByGenre = allBooks.filter((b) =>
+      //   b.genre?.some((g) => g.toLowerCase() === action.payload.toLowerCase())
+      // );
+      // return {
+      //   ...state,
+      //   books: filteredByGenre,
+      // };
+      return {
+        ...state,
+        books: state.books.filter((e) => {
+          if (action.payload === "all") {
+            return state.books;
+          } else {
+            if (e.genre.length() === 1) {
+              return e.genre[0].includes(action.payload);
+            }
+            if (e.genre.length() === 2) {
+              return (
+                e.genre[0].includes(action.payload) ||
+                e.genre[1].includes(action.payload)
+              );
+            } else {
+              return alert(`No hay libros con el género ${action.payload}`);
+            }
+          }
+        }),
       };
     default:
       return state;

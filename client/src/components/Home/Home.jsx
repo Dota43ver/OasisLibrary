@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
   aplhabeticalSort,
+  genreFilter,
   getBooks,
+  getGenres,
   priceSort,
   scoreSort,
 } from "../../actions";
@@ -14,6 +16,7 @@ import "./Home.css";
 
 export default function Home() {
   const allBooks = useSelector((state) => state.books);
+  const allGenres = useSelector((state) => state.genres);
   const dispatch = useDispatch();
 
 
@@ -33,6 +36,7 @@ export default function Home() {
 
   useEffect(() => {
     dispatch(getBooks());
+    dispatch(getGenres());
   }, [dispatch]);
 
   function handleClick(e) {
@@ -58,6 +62,7 @@ export default function Home() {
     setCurrentPage(1);
     setOrder(`Order ${e.target.value}`);
   }
+
   
 
   // function prevPage(e) {
@@ -71,6 +76,14 @@ export default function Home() {
   //   e.preventDefault()
   //   setCurrentPage(currentPage +1)
   // }
+
+
+
+  function handlerFilterByGenre(e) {
+    e.preventDefault();
+    dispatch(genreFilter(e.target.value));
+    setOrder(`Order ${e.target.value}`);
+  }
 
 
   return (
@@ -119,6 +132,14 @@ export default function Home() {
             </option>
             <option value="asc">Ascendiente</option>
             <option value="desc">Descendiente</option>
+          </select>
+          <select onChange={(e) => handlerFilterByGenre(e)}>
+            <option value="all">todos</option>
+            {allGenres?.map((genre) => (
+              <option key={genre.id} value={genre.name}>
+                {genre.name}
+              </option>
+            ))}
           </select>
         </div>
       </div>
