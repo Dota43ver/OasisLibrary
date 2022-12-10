@@ -22,7 +22,7 @@ export default function Home() {
   const indexLast = currentPage * booksPerPage;
   const indexFirst = indexLast - booksPerPage;
   const currentBooks = allBooks.slice(indexFirst, indexLast);
-  console.log(currentBooks);
+  // console.log(currentBooks);
 
   const paginated = (pageNumbers) => {
     setCurrentPage(pageNumbers)
@@ -38,27 +38,41 @@ export default function Home() {
   function handleClick(e) {
     e.preventDefault();
     dispatch(getBooks());
-    // setPage(1);
+    setCurrentPage(1);
   }
   function handleAlphabeticalSort(e) {
     e.preventDefault();
     dispatch(aplhabeticalSort(e.target.value));
-    // setPage(1);
+    setCurrentPage(1);
     setOrder(`Order ${e.target.value}`);
   }
   function handlePriceSort(e) {
     e.preventDefault();
     dispatch(priceSort(e.target.value));
-    // setPage(1);
+    setCurrentPage(1);
     setOrder(`Order ${e.target.value}`);
   }
   function handleScoreSort(e) {
     e.preventDefault();
     dispatch(scoreSort(e.target.value));
-    // setPage(1);
+    setCurrentPage(1);
     setOrder(`Order ${e.target.value}`);
   }
   
+
+  // function prevPage(e) {
+  //   if(currentPage == 1 ||currentPage < 1) {
+  //     e.preventDefault()
+  //     setCurrentPage(currentPage -1)
+  //   }
+  // } 
+
+  // function nextPage(e) {
+  //   e.preventDefault()
+  //   setCurrentPage(currentPage +1)
+  // }
+
+
   return (
     <div>
       <NavBar />
@@ -127,7 +141,12 @@ export default function Home() {
             })
           : "Loading..."}
       </h3>
-      <Paginated booksPerPage={booksPerPage} allBooks={allBooks.length} paginated={paginated}/>
+        {/* <div onClick={e => prevPage(e)}>Previous</div> */}
+        <div className="paginadoHome">
+          <Paginated booksPerPage={booksPerPage} allBooks={allBooks.length} paginated={paginated}/>
+        </div>
+        
+        {/* <div onClick={e => nextPage(e)}>Next</div> */}
       </div>
     </div>
   );
