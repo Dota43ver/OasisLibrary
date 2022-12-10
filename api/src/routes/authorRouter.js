@@ -3,7 +3,6 @@ const {Router} = require('express');
 const {Genre,Book,Author} = require ('../db');
 
 const jsonData = require('../api.json');
-const { all } = require('./genresRouter');
 // console.log(jsonData);
 
 const router = Router()
@@ -11,24 +10,56 @@ const router = Router()
 router.get('/', async (req, res) => {
     
     try{
-        const author = jsonData.map(g => {
-            return(
-                g.author
-            )
-        })
+//CORREGIIIIIIIIIIIIIIRRRRRRRRRRRRRRRRR
+        //get de autores por query (A SOLUCIONAR)
+        const {name} = req.query;
 
-        const filter = [... new Set (author)];
+        if(name) {
 
-        filter.forEach( g => {
-            Author.findOrCreate({
-                where: {
-                    name: g
-                }
+            let authorName = jsonData.filter(book => book.author.toLowerCase().includes(name.toLowerCase()))
+
+            if(authorName.length) {
+
+                const filterByName = [... new Set (authorName)]
+
+                filterByName.forEach( a => {
+                    Author.findOrCreate({
+                        where: {
+                            name: a.author
+                        }
+                    })
+                })
+                const authorByName = await Author.findAll();
+                res.status(200).send(authorByName)
+            }
+            else{
+                res.status(404).send({error: 'sorry, we could not find the author'})
+            }
+        }
+        
+        //get de todos los autores
+        else {
+
+            const author = jsonData.map(g => {
+              return(
+                  g.author
+              )
             })
-        })
 
-        const allAuthors = await Author.findAll();
-        res.status(200).send(allAuthors)
+            // const filter = [... new Set (author)];
+
+            author.forEach( a => {
+                Author.findOrCreate({
+                    where: {
+                        name: a
+                    }
+                })
+            })
+
+            const allAuthors = await Author.findAll();
+            res.status(200).send(allAuthors)
+          
+        }
         
     }
     catch (error) {
@@ -36,5 +67,19 @@ router.get('/', async (req, res) => {
     }
 })
 
+router.post('/', async (req, res) => {
+    
+    try {
+        let {name} = req.body;
+        
+        const createAuthor = await Author.create({
+            name
+        });
+
+        return res.status(200).send({message: "Autor creado con exito", createAuthor})
+    } catch (error) {
+        res.status(400).send({error: error.message})
+    }
+})
 
 module.exports = router;

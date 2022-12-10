@@ -33,7 +33,8 @@ router.get('/',async (req, res) => {
         
         
     } catch (error) {
-        console.log(error.message);
+        res.status(400).send({error: error.message})
+        
     }
 })
 
@@ -45,11 +46,11 @@ router.post('/', async (req, res) => {
             name
         })
 
-        return res.status(200).send({message: "Libro creado con exito",createGenre })
+        return res.status(200).send({message: "Género creado con exito",createGenre })
 
     } catch (error) {
         res.status(400).send({error: error.message})
-        console.log(error);
+        
     }
 })
 
