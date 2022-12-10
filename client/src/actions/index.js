@@ -31,7 +31,10 @@ export function cleanCache() {
 export function getBookDetails(id) {
   return async function (dispatch) {
     try {
-      var response = await axios.get(`${LOCAL_HOST}/books/${id}`);
+      var response = await axios.get(
+        // `https://6390e9b265ff418311227edc.mockapi.io/api/oasis/books/${id}`
+        `${LOCAL_HOST}/books/${id}` 
+      );
       return dispatch({ type: GET_BOOK_DETAILS, payload: response.data });
     } catch (error) {
       console.log(error);
