@@ -7,6 +7,7 @@ import BookCreate from "./components/BookCreate/BookCreate";
 import BookDetails from "./components/BookDetail/BookDetail";
 import Home from "./components/Home/Home";
 import LandingPage from "./components/LandingPage/LandingPage";
+import Account from './components/Account/Account';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route exact path="/" component={LandingPage} />
           <Route exact path="/home" component={Home} />
           <Route path="/book/:id" component={BookDetails} />
+          <Route exact path="/account" component={Account} />
           <Route path="/bookcreate" component={BookCreate} />
         </Switch>
       </div>

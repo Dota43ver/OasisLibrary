@@ -1,0 +1,47 @@
+.account {
+    margin: 2%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.left {
+    border: 1px solid #49D6DF;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 150px;
+}
+.info {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #49D6DF;
+    border-radius: 18px;
+    width: 900px;
+    height: 300px;
+}
+
+.headatos {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.usuario {
+    width: 600px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.orders {
+    margin: 5%;
+}
+
+.dato {
+    font-size: 16px;
+    font-weight: 400;
+}
