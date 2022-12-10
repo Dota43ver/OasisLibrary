@@ -78,6 +78,11 @@ export default function reducer(state = initialState, action) {
         ...state,
         recipes: sortedBooksByScore,
       };
+      case 'GET_NAME_BOOKS':
+            return{
+              ...state,
+              books: action.payload
+            }
 
     case PRICE_SORT:
       let sortedBooksByPrice = [...state.books];

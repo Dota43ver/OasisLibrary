@@ -21,7 +21,7 @@ module.exports = (sequelize) => {
         allowNull: false,
       },
       genre: {
-        type: DataTypes.STRING,
+        type: DataTypes.ARRAY(DataTypes.STRING),
         // allowNull: false,
       },
       author: {
@@ -51,7 +51,7 @@ module.exports = (sequelize) => {
       },
       image: {
         type: DataTypes.STRING,
-        allowNull: false,
+        /* allowNull: false, */
       },
       saga: {
         type: DataTypes.BOOLEAN,

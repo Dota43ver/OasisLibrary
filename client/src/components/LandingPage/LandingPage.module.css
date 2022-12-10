@@ -1,73 +1,74 @@
 .container {
-    /* background: linear-gradient(135deg,#94c3d2d3, #c5ba96); */
-    /* background: url(https://img.freepik.com/vector-gratis/pila-plana-dibujada-mano-libros_23-2149331325.jpg?w=2000); */
-    background: url(https://img.freepik.com/vector-gratis/ilustracion-pila-libros-diseno-plano-dibujado-mano_23-2149341898.jpg?w=2000);
-    /* background-repeat: no-repeat; */
-    background-size:750px;
-    height: 78.6vh;
-    /* -------------------------------------------- */
-    /* height: 78.6vh; */
-    /* width: 98vw; */
-    padding-top: 10%;
-    padding-left: 2%;
+    background: linear-gradient(135deg,#87c2b6d3, #eacca8);
+    /* background: linear-gradient(135deg,#62b7a6d3, #edc28c); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 100vh;
+    width: 100%;
 }
 
-.welcome{
-    letter-spacing: 1px;
-    width: 45vw;
-    padding-top: 8vh;
-    padding-left: 13vw;
-    font-size: 2.5rem;
-    color: rgb(0, 0, 0);
-}
-
-.tex{
-    margin-left: 10%;
-    background-color: rgba(229, 214, 200, 0.933);
-    /* background: url(https://img.freepik.com/vector-gratis/pila-plana-dibujada-mano-libros_23-2149331325.jpg?w=2000); */
-    background-size:34%;
-    background-repeat:round;
-    /* -------------------------- */
-    margin-right: 32%;
+.div{
+    margin-top: 5%;
+    width: 47%;
+    border: #e2d6c3a6 solid;
+    margin-left: 25%;
+    background-color: rgba(248, 232, 218, 0.913);
+    margin-right: 40%;
     border-radius: 10px;
     box-shadow: 15px 15px 20px #497c7cef;
     font-style: italic;
 }
 
+.welcome{
+    letter-spacing: 1px;
+    padding-top: 3vh;
+    padding-left: 15%;
+    font-size: 2.5rem;
+    color: rgb(0, 0, 0);
+}
+
 .instructions{
+    padding-top: 1vh;
     width: 70vw;
     font-size:larger;
-    margin-left: 28%;
+    padding-left: 23%;
 }
 
 .btn{
     width: 12%;
-    height: 5%;
+    height: 20%;
     border-radius: 15px;
     cursor: pointer;
     font-size: 1.5rem;
-    /* letter-spacing: 2px; */
+    font-style: italic;
     background-color:#ade5e2c5;
-    margin-top: 1vh;
+    margin-top: 2vh;
     margin-left: 46%;
     margin-block-end: 2%;
 }
 
+.btn:hover{
+    background-color: #d9edec;
+}
+
 .log{
-    margin-top: -7%;
-    margin-left: 80%;
-    margin-right: 1%;
+    margin-left: 89%;
 }
 
 .signBtn{
-    margin-left: 33%;
-    width: 40%;
-    height: 5%;
+    width: 90px;
     border-radius: 3px;
     cursor: pointer;
-    font-size: 1.5rem;
-    /* letter-spacing: 2px; */
+    font-size: 1.3rem;
+    font-style: italic;
     background-color:#ade5e2;
+}
+
+.signBtn:hover{
+    background-color: #d9edec;
 }
 
 .about{
@@ -78,6 +79,11 @@
 .aboutBtn{
     border-radius: 3px;
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    font-style: italic;
     background-color:#ade5e2;
+}
+
+.aboutBtn:hover{
+    background-color: #d9edec;
 }
