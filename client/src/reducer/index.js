@@ -3,6 +3,7 @@ import { CLEAN_CACHE, GET_BOOKS, GET_BOOK_DETAILS } from "../actions/types";
 const initialState = {
   books: [],
   bookDetails: [],
+  genres: []
 };
 
 export default function reducer(state = initialState, action) {
@@ -17,6 +18,15 @@ export default function reducer(state = initialState, action) {
         ...state,
         bookDetails: action.payload,
       };
+    case 'POST_BOOK':
+      return{
+        ...state
+      }
+    case "GET_GENRES":
+      return{
+        ...state,
+        genres: action.payload.data
+      }
     case CLEAN_CACHE:
       return {
         ...state,
