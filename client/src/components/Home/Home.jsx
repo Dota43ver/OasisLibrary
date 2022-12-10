@@ -18,12 +18,20 @@ export default function Home() {
 
     return (
         <div>
-            <NavBar/>
+            <NavBar />
             <h3 className='home'>
                 {allBooks && Array.isArray(allBooks) && allBooks.length !== 0 ? allBooks.map(el => {
                     return (
+                        <div>
+                              {/* <div className="text">
+                                    <div className="botones">
+                                        <button className="buttoncarro"> Agregar al carrito </button>
+                                        <button className="buttondetalle"> Ver detalle </button>
+                                    </div>
+                            </div> */}
                         <div className="cards">
                             <Card Nombre={el.Nombre} Precio={el.Precio} Puntuación={el.Puntuación} Imagen={el.Imagen} />
+                        </div>
                         </div>
                     )
                 })

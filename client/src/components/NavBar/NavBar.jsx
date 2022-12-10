@@ -9,12 +9,12 @@ export default function NavBar(){
     return(
         <div className={style.main_container}>
             <div className={style.container_image}>
-                <img src={oasis} alt="" width="164px" height="155px"/>
+                <img src={oasis} alt="" width="114px" height="105px"/>
             </div>
             
             <div className={style.buscar}>
                 <input type="text" className={style.input} />
-                <button className={style.button}>buscar</button>
+                <button className={style.button}>Buscar</button>
             </div>
             <div>
                 <button className={style.micuenta}>Mi cuenta</button>
