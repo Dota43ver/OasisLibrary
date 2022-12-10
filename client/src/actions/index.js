@@ -2,6 +2,7 @@ import axios from "axios";
 import {
   ALPHABETICAL_SORT,
   CLEAN_CACHE,
+  GENRE_FILTER,
   GET_BOOKS,
   GET_BOOK_DETAILS,
   LOCAL_HOST,
@@ -104,6 +105,13 @@ export function scoreSort(payload) {
 export function priceSort(payload) {
   return {
     type: PRICE_SORT,
+    payload,
+  };
+}
+
+export function genreFilter(payload) {
+  return {
+    type: GENRE_FILTER,
     payload,
   };
 }
