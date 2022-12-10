@@ -7,7 +7,7 @@ const LandingPage = () => {
         <div className={style.container}>
             {/* <img src="https://img.freepik.com/foto-gratis/abierto-volando-libros-antiguos_1232-2096.jpg?w=2000" height="250px" width="280px" className={style.img}/> */}
             <div className={style.log}>
-                <Link to = '/login'>
+                <Link to = '/a'>
                     <button className={style.signBtn}>Sign in</button>
                 </Link>
             </div>
