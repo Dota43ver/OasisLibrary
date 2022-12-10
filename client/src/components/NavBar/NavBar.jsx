@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {Link, useHistory} from 'react-router-dom';
 import style from "./NavBar.module.css"
 import oasis from "./oasis.jpg"
-import {getBooks} from "../../actions"
+import {getNameBooks} from "../../actions"
 
 export default function NavBar(){
     const dispatch = useDispatch()
@@ -21,9 +21,9 @@ export default function NavBar(){
 
     function handleSubmit(e){
         e.preventDefault()
-        dispatch(getBooks(name))
-        setName("")
-        history.push('/home')
+        dispatch(getNameBooks(name))
+        
+       
     
     }
 
