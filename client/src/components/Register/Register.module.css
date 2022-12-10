@@ -1,0 +1,130 @@
+.cabecera{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.text{
+    font-size: 36px;
+    font-family: medium italic;
+}
+
+form{
+    width: 614px;
+    height: 750px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 58%;
+    left:50%;
+    border-radius: 10px;
+    border: 2px solid #42829D;
+}
+
+input{
+    display: block;
+    margin-top: 30px;
+    width: 484px;
+    height: 65px;
+    border-radius: 10px;
+    text-align: center;
+    margin-left: 10%;   
+}
+
+.button{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.button1{
+    width: 249px;
+    font-size: 28px;
+    height: 65px;
+    cursor: pointer;
+}
+
+.text{
+    display: block;
+    align-items: center;
+    text-align: center;
+    justify-content: center;  
+}
+.text1{
+    
+    font-size: 28px;
+}
+
+.text2{
+    font-size: 24px;
+}
+
+.button2{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.button3{
+    width: 484px;
+    height: 65px;
+    border-radius: 10px;
+    background-color: #42829D;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+.divisor{
+    margin-left: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 505px;
+    height: 1;
+    border: 1px solid #42829D;
+}
+.button4{
+    margin-top: 45px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.button5{
+    width: 484px;
+    height: 65px;
+    background-color: #ECEBEB;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.button6{
+    margin-top: 45px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.button7{
+    font-size: 24px;
+    color: #777777;
+    outline:none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    background: none;
+}
+
+.button7:hover{
+    text-decoration: underline;
+}
