@@ -4,7 +4,7 @@ export default function Paginated({allBooks, booksPerPage, paginated}){
     
     const pageNumbers = [];
 
-    for(let i = 0; Math.ceil(allBooks/booksPerPage); i++){
+    for(let i = 0; i < Math.ceil(allBooks/booksPerPage); i++){
         pageNumbers.push(i+1)
     }
 
