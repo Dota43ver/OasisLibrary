@@ -78,6 +78,15 @@
     margin-top: 5px;
 }
 
+.paginadoHome {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style-type: none;
+    margin-bottom: 5px;
+}
+
+
 /* .div-imagen {
     display: inline-block;
     position: relative;
