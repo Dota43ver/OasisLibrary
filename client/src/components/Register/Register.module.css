@@ -21,14 +21,15 @@ form{
     border: 2px solid #42829D;
 }
 
-input{
+.inputs{
     display: block;
     margin-top: 30px;
     width: 484px;
     height: 65px;
     border-radius: 10px;
     text-align: center;
-    margin-left: 10%;   
+    margin-left: 10%; 
+    margin-top: 30px;  
 }
 
 .button{

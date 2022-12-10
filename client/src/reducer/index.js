@@ -32,6 +32,11 @@ export default function reducer(state = initialState, action) {
         ...state,
         bookDetails: initialState.bookDetails,
       };
+      case 'GET_NAME_BOOKS':
+            return{
+              ...state,
+              books: action.payload
+            }
 
     default:
       return state;

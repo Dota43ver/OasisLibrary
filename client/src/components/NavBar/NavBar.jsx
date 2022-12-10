@@ -1,11 +1,32 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 import style from "./NavBar.module.css"
 import oasis from "./oasis.jpg"
+import {getNameBooks} from "../../actions"
 
 export default function NavBar(){
+    const dispatch = useDispatch()
+    const [name, setName] = useState("")
+    const history = useHistory();
+
+
+
+    function handleInputChange(e){
+        e.preventDefault()
+        setName(e.target.value)
+        console.log(name)
+    }
+
+    function handleSubmit(e){
+        e.preventDefault()
+        dispatch(getNameBooks(name))
+        
+       
+    
+    }
+
     return(
         <div className={style.main_container}>
             <div className={style.container_image}>
@@ -13,8 +34,8 @@ export default function NavBar(){
             </div>
             
             <div className={style.buscar}>
-                <input type="text" className={style.input} />
-                <button className={style.button}>Buscar</button>
+                <input type="text" className={style.inputs1} onChange={(e)=> handleInputChange(e)} />
+                <button className={style.button} onClick={(e)=> handleSubmit(e)}>Buscar</button>
             </div>
             <div>
                 <button className={style.micuenta}>Mi cuenta</button>
