@@ -57,14 +57,16 @@
   align-items: center;
 }
 
-.input {
+.inputs1 {
   width: 195px;
   height: 25px;
   border-radius: 4px;
+ 
 }
 
 .buscar {
   display: flex;
   align-items: center;
-  gap: 5px;
+  justify-content: center;
+  align-content: center;
 }
