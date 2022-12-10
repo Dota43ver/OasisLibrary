@@ -1,6 +1,6 @@
 .home {
     display: grid;
-    
+
     grid-template-columns: repeat(4, 1fr);
     margin: 20px;
 }
@@ -11,10 +11,86 @@
     justify-content: center;
     align-items: center;
     flex-direction: column-reverse;
-    flex-direction: column-reverse;
     margin: 10px;
+
+    width: 180px;
+    height: 320px;
+
+    background-color: #ECEBEB;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+}
+
+.cards:hover{
+    opacity: 0.10;
+    transition: 500ms;
 }
 
 .cuerpo {
     display: flex;
 }
+
+.text{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 29px;
+}
+
+.botones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+}
+
+.buttoncarro {
+    cursor:pointer;
+    width: 150px;
+    height: 28px;
+
+    background: #AA7446;
+    border-radius: 4px;
+    border: none;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+
+    color: #FFFFFF;
+}
+
+.buttondetalle {
+    cursor:pointer;
+    width: 150px;
+    height: 28px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+
+    color: #AA7446;
+    box-sizing: border-box;
+
+    background: #ECEBEB;
+    border: 1px solid #AA7446;
+    border-radius: 4px;
+
+    margin-top: 5px;
+}
+
+/* .div-imagen {
+    display: inline-block;
+    position: relative;
+    width: 170px;
+    height: 259px;
+}
+
+.div-imagen>div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    padding: 10px;
+    margin: 0;
+} */
+
