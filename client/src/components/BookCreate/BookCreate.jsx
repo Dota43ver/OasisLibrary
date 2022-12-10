@@ -83,7 +83,7 @@ export default function BookCreate(){
                 </div>
                 <div className='group'>
                     <label className='letter'>Year of creation</label>
-                    <input required type='date' value = {input.year} name = "year" onChange={(g) => handleChange(g)}/>
+                    <input required type='number' value = {input.year} name = "year" onChange={(g) => handleChange(g)}/>
                 </div>
                 <div className='group'>
                     <label className='letter'>Genre/s</label>
@@ -118,7 +118,7 @@ export default function BookCreate(){
                 </div>
                 <div className='group'>
                     <label className='letter'>Saga</label>
-                    <input required type='text' value = {input.saga} name = "saga" onChange={(g) => handleChange(g)}/>
+                    <input type='text' value = {input.saga} name = "saga" onChange={(g) => handleChange(g)}/>
                 </div>
                 <div className='group'>
                     <label className='letter'>Description</label>
