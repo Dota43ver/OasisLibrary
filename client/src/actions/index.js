@@ -32,3 +32,34 @@ export function getBookDetails(id) {
     }
   };
 }
+
+export function postBook(info) {
+  return async function (dispatch){
+    var json = await axios.post("http://localhost:3001/books",info)
+    return json
+  }
+}
+
+/* export function getGenres(){
+  return async function (dispatch){
+      var gen = await axios.get("http://localhost:3001/genres")
+      return dispatch({
+          type: "GET_GENRES",
+          payload: gen.data
+      })
+  }
+} */
+
+export const getGenres = () => (dispatch) => {
+  return axios
+    .get(`${LOCAL_HOST}/genres`)
+    .then((genre) => {
+      dispatch({
+        type: "GET_GENRES",
+        payload: genre,
+      });
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
