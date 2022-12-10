@@ -53,8 +53,8 @@ return(
             <h3 className={style.text1}>Hello!</h3>
             <h4 className={style.text2}>Sign into your account</h4>
             </div>
-            <input type="text" name="email" value={input.email} id="" placeholder='Email' onChange={(e)=>handleChange(e)}></input>
-            <input type="password" name="password" value={input.password} id="" placeholder='Password' onChange={(e)=>handleChange(e)}></input>
+            <input type="text" name="email" value={input.email} id="" placeholder='Email' onChange={(e)=>handleChange(e)} className={style.inputs}></input>
+            <input type="password" name="password" value={input.password} id="" placeholder='Password' onChange={(e)=>handleChange(e)} className={style.inputs}></input>
             <div className={style.button2}>
             <button className={style.button3}>Login</button>
             </div>

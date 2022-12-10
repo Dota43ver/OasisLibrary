@@ -27,6 +27,7 @@ export function cleanCache() {
     type: CLEAN_CACHE,
   };
 }
+
 export function getBookDetails(id) {
   return async function (dispatch) {
     try {
@@ -36,6 +37,21 @@ export function getBookDetails(id) {
       console.log(error);
     }
   };
+}
+
+
+export function getNameBooks(name){
+  return async function(dispatch){
+    try{
+      var json = await axios.get(`${LOCAL_HOST}/books?name=`+name);
+      return dispatch({
+        type: "GET_NAME_BOOKS",
+        payload:json.data
+      })
+    } catch(error){
+      console.log(error)
+    }
+  }
 }
 
 export function postBook(info) {
@@ -88,3 +104,4 @@ export function priceSort(payload) {
     payload,
   };
 }
+
