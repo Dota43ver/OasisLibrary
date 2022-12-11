@@ -38,6 +38,7 @@ booksRouter.post("/", async (req,res) => { //MA O MENO, falta que traiga bien el
         await postBooks(req.body);
         res.status(200).send('Libro creado con éxito 😎');
     } catch (error) {
+        console.log(error);
         res.status(400).send(error.message);        
     }
 })

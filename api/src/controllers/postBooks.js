@@ -29,11 +29,6 @@ const postBooks = async (body) => {
         saga
     });
 
-    await Genre.findOrCreate({
-        where: {
-            name: genre
-        }
-    })
 
 //     let genreDb = await Genre.findAll({
 //         where: {name: genre}
