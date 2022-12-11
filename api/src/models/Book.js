@@ -54,7 +54,7 @@ module.exports = (sequelize) => {
         /* allowNull: false, */
       },
       saga: {
-        type: DataTypes.BOOLEAN,
+        type: DataTypes.STRING,
         allowNull: true,
       },
     },
