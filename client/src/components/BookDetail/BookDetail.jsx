@@ -25,7 +25,17 @@ export default function BookDetails(props) {
           <img className="bookImg" src={bookDetails.image} alt="" />
           <h1>${bookDetails.price}</h1>
           <h2>Autor: {bookDetails.author}</h2>
-          <h2>Géneros: {bookDetails.genre}</h2>
+          {bookDetails.genre? (
+            <div>
+              {
+                <h2>
+                  Genres: {bookDetails.genre.join(", ")}
+                </h2>
+              }
+            </div>
+          ):(
+            <h1>Cargando</h1>
+          )}
           <h2>Idioma: {bookDetails.language}</h2>
           <h2>Año: {bookDetails.year}</h2>
         </div>
