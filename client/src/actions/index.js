@@ -7,6 +7,7 @@ import {
   GET_BOOK_DETAILS,
   GET_GENRES,
   GET_NAME_BOOKS,
+  LANGUAGE_FILTER,
   LOCAL_HOST,
   PRICE_SORT,
   SAGA_FILTER,
@@ -120,6 +121,12 @@ export function genreFilter(payload) {
 export function sagaFilter(payload) {
   return {
     type: SAGA_FILTER,
+    payload,
+  };
+}
+export function languageFilter(payload) {
+  return {
+    type: LANGUAGE_FILTER,
     payload,
   };
 }
