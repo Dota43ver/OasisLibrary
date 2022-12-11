@@ -23,7 +23,7 @@ function validate(input){
         errors.password = false
     }
 
-    if(errors.name === false && errors.password === false){
+    if((errors.email === false) && (errors.password === false)){
         errors = false
     }
 
@@ -56,6 +56,7 @@ export default function Register(){
             ...input,
             [e.target.name]: e.target.value
         }))
+        console.log("esto es errors",errors)
     }
 
 
@@ -91,7 +92,7 @@ return(
                 )}
                 </div>
             <div className={style.button2}>
-            <button className={style.button3}>Login</button>
+            <button className={style.button3} disabled={!!errors}>Login</button>
             </div>
             <div className={style.divisor}>
             </div>
