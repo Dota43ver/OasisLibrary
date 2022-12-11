@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import {
   aplhabeticalSort,
   genreFilter,
@@ -19,7 +19,6 @@ export default function Home() {
   const allGenres = useSelector((state) => state.genres);
   const dispatch = useDispatch();
 
-
   const [currentPage, setCurrentPage] = useState(1);
   const [booksPerPage, setBooksPerPage] = useState(9);
   const indexLast = currentPage * booksPerPage;
@@ -28,11 +27,10 @@ export default function Home() {
   // console.log(currentBooks);
 
   const paginated = (pageNumbers) => {
-    setCurrentPage(pageNumbers)
-  }
+    setCurrentPage(pageNumbers);
+  };
 
   const [order, setOrder] = useState("");
-
 
   useEffect(() => {
     dispatch(getBooks());
@@ -82,6 +80,7 @@ export default function Home() {
   function handlerFilterByGenre(e) {
     e.preventDefault();
     dispatch(genreFilter(e.target.value));
+    setCurrentPage(1);
     setOrder(`Order ${e.target.value}`);
   }
 
@@ -92,7 +91,7 @@ export default function Home() {
       <div className="filtersDiv">
         <div>
           <button className="refreshButton" onClick={handleClick}>
-            Refresh recipes
+            Refresh books
           </button>
         </div>
         <div className="alphOrder">
@@ -109,6 +108,7 @@ export default function Home() {
           </select>
         </div>
         <div className="filterPrice">
+          <label> price </label>
           <select
             className="select"
             name="price"
@@ -117,11 +117,12 @@ export default function Home() {
             <option disabled selected>
               Price
             </option>
-            <option value="asc">Ascendiente</option>
-            <option value="desc">Descendiente</option>
+            <option value="asc">Ascendente</option>
+            <option value="desc">Descendente</option>
           </select>
         </div>
         <div className="filterScore">
+          <label> score </label>
           <select
             className="select"
             name="score"
@@ -130,8 +131,8 @@ export default function Home() {
             <option disabled selected>
               Score
             </option>
-            <option value="asc">Ascendiente</option>
-            <option value="desc">Descendiente</option>
+            <option value="asc">Descendente</option>
+            <option value="desc">Ascendente</option>
           </select>
           <select onChange={(e) => handlerFilterByGenre(e)}>
             <option value="all">todos</option>
@@ -144,6 +145,7 @@ export default function Home() {
         </div>
       </div>
       <div className="allBooksDiv">
+
       <h3 className="home">
         {currentBooks.length > 0 ?
           currentBooks.map((el) => {
@@ -168,6 +170,7 @@ export default function Home() {
         </div>
         
         {/* <div onClick={e => nextPage(e)}>Next</div> */}
+
       </div>
     </div>
   );

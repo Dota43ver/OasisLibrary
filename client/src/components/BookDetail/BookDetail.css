@@ -6,6 +6,8 @@
     "first second second"
     "first third third"
     "first third third";
+
+  /* box-shadow: ; */
 }
 .firstCont {
   background-color: #aa7446;
@@ -14,8 +16,19 @@
   grid-area: first;
   margin: 2rem;
   margin-left: 4rem;
+  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
+  min-height: 37rem;
+  max-height: 43rem;
+}
+.firstCont h1 {
+  font-size: 2rem;
+  text-align: center;
+  padding-right: 1rem;
+  color: #5e3614;
 }
 .bookImg {
+  min-width: 10rem;
+  min-height: 20rem;
   max-width: 20rem;
   max-height: 20rem;
   padding: 2rem;
@@ -29,12 +42,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  min-height: 6rem;
+  max-height: 7rem;
+  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .thirdCont {
   background-color: #d9d9d9;
   grid-area: third;
   margin: 2rem;
+  margin-top: 0;
   text-align: justify;
+  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .bookTitle {

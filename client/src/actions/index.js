@@ -5,8 +5,11 @@ import {
   GENRE_FILTER,
   GET_BOOKS,
   GET_BOOK_DETAILS,
+  GET_GENRES,
+  GET_NAME_BOOKS,
   LOCAL_HOST,
   PRICE_SORT,
+  SAGA_FILTER,
   SCORE_SORT,
 } from "./types";
 
@@ -34,7 +37,7 @@ export function getBookDetails(id) {
     try {
       var response = await axios.get(
         // `https://6390e9b265ff418311227edc.mockapi.io/api/oasis/books/${id}`
-        `${LOCAL_HOST}/books/${id}` 
+        `${LOCAL_HOST}/books/${id}`
       );
       return dispatch({ type: GET_BOOK_DETAILS, payload: response.data });
     } catch (error) {
@@ -43,19 +46,18 @@ export function getBookDetails(id) {
   };
 }
 
-
-export function getNameBooks(name){
-  return async function(dispatch){
-    try{
-      var json = await axios.get(`${LOCAL_HOST}/books?name=`+name);
+export function getNameBooks(name) {
+  return async function (dispatch) {
+    try {
+      var json = await axios.get(`${LOCAL_HOST}/books?name=` + name);
       return dispatch({
-        type: "GET_NAME_BOOKS",
-        payload:json.data
-      })
-    } catch(error){
-      console.log(error)
+        type: GET_NAME_BOOKS,
+        payload: json.data,
+      });
+    } catch (error) {
+      console.log(error);
     }
-  }
+  };
 }
 
 export function postBook(info) {
@@ -80,7 +82,7 @@ export const getGenres = () => (dispatch) => {
     .get(`${LOCAL_HOST}/genres`)
     .then((genre) => {
       dispatch({
-        type: "GET_GENRES",
+        type: GET_GENRES,
         payload: genre,
       });
     })
@@ -115,4 +117,9 @@ export function genreFilter(payload) {
     payload,
   };
 }
-
+export function sagaFilter(payload) {
+  return {
+    type: SAGA_FILTER,
+    payload,
+  };
+}
