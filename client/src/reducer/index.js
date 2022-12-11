@@ -6,8 +6,10 @@ import {
   GET_BOOK_DETAILS,
   GET_GENRES,
   GET_NAME_BOOKS,
+  LANGUAGE_FILTER,
   POST_BOOK,
   PRICE_SORT,
+  SAGA_FILTER,
   SCORE_SORT,
 } from "../actions/types";
 
@@ -64,7 +66,7 @@ export default function reducer(state = initialState, action) {
         books: sortedBooks,
       };
     case SCORE_SORT:
-      let sortedBooksByScore = [...state.books];
+      let sortedBooksByScore = state.allBooks;
       sortedBooksByScore =
         action.payload === "desc"
           ? state.books.sort(function (a, b) {
@@ -88,7 +90,7 @@ export default function reducer(state = initialState, action) {
       };
 
     case PRICE_SORT:
-      let sortedBooksByPrice = [...state.books];
+      let sortedBooksByPrice = state.allBooks;
       sortedBooksByPrice =
         action.payload === "asc"
           ? state.books.sort(function (a, b) {
@@ -106,9 +108,9 @@ export default function reducer(state = initialState, action) {
         books: sortedBooksByPrice,
       };
     case GENRE_FILTER:
-      const allBooks = state.allBooks;
+      const allBooksGenre = state.allBooks;
       if (action.payload === "all") return { ...state, books: state.allBooks };
-      const filteredByGenre = allBooks.filter((b) =>
+      const filteredByGenre = allBooksGenre.filter((b) =>
         b.genre?.some((g) => g.toLowerCase() === action.payload.toLowerCase())
       );
       return {
@@ -116,15 +118,26 @@ export default function reducer(state = initialState, action) {
         books: filteredByGenre,
       };
     // FILTRO SAGA PREPARADO
-    // case SAGA_FILTER:
-    //   const allBook = state.allBooks;
-    //   const filteredBySaga = allBook.filter((b) =>
-    //     b.saga?.some((s) => s.toLowerCase() === action.payload.toLowerCase())
-    //   );
-    //   return {
-    //     ...state,
-    //     books: filteredBySaga,
-    //   };
+    case SAGA_FILTER:
+      const allBookSaga = state.allBooks;
+      if (action.payload === "all") return { ...state, books: state.allBooks };
+      const filteredBySaga = allBookSaga.filter(
+        (b) => b.saga === action.payload
+      );
+      return {
+        ...state,
+        books: filteredBySaga,
+      };
+    case LANGUAGE_FILTER:
+      const allBookLang = state.allBooks;
+      if (action.payload === "all") return { ...state, books: state.allBooks };
+      const filteredByLang = allBookLang.filter(
+        (b) => b.language === action.payload
+      );
+      return {
+        ...state,
+        books: filteredByLang,
+      };
     default:
       return state;
   }
