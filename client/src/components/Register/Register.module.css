@@ -150,7 +150,8 @@ form{
     color: red;
     align-items: center;
     justify-content: center;
-    
-    
-
 }
+
+.button3:disabled {
+    background: #ccc;
+  }
