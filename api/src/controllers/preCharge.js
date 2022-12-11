@@ -19,7 +19,7 @@ function preCharge () {
                     language: book.language? book.language : "No especificado",
                     stock: book.stock? book.stock : false,
                     image: book.image,
-                    saga: typeof book.saga === 'boolean' ? book.saga : false
+                    saga: book.saga ? book.saga : null
                 }
             })
         })
