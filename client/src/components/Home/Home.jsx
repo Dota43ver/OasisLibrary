@@ -24,7 +24,7 @@ export default function Home() {
   const indexLast = currentPage * booksPerPage;
   const indexFirst = indexLast - booksPerPage;
   const currentBooks = allBooks.slice(indexFirst, indexLast);
-  console.log(currentBooks);
+  // console.log(currentBooks);
 
   const paginated = (pageNumbers) => {
     setCurrentPage(pageNumbers);
@@ -61,12 +61,29 @@ export default function Home() {
     setOrder(`Order ${e.target.value}`);
   }
 
+  
+
+  // function prevPage(e) {
+  //   if(currentPage == 1 ||currentPage < 1) {
+  //     e.preventDefault()
+  //     setCurrentPage(currentPage -1)
+  //   }
+  // } 
+
+  // function nextPage(e) {
+  //   e.preventDefault()
+  //   setCurrentPage(currentPage +1)
+  // }
+
+
+
   function handlerFilterByGenre(e) {
     e.preventDefault();
     dispatch(genreFilter(e.target.value));
     setCurrentPage(1);
     setOrder(`Order ${e.target.value}`);
   }
+
 
   return (
     <div>
@@ -128,29 +145,32 @@ export default function Home() {
         </div>
       </div>
       <div className="allBooksDiv">
-        <h3 className="home">
-          {currentBooks.length > 0
-            ? currentBooks.map((el) => {
-                return (
-                  <div className="cards">
-                    <Link to={`/book/${el.id}`}>
-                      <Card
-                        Nombre={el.name}
-                        Precio={el.price}
-                        Puntuación={el.score}
-                        Imagen={el.image}
-                      />
-                    </Link>
-                  </div>
-                );
-              })
-            : "Loading..."}
-        </h3>
-        <Paginated
-          booksPerPage={booksPerPage}
-          allBooks={allBooks.length}
-          paginated={paginated}
-        />
+
+      <h3 className="home">
+        {currentBooks.length > 0 ?
+          currentBooks.map((el) => {
+              return (
+                <div className="cards">
+                  <Link to={`/book/${el.id}`}>
+                  <Card
+                    Nombre={el.name}
+                    Precio={el.price}
+                    Puntuación={el.score}
+                    Imagen={el.image}
+                  />
+                  </Link>
+                </div>
+              );
+            })
+          : "Loading..."}
+      </h3>
+        {/* <div onClick={e => prevPage(e)}>Previous</div> */}
+        <div className="paginadoHome">
+          <Paginated booksPerPage={booksPerPage} allBooks={allBooks.length} paginated={paginated}/>
+        </div>
+        
+        {/* <div onClick={e => nextPage(e)}>Next</div> */}
+
       </div>
     </div>
   );
