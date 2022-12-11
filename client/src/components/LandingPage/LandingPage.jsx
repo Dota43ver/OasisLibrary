@@ -4,6 +4,10 @@ import {Link} from 'react-router-dom';
 
 const LandingPage = () => {
     return(
+        <div className={style.home}>
+        <div>
+            {/* <img src="https://i.pinimg.com/originals/6d/a8/b8/6da8b852257a75b7388239cf3736e62f.gif"></img> */}
+        </div>
         <div className={style.container}>
             <div className={style.log}>
                 <Link to = '/a'>
@@ -22,6 +26,7 @@ const LandingPage = () => {
                     <button className={style.aboutBtn}>About us</button>
                 </Link>
             </div>
+        </div>
         </div>
     )
 }

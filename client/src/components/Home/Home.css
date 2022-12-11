@@ -86,6 +86,43 @@
     margin-bottom: 5px;
 }
 
+.all {
+    display: flex;
+    flex-direction: row;
+}
+
+.filterh2 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.filtersDiv {
+    display: flex;
+    flex-direction: column;
+    margin-block-start: 31px;
+    margin-left: 10px;
+    padding-left: 10px;
+    gap: 15px;
+    background-color: #ECEBEB;
+    border-radius: 4px;
+    height: 300px;
+    width: 250px;
+}
+
+.refreshButton{
+    background-color: #1C555E;
+    border: none;
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 150px;
+    height: 28px;
+}
+
+.select {
+    width: 150px;
+}
 
 /* .div-imagen {
     display: inline-block;
