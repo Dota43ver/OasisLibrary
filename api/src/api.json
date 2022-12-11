@@ -610,5 +610,56 @@
     "language": "Español",
     "stock": true,
     "image": "https://images.cdn1.buscalibre.com/fit-in/360x360/3e/0e/3e0eb9a4b7e8a9dd71da87615def899e.jpg"
+  },
+  {
+    "name": "El señor de los anillos: La comunidad del Anillo",
+    "year": 1954,
+    "genre": ["Fantasia", "Aventura", "Historieta"],
+    "author": "J. R. R. Tolkien",
+    "price": 3100,
+    "score": 4.8,
+    "description": "En la adormecida e idílica Comarca, un joven hobbit recibe un encargo: custodiar el Anillo Único y emprender el viaje para su destrucción en las Grietas del Destino. Consciente de la importancia de su misión, Frodo abandona la Comarca e inicia el camino hacia Mordor con la compañía de inesperada de Sam, Pippin y Merry.  Pero sólo con la ayuda de Aragorn conseguirán vencer a los Jinetes Negros y alcanzar el refugio de la Casa de Elrond en Rivendel.",
+    "language": "Ingles",
+    "stock": true,
+    "image": "https://quelibroleo.com/images/libros/libro_1322009582.jpg",
+    "saga": "El señor de los anillos"
+  },
+  {
+    "name": "El señor de los anillos: Las dos Torres",
+    "year": 1954,
+    "genre": ["Fantasia", "Aventura", "Historieta"],
+    "author": "J. R. R. Tolkien",
+    "price": 3428,
+    "score": 4.9,
+    "description": "La Compañía se ha disuelto y sus integrantes emprenden caminos separados. Frodo y Sam continúan solos su viaje a lo largo del río Anduin, perseguidos por la sombra misteriosa de un ser extraño que también ambiciona la posesión del Anillo. Mientras, hombres, elfos y enanos se preparan para la batalla final contra las fuerzas del Señor del Mal.",
+    "language": "Ingles",
+    "stock": true,
+    "image": "https://www.planetadelibros.com.ar/usuaris/libros/fotos/48/m_libros/47930_portada_el-senor-de-los-anillos-n-0203-las-dos-torres-ne_j-r-r-tolkien_202203111314.jpg",
+    "saga": "El señor de los anillos"
+  },
+  {
+    "name": "El señor de los anillos: El retorno del Rey",
+    "year": 1955,
+    "genre": ["Fantasia", "Aventura", "Historieta"],
+    "author": "J. R. R. Tolkien",
+    "price": 4010,
+    "score": 4.9,
+    "description": "Los ejércitos del Señor Oscuro van extendiendo cada vez más su maléfica sombra por la Tierra Media. Hombres, elfos y enanos unen sus fuerzas para presentar batalla contra Sauron y sus huestes. Ajenos a estos preparativos, Frodo y Sam se internan cada vez más en el país de Mordor en su heroico viaje para destruir el Anillo de Poder en las Grietas del Destino.",
+    "language": "Ingles",
+    "stock": true,
+    "image": "https://www.planetadelibros.com.ar/usuaris/libros/fotos/48/m_libros/47931_portada_el-senor-de-los-anillos-n-0303-el-retorno-del-rey-ne_j-r-r-tolkien_202203111320.jpg",
+    "saga": "El señor de los anillos"
+  },
+  {
+    "name": "El pajaro canta hasta morir",
+    "year": 1977,
+    "genre": ["Novela", "Saga Familiar", "Ficcion historica"],
+    "author": "Colleen McCullough",
+    "price": 4749,
+    "score": 4.9,
+    "description": "Una historia que comienza en 1915 y está llena de sueños, secretos, pasiones oscuras y amor prohibido en el interior de Australia. En ella asistimos a la gesta de tres generaciones de la familia Cleary, pero sobre todo, somos testigos de la relación sentimental de Meggie con el sacerdote Ralph de Bricassart, un párroco cuya ambición lo lleva a formar parte de los círculos influyentes del Vaticano. Una historia de amor conmovedora, una apasionante lucha entre el deseo y el deber, la vocación y la pasión, pero también una celebración de la individualidad y el espíritu.",
+    "language": "Ingles",
+    "stock": true,
+    "image": "https://covers.alibrate.com/b/59872e94cba2bce50c1bcc9f/71a8b87f-2fc6-4a55-9007-fe4285ce8be5/share"
   }
 ]

@@ -64,8 +64,10 @@ export default function Register(){
 return(
     <div className={style.main_container}>
         <div className={style.cabecera}>
-        <img src={oasis} alt=""  height="143px" width="151px"/>
-        <h3 className={style.text}>OASIS LIBRARY</h3>
+            <Link to = '/home'>
+                <img src={oasis} alt=""  height="143px" width="151px"/>
+            </Link>
+            <h3 className={style.text}>OASIS LIBRARY</h3>
         </div>
         <div className={style.main_container2}>
         <form>

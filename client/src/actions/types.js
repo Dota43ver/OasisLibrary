@@ -10,3 +10,4 @@ export const GET_GENRES = "GET_GENRES";
 export const POST_BOOK = "POST_BOOK";
 export const SAGA_FILTER = "SAGA_FILTER";
 export const GET_NAME_BOOKS = "GET_NAME_BOOKS";
+export const LANGUAGE_FILTER = "LANGUAGE_FILTER";
