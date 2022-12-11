@@ -23,6 +23,7 @@ export default function BookDetails(props) {
       <div className="allDetails">
         <div className="firstCont">
           <img className="bookImg" src={bookDetails.image} alt="" />
+          <h1>${bookDetails.price}</h1>
           <h2>Autor: {bookDetails.author}</h2>
           <h2>Géneros: {bookDetails.genre}</h2>
           <h2>Idioma: {bookDetails.language}</h2>

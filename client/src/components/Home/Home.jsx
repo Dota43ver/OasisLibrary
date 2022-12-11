@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import {
   aplhabeticalSort,
   genreFilter,
@@ -19,7 +19,6 @@ export default function Home() {
   const allGenres = useSelector((state) => state.genres);
   const dispatch = useDispatch();
 
-
   const [currentPage, setCurrentPage] = useState(1);
   const [booksPerPage, setBooksPerPage] = useState(9);
   const indexLast = currentPage * booksPerPage;
@@ -28,11 +27,10 @@ export default function Home() {
   console.log(currentBooks);
 
   const paginated = (pageNumbers) => {
-    setCurrentPage(pageNumbers)
-  }
+    setCurrentPage(pageNumbers);
+  };
 
   const [order, setOrder] = useState("");
-
 
   useEffect(() => {
     dispatch(getBooks());
@@ -42,30 +40,31 @@ export default function Home() {
   function handleClick(e) {
     e.preventDefault();
     dispatch(getBooks());
-    // setPage(1);
+    setCurrentPage(1);
   }
   function handleAlphabeticalSort(e) {
     e.preventDefault();
     dispatch(aplhabeticalSort(e.target.value));
-    // setPage(1);
+    setCurrentPage(1);
     setOrder(`Order ${e.target.value}`);
   }
   function handlePriceSort(e) {
     e.preventDefault();
     dispatch(priceSort(e.target.value));
-    // setPage(1);
+    setCurrentPage(1);
     setOrder(`Order ${e.target.value}`);
   }
   function handleScoreSort(e) {
     e.preventDefault();
     dispatch(scoreSort(e.target.value));
-    // setPage(1);
+    setCurrentPage(1);
     setOrder(`Order ${e.target.value}`);
   }
 
   function handlerFilterByGenre(e) {
     e.preventDefault();
     dispatch(genreFilter(e.target.value));
+    setCurrentPage(1);
     setOrder(`Order ${e.target.value}`);
   }
 
@@ -75,7 +74,7 @@ export default function Home() {
       <div className="filtersDiv">
         <div>
           <button className="refreshButton" onClick={handleClick}>
-            Refresh recipes
+            Refresh books
           </button>
         </div>
         <div className="alphOrder">
@@ -92,6 +91,7 @@ export default function Home() {
           </select>
         </div>
         <div className="filterPrice">
+          <label> price </label>
           <select
             className="select"
             name="price"
@@ -100,11 +100,12 @@ export default function Home() {
             <option disabled selected>
               Price
             </option>
-            <option value="asc">Ascendiente</option>
-            <option value="desc">Descendiente</option>
+            <option value="asc">Ascendente</option>
+            <option value="desc">Descendente</option>
           </select>
         </div>
         <div className="filterScore">
+          <label> score </label>
           <select
             className="select"
             name="score"
@@ -113,8 +114,8 @@ export default function Home() {
             <option disabled selected>
               Score
             </option>
-            <option value="asc">Ascendiente</option>
-            <option value="desc">Descendiente</option>
+            <option value="asc">Descendente</option>
+            <option value="desc">Ascendente</option>
           </select>
           <select onChange={(e) => handlerFilterByGenre(e)}>
             <option value="all">todos</option>
@@ -127,25 +128,29 @@ export default function Home() {
         </div>
       </div>
       <div className="allBooksDiv">
-      <h3 className="home">
-        {currentBooks.length > 0 ?
-          currentBooks.map((el) => {
-              return (
-                <div className="cards">
-                  <Link to={`/book/${el.id}`}>
-                  <Card
-                    Nombre={el.name}
-                    Precio={el.price}
-                    Puntuación={el.score}
-                    Imagen={el.image}
-                  />
-                  </Link>
-                </div>
-              );
-            })
-          : "Loading..."}
-      </h3>
-      <Paginated booksPerPage={booksPerPage} allBooks={allBooks.length} paginated={paginated}/>
+        <h3 className="home">
+          {currentBooks.length > 0
+            ? currentBooks.map((el) => {
+                return (
+                  <div className="cards">
+                    <Link to={`/book/${el.id}`}>
+                      <Card
+                        Nombre={el.name}
+                        Precio={el.price}
+                        Puntuación={el.score}
+                        Imagen={el.image}
+                      />
+                    </Link>
+                  </div>
+                );
+              })
+            : "Loading..."}
+        </h3>
+        <Paginated
+          booksPerPage={booksPerPage}
+          allBooks={allBooks.length}
+          paginated={paginated}
+        />
       </div>
     </div>
   );
