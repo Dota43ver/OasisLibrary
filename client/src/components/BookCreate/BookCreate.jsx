@@ -26,8 +26,6 @@ export default function BookCreate() {
         price: '',
         score: '',
         language: '',
-        image: '',
-        saga: '',
         description: ''
     })
 
@@ -63,8 +61,6 @@ export default function BookCreate() {
             price: '',
             score: '',
             language: '',
-            image: '',
-            saga: '',
             description: '',
         })
         history.push('/home')
@@ -124,10 +120,6 @@ export default function BookCreate() {
                     <div className='group'>
                         <label className='letter'>Language</label>
                         <input required type='text' value={input.language} name="language" onChange={(g) => handleChange(g)} />
-                    </div>
-                    <div className='group'>
-                        <label className='letter'>Saga</label>
-                        <input type='text' value={input.saga} name="saga" onChange={(g) => handleChange(g)} />
                     </div>
                     <div className='group'>
                         <label className='letter'>Description</label>
