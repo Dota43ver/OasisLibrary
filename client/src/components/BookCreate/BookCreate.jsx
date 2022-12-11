@@ -26,7 +26,7 @@ export default function BookCreate(){
         score:'',
         language:'',
         image:'',
-        saga:'',
+        
         description:''
     })
 
@@ -47,7 +47,9 @@ export default function BookCreate(){
         arr.map((s)=>{
             arrayResultado.push(s.value);
         })
+        console.log(input.genre);
         input.genre = arrayResultado;
+        
     }
 
     function handleSubmit(g){
@@ -63,7 +65,7 @@ export default function BookCreate(){
             score:'',
             language:'',
             image:'',
-            saga:'',
+            
             description:'',
         })
         history.push('/home')
@@ -117,8 +119,8 @@ export default function BookCreate(){
                     <input required type='text' value = {input.language} name = "language" onChange={(g) => handleChange(g)}/>
                 </div>
                 <div className='group'>
-                    <label className='letter'>Saga</label>
-                    <input type='text' value = {input.saga} name = "saga" onChange={(g) => handleChange(g)}/>
+                    <label className='letter'>ImageUpload</label>
+                    <input type='file' value = {input.image} name = "image" onChange={(g) => handleChange(g)}/>
                 </div>
                 <div className='group'>
                     <label className='letter'>Description</label>
