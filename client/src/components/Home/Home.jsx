@@ -31,6 +31,7 @@ export default function Home() {
     setCurrentPage(pageNumbers);
   };
 
+  const [refresh, setRefresh] = useState()
   const [order, setOrder] = useState("");
 
   useEffect(() => {
@@ -41,6 +42,7 @@ export default function Home() {
   function handleClick(e) {
     e.preventDefault();
     dispatch(getBooks());
+    setRefresh('default')
     setCurrentPage(1);
   }
   function handleAlphabeticalSort(e) {
@@ -48,18 +50,21 @@ export default function Home() {
     dispatch(aplhabeticalSort(e.target.value));
     setCurrentPage(1);
     setOrder(`Order ${e.target.value}`);
+    setRefresh()
   }
   function handlePriceSort(e) {
     e.preventDefault();
     dispatch(priceSort(e.target.value));
     setCurrentPage(1);
     setOrder(`Order ${e.target.value}`);
+    setRefresh()
   }
   function handleScoreSort(e) {
     e.preventDefault();
     dispatch(scoreSort(e.target.value));
     setCurrentPage(1);
     setOrder(`Order ${e.target.value}`);
+    setRefresh()
   }
 
 
@@ -83,6 +88,7 @@ export default function Home() {
     dispatch(genreFilter(e.target.value));
     setCurrentPage(1);
     setOrder(`Order ${e.target.value}`);
+    setRefresh()
   }
 
 
@@ -102,8 +108,9 @@ export default function Home() {
             className="select"
             name="alphabetical"
             onChange={(e) => handleAlphabeticalSort(e)}
+            value={refresh}
           >
-            <option disabled selected>
+            <option disabled selected value='default'>
               Alphabetical
             </option>
             <option value="atoz">A to Z</option>
@@ -116,8 +123,9 @@ export default function Home() {
             className="select"
             name="price"
             onChange={(e) => handlePriceSort(e)}
+            value={refresh}
           >
-            <option disabled selected>
+            <option disabled selected value='default'>
               Price
             </option>
             <option value="asc">Ascendente</option>
@@ -130,14 +138,17 @@ export default function Home() {
             className="select"
             name="score"
             onChange={(e) => handleScoreSort(e)}
+            value={refresh}
           >
-            <option disabled selected>
+            <option disabled selected value='default'>
               Score
             </option>
             <option value="asc">Descendente</option>
             <option value="desc">Ascendente</option>
           </select>
-          <select className="select" onChange={(e) => handlerFilterByGenre(e)}>
+          <div>
+          <label>Genre </label>
+          <select className="select" onChange={(e) => handlerFilterByGenre(e)} value={refresh}>
             <option value="all">All</option>
             {allGenres?.map((genre) => (
               <option key={genre.id} value={genre.name}>
@@ -145,6 +156,7 @@ export default function Home() {
               </option>
             ))}
           </select>
+          </div>
         </div>
       </div>
       <div className="allBooksDiv">
