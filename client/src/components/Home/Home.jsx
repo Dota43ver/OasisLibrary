@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -61,7 +62,7 @@ export default function Home() {
     setOrder(`Order ${e.target.value}`);
   }
 
-  
+
 
   // function prevPage(e) {
   //   if(currentPage == 1 ||currentPage < 1) {
@@ -88,7 +89,9 @@ export default function Home() {
   return (
     <div>
       <NavBar />
+      <div className="all">
       <div className="filtersDiv">
+          <h2 className="filterh2"> Filter by: </h2>
         <div>
           <button className="refreshButton" onClick={handleClick}>
             Refresh books
@@ -108,7 +111,7 @@ export default function Home() {
           </select>
         </div>
         <div className="filterPrice">
-          <label> price </label>
+          <label> Price </label>
           <select
             className="select"
             name="price"
@@ -122,7 +125,7 @@ export default function Home() {
           </select>
         </div>
         <div className="filterScore">
-          <label> score </label>
+          <label> Score </label>
           <select
             className="select"
             name="score"
@@ -134,8 +137,8 @@ export default function Home() {
             <option value="asc">Descendente</option>
             <option value="desc">Ascendente</option>
           </select>
-          <select onChange={(e) => handlerFilterByGenre(e)}>
-            <option value="all">todos</option>
+          <select className="select" onChange={(e) => handlerFilterByGenre(e)}>
+            <option value="all">All</option>
             {allGenres?.map((genre) => (
               <option key={genre.id} value={genre.name}>
                 {genre.name}
@@ -146,31 +149,32 @@ export default function Home() {
       </div>
       <div className="allBooksDiv">
 
-      <h3 className="home">
-        {currentBooks.length > 0 ?
-          currentBooks.map((el) => {
+        <h3 className="home">
+          {currentBooks.length > 0 ?
+            currentBooks.map((el) => {
               return (
                 <div className="cards">
                   <Link to={`/book/${el.id}`}>
-                  <Card
-                    Nombre={el.name}
-                    Precio={el.price}
-                    Puntuación={el.score}
-                    Imagen={el.image}
-                  />
+                    <Card
+                      Nombre={el.name}
+                      Precio={el.price}
+                      Puntuación={el.score}
+                      Imagen={el.image}
+                    />
                   </Link>
                 </div>
               );
             })
-          : "Loading..."}
-      </h3>
+            : "Loading..."}
+        </h3>
         {/* <div onClick={e => prevPage(e)}>Previous</div> */}
         <div className="paginadoHome">
-          <Paginated booksPerPage={booksPerPage} allBooks={allBooks.length} paginated={paginated}/>
+          <Paginated booksPerPage={booksPerPage} allBooks={allBooks.length} paginated={paginated} />
         </div>
-        
+
         {/* <div onClick={e => nextPage(e)}>Next</div> */}
 
+      </div>
       </div>
     </div>
   );
