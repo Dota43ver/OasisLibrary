@@ -30,7 +30,9 @@ export default function NavBar(){
     return(
         <div className={style.main_container}>
             <div className={style.container_image}>
-                <img src={oasis} alt="" width="114px" height="105px"/>
+                <Link to = '/home'>
+                    <img src={oasis} alt="" width="114px" height="105px"/>
+                </Link>
             </div>
             
             <div className={style.buscar}>

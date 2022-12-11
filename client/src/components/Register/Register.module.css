@@ -129,3 +129,29 @@ form{
 .button7:hover{
     text-decoration: underline;
 }
+
+.main_conteiner2{
+    display: flex;
+}
+
+.container_errors {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    width: 484px;
+    justify-content: center;
+    margin-left: 10%;
+    background-color: pink;
+    border-radius: 10px;
+}
+
+.errors {
+    display: flex;
+    color: red;
+    align-items: center;
+    justify-content: center;
+}
+
+.button3:disabled {
+    background: #ccc;
+  }
