@@ -121,12 +121,12 @@ export default function Home() {
               <option disabled selected value="default">
                 Alphabetical
               </option>
-              <option value="atoz">A to Z</option>
-              <option value="ztoa">Z to A</option>
+              <option value="atoz">A - Z</option>
+              <option value="ztoa">Z - A</option>
             </select>
           </div>
           <div>
-            <label> Price </label>
+            <label> Precio </label>
             <select
               className="select"
               name="price"
@@ -134,14 +134,14 @@ export default function Home() {
               value={refresh}
             >
               <option disabled selected value="default">
-                Price
+                Precio
               </option>
               <option value="asc">Ascendente</option>
               <option value="desc">Descendente</option>
             </select>
           </div>
           <div>
-            <label> Score </label>
+            <label> Puntuación </label>
             <select
               className="select"
               name="score"
@@ -149,20 +149,20 @@ export default function Home() {
               value={refresh}
             >
               <option disabled selected value="default">
-                Score
+                Puntuación
               </option>
-              <option value="asc">Descendente</option>
               <option value="desc">Ascendente</option>
+              <option value="asc">Descendente</option>
             </select>
           </div>
           <div>
-            <label>Genre </label>
+            <label>Géneros </label>
             <select
               className="select"
               onChange={(e) => handlerFilterByGenre(e)}
               value={refresh}
             >
-              <option value="all">All</option>
+              <option value="all">Todos</option>
               {allGenres?.map((genre) => (
                 <option key={genre.id} value={genre.name}>
                   {genre.name}
@@ -177,7 +177,7 @@ export default function Home() {
               onChange={(e) => handlerFilterBySaga(e)}
               value={refresh}
             >
-              <option value="all">None</option>
+              <option value="all">Ninguna</option>
               <option value="El señor de los anillos">
                 Señor de los añillos
               </option>
@@ -201,19 +201,19 @@ export default function Home() {
         <div className="home">
           {currentBooks.length > 0
             ? currentBooks.map((el) => {
-              return (
-                <div className="cards">
-                  <Link to={`/book/${el.id}`}>
-                    <Card
-                      Nombre={el.name}
-                      Precio={el.price}
-                      Puntuación={el.score}
-                      Imagen={el.image}
-                    />
-                  </Link>
-                </div>
-              );
-            })
+                return (
+                  <div className="cards">
+                    <Link to={`/book/${el.id}`}>
+                      <Card
+                        Nombre={el.name}
+                        Precio={el.price}
+                        Puntuación={el.score}
+                        Imagen={el.image}
+                      />
+                    </Link>
+                  </div>
+                );
+              })
             : "Loading..."}
         </div>
         {/* <div onClick={e => prevPage(e)}>Previous</div> */}
