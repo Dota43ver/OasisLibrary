@@ -38,9 +38,15 @@ export default function reducer(state = initialState, action) {
         ...state,
       };
     case GET_GENRES:
+      let sortedGenres = action.payload.data;
+      sortedGenres = action.payload.data.sort(function (a, b) {
+        if (a.name.toLowerCase() > b.name.toLowerCase()) return 1;
+        if (a.name.toLowerCase() < b.name.toLowerCase()) return -1;
+        return 0;
+      });
       return {
         ...state,
-        genres: action.payload.data,
+        genres: sortedGenres,
       };
     case CLEAN_CACHE:
       return {

@@ -35,7 +35,7 @@ export default function BookDetails(props) {
               <button className="backButton">Back to home</button>
             </Link>
           </div>
-          <h1 className="quantity">cantidad: {bookDetails.stock}</h1>
+          {/* <h1 className="quantity">Cantidad: {bookDetails.stock}</h1> */}
           <div className="cart">
             <Link to="/cart">
               <button className="cartButton">Add to cart</button>
