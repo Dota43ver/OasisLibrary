@@ -1,7 +1,7 @@
 .home {
     display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(205px,1fr));
+    width: 100%;
     margin: 20px;
 }
 
@@ -88,12 +88,14 @@
 
 .all {
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
 }
 
 .filterh2 {
     font-size: 20px;
     font-weight: 500;
+    margin: 0px;
+    text-align: center;
 }
 
 .filtersDiv {
@@ -101,13 +103,16 @@
     flex-direction: column;
     margin-block-start: 31px;
     margin-left: 10px;
-    padding-left: 10px;
-    gap: 15px;
+    padding: 10px;
     background-color: #ECEBEB;
     border-radius: 4px;
-    height: 300px;
-    width: 250px;
+    height: max-content;
+    width: min-content;
 }
+
+/* .filtersDiv > div {
+    color: #AA7446;
+} */
 
 .refreshButton{
     background-color: #1C555E;
