@@ -22,7 +22,7 @@ export default function Home() {
   const dispatch = useDispatch();
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [booksPerPage, setBooksPerPage] = useState(9);
+  const [booksPerPage, setBooksPerPage] = useState(20);
   const indexLast = currentPage * booksPerPage;
   const indexFirst = indexLast - booksPerPage;
   const currentBooks = allBooks.slice(indexFirst, indexLast);
@@ -107,12 +107,10 @@ export default function Home() {
       <div className="all">
         <div className="filtersDiv">
           <h2 className="filterh2"> Filter by: </h2>
+          <button className="refreshButton" onClick={handleClick}>
+            Refresh books
+          </button>
           <div>
-            <button className="refreshButton" onClick={handleClick}>
-              Refresh books
-            </button>
-          </div>
-          <div className="alphOrder">
             <label>Ordenamieto</label>
             <select
               className="select"
@@ -127,7 +125,7 @@ export default function Home() {
               <option value="ztoa">Z to A</option>
             </select>
           </div>
-          <div className="filterPrice">
+          <div>
             <label> Price </label>
             <select
               className="select"
@@ -142,7 +140,7 @@ export default function Home() {
               <option value="desc">Descendente</option>
             </select>
           </div>
-          <div className="filterScore">
+          <div>
             <label> Score </label>
             <select
               className="select"
@@ -156,78 +154,78 @@ export default function Home() {
               <option value="asc">Descendente</option>
               <option value="desc">Ascendente</option>
             </select>
-            <div>
-              <label>Genre </label>
-              <select
-                className="select"
-                onChange={(e) => handlerFilterByGenre(e)}
-                value={refresh}
-              >
-                <option value="all">All</option>
-                {allGenres?.map((genre) => (
-                  <option key={genre.id} value={genre.name}>
-                    {genre.name}
-                  </option>
-                ))}
-              </select>
-              <br />
-              <label>Saga </label>
-              <select
-                className="select"
-                onChange={(e) => handlerFilterBySaga(e)}
-                value={refresh}
-              >
-                <option value="all">None</option>
-                <option value="El señor de los anillos">
-                  Señor de los añillos
+          </div>
+          <div>
+            <label>Genre </label>
+            <select
+              className="select"
+              onChange={(e) => handlerFilterByGenre(e)}
+              value={refresh}
+            >
+              <option value="all">All</option>
+              {allGenres?.map((genre) => (
+                <option key={genre.id} value={genre.name}>
+                  {genre.name}
                 </option>
-                <option value="Harry Potter">Harry Potter</option>
-                <option value="Juego de Tronos">Juego de tronos</option>
-              </select>
-              <br />
-              <label>Idioma </label>
-              <select
-                className="select"
-                onChange={(e) => handlerFilterByLanguage(e)}
-                value={refresh}
-              >
-                <option value="all">Todos</option>
-                <option value="Español">Español</option>
-                <option value="Ingles">Inglés</option>
-              </select>
-            </div>
+              ))}
+            </select>
+          </div>
+          <div>
+            <label>Saga </label>
+            <select
+              className="select"
+              onChange={(e) => handlerFilterBySaga(e)}
+              value={refresh}
+            >
+              <option value="all">None</option>
+              <option value="El señor de los anillos">
+                Señor de los añillos
+              </option>
+              <option value="Harry Potter">Harry Potter</option>
+              <option value="Juego de Tronos">Juego de tronos</option>
+            </select>
+          </div>
+          <div>
+            <label>Idioma </label>
+            <select
+              className="select"
+              onChange={(e) => handlerFilterByLanguage(e)}
+              value={refresh}
+            >
+              <option value="all">Todos</option>
+              <option value="Español">Español</option>
+              <option value="Ingles">Inglés</option>
+            </select>
           </div>
         </div>
-        <div className="allBooksDiv">
-          <h3 className="home">
-            {currentBooks.length > 0
-              ? currentBooks.map((el) => {
-                  return (
-                    <div className="cards">
-                      <Link to={`/book/${el.id}`}>
-                        <Card
-                          Nombre={el.name}
-                          Precio={el.price}
-                          Puntuación={el.score}
-                          Imagen={el.image}
-                        />
-                      </Link>
-                    </div>
-                  );
-                })
-              : "Loading..."}
-          </h3>
-          {/* <div onClick={e => prevPage(e)}>Previous</div> */}
-          <div className="paginadoHome">
-            <Paginated
-              booksPerPage={booksPerPage}
-              allBooks={allBooks.length}
-              paginated={paginated}
-            />
-          </div>
+        <div className="home">
+          {currentBooks.length > 0
+            ? currentBooks.map((el) => {
+              return (
+                <div className="cards">
+                  <Link to={`/book/${el.id}`}>
+                    <Card
+                      Nombre={el.name}
+                      Precio={el.price}
+                      Puntuación={el.score}
+                      Imagen={el.image}
+                    />
+                  </Link>
+                </div>
+              );
+            })
+            : "Loading..."}
+        </div>
+        {/* <div onClick={e => prevPage(e)}>Previous</div> */}
 
-          {/* <div onClick={e => nextPage(e)}>Next</div> */}
-        </div>
+        {/* <div onClick={e => nextPage(e)}>Next</div> */}
+      </div>
+      <div className="paginadoHome">
+        <Paginated
+          booksPerPage={booksPerPage}
+          allBooks={allBooks.length}
+          paginated={paginated}
+        />
       </div>
     </div>
   );
