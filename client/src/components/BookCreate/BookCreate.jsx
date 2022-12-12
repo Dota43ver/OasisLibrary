@@ -47,6 +47,7 @@ export default function BookCreate() {
             arrayResultado.push(s.value);
         })
         input.genre = arrayResultado;
+        console.log(arrayResultado);
     }
 
     function handleSubmit(g) {
