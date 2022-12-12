@@ -1,19 +1,61 @@
 .home{
     display: flex;
+    height:max-content;
+    background-color: #CFE4F6;
 }
 
-.container {
+.image {
+    height: 99vh;
+}
+
+.div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: max-content;
+    width: max-content;
+
+    padding: 10%;
+    margin-top: 15%;
+    margin-inline: 2%;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+    margin-left: 100%;
+    margin-top: 5%;
+}
+
+.welcome {
+    font-size: 40px;
+    font-weight: 600;
+    font-style:normal;
+}
+
+.instructions {
+    display: flex;
+    justify-content: center;
+    font-weight: 400;
+    width: 450px;
+}
+
+/* .container {
     background: linear-gradient(135deg,#87c2b6d3, #eacca8);
-    /* background: linear-gradient(135deg,#62b7a6d3, #edc28c); */
+    background: linear-gradient(135deg,#62b7a6d3, #edc28c);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     width: 100%;
-}
+} */
 
-.div{
+/* .div{
     margin-top: 5%;
     width: 47%;
     border: #e2d6c3a6 solid;
@@ -23,9 +65,9 @@
     border-radius: 10px;
     box-shadow: 15px 15px 20px #497c7cef;
     font-style: italic;
-}
+} */
 
-.welcome{
+/* .welcome{
     letter-spacing: 1px;
     padding-top: 3vh;
     padding-left: 15%;
@@ -38,21 +80,19 @@
     width: 70vw;
     font-size:larger;
     padding-left: 23%;
-}
+} */
 
 .btn{
     background-color: #1C555E;
     border: none;
     color: white;
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: 200;
     border-radius: 5px;
     cursor: pointer;
-    width: 150px;
-    height: 28px;
-
-    margin-top: 2vh;
-    margin-left: 46%;
-    margin-block-end: 2%;
+    width: 180px;
+    height: 34px;
+    margin-top: 10px;
 }
 
 .btn:hover{
@@ -60,14 +100,13 @@
     color: #1C555E;;
 }
 
-.log{
+/* .log{
     margin-left: 89%;
-}
+} */
 
 .signBtn{
     width: 90px;
     height: 25px;
-    cursor: pointer;
 
     background-color: #1C555E;
     border: none;
@@ -81,15 +120,14 @@
     background-color: #d9edec;
 }
 
-.about{
+/* .about{
     margin-top: 19%;
     margin-left: 90%;
-}
+} */
 
 .aboutBtn{
     width: 90px;
     height: 25px;
-    cursor: pointer;
 
     background-color: #1C555E;
     border: none;
