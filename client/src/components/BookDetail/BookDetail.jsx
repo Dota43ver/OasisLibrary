@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { cleanCache, getBookDetails } from "../../actions";
 import "../BookDetail/BookDetail.css";
 import NavBar from "../NavBar/NavBar.jsx";
+import {AiOutlineStar, AiFillStar} from "react-icons/ai"
 
 export default function BookDetails(props) {
   const dispatch = useDispatch();
@@ -28,6 +29,9 @@ export default function BookDetails(props) {
       <div className="allDetails">
         <div className="firstCont">
           <img className="bookImg" src={bookDetails.image} alt="" />
+          <h3 className="score1"> {[... new Array(5)].map((star, index) =>{
+                    return index< bookDetails.score ? <AiFillStar/> : <AiOutlineStar/>
+                })} </h3>
           <h1>${bookDetails.price}</h1>
           <h2>Autor: {bookDetails.author}</h2>
           <h2>Géneros: {genreString}</h2>
