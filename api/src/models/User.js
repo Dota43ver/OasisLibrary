@@ -8,10 +8,10 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false
       },
-      lastName: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
+      // lastName: {
+      //   type: DataTypes.STRING,
+      //   allowNull: false
+      // },
       email: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -26,6 +26,21 @@ module.exports = (sequelize) => {
         allowNull: false,
         primaryKey: true,
       },
+      role: {
+        type: DataTypes.STRING,
+        defaultValue: 'user',
+        allowNull: false,
+      },
+      password: {
+        type: DataTypes.STRING,
+        defaultValue: "SignedInWithGoogle",
+        allowNull: false
+      },
+      isActive: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: true,
+        allowNull: false
+      }
     },
     {
       timestamps: false,
