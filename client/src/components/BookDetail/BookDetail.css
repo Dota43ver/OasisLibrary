@@ -108,3 +108,10 @@
   background-color: rgb(80, 130, 205);
   color: white;
 }
+
+.score1{
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  color: #1c555e;
+}
