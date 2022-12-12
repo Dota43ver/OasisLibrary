@@ -179,7 +179,7 @@ export default function Home() {
             >
               <option value="all">Ninguna</option>
               <option value="El señor de los anillos">
-                Señor de los añillos
+                Señor de los anillos
               </option>
               <option value="Harry Potter">Harry Potter</option>
               <option value="Juego de Tronos">Juego de tronos</option>
