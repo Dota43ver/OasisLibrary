@@ -4,28 +4,28 @@ module.exports = (sequelize) => {
   sequelize.define(
     "user",
     {
-      name: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
-      // lastName: {
-      //   type: DataTypes.STRING,
-      //   allowNull: false
-      // },
-      email: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      shoppingCart: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
       id: {
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4,
         allowNull: false,
         primaryKey: true,
       },
+      name: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+      lastName: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+      email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      // shoppingCart: {
+      //   type: DataTypes.STRING,
+      //   allowNull: false
+      // },
       role: {
         type: DataTypes.STRING,
         defaultValue: 'user',
@@ -40,7 +40,7 @@ module.exports = (sequelize) => {
         type: DataTypes.BOOLEAN,
         defaultValue: true,
         allowNull: false
-      }
+      } //Para el borrador logico
     },
     {
       timestamps: false,
