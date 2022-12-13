@@ -30,6 +30,31 @@
     z-index: +1;
 }
 
+.borderless-button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #AA7446;
+    padding: 3px;
+}
+
+.borderless-button:active i {
+    color: #5E3613;
+    font-size: 28px;
+}
+
+.borderless-button:disabled i {
+    color: white
+}
+
+.topCards {
+    display: flex;
+    margin-inline: 10px;
+    margin-top: 15px;
+    margin-bottom: 110px;
+}
+
 .content {
     display: flex;
     flex-direction: column;
@@ -53,7 +78,7 @@
     border: none;
 }
 
-.detailButton:hover{
+.detailButton:hover {
     cursor: pointer;
     color: white;
     background: #5E3613
@@ -71,13 +96,15 @@
     border-radius: 4px;
 }
 
-.content>h4 {
-    color:black;
+.addButton:hover {
+    cursor: pointer;
+    background-color: #d8d8d8;
+}
+
+.topCards>h4 {
+    color:#5E3613;
     font-size: medium;
     font-weight: 500;
-    margin-inline: 20px;
-    margin-top: 30px;
-    margin-bottom: 130px;
 }
 
 .cuerpo {
@@ -166,7 +193,7 @@
     align-items: center;
 }
 
-.filtersDiv > div {
+.filtersDiv>div {
     margin-block: 4px;
 }
 
