@@ -70,7 +70,7 @@ return(
             <h3 className={style.text}>OASIS LIBRARY</h3>
         </div>
         <div className={style.main_container2}>
-        <form>
+        <form className={style.formRegistro}>
             <div className={style.button}>
             <button className={style.button1}>Login</button>
             <button className={style.button1}>Registrarte</button>
