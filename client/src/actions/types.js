@@ -11,3 +11,4 @@ export const POST_BOOK = "POST_BOOK";
 export const SAGA_FILTER = "SAGA_FILTER";
 export const GET_NAME_BOOKS = "GET_NAME_BOOKS";
 export const LANGUAGE_FILTER = "LANGUAGE_FILTER";
+export const ADD_TO_CART = "ADD_TO_CART";

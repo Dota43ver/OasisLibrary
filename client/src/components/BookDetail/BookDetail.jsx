@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { cleanCache, getBookDetails } from "../../actions";
+import { addToCart, cleanCache, getBookDetails } from "../../actions";
 import "../BookDetail/BookDetail.css";
 import NavBar from "../NavBar/NavBar.jsx";
 
@@ -13,6 +13,17 @@ export default function BookDetails(props) {
     dispatch(getBookDetails(id));
     dispatch(cleanCache());
   }, [dispatch, id]);
+  const handleAddToCart = () => {
+    dispatch(
+      addToCart({
+        id: bookDetails.id,
+        name: bookDetails.name,
+        price: bookDetails.price,
+        image: bookDetails.image,
+        quantity: quantity,
+      })
+    );
+  };
 
   const bookDetails = useSelector((state) => state.bookDetails);
   let genreString;
@@ -48,9 +59,9 @@ export default function BookDetails(props) {
             <button onClick={() => setQuantity(quantity + 1)}>+</button>
           </div>
           <div className="cart">
-            <Link to="/cart">
-              <button className="cartButton">Add to cart</button>
-            </Link>
+            <button onClick={handleAddToCart} className="cartButton">
+              Add to cart
+            </button>
           </div>
         </div>
         <div className="thirdCont">

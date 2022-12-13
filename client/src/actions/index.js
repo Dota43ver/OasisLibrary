@@ -1,5 +1,6 @@
 import axios from "axios";
 import {
+  ADD_TO_CART,
   ALPHABETICAL_SORT,
   CLEAN_CACHE,
   GENRE_FILTER,
@@ -128,5 +129,11 @@ export function languageFilter(payload) {
   return {
     type: LANGUAGE_FILTER,
     payload,
+  };
+}
+export function addToCart(item) {
+  return {
+    type: ADD_TO_CART,
+    payload: item,
   };
 }
