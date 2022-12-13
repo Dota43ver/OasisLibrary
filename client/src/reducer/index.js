@@ -1,4 +1,5 @@
 import {
+  ADD_TO_CART,
   ALPHABETICAL_SORT,
   CLEAN_CACHE,
   GENRE_FILTER,
@@ -18,6 +19,7 @@ const initialState = {
   books: [],
   bookDetails: [],
   genres: [],
+  cart: [],
 };
 
 export default function reducer(state = initialState, action) {
@@ -123,7 +125,6 @@ export default function reducer(state = initialState, action) {
         ...state,
         books: filteredByGenre,
       };
-    // FILTRO SAGA PREPARADO
     case SAGA_FILTER:
       const allBookSaga = state.allBooks;
       if (action.payload === "all") return { ...state, books: state.allBooks };
@@ -144,6 +145,8 @@ export default function reducer(state = initialState, action) {
         ...state,
         books: filteredByLang,
       };
+    case ADD_TO_CART:
+      return { ...state, cart: [...state.cart, action.payload] };
     default:
       return state;
   }
