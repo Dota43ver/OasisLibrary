@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Matias Ghigi",
+        "email": "matiasghigi@gmail.com",
+        "role": "admin",
+        "password": "admin123",
+        "isActive": true
+    },
+    {
+        "name": "Gaston Abaca",
+        "email": "gaston.abaca11@gmail.com",
+        "role": "admin",
+        "password": "admin123",
+        "isActive": true
+    },
+    {
+        "name": "Milagros Dziuban",
+        "email": "milagrosdziuban1@gmail.com",
+        "role": "admin",
+        "password": "admin123",
+        "isActive": true
+    },
+    {
+        "name": "Santiago Cuevas",
+        "email": "santicuevas34@gmail.com",
+        "role": "admin",
+        "password": "admin123",
+        "isActive": true
+    },
+    {
+        "name": "Facundo Aguero",
+        "email": "facundoagueroc@gmail.com",
+        "role": "admin",
+        "password": "admin123",
+        "isActive": true
+    },
+    {
+        "name": "Franco Malfetano",
+        "email": "franmalfe@gmail.com",
+        "role": "admin",
+        "password": "admin123",
+        "isActive": true
+    }
+]

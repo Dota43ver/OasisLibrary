@@ -1,0 +1,44 @@
+a:link {
+    text-decoration: none;
+}
+
+.card {
+    color: black;
+    width: min-content;
+    height: min-content;
+    
+    display:inline-block;
+    position:relative;
+}
+
+.name {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 2px;
+    display: flex;
+    justify-content: center;
+}
+
+.datos {
+    display: flex;
+    justify-content: space-between;
+}
+
+.price {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    margin: 1px;
+}
+
+.score {
+    display: flex;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    margin: 1px;
+    color: rgb(28, 137, 187);
+    font-size: 18px;
+}

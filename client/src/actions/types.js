@@ -1,0 +1,15 @@
+export const GET_BOOKS = "GET_BOOKS";
+export const CLEAN_CACHE = "CLEAN_CACHE";
+export const GET_BOOK_DETAILS = "GET_BOOK_DETAILS";
+export const LOCAL_HOST = "http://localhost:3001";
+export const ALPHABETICAL_SORT = "ALPHABETICAL_SORT";
+export const SCORE_SORT = "SCORE_SORT";
+export const PRICE_SORT = "PRICE_SORT";
+export const GENRE_FILTER = "GENRE_FILTER";
+export const GET_GENRES = "GET_GENRES";
+export const POST_BOOK = "POST_BOOK";
+export const SAGA_FILTER = "SAGA_FILTER";
+export const GET_NAME_BOOKS = "GET_NAME_BOOKS";
+export const LANGUAGE_FILTER = "LANGUAGE_FILTER";
+export const ADD_TO_CART = "ADD_TO_CART";
+export const ADD_FAVS = "ADD_FAVS";

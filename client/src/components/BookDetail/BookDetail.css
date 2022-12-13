@@ -1,0 +1,118 @@
+.allDetails {
+  margin-top: 6rem;
+  display: grid;
+  grid-row-start: auto;
+  grid-template-areas:
+    "first second second"
+    "first third third"
+    "first third third";
+
+  /* box-shadow: ; */
+}
+.firstCont {
+  background-color: #aa7446;
+  max-width: 18rem;
+  padding-left: 1rem;
+  grid-area: first;
+  margin: 2rem;
+  margin-left: 4rem;
+  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
+  min-height: 39rem;
+  max-height: 45rem;
+}
+.firstCont h1 {
+  font-size: 2rem;
+  text-align: center;
+  padding-right: 1rem;
+  color: #5e3614;
+}
+.bookImg {
+  min-width: 10rem;
+  min-height: 20rem;
+  max-width: 13.5rem;
+  max-height: 20rem;
+  padding: 2rem;
+  padding-bottom: 0px;
+  display: flex;
+  justify-content: center;
+}
+.secondCont {
+  background-color: #d9d9d9;
+  grid-area: second;
+  margin: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 6rem;
+  max-height: 7rem;
+  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.thirdCont {
+  background-color: #d9d9d9;
+  grid-area: third;
+  margin: 2rem;
+  margin-top: 0;
+  text-align: justify;
+  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.bookTitle {
+  font-size: 2rem;
+  padding-left: 2rem;
+}
+.bookDescription {
+  font-size: 1.4rem;
+  padding-left: 2rem;
+  margin-right: 3rem;
+}
+.back {
+  padding-left: 3rem;
+}
+.cart {
+  padding-right: 3rem;
+}
+.backButton {
+  width: 200px;
+  height: 50px;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 19px;
+  color: #ecebeb;
+  box-sizing: border-box;
+  background: #aa7446;
+  border: 1px solid black;
+  border-radius: 4px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+.cartButton {
+  background-color: #1c555e;
+  color: white;
+  font-size: 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 163px;
+  height: 43px;
+}
+.quantityControls {
+  border: 2px solid #1c555e;
+  padding: 4px;
+  border-radius: 6px;
+  color: rgb(0, 0, 0);
+  /* background-color: white; */
+  font-weight: 500;
+  text-shadow: black 0.1em 0.1em 0.2em;
+  cursor: pointer;
+}
+
+.quantityControls:hover {
+  background-color: rgb(80, 130, 205);
+  color: white;
+}
+
+.score1{
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  color: #1c555e;
+}
