@@ -6,6 +6,7 @@ const { Router } = require('express');
 const booksRouter = require('./booksRouter.js')
 const genresRouter = require('./genresRouter')
 const authorRouter = require('./authorRouter')
+const usersRouter = require('./usersRouter')
 
 const router = Router();
 
@@ -15,5 +16,7 @@ const router = Router();
 router.use("/books", booksRouter)
 router.use("/genres", genresRouter)
 router.use("/authors", authorRouter)
+router.use("/users", usersRouter)
+
 
 module.exports = router;
