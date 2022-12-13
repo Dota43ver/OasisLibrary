@@ -10,7 +10,7 @@ export default function Cart() {
     (total, item) => total + item.price * item.quantity,
     0
   );
-  const totalPriceById = cart.map((item) => item.price * item.quantity);
+  //   const totalPriceById = cart.map((item) => item.price * item.quantity);
 
   return (
     <div>
