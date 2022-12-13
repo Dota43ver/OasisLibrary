@@ -40,17 +40,20 @@ export default function Home() {
     dispatch(getBooks());
     dispatch(getGenres());
   }, [dispatch]);
-
-  const handleAddToCart = () => {
+  
+  const handleAddToCart = (el) => {
+    const addBooks = allBooks.find(e => e.id === el.target.value)
     dispatch(
       addToCart({
-        id: allBooks.id,
-        name: allBooks.name,
-        price: allBooks.price,
-        image: allBooks.image,
+        id: el.target.value,
+        name: addBooks.name,
+        price: addBooks.price,
+        image: addBooks.image,
         quantity: quantity,
+       
       })
     );
+    alert('Item agregado')
   };
 
   function handleClick(e) {
@@ -221,7 +224,7 @@ export default function Home() {
                     <Link to={`/book/${el.id}`}>
                       <button className="detailButton"> Ver detalles </button>
                     </Link>
-                    <button onClick={handleAddToCart} className="addButton">Agregar al carrito</button>
+                    <button value={el.id} onClick={(el) => handleAddToCart(el)} className="addButton">Agregar al carrito</button>
                   </div>
                   <div className="cards">
                     <Card
