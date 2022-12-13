@@ -37,7 +37,9 @@
   padding-left: 1rem;
 }
 .itemImg {
-  max-width: 20rem;
+  min-width: 10rem;
+  min-height: 20rem;
+  max-width: 13rem;
   max-height: 20rem;
   margin: 2rem;
 }
