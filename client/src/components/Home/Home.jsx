@@ -10,6 +10,7 @@ import {
   priceSort,
   sagaFilter,
   scoreSort,
+  addToCart,
 } from "../../actions";
 import Card from "../Card/Card";
 import NavBar from "../NavBar/NavBar";
@@ -26,7 +27,6 @@ export default function Home() {
   const indexLast = currentPage * booksPerPage;
   const indexFirst = indexLast - booksPerPage;
   const currentBooks = allBooks.slice(indexFirst, indexLast);
-  // console.log(currentBooks);
 
   const paginated = (pageNumbers) => {
     setCurrentPage(pageNumbers);
@@ -34,11 +34,24 @@ export default function Home() {
 
   const [refresh, setRefresh] = useState();
   const [order, setOrder] = useState("");
+  const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
     dispatch(getBooks());
     dispatch(getGenres());
   }, [dispatch]);
+
+  const handleAddToCart = () => {
+    dispatch(
+      addToCart({
+        id: allBooks.id,
+        name: allBooks.name,
+        price: allBooks.price,
+        image: allBooks.image,
+        quantity: quantity,
+      })
+    );
+  };
 
   function handleClick(e) {
     e.preventDefault();
@@ -106,7 +119,7 @@ export default function Home() {
       <NavBar />
       <div className="all">
         <div className="filtersDiv">
-          <h2 className="filterh2"> Filter by: </h2>
+          <h2> Filter by: </h2>
           <button className="refreshButton" onClick={handleClick}>
             Refresh books
           </button>
@@ -208,7 +221,7 @@ export default function Home() {
                     <Link to={`/book/${el.id}`}>
                       <button className="detailButton"> Ver detalles </button>
                     </Link>
-                    <button className="addButton">Agregar al carrito</button>
+                    <button onClick={handleAddToCart} className="addButton">Agregar al carrito</button>
                   </div>
                   <div className="cards">
                     <Card
