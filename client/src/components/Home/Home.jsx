@@ -201,19 +201,26 @@ export default function Home() {
         <div className="home">
           {currentBooks.length > 0
             ? currentBooks.map((el) => {
-                return (
-                  <div className="cards">
+              return (
+                <div className="linkDetail">
+                  <div className="content">
+                    <h4>{el.name}</h4>
                     <Link to={`/book/${el.id}`}>
-                      <Card
-                        Nombre={el.name}
-                        Precio={el.price}
-                        Puntuación={el.score}
-                        Imagen={el.image}
-                      />
+                      <button className="detailButton"> Ver detalles </button>
                     </Link>
+                    <button className="addButton">Agregar al carrito</button>
                   </div>
-                );
-              })
+                  <div className="cards">
+                    <Card
+                      Nombre={el.name}
+                      Precio={el.price}
+                      Puntuación={el.score}
+                      Imagen={el.image}
+                    />
+                  </div>
+                </div>
+              );
+            })
             : "Loading..."}
         </div>
         {/* <div onClick={e => prevPage(e)}>Previous</div> */}
