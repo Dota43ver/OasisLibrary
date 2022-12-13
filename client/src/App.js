@@ -8,6 +8,7 @@ import Cart from "./components/Cart/Cart";
 import Home from "./components/Home/Home";
 import LandingPage from "./components/LandingPage/LandingPage";
 import Register from "./components/Register/Register";
+import Favorites from "./components/Favorites/Favorites";
 function App() {
   return (
     <BrowserRouter>
@@ -20,6 +21,7 @@ function App() {
           <Route exact path="/account" component={Account} />
           <Route path="/bookcreate" component={BookCreate} />
           <Route path="/cart" component={Cart} />
+          <Route path="/favorites" component={Favorites} />
         </Switch>
       </div>
     </BrowserRouter>

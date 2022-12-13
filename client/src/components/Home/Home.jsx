@@ -11,6 +11,7 @@ import {
   sagaFilter,
   scoreSort,
   addToCart,
+  addFavs,
 } from "../../actions";
 import Card from "../Card/Card";
 import NavBar from "../NavBar/NavBar";
@@ -55,6 +56,19 @@ export default function Home() {
     );
     alert('Item agregado')
   };
+
+  const handleAddFavs = (el) => {
+    const favsBooks = allBooks.find(e => e.id === el.target.id)
+    dispatch(
+      addFavs({
+        id: el.target.id,
+        name: favsBooks.name,
+        price: favsBooks.price,
+        image: favsBooks.image,
+      })
+    );
+    console.log(el.target.id);
+  }
 
   function handleClick(e) {
     e.preventDefault();
@@ -221,13 +235,13 @@ export default function Home() {
                 <div className="linkDetail">
                   <div className="content">
                     <div className="topCards">
-                    <h4>{el.name}</h4>
-                    {
-                      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
-                    }
-                    <button class="borderless-button">
-                      <i class="material-icons">favorite</i>
-                    </button>
+                      <h4>{el.name}</h4>
+                      {
+                        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
+                      }
+                      <button value={el.id} onClick={(el) => handleAddFavs(el)} class="borderless-button">
+                        <i id={el.id} class="material-icons">favorite</i>
+                      </button>
                     </div>
                     <Link to={`/book/${el.id}`}>
                       <button className="detailButton"> Ver detalles </button>

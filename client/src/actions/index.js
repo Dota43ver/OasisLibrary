@@ -13,6 +13,7 @@ import {
   PRICE_SORT,
   SAGA_FILTER,
   SCORE_SORT,
+  ADD_FAVS
 } from "./types";
 
 export const getBooks = () => (dispatch) => {
@@ -135,5 +136,12 @@ export function addToCart(item) {
   return {
     type: ADD_TO_CART,
     payload: item,
+  };
+}
+
+export function addFavs(payload) {
+  return {
+    type: ADD_FAVS,
+    payload,
   };
 }
