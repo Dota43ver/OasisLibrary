@@ -1,6 +1,7 @@
 .home{
     display: flex;
     height:max-content;
+    width:auto;
     background-color: #CFE4F6;
 }
 
@@ -14,11 +15,9 @@
     align-items: center;
     justify-content: center;
 
-    height: max-content;
-    width: max-content;
+    height: 80vh;
+    width: 80vh;
 
-    padding: 10%;
-    margin-top: 20%;
     margin-inline: 2%;
 }
 
@@ -32,13 +31,17 @@
 }
 
 .welcome {
-    font-size: 40px;
+    width: max-content;
+    font-size: 52px;
     font-weight: 600;
     font-style:normal;
+    margin: 30px;
 }
 
 .instructions {
     display: flex;
+    align-items: center;
+    align-content: center;
     justify-content: center;
     font-weight: 400;
     width: 450px;
@@ -52,9 +55,9 @@
     font-weight: 200;
     border-radius: 5px;
     cursor: pointer;
-    width: 180px;
-    height: 34px;
-    margin-top: 10px;
+    width: 230px;
+    height: 38px;
+    margin-top: 30px;
 }
 
 .btn:hover{
@@ -63,13 +66,13 @@
 }
 
 .signBtn{
-    width: 90px;
-    height: 25px;
+    width: 120px;
+    height: 30px;
 
     background-color: #1C555E;
     border: none;
     color: white;
-    font-size: 14px;
+    font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -79,13 +82,13 @@
 }
 
 .aboutBtn{
-    width: 90px;
-    height: 25px;
+    width: 120px;
+    height: 30px;
 
     background-color: #1C555E;
     border: none;
     color: white;
-    font-size: 14px;
+    font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
 }

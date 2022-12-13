@@ -40,7 +40,7 @@ export default function Home() {
     dispatch(getBooks());
     dispatch(getGenres());
   }, [dispatch]);
-  
+
   const handleAddToCart = (el) => {
     const addBooks = allBooks.find(e => e.id === el.target.value)
     dispatch(
@@ -50,7 +50,7 @@ export default function Home() {
         price: addBooks.price,
         image: addBooks.image,
         quantity: quantity,
-       
+
       })
     );
     alert('Item agregado')
@@ -220,7 +220,15 @@ export default function Home() {
               return (
                 <div className="linkDetail">
                   <div className="content">
+                    <div className="topCards">
                     <h4>{el.name}</h4>
+                    {
+                      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
+                    }
+                    <button class="borderless-button">
+                      <i class="material-icons">favorite</i>
+                    </button>
+                    </div>
                     <Link to={`/book/${el.id}`}>
                       <button className="detailButton"> Ver detalles </button>
                     </Link>
