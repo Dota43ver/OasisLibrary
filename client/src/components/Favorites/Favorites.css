@@ -1,0 +1,70 @@
+.detailFavs {
+    display: flex;
+    padding: 20px;
+    margin: 30px;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: #ECEBEB;
+    border-radius: 8px;
+}
+
+.infoTop {
+    margin: 30px;
+}
+
+.infoFavs{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 10px;
+    margin: 20px;
+}
+
+.material-symbols-outlined{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #4e3620;
+    padding: 3px;
+    font-weight: 500;
+    font-size: 30px;
+}
+
+.btnStyles {
+    display: flex;
+    flex-direction: column;
+    margin-inline: 20px;
+    align-items: center;
+}
+
+.addAndDelete{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.buttonFav {
+    margin-block: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.selectFavs {
+    display: flex;
+    align-items: center;
+}
+
+.selectFavs > h4 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.selectFavs > select {
+    height: 25px;
+    width: 165px;
+    margin-left: 20px;
+}
