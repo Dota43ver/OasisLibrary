@@ -1,19 +1,22 @@
 import axios from "axios";
 import {
+  ADD_FAVS,
   ADD_TO_CART,
   ALPHABETICAL_SORT,
   CLEAN_CACHE,
+  DECREASE_QUANTITY,
   GENRE_FILTER,
   GET_BOOKS,
   GET_BOOK_DETAILS,
   GET_GENRES,
   GET_NAME_BOOKS,
+  INCREASE_QUANTITY,
   LANGUAGE_FILTER,
   LOCAL_HOST,
   PRICE_SORT,
+  REMOVE_FROM_CART,
   SAGA_FILTER,
   SCORE_SORT,
-  ADD_FAVS
 } from "./types";
 
 export const getBooks = () => (dispatch) => {
@@ -143,5 +146,23 @@ export function addFavs(payload) {
   return {
     type: ADD_FAVS,
     payload,
+  };
+}
+export function removeFromCart(id) {
+  return {
+    type: REMOVE_FROM_CART,
+    payload: id,
+  };
+}
+export function decreaseQuantity(id) {
+  return {
+    type: DECREASE_QUANTITY,
+    payload: id,
+  };
+}
+export function increaseQuantity(id) {
+  return {
+    type: INCREASE_QUANTITY,
+    payload: id,
   };
 }

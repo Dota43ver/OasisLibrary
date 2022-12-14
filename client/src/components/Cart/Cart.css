@@ -78,3 +78,18 @@
 .detailTitle {
   padding-left: 4rem;
 }
+.quantBtns {
+  display: flex;
+  border: 2px solid #1c555e;
+  padding: 4px;
+  border-radius: 6px;
+  color: rgb(0, 0, 0);
+  /* background-color: white; */
+  font-weight: 500;
+  text-shadow: black 0.1em 0.1em 0.2em;
+  cursor: pointer;
+}
+.quantBtns:hover {
+  background-color: rgb(80, 130, 205);
+  color: white;
+}
