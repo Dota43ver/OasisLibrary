@@ -1,5 +1,10 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  decreaseQuantity,
+  increaseQuantity,
+  removeFromCart,
+} from "../../actions";
 import NavBar from "../NavBar/NavBar";
 import "./Cart.css";
 
@@ -10,8 +15,18 @@ export default function Cart() {
     (total, item) => total + item.price * item.quantity,
     0
   );
+  const dispatch = useDispatch();
   //   const totalPriceById = cart.map((item) => item.price * item.quantity);
+  const handleRemoveFromCart = (id) => {
+    dispatch(removeFromCart(id));
+  };
+  const handleIncreaseQuantity = (id) => {
+    dispatch(increaseQuantity(id));
+  };
 
+  const handleDecreaseQuantity = (id) => {
+    dispatch(decreaseQuantity(id));
+  };
   return (
     <div>
       <NavBar />
@@ -40,10 +55,29 @@ export default function Cart() {
                 </div>
                 <div className="quantityTotalDiv">
                   <h3 className="itemQuantity">Cantidad: {item.quantity}</h3>
+                  <div className="quantBtns">
+                    <button
+                      className="incrementBtn"
+                      onClick={() => handleIncreaseQuantity(item.id)}
+                    >
+                      +
+                    </button>
+                    <button
+                      className="decrementBtn"
+                      onClick={() => handleDecreaseQuantity(item.id)}
+                    >
+                      -
+                    </button>
+                  </div>
                   <h1 className="itemTotal">
                     Total ${item.price * item.quantity}
                   </h1>
-                  <button className="btnDelete">Eliminar</button>
+                  <button
+                    onClick={() => handleRemoveFromCart(item.id)}
+                    className="btnDelete"
+                  >
+                    Eliminar
+                  </button>
                 </div>
               </div>
             ))}
