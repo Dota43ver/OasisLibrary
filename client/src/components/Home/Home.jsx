@@ -67,7 +67,6 @@ export default function Home() {
         image: favsBooks.image,
       })
     );
-    console.log(el.target.id);
   }
 
   function handleClick(e) {
