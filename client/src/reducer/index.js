@@ -100,13 +100,13 @@ export default function reducer(state = initialState, action) {
       sortedBooksByPrice =
         action.payload === "asc"
           ? state.books.sort(function (a, b) {
-              if (a.price > b.price) return -1;
-              if (a.price < b.price) return 1;
+              if (a.price > b.price) return 1;
+              if (a.price < b.price) return -1;
               return 0;
             })
           : state.books.sort(function (a, b) {
-              if (a.price < b.price) return -1;
-              if (a.price > b.price) return 1;
+              if (a.price < b.price) return 1;
+              if (a.price > b.price) return -1;
               return 0;
             });
       return {

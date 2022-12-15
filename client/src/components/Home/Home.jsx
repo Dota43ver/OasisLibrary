@@ -136,8 +136,8 @@ export default function Home() {
               <option disabled selected value="default">
                 Precio
               </option>
-              <option value="asc">Ascendente</option>
-              <option value="desc">Descendente</option>
+              <option value="asc">menor</option>
+              <option value="desc">mayor</option>
             </select>
           </div>
           <div>
