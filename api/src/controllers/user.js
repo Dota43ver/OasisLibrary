@@ -51,8 +51,6 @@ async function createUser(body) {
     }
 }
 
-
-
 async function activateAccount(activationToken) {
     const payload = jwt.verify(activationToken, process.env.SECRET);
     // await User.update(
@@ -97,11 +95,21 @@ async function logIn(email, password) {
 }
 
 async function logOut(id){
-    let userFound = await User.findOne({
-        where: id
-    });
+    let userFound = await User.findOne({ where: {id: id} });
     await userFound.update({token: null});
     await userFound.save();
+}
+
+async function getOneUser(id) {
+    if (!id) {
+        return errorMsg = 'Missing data.';
+      } else {
+        let userFound = await User.findOne({ where: {id: id} });
+        if(!userFound) {
+            return errorMsg = 'User not found.';
+        }
+        return userFound;
+      }
 }
 
 
@@ -110,4 +118,5 @@ module.exports = {
     activateAccount,
     logIn,
     logOut,
+    getOneUser
 }
