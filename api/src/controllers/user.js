@@ -15,20 +15,22 @@ async function createUser(body) {
             lastName, 
             email, 
             password, 
-            role
+            // role
         } = body
 
         password = await bcrypt.hash(password, 8);
 
         //Creamos el usuario
+        // const isActive = false;   //Por default esta en true asi que lo ponemos en false para que se tenga que actualizar con la ruta de activacion
         let user = await User.create({
             name, 
             lastName, 
             email, 
             password, 
-            role
+            // isActive
+            // role
         })
-
+        
         //Generamos nuestro token a partir del ID del nuevo usuario
         const token = jwt.sign({ id: user.id}, process.env.SECRET, { expiresIn: '1h'});
 
@@ -49,6 +51,63 @@ async function createUser(body) {
     }
 }
 
+
+
+async function activateAccount(activationToken) {
+    const payload = jwt.verify(activationToken, process.env.SECRET);
+    // await User.update(
+    //     { isActive: true, activationToken: null },
+    //     {
+    //       where: {
+    //         id: payload.id,
+    //         activationToken,
+    //       },
+    //     }
+    //   );
+    const userFound = await User.findByPk(payload.id);
+    // console.log("usuario a activar",userFound);
+    await userFound.update({ isActive: true});
+    await userFound.update({ activationToken: null });
+    await userFound.save();
+}
+
+async function logIn(email, password) {
+    const user = await User.findOne({
+        where: {
+          email
+        },
+    });
+    const match = bcrypt.compare(password, user.password) //compara la contraseña que manda el usuario con la que tenemos hasheada y guardada en la BD.
+    if (!user) {
+        return res.status(404).send({ errorMsg: 'Email or password is wrong.' });
+      } else if(!match) {
+        return error = {
+            msg: 'Password is wrong'
+        }
+    } else if (!user.isActive) {
+        return error = {
+            msg: 'User is not active'
+        }
+    }
+    //Genero nuevo token por inicio de sesión
+    const token = jwt.sign({ id: user.id }, process.env.SECRET);
+    await user.update({token: token});
+    await user.save();
+    return token;
+}
+
+async function logOut(id){
+    let userFound = await User.findOne({
+        where: id
+    });
+    await userFound.update({token: null});
+    await userFound.save();
+}
+
+
 module.exports = {
-    createUser
+    createUser,
+    activateAccount,
+    logIn,
+    logOut,
 }
