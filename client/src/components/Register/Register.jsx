@@ -65,20 +65,21 @@ return(
     <div className={style.main_container}>
         <div className={style.cabecera}>
             <Link to = '/home'>
-                <img src={oasis} alt=""  height="143px" width="151px"/>
+                <img src={oasis} alt=""  height="85px" width="90px"/>
             </Link>
             <h3 className={style.text}>OASIS LIBRARY</h3>
         </div>
         <div className={style.main_container2}>
         <form className={style.formRegistro}>
             <div className={style.button}>
-            <button className={style.button1}>Login</button>
+            {/* <button className={style.button1}>Login</button> */}
             <button className={style.button1}>Registrarte</button>
             </div>
             <div className={style.text}>
             <h3 className={style.text1}>Hello!</h3>
             <h4 className={style.text2}>Sign into your account</h4>
             </div>
+            <div className={style.inputContainer}>
             <input type="text" name="email" value={input.email} id="" placeholder='Email' onChange={(e)=>handleChange(e)} className={style.inputs}></input>
             <div className={style.container_errors}>
             {errors.email && (
@@ -91,6 +92,7 @@ return(
                 <p className={style.errors}>{errors.password}</p>
                 )}
                 </div>
+            </div>
             <div className={style.button2}>
             <button className={style.button3} disabled={!!errors}>Login</button>
             </div>

@@ -10,6 +10,8 @@ import LandingPage from "./components/LandingPage/LandingPage";
 import Register from "./components/Register/Register";
 import Favorites from "./components/Favorites/Favorites";
 import Checkout from "./components/Checkout/Checkout";
+import AboutUs from "./components/About us/AboutUs";
+
 function App() {
   return (
     <BrowserRouter>
@@ -24,6 +26,8 @@ function App() {
           <Route path="/cart" component={Cart} />
           <Route path="/favorites" component={Favorites} />
           <Route path="/checkout" component={Checkout}/>
+          <Route path="/about" component={AboutUs}/>
+
         </Switch>
       </div>
     </BrowserRouter>

@@ -167,8 +167,8 @@ export default function Home() {
               <option disabled selected value="default">
                 Precio
               </option>
-              <option value="asc">Ascendente</option>
-              <option value="desc">Descendente</option>
+              <option value="asc">Menor</option>
+              <option value="desc">Mayor</option>
             </select>
           </div>
           <div>
@@ -182,8 +182,8 @@ export default function Home() {
               <option disabled selected value="default">
                 Puntuación
               </option>
-              <option value="desc">Ascendente</option>
-              <option value="asc">Descendente</option>
+              <option value="desc">Menor</option>
+              <option value="asc">Mayor</option>
             </select>
           </div>
           <div>
@@ -263,7 +263,7 @@ export default function Home() {
                 </div>
               );
             })
-            : "Loading..."}
+            : <div className="loading"><div><p className="loadingP">Loading...</p></div></div>}
         </div>
         {/* <div onClick={e => prevPage(e)}>Previous</div> */}
 
@@ -275,6 +275,13 @@ export default function Home() {
           allBooks={allBooks.length}
           paginated={paginated}
         />
+      </div>
+      <div className="about">
+        <div >
+            <Link to = '/about'>
+              <p className="aboutBtn">About Us</p>
+            </Link>
+        </div>
       </div>
     </div>
   );
