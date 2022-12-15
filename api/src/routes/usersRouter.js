@@ -1,5 +1,5 @@
 const {Router} = require('express');
-const { createUser, activateAccount, logIn, logOut } = require("../controllers/user");
+const { createUser, activateAccount, logIn, logOut, getOneUser } = require("../controllers/user");
 const { verify } = require('../middleware/auth');
 
 const usersRouter = Router();
@@ -34,7 +34,10 @@ usersRouter.post("/login", async (req,res) => {
         let response = await logIn(email, password);
         
         //Respondo un msg de éxito y además paso el token por header
-        res.header('auth-token', response).send({
+    //     res.header('auth-token', response).send({
+    //     successMsg: 'You signed in successfully.',
+    //   });
+    res.status(200).send({
         successMsg: 'You signed in successfully.',
       });
     } catch (error) {
@@ -46,13 +49,28 @@ usersRouter.post("/login", async (req,res) => {
 //User
 usersRouter.get("/logout", verify, async (req, res) => {
     try {
-        await logOut(req.userId, req.token);
-        res.send("Successfully loggedOut");
+        await logOut(req.userId);
+        res.status(200).send("Successfully loggedOut");
     } catch (error) {
         console.log(error);
-        res.status(400).send("error al activar", error.message);
+        res.status(400).send("error al desloguear", error.message);
     }
 });
+usersRouter.get('/profile', verify, async (req, res) => {
+    try {
+        let id = req.userId;
+        // console.log((id));
+        // let token = req.token;
+        const usuario = await getOneUser(id);
+        res.status(200).send(usuario);
+    } catch (error) {
+        console.log(error);
+        res.status(400).send("error al mostrar un usuario", error.message);
+    }
+});;
+
+//Admin
+// rutas protegidas por un middleware que se fija si user.isAdmin esta en true, solo deja pasar a los que tengan esta propiedad.
 
 
 

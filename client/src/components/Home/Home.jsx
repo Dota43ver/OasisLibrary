@@ -263,7 +263,7 @@ export default function Home() {
                 </div>
               );
             })
-            : <div className="loading"><div><p className="loadingP">Loading...</p></div></div>}
+            : <div className="loading"><div><img src="https://media.tenor.com/nuCeLTABSTsAAAAM/jalan-book.gif" height="300px" width="200px"/></div></div>}
         </div>
         {/* <div onClick={e => prevPage(e)}>Previous</div> */}
 
