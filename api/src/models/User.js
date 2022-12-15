@@ -38,9 +38,21 @@ module.exports = (sequelize) => {
       },
       isActive: {
         type: DataTypes.BOOLEAN,
-        defaultValue: true,
+        defaultValue: false,
         allowNull: false
-      } //Para el borrador logico
+      }, //Para el borrador logico
+      activationToken: {
+        type: DataTypes.STRING,
+        allowNull: true
+      },
+      token: {
+        type: DataTypes.STRING,
+        allowNull: true
+      },
+      image: {
+        type: DataTypes.STRING,
+        allowNull: true
+      }
     },
     {
       timestamps: false,
