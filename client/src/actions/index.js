@@ -6,6 +6,7 @@ import {
   CLEAN_CACHE,
   DECREASE_QUANTITY,
   GENRE_FILTER,
+  GET_AUTHOR_DETAILS,
   GET_BOOKS,
   GET_BOOK_DETAILS,
   GET_GENRES,
@@ -51,7 +52,16 @@ export function getBookDetails(id) {
     }
   };
 }
-
+export function getAuthorDetails(id) {
+  return async function (dispatch) {
+    try {
+      var response = await axios.get(`${LOCAL_HOST}/authors/${id}`);
+      return dispatch({ type: GET_AUTHOR_DETAILS, payload: response.data });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+}
 export function getNameBooks(name) {
   return async function (dispatch) {
     try {

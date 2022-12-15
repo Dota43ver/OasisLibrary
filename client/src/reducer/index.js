@@ -5,6 +5,7 @@ import {
   CLEAN_CACHE,
   DECREASE_QUANTITY,
   GENRE_FILTER,
+  GET_AUTHOR_DETAILS,
   GET_BOOKS,
   GET_BOOK_DETAILS,
   GET_GENRES,
@@ -25,6 +26,7 @@ const initialState = {
   genres: [],
   cart: [],
   favs: [],
+  authorDetails: [],
 };
 
 export default function reducer(state = initialState, action) {
@@ -39,6 +41,11 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
         bookDetails: action.payload,
+      };
+    case GET_AUTHOR_DETAILS:
+      return {
+        ...state,
+        authorDetails: action.payload,
       };
     case POST_BOOK:
       return {

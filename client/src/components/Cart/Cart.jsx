@@ -57,16 +57,16 @@ export default function Cart() {
                   <h3 className="itemQuantity">Cantidad: {item.quantity}</h3>
                   <div className="quantBtns">
                     <button
-                      className="incrementBtn"
-                      onClick={() => handleIncreaseQuantity(item.id)}
-                    >
-                      +
-                    </button>
-                    <button
                       className="decrementBtn"
                       onClick={() => handleDecreaseQuantity(item.id)}
                     >
                       -
+                    </button>
+                    <button
+                      className="incrementBtn"
+                      onClick={() => handleIncreaseQuantity(item.id)}
+                    >
+                      +
                     </button>
                   </div>
                   <h1 className="itemTotal">
