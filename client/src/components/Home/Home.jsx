@@ -10,6 +10,8 @@ import {
   priceSort,
   sagaFilter,
   scoreSort,
+  addToCart,
+  addFavs,
 } from "../../actions";
 import Card from "../Card/Card";
 import NavBar from "../NavBar/NavBar";
@@ -26,7 +28,6 @@ export default function Home() {
   const indexLast = currentPage * booksPerPage;
   const indexFirst = indexLast - booksPerPage;
   const currentBooks = allBooks.slice(indexFirst, indexLast);
-  // console.log(currentBooks);
 
   const paginated = (pageNumbers) => {
     setCurrentPage(pageNumbers);
@@ -34,11 +35,39 @@ export default function Home() {
 
   const [refresh, setRefresh] = useState();
   const [order, setOrder] = useState("");
+  const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
     dispatch(getBooks());
     dispatch(getGenres());
   }, [dispatch]);
+
+  const handleAddToCart = (el) => {
+    const addBooks = allBooks.find(e => e.id === el.target.value)
+    dispatch(
+      addToCart({
+        id: el.target.value,
+        name: addBooks.name,
+        price: addBooks.price,
+        image: addBooks.image,
+        quantity: quantity,
+
+      })
+    );
+    alert('Item agregado')
+  };
+
+  const handleAddFavs = (el) => {
+    const favsBooks = allBooks.find(e => e.id === el.target.id)
+    dispatch(
+      addFavs({
+        id: el.target.id,
+        name: favsBooks.name,
+        price: favsBooks.price,
+        image: favsBooks.image,
+      })
+    );
+  }
 
   function handleClick(e) {
     e.preventDefault();
@@ -106,7 +135,7 @@ export default function Home() {
       <NavBar />
       <div className="all">
         <div className="filtersDiv">
-          <h2 className="filterh2"> Filter by: </h2>
+          <h2> Filter by: </h2>
           <button className="refreshButton" onClick={handleClick}>
             Refresh books
           </button>
@@ -201,19 +230,34 @@ export default function Home() {
         <div className="home">
           {currentBooks.length > 0
             ? currentBooks.map((el) => {
-                return (
-                  <div className="cards">
+              return (
+                <div className="linkDetail">
+                  <div className="content">
+                    <div className="topCards">
+                      <h4>{el.name}</h4>
+                      {
+                        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
+                      }
+                      <button value={el.id} onClick={(el) => handleAddFavs(el)} class="borderless-button">
+                        <i id={el.id} class="material-icons">favorite</i>
+                      </button>
+                    </div>
                     <Link to={`/book/${el.id}`}>
-                      <Card
-                        Nombre={el.name}
-                        Precio={el.price}
-                        Puntuación={el.score}
-                        Imagen={el.image}
-                      />
+                      <button className="detailButton"> Ver detalles </button>
                     </Link>
+                    <button value={el.id} onClick={(el) => handleAddToCart(el)} className="addButton">Agregar al carrito</button>
                   </div>
-                );
-              })
+                  <div className="cards">
+                    <Card
+                      Nombre={el.name}
+                      Precio={el.price}
+                      Puntuación={el.score}
+                      Imagen={el.image}
+                    />
+                  </div>
+                </div>
+              );
+            })
             : "Loading..."}
         </div>
         {/* <div onClick={e => prevPage(e)}>Previous</div> */}

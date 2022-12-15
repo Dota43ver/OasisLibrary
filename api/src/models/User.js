@@ -4,6 +4,12 @@ module.exports = (sequelize) => {
   sequelize.define(
     "user",
     {
+      id: {
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
+        allowNull: false,
+        primaryKey: true,
+      },
       name: {
         type: DataTypes.STRING,
         allowNull: false
@@ -16,16 +22,37 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      shoppingCart: {
+      // shoppingCart: {
+      //   type: DataTypes.STRING,
+      //   allowNull: false
+      // },
+      role: {
         type: DataTypes.STRING,
+        defaultValue: 'user',
+        allowNull: false,
+      },
+      password: {
+        type: DataTypes.STRING,
+        defaultValue: "SignedInWithGoogle",
         allowNull: false
       },
-      id: {
-        type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV4,
-        allowNull: false,
-        primaryKey: true,
+      isActive: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false,
+        allowNull: false
+      }, //Para el borrador logico
+      activationToken: {
+        type: DataTypes.STRING,
+        allowNull: true
       },
+      token: {
+        type: DataTypes.STRING,
+        allowNull: true
+      },
+      image: {
+        type: DataTypes.STRING,
+        allowNull: true
+      }
     },
     {
       timestamps: false,

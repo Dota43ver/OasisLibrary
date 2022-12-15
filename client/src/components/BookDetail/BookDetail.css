@@ -17,7 +17,8 @@
   margin: 2rem;
   margin-left: 4rem;
   box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
-  min-height: 37rem;
+  min-height: 39rem;
+  max-height: 47rem;
 }
 .firstCont h1 {
   font-size: 2rem;
@@ -109,7 +110,7 @@
   color: white;
 }
 
-.score1{
+.score1 {
   font-size: 25px;
   display: flex;
   justify-content: center;

@@ -1,6 +1,7 @@
 .home{
     display: flex;
     height:max-content;
+    width:auto;
     background-color: #CFE4F6;
 }
 
@@ -14,11 +15,9 @@
     align-items: center;
     justify-content: center;
 
-    height: max-content;
-    width: max-content;
+    height: 80vh;
+    width: 80vh;
 
-    padding: 10%;
-    margin-top: 15%;
     margin-inline: 2%;
 }
 
@@ -32,55 +31,21 @@
 }
 
 .welcome {
-    font-size: 40px;
+    width: max-content;
+    font-size: 52px;
     font-weight: 600;
     font-style:normal;
+    margin: 30px;
 }
 
 .instructions {
     display: flex;
+    align-items: center;
+    align-content: center;
     justify-content: center;
     font-weight: 400;
     width: 450px;
 }
-
-/* .container {
-    background: linear-gradient(135deg,#87c2b6d3, #eacca8);
-    background: linear-gradient(135deg,#62b7a6d3, #edc28c);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100%;
-} */
-
-/* .div{
-    margin-top: 5%;
-    width: 47%;
-    border: #e2d6c3a6 solid;
-    margin-left: 25%;
-    background-color: rgba(248, 232, 218, 0.913);
-    margin-right: 40%;
-    border-radius: 10px;
-    box-shadow: 15px 15px 20px #497c7cef;
-    font-style: italic;
-} */
-
-/* .welcome{
-    letter-spacing: 1px;
-    padding-top: 3vh;
-    padding-left: 15%;
-    font-size: 2.5rem;
-    color: rgb(0, 0, 0);
-}
-
-.instructions{
-    padding-top: 1vh;
-    width: 70vw;
-    font-size:larger;
-    padding-left: 23%;
-} */
 
 .btn{
     background-color: #1C555E;
@@ -90,9 +55,9 @@
     font-weight: 200;
     border-radius: 5px;
     cursor: pointer;
-    width: 180px;
-    height: 34px;
-    margin-top: 10px;
+    width: 230px;
+    height: 38px;
+    margin-top: 30px;
 }
 
 .btn:hover{
@@ -100,18 +65,14 @@
     color: #1C555E;;
 }
 
-/* .log{
-    margin-left: 89%;
-} */
-
 .signBtn{
-    width: 90px;
-    height: 25px;
+    width: 120px;
+    height: 30px;
 
     background-color: #1C555E;
     border: none;
     color: white;
-    font-size: 14px;
+    font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -120,19 +81,14 @@
     background-color: #d9edec;
 }
 
-/* .about{
-    margin-top: 19%;
-    margin-left: 90%;
-} */
-
 .aboutBtn{
-    width: 90px;
-    height: 25px;
+    width: 120px;
+    height: 30px;
 
     background-color: #1C555E;
     border: none;
     color: white;
-    font-size: 14px;
+    font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
 }
