@@ -6,9 +6,9 @@
 .header{
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 50px;
     background-color: #ECEBEB;;
-
 }
 
 .cardsInfo {
@@ -30,5 +30,6 @@
     margin: 10px;
     justify-content: center;
     align-items: center;
+    justify-items: center;
 }
 

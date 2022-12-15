@@ -46,6 +46,11 @@ Genre.belongsToMany(Book,{through: 'BookGenre'})
 
 Author.hasMany(Book, {as: "libro"})
 Book.belongsTo(Author, {as: "autor"})
+
+// Users.hasMany(shoppingCart)
+// ShoppingCart.belongsTo(Users)
+// libros pertenecen a un carrito y un carrito a muchos libros?
+
 // Product.hasMany(Reviews);
 //.
 module.exports = {
