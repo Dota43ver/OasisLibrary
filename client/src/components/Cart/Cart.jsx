@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import {
   decreaseQuantity,
   increaseQuantity,
@@ -38,7 +39,9 @@ export default function Cart() {
               Tienes {totalBooks} libros por un total de ${totalPrice}
             </h2>
             <div className="checkDiv">
+              <Link to={'/checkout'}>
               <button className="checkoutBtn">Checkout</button>
+              </Link>
             </div>
           </div>
           <div className="infoBookCart">
