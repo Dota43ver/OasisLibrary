@@ -170,6 +170,7 @@
 }
 
 .errors {
+    font-size: small;
     display: flex;
     color: red;
     align-items: center;
