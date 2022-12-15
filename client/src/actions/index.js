@@ -177,10 +177,10 @@ export function increaseQuantity(id) {
   };
 }
 
-export function checkoutCart(data, user){
+export function checkoutCart(data){
   //pasar el user y cart
   
-  console.log(data, user);
+  console.log(data);
 
     const config = {
       headers: {
@@ -189,7 +189,7 @@ export function checkoutCart(data, user){
   };
 
   return async function (dispatch) {
-    let checkoutCartId = await axios.post("http://localhost:3001/checkout", { data , user}, config);
+    let checkoutCartId = await axios.post("http://localhost:3001/checkout", { data }, config);
     console.log(checkoutCartId);
     return dispatch({
       type: CHECKOUT_CART,
