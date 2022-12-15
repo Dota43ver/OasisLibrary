@@ -33,6 +33,8 @@ export default function Home() {
     setCurrentPage(pageNumbers);
   };
 
+  const [btnActive, setBtnActive] = useState(false);
+
   const [refresh, setRefresh] = useState();
   const [order, setOrder] = useState("");
   const [quantity, setQuantity] = useState(1);
@@ -238,7 +240,10 @@ export default function Home() {
                       {
                         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
                       }
-                      <button value={el.id} onClick={(el) => handleAddFavs(el)} class="borderless-button">
+                      <button value={el.id} 
+                      onClick={(el) => handleAddFavs(el)} 
+                      // onClick={() => setBtnActive(!btnActive)} 
+                      className={btnActive ? 'borderless-button' : 'borderless-button'}>
                         <i id={el.id} class="material-icons">favorite</i>
                       </button>
                     </div>
