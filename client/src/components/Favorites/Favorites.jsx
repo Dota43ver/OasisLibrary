@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
-import { addToCart } from "../../actions";
+import { addToCart, removeFromFavs } from "../../actions";
 import NavBar from "../NavBar/NavBar";
 import './Favorites.css'
 
@@ -16,16 +16,21 @@ export default function Favorites() {
     const handleAddToCart = (i) => {
         const addBooks = allFavs.find(e => e.id === i.target.value)
         dispatch(
-            addToCart({
-                id: i.target.value,
-                name: addBooks.name,
-                price: addBooks.price,
-                image: addBooks.image,
-                quantity: quantity,
-
-            })
+          addToCart({
+            id: i.target.value,
+            name: addBooks.name,
+            price: addBooks.price,
+            image: addBooks.image,
+            quantity: quantity,
+    
+          })
         );
+        console.log(i.target.value);
         alert('Item agregado')
+      };
+
+    const handleRemoveFavs = (id) => {
+        dispatch(removeFromFavs(id));
     };
 
     return (
@@ -42,6 +47,7 @@ export default function Favorites() {
                     <h4> Ordenar items por: </h4>
 
                     <select>
+                        <option> Agregados recientemente </option>
                         <option> Precio mayor a menor </option>
                         <option> Precio menor a mayor </option>
                     </select>
@@ -71,7 +77,7 @@ export default function Favorites() {
                                 <button class="material-symbols-outlined">
                                     delete
                                 </button>
-                                <button className="addAndDelete"> Eliminar </button>
+                                <button onClick={() => handleRemoveFavs(i.id)} className="addAndDelete" > Eliminar </button>
 
                             </div>
 

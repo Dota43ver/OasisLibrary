@@ -17,6 +17,7 @@ import {
   REMOVE_FROM_CART,
   SAGA_FILTER,
   SCORE_SORT,
+  REMOVE_FROM_FAVS
 } from "./types";
 
 export const getBooks = () => (dispatch) => {
@@ -148,6 +149,14 @@ export function addFavs(payload) {
     payload,
   };
 }
+
+export function removeFromFavs(id) {
+  return {
+    type: REMOVE_FROM_FAVS,
+    payload: id,
+  };
+}
+
 export function removeFromCart(id) {
   return {
     type: REMOVE_FROM_CART,
