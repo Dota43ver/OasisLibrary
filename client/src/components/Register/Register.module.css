@@ -125,7 +125,7 @@
 }
 
 .button6{
-    margin-top: 45px;
+    margin-top: 35px;
     display: flex;
     align-items: center;
     text-align: center;
@@ -140,8 +140,6 @@
     padding: 0;
     cursor: pointer;
     background: none;
-    margin-bottom: 150px;
-    
 }
 
 .button7:hover{
@@ -180,3 +178,9 @@
 .button3:disabled {
     background: #ccc;
   }
+
+.main_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,36 @@
+.authorInfo {
+  background-color: #a5a5a5d3;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 8px;
+  max-height: 34rem;
+  margin: 3rem;
+}
+.authorName {
+  grid-area: 2 / 1 / 4 / 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.imgDivv {
+  grid-area: 1 / 1 / 2 / 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 4rem;
+}
+
+.authorBio {
+  grid-area: 1 / 2 / 4 / 4;
+  background-color: #d9d9d9;
+  padding-left: 3rem;
+  padding-top: 3rem;
+  max-width: 70rem;
+  font-size: 1.4rem;
+}
+.titles {
+  padding-left: 4rem;
+}

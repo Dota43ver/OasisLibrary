@@ -29,7 +29,7 @@ module.exports = (sequelize) => {
       role: {  // Admin or User
         type: DataTypes.STRING,
         defaultValue: 'user',
-        allowNull: false,
+        allowNull: true,
       },
       password: {
         type: DataTypes.STRING,
