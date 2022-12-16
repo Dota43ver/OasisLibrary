@@ -12,7 +12,10 @@
     background-color: rgba(255, 255, 255, 0.859);
     margin: 25px;
     border-radius: 15px;
-    
+    justify-content: center;
+    gap: 50px;
+    background-color: #ECEBEB;;
+
 }
 
 .cardsInfo {
@@ -48,6 +51,7 @@
     margin: 10px;
     justify-content: center;
     align-items: center;
+    justify-items: center;
 }
 
 
