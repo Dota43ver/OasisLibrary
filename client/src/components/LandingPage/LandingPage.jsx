@@ -7,7 +7,7 @@ const LandingPage = () => {
     return (
         <div className={style.home}>
             <div>
-                <img className={style.image} src="https://i.pinimg.com/originals/6d/a8/b8/6da8b852257a75b7388239cf3736e62f.gif" width='100%'></img>
+                <img className={style.image} src="https://i.pinimg.com/originals/6d/a8/b8/6da8b852257a75b7388239cf3736e62f.gif" alt="not found" width='100%'></img>
             </div>
             <div className={style.container}>
                 <div className={style.buttons}>

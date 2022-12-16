@@ -27,7 +27,6 @@ const checkoutMP = async (data) => {
             back_urls: {
                 "success": "http://localhost:3000/success",
                 "failure": "http://localhost:3000/failure", //agregar pag de error
-                "pending": "http://localhost:3000/pending",
             },
         };
 
