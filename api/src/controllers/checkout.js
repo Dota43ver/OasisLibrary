@@ -36,7 +36,7 @@ const checkoutMP = async (data) => {
         .create(preference)
         .then(function (response) {
             // En esta instancia deberás asignar el valor dentro de response.body.id por el ID de preferencia solicitado en el siguiente paso
-            return { redirect: response.body.init_point }
+            return { redirectURL: response.body.init_point }
             })
             .catch(function (error) {
                 console.log(error);

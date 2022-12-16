@@ -34,7 +34,7 @@ const initialState = {
   author: [],
   authorDetails: [],
   authorBooks: [],
-  user: [{ name: "mili", email: "mili@hotmail.com" }],
+  user: [],
 };
 
 export default function reducer(state = initialState, action) {
@@ -254,8 +254,7 @@ export default function reducer(state = initialState, action) {
     case CHECKOUT_CART: {
       return {
         ...state,
-        purchasedCart: {
-        },
+        purchasedCart: action.payload,
         cart: [],
       };
     }

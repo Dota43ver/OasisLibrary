@@ -210,10 +210,16 @@ export function getAuthorBooks(payload) {
   };
 }
 
-export function checkoutCart(data) {
+export function checkoutCart(cart, user) {
   //pasar el user y cart
 
-  console.log(data);
+  const body = {
+    name: 'mili',
+    email: 'mili@hotmail.com',
+    shoppingCart: cart
+  }
+
+  console.log(body);
 
   const config = {
     headers: {
@@ -224,7 +230,7 @@ export function checkoutCart(data) {
   return async function (dispatch) {
     let checkoutCartId = await axios.post(
       "http://localhost:3001/checkout",
-      { data },
+      body,
       config
     );
     console.log(checkoutCartId);
@@ -234,23 +240,3 @@ export function checkoutCart(data) {
     });
   };
 }
-
-// export function checkoutCart(userId, token) {
-
-//   console.log(userId, token);
-
-//   const config = {
-//     headers: {
-//       "Content-Type": "application/json",
-//       Authorization: `Bearer ${token}`,
-//     },
-//   };
-
-//   return async function (dispatch) {
-//     let checkoutCartId = await axios.put("/checkout", { userId }, config);
-//     return dispatch({
-//       type: CHECKOUT_CART,
-//       payload: checkoutCartId.data,
-//     });
-//   };
-// }
