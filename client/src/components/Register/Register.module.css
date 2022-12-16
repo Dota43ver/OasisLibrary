@@ -2,37 +2,40 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: red;
     margin-top: 30px;
-    
 }
 
 .text{
-    font-size: 36px;
+    font-size: 30px;
     font-family: medium italic;
 }
 
 .formRegistro{
     width: 614px;
-/*     height: 700px; */
-   /*  position: absolute;
-    transform: translate(-50%,-50%);
-    top: 58%;
-    left:50%; */
+    /* height: 550px; */
+    height:610px;
     border-radius: 10px;
     border: 2px solid #42829D;
-    background-color: blue;
 }
 
 .inputs{
     display: block;
     margin-top: 30px;
-    width: 484px;
-    height: 65px;
+    width: 70%;
+    align-self: center;
+    height: 30px;
     border-radius: 10px;
     text-align: center;
-    margin-left: 10%; 
     margin-top: 30px;  
+}
+
+.inputContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .button{
@@ -41,13 +44,15 @@
     text-align: center;
     justify-content: center;
     margin-top: 15px;
+    gap: 10px;
 }
 
 .button1{
-    width: 249px;
-    font-size: 28px;
-    height: 65px;
+    width: 140px;
+    font-size: 15px;
+    height: 25px;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 .text{
@@ -58,11 +63,11 @@
 }
 .text1{
     
-    font-size: 28px;
+    font-size: 20px;
 }
 
 .text2{
-    font-size: 24px;
+    font-size: 17px;
 }
 
 .button2{
@@ -75,13 +80,17 @@
 }
 
 .button3{
-    width: 484px;
-    height: 65px;
+    width: 240px;
+    height: 35px;
     border-radius: 10px;
     background-color: #42829D;
     font-size: 24px;
     color: white;
     cursor: pointer;
+}
+
+.button3:hover{
+    background-color: #1C555E;
 }
 
 .divisor{
@@ -101,18 +110,22 @@
     justify-content: center;
 }
 .button5{
-    width: 484px;
-    height: 65px;
+    width: 220px;
+    height: 30px;
     background-color: #ECEBEB;
-    font-size: 24px;
+    font-size: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
 }
 
+.button5:hover{
+    background-color: #5e471c69;
+}
+
 .button6{
-    margin-top: 45px;
+    margin-top: 35px;
     display: flex;
     align-items: center;
     text-align: center;
@@ -120,15 +133,13 @@
 }
 
 .button7{
-    font-size: 24px;
+    font-size: 15px;
     color: #777777;
     outline:none;
     border: 0;
     padding: 0;
     cursor: pointer;
     background: none;
-    margin-bottom: 150px;
-    
 }
 
 .button7:hover{
@@ -140,7 +151,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 30px 0px;
+    margin: 10px 0px;
 }
 .main_conteiner2{
     display: flex;
@@ -150,14 +161,14 @@
     display: flex;
     align-items: center;
     margin-top: 10px;
-    width: 484px;
+    width: 70%;
     justify-content: center;
-    margin-left: 10%;
     background-color: pink;
     border-radius: 10px;
 }
 
 .errors {
+    font-size: small;
     display: flex;
     color: red;
     align-items: center;
@@ -167,3 +178,9 @@
 .button3:disabled {
     background: #ccc;
   }
+
+.main_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

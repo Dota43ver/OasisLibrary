@@ -20,6 +20,8 @@ import {
   REMOVE_FROM_FAVS,
   SAGA_FILTER,
   SCORE_SORT,
+  REMOVE_FROM_FAVS,
+  CHECKOUT_CART
 } from "../actions/types";
 
 const initialState = {
@@ -28,10 +30,13 @@ const initialState = {
   bookDetails: [],
   genres: [],
   cart: [],
+  purchasedCart: [],
   favs: [],
   author: [],
   authorDetails: [],
   authorBooks: [],
+  user:[{name: 'mili',
+  email: 'mili@hotmail.com'}]
 };
 
 export default function reducer(state = initialState, action) {
@@ -247,6 +252,18 @@ export default function reducer(state = initialState, action) {
         ...state,
         favs: state.favs.filter((i) => i.id !== action.payload),
       };
+
+    case CHECKOUT_CART: {
+      return {
+        ...state,
+        purchasedCart: {
+          Events: state.cart,
+          CartId: action.payload,
+        },
+        cart: [],
+      };
+    }
+
 
     default:
       return state;
