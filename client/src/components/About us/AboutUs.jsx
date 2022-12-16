@@ -14,7 +14,7 @@ export default function AboutUs(){
                     <img className="logo" src={logo} alt="logo" width="45"/>
                 </a>
                 <p>
-                    Texto donde vamos a poner a que nos dedicamos y que hacemos bien en inglish.com
+                    Texto donde vamos a poner a que nos dedicamos y que hacemos bien en inglish
                 </p>
             </div>
             <div className="cardsAbout">
@@ -22,15 +22,15 @@ export default function AboutUs(){
                     return(
                         <div className="cardsInfo">
                             <div className="logos">
-                                <a href={user.linkedin} id='icono' className="svg-container">
+                                <a href={user.linkedin} id='icono' className="logo-container">
                                     <LinkedInIcon id="contenedor"/>
                                 </a>
-                                <a href={user.github} id="icono" className="svg-container">
+                                <a href={user.github} id="icono" className="logo-container">
                                     <GitHubIcon id="contenedor"/>
                                 </a>
                             </div>
                             <h3>Full Stack Developer</h3>
-                            <h2 width="55">{user.name}</h2>
+                            <h2 className="letraName">{user.name}</h2>
                             <img src={user.img} width="195" alt="profile" />
                         </div>
                     )
