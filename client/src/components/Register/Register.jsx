@@ -1,6 +1,6 @@
 import React from 'react';
-import {useState, useEffect} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import {useState} from 'react';
+import {useDispatch} from 'react-redux';
 import {Link, useHistory} from 'react-router-dom';
 import style from "./Register.module.css"
 import oasis from "../NavBar/oasis.jpg"
@@ -29,14 +29,6 @@ function validate(input){
 
     return errors
 }
-
-
-
-
-
-
-
-
 
 export default function Register(){
     const dispatch = useDispatch()

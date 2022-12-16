@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { getNameBooks } from "../../actions";
 import style from "./NavBar.module.css";
 import oasis from "./oasis.jpg";
@@ -9,7 +9,6 @@ export default function NavBar() {
   const dispatch = useDispatch();
   const allBooks = useSelector((state) => state.allBooks);
   const [name, setName] = useState("");
-  const history = useHistory();
   const cart = useSelector((state) => state.cart);
   const totalBooks = cart.reduce((total, item) => total + item.quantity, 0);
   
