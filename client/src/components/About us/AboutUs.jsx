@@ -9,8 +9,9 @@ export default function AboutUs(){
     return(
         <div className="abaut">
             <div className="header">
+                <h1 className="title">ABOUT US</h1>
                 <a href="/">
-                    <img className="logo" src={logo} alt="logo" width="150"/>
+                    <img className="logo" src={logo} alt="logo" width="45"/>
                 </a>
                 <p>
                     Texto donde vamos a poner a que nos dedicamos y que hacemos bien en inglish.com
@@ -28,13 +29,12 @@ export default function AboutUs(){
                                     <GitHubIcon id="contenedor"/>
                                 </a>
                             </div>
-                            <img src={user.img} width="185" alt="profile" />
-                            <h2>{user.name}</h2>
                             <h3>Full Stack Developer</h3>
+                            <h2 width="55">{user.name}</h2>
+                            <img src={user.img} width="195" alt="profile" />
                         </div>
                     )
                 })}
-<div className="title">ABOUT US</div>
             </div>
         </div>
     )
