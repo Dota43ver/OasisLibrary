@@ -3,6 +3,7 @@ import {
   ADD_FAVS,
   ADD_TO_CART,
   ALPHABETICAL_SORT,
+  CHECKOUT_CART,
   CLEAN_CACHE,
   DECREASE_QUANTITY,
   GENRE_FILTER,
@@ -21,8 +22,6 @@ import {
   REMOVE_FROM_FAVS,
   SAGA_FILTER,
   SCORE_SORT,
-  REMOVE_FROM_FAVS,
-  CHECKOUT_CART
 } from "./types";
 
 export const getBooks = () => (dispatch) => {
@@ -211,20 +210,23 @@ export function getAuthorBooks(payload) {
   };
 }
 
-
-export function checkoutCart(data){
+export function checkoutCart(data) {
   //pasar el user y cart
-  
+
   console.log(data);
 
-    const config = {
-      headers: {
-        "Content-Type": "application/json",
-      },
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+    },
   };
 
   return async function (dispatch) {
-    let checkoutCartId = await axios.post("http://localhost:3001/checkout", { data }, config);
+    let checkoutCartId = await axios.post(
+      "http://localhost:3001/checkout",
+      { data },
+      config
+    );
     console.log(checkoutCartId);
     return dispatch({
       type: CHECKOUT_CART,
@@ -232,7 +234,6 @@ export function checkoutCart(data){
     });
   };
 }
-
 
 // export function checkoutCart(userId, token) {
 
@@ -253,4 +254,3 @@ export function checkoutCart(data){
 //     });
 //   };
 // }
-

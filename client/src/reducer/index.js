@@ -2,6 +2,7 @@ import {
   ADD_FAVS,
   ADD_TO_CART,
   ALPHABETICAL_SORT,
+  CHECKOUT_CART,
   CLEAN_CACHE,
   DECREASE_QUANTITY,
   GENRE_FILTER,
@@ -20,8 +21,6 @@ import {
   REMOVE_FROM_FAVS,
   SAGA_FILTER,
   SCORE_SORT,
-  REMOVE_FROM_FAVS,
-  CHECKOUT_CART
 } from "../actions/types";
 
 const initialState = {
@@ -35,8 +34,7 @@ const initialState = {
   author: [],
   authorDetails: [],
   authorBooks: [],
-  user:[{name: 'mili',
-  email: 'mili@hotmail.com'}]
+  user: [{ name: "mili", email: "mili@hotmail.com" }],
 };
 
 export default function reducer(state = initialState, action) {
@@ -263,7 +261,6 @@ export default function reducer(state = initialState, action) {
         cart: [],
       };
     }
-
 
     default:
       return state;
