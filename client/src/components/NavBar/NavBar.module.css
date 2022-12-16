@@ -6,7 +6,7 @@
   height: 130px;
   justify-content: space-around;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  /* position: fixed; */
+  position: relative;
   width: -webkit-fill-available;
   z-index: +1;
 }
@@ -81,6 +81,7 @@
   display: flex;
   flex-direction: column;
   border: 1px solid gray;
+  position: fixed;
   
 }
 
