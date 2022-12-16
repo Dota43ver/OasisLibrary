@@ -8,7 +8,6 @@ import {
 } from "../../actions";
 import NavBar from "../NavBar/NavBar";
 import "./Cart.css";
-
 export default function Cart() {
   const cart = useSelector((state) => state.cart);
   const totalBooks = cart.reduce((total, item) => total + item.quantity, 0);
@@ -49,7 +48,9 @@ export default function Cart() {
             {cart.map((item) => (
               <div className="itemCart">
                 <div className="imgDiv">
-                  <img className="itemImg" src={item.image} />
+                  <Link to={`/book/${item.id}`}>
+                    <img className="itemImg" src={item.image} alt="itemImg" />
+                  </Link>
                 </div>
 
                 <div className="namePriceDiv">
@@ -60,16 +61,16 @@ export default function Cart() {
                   <h3 className="itemQuantity">Cantidad: {item.quantity}</h3>
                   <div className="quantBtns">
                     <button
-                      className="incrementBtn"
-                      onClick={() => handleIncreaseQuantity(item.id)}
-                    >
-                      +
-                    </button>
-                    <button
                       className="decrementBtn"
                       onClick={() => handleDecreaseQuantity(item.id)}
                     >
                       -
+                    </button>
+                    <button
+                      className="incrementBtn"
+                      onClick={() => handleIncreaseQuantity(item.id)}
+                    >
+                      +
                     </button>
                   </div>
                   <h1 className="itemTotal">

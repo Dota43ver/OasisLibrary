@@ -11,14 +11,12 @@ export default function Checkout() {
     dispatch(checkoutCart(cart, user));
   };
 
-  return(
+  return (
     <div>
-        <button onClick={handeleCheckout}> Comprar </button>
+      <button onClick={handeleCheckout}> Comprar </button>
     </div>
-  )
-
+  );
 }
-
 
 // import { checkoutCart } from "../../actions/index";
 
@@ -36,13 +34,9 @@ export default function Checkout() {
 
 //       <script src="https://sdk.mercadopago.com/js/v2"></script>
 
-
-
 //       <button onClick={check}> Comprar </button>
 
-
 //       <form id={FORM_ID} method="GET" />
-
 
 //     </div>
 //   )

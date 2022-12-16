@@ -19,6 +19,12 @@
   box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
   min-height: 39rem;
   max-height: 47rem;
+  text-decoration: none;
+  color: black;
+}
+a {
+  text-decoration: none;
+  color: black;
 }
 .firstCont h1 {
   font-size: 2rem;
