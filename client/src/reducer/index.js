@@ -224,8 +224,6 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
         purchasedCart: {
-          Events: state.cart,
-          CartId: action.payload,
         },
         cart: [],
       };
