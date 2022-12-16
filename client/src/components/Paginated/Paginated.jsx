@@ -1,5 +1,7 @@
 import React from "react";
-import "./Paginated.css";
+// import "./Paginated.css";
+import style from './Paginated.module.css'
+
 
 export default function Paginated({allBooks, booksPerPage, paginated}){
 
@@ -10,14 +12,14 @@ export default function Paginated({allBooks, booksPerPage, paginated}){
     }
 
     return(
-        <div className="paginado">
+        <div className={style.paginado}>
             {
                  pageNumbers && pageNumbers.map(number => {
 
                      return(
-                        <div className="each">
+                        <div className={style.each}>
 
-                            <button className="li"
+                            <button className={style.li}
                             key={number}
                             onClick={() => paginated(number)}>                    
                             {number}

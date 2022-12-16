@@ -17,6 +17,8 @@ import {
   REMOVE_FROM_CART,
   SAGA_FILTER,
   SCORE_SORT,
+  REMOVE_FROM_FAVS,
+  CHECKOUT_CART
 } from "./types";
 
 export const getBooks = () => (dispatch) => {
@@ -148,6 +150,14 @@ export function addFavs(payload) {
     payload,
   };
 }
+
+export function removeFromFavs(id) {
+  return {
+    type: REMOVE_FROM_FAVS,
+    payload: id,
+  };
+}
+
 export function removeFromCart(id) {
   return {
     type: REMOVE_FROM_CART,
@@ -166,3 +176,45 @@ export function increaseQuantity(id) {
     payload: id,
   };
 }
+
+export function checkoutCart(data){
+  //pasar el user y cart
+  
+  console.log(data);
+
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+  };
+
+  return async function (dispatch) {
+    let checkoutCartId = await axios.post("http://localhost:3001/checkout", { data }, config);
+    console.log(checkoutCartId);
+    return dispatch({
+      type: CHECKOUT_CART,
+      payload: checkoutCartId.data,
+    });
+  };
+}
+
+
+// export function checkoutCart(userId, token) {
+
+//   console.log(userId, token);
+
+//   const config = {
+//     headers: {
+//       "Content-Type": "application/json",
+//       Authorization: `Bearer ${token}`,
+//     },
+//   };
+
+//   return async function (dispatch) {
+//     let checkoutCartId = await axios.put("/checkout", { userId }, config);
+//     return dispatch({
+//       type: CHECKOUT_CART,
+//       payload: checkoutCartId.data,
+//     });
+//   };
+// }

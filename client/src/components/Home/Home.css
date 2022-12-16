@@ -219,6 +219,36 @@
     width: 150px;
 }
 
+.about {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    background-color: #ECEBEB;
+    box-shadow: 0 2px 3px 5px #d7d7d7a4;
+    /* height: 5vh; */
+    padding: 6px;
+    
+}
+
+.aboutBtn {
+    text-decoration: none;
+    color: black;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    margin-left: 500px;
+}
+
+.loadingP {
+    color: #1c555e;
+    background-color: #ecebeba4;
+    padding: 10px;
+    border-radius: 5px;
+    font-size:xx-large;
+}
 /* .div-imagen {
     display: inline-block;
     position: relative;

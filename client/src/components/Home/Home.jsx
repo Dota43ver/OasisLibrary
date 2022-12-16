@@ -33,6 +33,8 @@ export default function Home() {
     setCurrentPage(pageNumbers);
   };
 
+  const [btnActive, setBtnActive] = useState(false);
+
   const [refresh, setRefresh] = useState();
   const [order, setOrder] = useState("");
   const [quantity, setQuantity] = useState(1);
@@ -165,8 +167,8 @@ export default function Home() {
               <option disabled selected value="default">
                 Precio
               </option>
-              <option value="asc">menor</option>
-              <option value="desc">mayor</option>
+              <option value="asc">Menor</option>
+              <option value="desc">Mayor</option>
             </select>
           </div>
           <div>
@@ -180,8 +182,8 @@ export default function Home() {
               <option disabled selected value="default">
                 Puntuación
               </option>
-              <option value="desc">Ascendente</option>
-              <option value="asc">Descendente</option>
+              <option value="desc">Menor</option>
+              <option value="asc">Mayor</option>
             </select>
           </div>
           <div>
@@ -238,7 +240,10 @@ export default function Home() {
                       {
                         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
                       }
-                      <button value={el.id} onClick={(el) => handleAddFavs(el)} class="borderless-button">
+                      <button value={el.id} 
+                      onClick={(el) => handleAddFavs(el)} 
+                      // onClick={() => setBtnActive(!btnActive)} 
+                      className={btnActive ? 'borderless-button' : 'borderless-button'}>
                         <i id={el.id} class="material-icons">favorite</i>
                       </button>
                     </div>
@@ -258,7 +263,7 @@ export default function Home() {
                 </div>
               );
             })
-            : "Loading..."}
+            : <div className="loading"><div><img src="https://media.tenor.com/nuCeLTABSTsAAAAM/jalan-book.gif" height="300px" width="200px"/></div></div>}
         </div>
         {/* <div onClick={e => prevPage(e)}>Previous</div> */}
 
@@ -270,6 +275,13 @@ export default function Home() {
           allBooks={allBooks.length}
           paginated={paginated}
         />
+      </div>
+      <div className="about">
+        <div >
+            <Link to = '/about'>
+              <p className="aboutBtn">About Us</p>
+            </Link>
+        </div>
       </div>
     </div>
   );
