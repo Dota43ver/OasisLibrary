@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 // import Home from "./components/Home/Home"
 import "./App.css";
 import Account from "./components/Account/Account";
+import Author from "./components/Author/Author";
 import BookCreate from "./components/BookCreate/BookCreate";
 import BookDetails from "./components/BookDetail/BookDetail";
 import Cart from "./components/Cart/Cart";
@@ -25,9 +26,9 @@ function App() {
           <Route path="/bookcreate" component={BookCreate} />
           <Route path="/cart" component={Cart} />
           <Route path="/favorites" component={Favorites} />
+          <Route path="/author/:name" component={Author} />
           <Route path="/checkout" component={Checkout}/>
           <Route path="/about" component={AboutUs}/>
-
         </Switch>
       </div>
     </BrowserRouter>

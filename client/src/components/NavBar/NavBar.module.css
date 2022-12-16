@@ -70,7 +70,30 @@
 
 .buscar {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   align-content: center;
+}
+
+.dropdown {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid gray;
+  
+}
+
+.dropdown:empty {
+  border: none;
+}
+
+.dropdownrow{
+  cursor: pointer;
+  text-align: center;
+  margin: 2px 0;
+  
+}
+.searchinner {
+  display: flex;
 }

@@ -41,11 +41,11 @@ const { Book, Author, Genre } = sequelize.models;
 
 // Aca vendrian las relaciones
 //Relacion entre Book y Genre de muchos a muchos
-Book.belongsToMany(Genre, {through: 'BookGenre'})
-Genre.belongsToMany(Book,{through: 'BookGenre'})
+Book.belongsToMany(Genre, { through: "BookGenre" });
+Genre.belongsToMany(Book, { through: "BookGenre" });
 
-Author.hasMany(Book, {as: "libro"})
-Book.belongsTo(Author, {as: "autor"})
+Author.hasMany(Book, { as: "libro" });
+Book.belongsTo(Author, { as: "autor" });
 // Product.hasMany(Reviews);
 //.
 module.exports = {

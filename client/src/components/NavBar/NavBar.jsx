@@ -7,18 +7,26 @@ import oasis from "./oasis.jpg";
 
 export default function NavBar() {
   const dispatch = useDispatch();
+  const allBooks = useSelector((state) => state.allBooks);
   const [name, setName] = useState("");
   const history = useHistory();
   const cart = useSelector((state) => state.cart);
   const totalBooks = cart.reduce((total, item) => total + item.quantity, 0);
+  
   function handleInputChange(e) {
     e.preventDefault();
     setName(e.target.value);
     console.log(name);
   }
 
+   function onSearch(searchTerm){
+    setName(searchTerm)
+    console.log(searchTerm)
+   }
+
   function handleSubmit(e) {
     e.preventDefault();
+    setName("")
     dispatch(getNameBooks(name));
   }
 
@@ -29,17 +37,35 @@ export default function NavBar() {
           <img src={oasis} alt="" width="114px" height="105px" />
         </Link>
       </div>
+      <div>
 
       <div className={style.buscar}>
+        <div className={style.searchinner}>
+
         <input
           type="text"
           className={style.inputs1}
           onChange={(e) => handleInputChange(e)}
-        />
+          value={name}
+          />
         <button className={style.button} onClick={(e) => handleSubmit(e)}>
           Buscar
         </button>
+        
       </div>
+      </div>
+      <div className={style.dropdown}>
+        {allBooks.filter(item =>{
+          const term = name.toLowerCase();
+          const fullName = item.name.toLowerCase();
+          
+          return term && fullName.startsWith(name)
+        })
+        .map((item) =>(
+          <div onClick={(e)=>onSearch(item.name)} className={style.drowpdownrow}>{item.name}</div>
+          ))}
+        </div>
+          </div>
       <div>
         <Link to="/account">
           {" "}
