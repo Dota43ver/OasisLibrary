@@ -40,8 +40,19 @@ sequelize.models = Object.fromEntries(capsEntries);
 const { Book, Author, Genre } = sequelize.models;
 
 // Aca vendrian las relaciones
-// Product.hasMany(Reviews);
+//Relacion entre Book y Genre de muchos a muchos
+Book.belongsToMany(Genre, { through: "BookGenre" });
+Genre.belongsToMany(Book, { through: "BookGenre" });
 
+Author.hasMany(Book, {as: "libro"})
+Book.belongsTo(Author, {as: "autor"})
+
+// Users.hasMany(shoppingCart)
+// ShoppingCart.belongsTo(Users)
+// libros pertenecen a un carrito y un carrito a muchos libros?
+
+// Product.hasMany(Reviews);
+//.
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
   conn: sequelize, // para importart la conexión { conn } = require('./db.js');

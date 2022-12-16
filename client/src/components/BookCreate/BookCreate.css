@@ -1,0 +1,97 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    margin-left: 20px;
+}
+
+.form {
+    position: initial;
+    transform: none;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    margin-block: 2%;
+    margin-right: 10%;
+    margin-left: 5%;
+    padding-inline: 5%;
+    gap: 10px;
+    border-radius: 20px;
+    filter: drop-shadow(5px 5px 10px black);
+
+    background-color: rgb(150, 170, 214);
+    padding-bottom: 20px;
+    height: 100%;
+}
+
+.create {
+    color: white;
+}
+
+.form .group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(119, 134, 168);
+    border-radius: 5px;
+}
+
+.form .group .letter {
+    margin-left: 5px;
+    color: white;
+}
+
+.form .group input {
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid rgb(150, 170, 214);
+}
+
+.form .group .desc {
+    border-radius: 5px;
+    border: 1px solid rgb(150, 170, 214);
+    width: 200px;
+    height: 100px;
+}
+
+.form .group select {
+    width: 204px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid rgb(150, 170, 214);
+}
+
+.form .group .genres {
+    display: flex;
+    flex-direction: column;
+    width: 204px;
+}
+
+.form .group .genres button {
+    width: 204px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid rgb(150, 170, 214);
+    cursor: pointer;
+    transition: 0.2s all;
+}
+
+.form .submit {
+    height: 30px;
+    width: 50%;
+    margin: auto;
+    border-radius: 5px;
+    border: 1px solid rgb(150, 170, 214);
+    cursor: pointer;
+    transition: 0.2s all;
+}
+
+
+.form .group .genres button:hover,
+.form .submit:hover {
+    background-color: rgb(40, 81, 100);
+    color: rgb(255, 255, 255);
+
+}

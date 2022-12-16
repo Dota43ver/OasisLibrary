@@ -1,0 +1,33 @@
+.paginado{
+    display: flex;
+}
+
+.li {
+    border: 3px solid #1C555E;
+    /* padding: 5px; */
+    padding: 7px;
+    width: 30px;
+    border-radius: 6px;
+    color:rgb(0, 0, 0);
+    font-weight: 500;
+    /* text-shadow: black 0.1em 0.1em 0.2em; */
+    cursor: pointer;
+    box-shadow: black 0.1em 0.1em 0.2em;
+}
+
+
+.each + .each{
+    margin-left: 10px;
+    margin-block-end: 10px;
+}
+
+.li:hover{
+    background-color: rgb(80, 130, 205); 
+    color: white;   
+}
+
+.li:focus{
+    background-color: #1C555E;    
+    box-shadow: 1px 1px 5px rgba(1, 1, 0, .7);   
+    transform: scale(1.3);
+} 

@@ -1,0 +1,35 @@
+.abaut{
+    display: block;
+    justify-content: space-between;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    background-color: #ECEBEB;;
+}
+
+.cardsInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    margin: 40px;
+    width: 300px;
+    height: 368px;
+    background-color: #cc9b9b;
+    box-shadow: 0px 4px 4px rgba(170, 46, 46, 0.25);
+    border-radius: 14px;
+}
+
+.cardsAbout{
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+}
+

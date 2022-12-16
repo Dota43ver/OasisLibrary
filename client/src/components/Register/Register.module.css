@@ -1,0 +1,186 @@
+.cabecera{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.text{
+    font-size: 30px;
+    font-family: medium italic;
+}
+
+.formRegistro{
+    width: 614px;
+    /* height: 550px; */
+    height:610px;
+    border-radius: 10px;
+    border: 2px solid #42829D;
+}
+
+.inputs{
+    display: block;
+    margin-top: 30px;
+    width: 70%;
+    align-self: center;
+    height: 30px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 30px;  
+}
+
+.inputContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.button{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-top: 15px;
+    gap: 10px;
+}
+
+.button1{
+    width: 140px;
+    font-size: 15px;
+    height: 25px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.text{
+    display: block;
+    align-items: center;
+    text-align: center;
+    justify-content: center;  
+}
+.text1{
+    
+    font-size: 20px;
+}
+
+.text2{
+    font-size: 17px;
+}
+
+.button2{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.button3{
+    width: 240px;
+    height: 35px;
+    border-radius: 10px;
+    background-color: #42829D;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+.button3:hover{
+    background-color: #1C555E;
+}
+
+.divisor{
+    margin-left: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 505px;
+    height: 1;
+    border: 1px solid #42829D;
+}
+.button4{
+    margin-top: 45px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.button5{
+    width: 220px;
+    height: 30px;
+    background-color: #ECEBEB;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.button5:hover{
+    background-color: #5e471c69;
+}
+
+.button6{
+    margin-top: 35px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.button7{
+    font-size: 15px;
+    color: #777777;
+    outline:none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    background: none;
+}
+
+.button7:hover{
+    text-decoration: underline;
+    
+}
+.main_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px 0px;
+}
+.main_conteiner2{
+    display: flex;
+}
+
+.container_errors {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    width: 70%;
+    justify-content: center;
+    background-color: pink;
+    border-radius: 10px;
+}
+
+.errors {
+    font-size: small;
+    display: flex;
+    color: red;
+    align-items: center;
+    justify-content: center;
+}
+
+.button3:disabled {
+    background: #ccc;
+  }
+
+.main_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
