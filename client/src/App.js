@@ -6,7 +6,6 @@ import Author from "./components/Author/Author";
 import BookCreate from "./components/BookCreate/BookCreate";
 import BookDetails from "./components/BookDetail/BookDetail";
 import Cart from "./components/Cart/Cart";
-import Favorites from "./components/Favorites/Favorites";
 import Home from "./components/Home/Home";
 import LandingPage from "./components/LandingPage/LandingPage";
 import Register from "./components/Register/Register";
