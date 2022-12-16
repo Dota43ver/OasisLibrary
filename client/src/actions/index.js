@@ -6,6 +6,9 @@ import {
   CLEAN_CACHE,
   DECREASE_QUANTITY,
   GENRE_FILTER,
+  GET_AUTHOR_BOOKS,
+  GET_AUTHOR_DETAILS,
+  GET_AUTHOR_DETAILS_NAME,
   GET_BOOKS,
   GET_BOOK_DETAILS,
   GET_GENRES,
@@ -15,6 +18,7 @@ import {
   LOCAL_HOST,
   PRICE_SORT,
   REMOVE_FROM_CART,
+  REMOVE_FROM_FAVS,
   SAGA_FILTER,
   SCORE_SORT,
   REMOVE_FROM_FAVS,
@@ -48,6 +52,29 @@ export function getBookDetails(id) {
         `${LOCAL_HOST}/books/${id}`
       );
       return dispatch({ type: GET_BOOK_DETAILS, payload: response.data });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+}
+export function getAuthorDetails(id) {
+  return async function (dispatch) {
+    try {
+      var response = await axios.get(`${LOCAL_HOST}/authors/${id}`);
+      return dispatch({ type: GET_AUTHOR_DETAILS, payload: response.data });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+}
+export function getAuthorDetailsName(name) {
+  return async function (dispatch) {
+    try {
+      var response = await axios.get(`${LOCAL_HOST}/authors/name/${name}`);
+      return dispatch({
+        type: GET_AUTHOR_DETAILS_NAME,
+        payload: response.data,
+      });
     } catch (error) {
       console.log(error);
     }
@@ -177,6 +204,14 @@ export function increaseQuantity(id) {
   };
 }
 
+export function getAuthorBooks(payload) {
+  return {
+    type: GET_AUTHOR_BOOKS,
+    payload,
+  };
+}
+
+
 export function checkoutCart(data){
   //pasar el user y cart
   
@@ -218,3 +253,4 @@ export function checkoutCart(data){
 //     });
 //   };
 // }
+
