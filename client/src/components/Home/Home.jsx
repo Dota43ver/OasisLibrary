@@ -236,7 +236,7 @@ export default function Home() {
                 <div className="linkDetail">
                   <div className="content">
                     <div className="topCards">
-                      <h4>{el.name}</h4>
+                      <h4>{el.name.length > 32? el.name.substr(0 , 33) + "...": el.name}</h4>
                       {
                         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
                       }
