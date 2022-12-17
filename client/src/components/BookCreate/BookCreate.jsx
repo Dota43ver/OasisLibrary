@@ -80,7 +80,9 @@ export default function BookCreate() {
                 <Link to="/home">
                   <img src={oasis} alt="" width="114px" height="105px" />
                 </Link>
-                <h2 className='title'>Dashboard Admin</h2>
+                <Link to = '/dashboard'>
+                    <h2 className='title'>Dashboard Admin</h2>
+                </Link>
             </div>
             {/* <NavBar></NavBar> */}
             </div>

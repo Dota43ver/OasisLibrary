@@ -17,7 +17,7 @@ export default function Dashboard(){
             </div>
 
             <div className={style.linkCreate}>
-                <Link to="/bookcreate">
+                <Link to="/dashboard/bookcreate">
                     <button className={style.createBtn}>Add Books</button>
                 </Link>
             </div>
