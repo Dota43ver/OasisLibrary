@@ -1,10 +1,11 @@
 import React from 'react';
-import Link, { useHistory } from 'react-router-dom';
+import  { Link,useHistory } from 'react-router-dom';
 import "./BookCreate.css";
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { postBook, getBooks, getGenres } from '../../actions';
-import NavBar from "../NavBar/NavBar";
+import oasis from './oasis.jpg'
+// import NavBar from "../NavBar/NavBar";
 
 export default function BookCreate() {
     const dispatch = useDispatch()
@@ -74,8 +75,14 @@ export default function BookCreate() {
     return (
 
         <div>
-            <div>
-            <NavBar></NavBar>
+            <div className='barra'>
+            <div className='barraContent'>
+                <Link to="/home">
+                  <img src={oasis} alt="" width="114px" height="105px" />
+                </Link>
+                <h2 className='title'>Dashboard Admin</h2>
+            </div>
+            {/* <NavBar></NavBar> */}
             </div>
             <div className='container'>
 
