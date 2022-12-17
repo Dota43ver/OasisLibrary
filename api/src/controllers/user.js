@@ -38,6 +38,7 @@ async function createUser(body) {
         await sendEmail(email, "Token Validation", token);
 
         return {
+            token,
             success: true,
             msg: "Fue creado con éxito"
         }
@@ -91,7 +92,7 @@ async function logIn(email, password) {
     const token = jwt.sign({ id: user.id }, process.env.SECRET);
     await user.update({token: token});
     await user.save();
-    return token;
+    return {token};
 }
 
 async function logOut(id){

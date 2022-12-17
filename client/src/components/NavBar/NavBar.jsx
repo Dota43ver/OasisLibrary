@@ -57,8 +57,7 @@ export default function NavBar() {
       <div className={style.dropdown}>
         {allBooks.filter(item =>{
           const term = name.toLowerCase();
-          const fullName = item.name.toLowerCase();
-          
+          const fullName = item.name.toLowerCase();   
           return term && fullName.startsWith(name)
         })
         .map((item) =>(

@@ -34,12 +34,13 @@ usersRouter.post("/login", async (req,res) => {
         let response = await logIn(email, password);
         
         //Respondo un msg de éxito y además paso el token por header
+        res.json(response)
     //     res.header('auth-token', response).send({
     //     successMsg: 'You signed in successfully.',
+    //    });
+    // res.status(200).send({
+    //     successMsg: 'You signed in successfully.',
     //   });
-    res.status(200).send({
-        successMsg: 'You signed in successfully.',
-      });
     } catch (error) {
         console.log(error);
         res.status(400).send("error al iniciar sesión", error.message);
