@@ -97,4 +97,6 @@
 }
 .searchinner {
   display: flex;
+  gap: 5px;
+  height: 25px;
 }

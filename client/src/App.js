@@ -12,6 +12,7 @@ import Register from "./components/Register/Register";
 import Favorites from "./components/Favorites/Favorites";
 import Checkout from "./components/Checkout/Checkout";
 import AboutUs from "./components/About us/AboutUs";
+import Dashboard from "./components/Dashboard Admin/Dashboard";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/author/:name" component={Author} />
           <Route path="/checkout" component={Checkout}/>
           <Route path="/about" component={AboutUs}/>
+          <Route exact path="/dashboard" component={Dashboard}/>
         </Switch>
       </div>
     </BrowserRouter>
