@@ -35,6 +35,12 @@ export default function Account({setAuth}) {
             console.error(err.message)
         }
     }
+    const logout = e => {
+        e.preventDefault();
+        localStorage.removeItem("token");
+        setAuth(false)
+        
+    }
 
     useEffect(() =>{
         getName();
@@ -88,11 +94,12 @@ export default function Account({setAuth}) {
                         <h3 className="dato" name="email" value={email}> Mail: {email} </h3>
                         <h3 className="dato" name="password" value={password}> Password: {password} </h3>
                     </div>
-
+                    <button onClick={e => logout(e)}>Logout</button>
                     {/* <button> Guardar Cambios </button> */}
 
                 </div>
             </div>
+           
         </div>
     )
 

@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Switch, Redirect} from "react-router-dom";
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 // import Home from "./components/Home/Home"
 import "./App.css";
 import Account from "./components/Account/Account";
@@ -22,6 +22,25 @@ function App() {
     setIsAuthenticated(boolean);
   }
 
+  async function isAuth(){
+    try {
+      const response = await fetch("http://localhost:3001/users/is-verify",{
+        method: "GET",
+        headers: {token: localStorage.token}
+      });
+
+      const parseRes = await response.json()
+
+      parseRes === true ? setIsAuthenticated(true) : setIsAuthenticated(false)
+    } catch (err) {
+      console.error(err.message)
+    }
+  }
+
+  useEffect(()=>{
+    isAuth()
+  })
+
   return (
     <BrowserRouter>
       <div>
@@ -31,7 +50,7 @@ function App() {
           <Route exact path="/" component={LandingPage} />
           <Route exact path="/home" component={Home} />
           <Route path="/book/:id" component={BookDetails} />
-          <Route exact path="/account" render={props => isAuthenticated ? <Account {...props}/> : <Redirect to="/login" setAuth={setAuth}/>} />
+          <Route exact path="/account" render={props => isAuthenticated ? <Account {...props} setAuth={setAuth}/> : <Redirect to="/login" />} />
           <Route path="/bookcreate" component={BookCreate} />
           <Route path="/cart" component={Cart} />
           <Route path="/favorites" component={Favorites} />

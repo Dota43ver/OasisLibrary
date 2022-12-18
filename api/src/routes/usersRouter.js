@@ -70,6 +70,15 @@ usersRouter.get('/profile', verify, async (req, res) => {
     }
 });;
 
+usersRouter.get('/is-verify', verify, async (req, res)=>{
+    try {
+        res.json(true)
+    } catch (err) {
+        console.error(err.message)
+        res.status(500).send("server Error")
+    }
+} )
+
 //Admin
 // rutas protegidas por un middleware que se fija si user.isAdmin esta en true, solo deja pasar a los que tengan esta propiedad.
 
