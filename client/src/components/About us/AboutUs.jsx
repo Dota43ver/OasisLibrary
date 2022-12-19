@@ -14,7 +14,7 @@ export default function AboutUs(){
                     <img className="logo" src={logo} alt="logo" width="45"/>
                 </a>
                 <p>
-                    Texto donde vamos a poner a que nos dedicamos y que hacemos bien en inglish
+                Hello! We are the creators of Oasis Library, a website where you can buy your favorite books, and see details about them and their authors. We studied at "SoyHenry" to become Full Stack Developers, learning various technologies and tools to perform successfully in the workplace. In this section you will find the information of each one of us, and our respective links to Linkedin and GitHub. Thank you for visiting our website!
                 </p>
             </div>
             <div className="cardsAbout">

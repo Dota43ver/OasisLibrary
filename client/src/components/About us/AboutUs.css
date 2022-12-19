@@ -3,15 +3,18 @@
     justify-content: space-between;
     background: rgb(255,255,255);
     background: linear-gradient(5deg, rgba(255,255,255,1) 2%, rgba(83,175,194,1) 89%);
+    scroll-behavior: auto;
 }
 
 .header{
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: rgba(255, 255, 255, 0.859);
-    margin: 25px;
-    border-radius: 15px;
+    /* background-color: rgba(255, 255, 255, 0.859); */
+    background-color: #ECEBEB;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    /* margin: 25px; */
+    /* border-radius: 15px; */
     justify-content: center;
     background-color: #ECEBEB;;
 }
@@ -37,7 +40,8 @@
 .title{
     font-size:25px;
     margin-bottom: 0.5em;
-    font-family: "Pacifico", cursive;
+    /* font-family: "Pacifico", cursive; */
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.309)
 }
 .cardsAbout{
     display: grid;
@@ -51,8 +55,8 @@
 
 
 .logo{   
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
 }
 .logo:hover {
     transform: translateY(-1%);

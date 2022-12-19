@@ -1,6 +1,6 @@
 const {Router} = require('express');
-const { createUser, activateAccount, logIn, logOut, getOneUser } = require("../controllers/user");
-const { verify } = require('../middleware/auth');
+const { createUser, activateAccount, logIn, logOut, getOneUser, adminGetUsers } = require("../controllers/user");
+const { verify, adminAuth } = require('../middleware/auth');
 
 const usersRouter = Router();
 
@@ -67,11 +67,25 @@ usersRouter.get('/profile', verify, async (req, res) => {
         console.log(error);
         res.status(400).send("error al mostrar un usuario", error.message);
     }
-});;
+});
 
 //Admin
-// rutas protegidas por un middleware que se fija si user.isAdmin esta en true, solo deja pasar a los que tengan esta propiedad.
+usersRouter.get("/admin/users", verify, adminAuth, async (req,res) => {
 
-
+    try {
+        const id = req.query;
+        if(id) {
+            let response = await adminGetUsers(id);
+            res.send(response);
+        } else {
+            let response = await adminGetUsers();
+            res.send(response);
+        }
+    } catch (error) {
+        res.status(400).send("Algo falló")
+    }
+});
+// usersRouter.put 
+// usersRouter.post ???? 
 
 module.exports = usersRouter;

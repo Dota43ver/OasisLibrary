@@ -29,6 +29,15 @@ async function verify(req, res, next) {
     }
 }
 
+async function adminAuth(){
+    let user = await User.findOne({ where: { id: req.userID } });
+    if (user.role !== "admin") {
+      throw new Error({message: "El usuario no es administrador"});
+    }
+    next();
+}
+
 module.exports = {
-    verify
+    verify,
+    adminAuth
 }
