@@ -29,7 +29,11 @@ export default function Checkout() {
       <NavBar />
 
       <div className="checkTitulo">
-        <h2>Checkout</h2>
+        <h2> Checkout</h2>
+        {
+          <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        }
+
         <h3> ¡Te quedan los ultimos pasos! </h3>
       </div>
 
@@ -48,7 +52,7 @@ export default function Checkout() {
                 <p>  Registrate para poder continuar con la compra </p>
               </div>
               <Link to='/a'>
-                <button className="buttonCompra"> Sing In </button>
+                <button className="buttoncheck"> Sing In </button>
               </Link>
             </div>
           }
@@ -75,7 +79,7 @@ export default function Checkout() {
 
           ) : <div className="checkerror"> <h3> Carrito vacío, vuelve y completa tu compra </h3>
             <Link to='/home'>
-              <button className="buttonCompra" > Home </button>
+              <button className="buttoncheck" > Home </button>
             </Link>
           </div>}
 

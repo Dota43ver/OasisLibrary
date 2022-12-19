@@ -65,7 +65,7 @@
     margin-block: 1px;
 }
 
-.buttonCompra {
+.buttoncheck {
     cursor: pointer;
     width: 150px;
     height: 28px;
@@ -78,6 +78,23 @@
     font-size: 14px;
     line-height: 19px;
 
+    color: #FFFFFF;
+}
+
+.buttonCompra {
+    width: 90%;
+    height: 50px;
+
+    font-size:18px;
+    border-radius: 6px;
+    border: none;
+    background-color: #AA7446;
+    color: #FFFFFF;
+}
+
+.buttonCompra:hover {
+    cursor: pointer;
+    background-color: #5E3613;
     color: #FFFFFF;
 }
 
