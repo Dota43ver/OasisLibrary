@@ -249,18 +249,8 @@
     border-radius: 5px;
     font-size:xx-large;
 }
-/* .div-imagen {
-    display: inline-block;
-    position: relative;
-    width: 170px;
-    height: 259px;
-}
 
-.div-imagen>div {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    padding: 10px;
-    margin: 0;
-} */
+.carrusel {
+    display: flex;
+    justify-content: center;
+}
