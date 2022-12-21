@@ -17,6 +17,7 @@ import Card from "../Card/Card";
 import NavBar from "../NavBar/NavBar";
 import Paginated from "../Paginated/Paginated";
 import "./Home.css";
+import CarouselBook from "../Carousel/Carousel";
 
 export default function Home() {
   const allBooks = useSelector((state) => state.books);
@@ -135,6 +136,9 @@ export default function Home() {
   return (
     <div>
       <NavBar />
+      <div className="carrusel">
+      <CarouselBook/>
+      </div>
       <div className="all">
         <div className="filtersDiv">
           <h2> Filter by: </h2>
