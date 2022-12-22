@@ -17,9 +17,14 @@
     "react-redux": "^7.2.3",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+<<<<<<< HEAD
     "react-toastify": "^9.1.1",
+=======
+    "react-slick": "^0.29.0",
+>>>>>>> 57a83381d1e149fd5d0dde5a14ed419b7e5c5f07
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
+    "slick-carousel": "^1.8.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

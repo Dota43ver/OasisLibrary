@@ -6,14 +6,15 @@
 
 .checkInfo {
     display: flex;
-    margin-inline: 30px;
+    margin-inline: 40px;
+    margin-bottom: 20px;
     justify-content: space-between;
 }
 
 .checkUsuario {
     background-color: #ECEBEB;
     border-radius: 8px; 
-    width: 600px;
+    width: 60%;
 
     display: flex;
     flex-direction: column;
@@ -24,7 +25,7 @@
 .checkCompra {
     background-color: #ECEBEB;
     border-radius: 8px;
-    width: 400px;
+    width: 30%;
 
     display: flex;
     flex-direction: column;
@@ -43,7 +44,7 @@
     
     font-size: 12px;
     
-    width: 320px;
+    width: 85%;
     height: 80px;
 }
 
@@ -64,7 +65,7 @@
     margin-block: 1px;
 }
 
-.buttonCompra {
+.buttoncheck {
     cursor: pointer;
     width: 150px;
     height: 28px;
@@ -78,4 +79,27 @@
     line-height: 19px;
 
     color: #FFFFFF;
+}
+
+.buttonCompra {
+    width: 90%;
+    height: 50px;
+
+    font-size:18px;
+    border-radius: 6px;
+    border: none;
+    background-color: #AA7446;
+    color: #FFFFFF;
+}
+
+.buttonCompra:hover {
+    cursor: pointer;
+    background-color: #5E3613;
+    color: #FFFFFF;
+}
+
+.checkerror {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

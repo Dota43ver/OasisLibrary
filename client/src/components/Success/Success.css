@@ -1,0 +1,36 @@
+.bodySc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.infoSc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 60px;
+}
+
+.infoSc > h2{
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.buttonSc {
+    width: 250px;
+    height: 40px;
+
+    font-size: 18px;
+    border-radius: 6px;
+    border: none;
+    background-color: #3ABA6F;
+    color: #FFFFFF;
+
+    margin: 20px;
+}
+
+.buttonSc:hover {
+    color: #3ABA6F;
+    background-color: #ECEBEB;
+    cursor: pointer;
+}

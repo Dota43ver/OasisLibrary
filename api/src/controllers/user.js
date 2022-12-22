@@ -113,11 +113,33 @@ async function getOneUser(id) {
       }
 }
 
+async function adminGetUsers(id) {
+
+    if(id) {
+        let user = await User.findOne({where: {id}});
+        if(!user) {
+            throw new Error({message: "User not found"})
+        }
+        return user;
+    } else {
+        let users = await User.findAll({ order: [['name', 'ASC']] });
+        // De esta manera podria especificar que cosas traigo:
+        // const allUsers = users.map(u => {  
+        //      user.name,
+        //      user.email,
+        //      user.password
+        // })     
+        return users;      
+    }
+}
+
+
 
 module.exports = {
     createUser,
     activateAccount,
     logIn,
     logOut,
-    getOneUser
+    getOneUser,
+    adminGetUsers
 }
