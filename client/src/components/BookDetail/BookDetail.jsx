@@ -51,9 +51,11 @@ export default function BookDetails(props) {
             })}{" "}
           </h3>
           <h1>${bookDetails.price}</h1>
-          <Link to={`/author/${bookDetails.author}`}>
-            <h2 className="author">Autor: {bookDetails.author}</h2>
-          </Link>
+            <h2>Autor: {' '}
+               <Link to={`/author/${bookDetails.author}`} className="author">
+                  {bookDetails.author}
+              </Link>
+            </h2>
           <h2>Géneros: {genreString}</h2>
           <h2>Idioma: {bookDetails.language}</h2>
           <h2>Año: {bookDetails.year}</h2>
@@ -67,9 +69,10 @@ export default function BookDetails(props) {
           <h1 className="quantity">Cantidad: {quantity}</h1>
           <div className="quantityControls">
             {quantity >= 1 && (
-              <button onClick={() => setQuantity(quantity - 1)}>-</button>
+              <button onClick={() => setQuantity(quantity - 1)} className="quantityBtn">-</button>
             )}
-            <button onClick={() => setQuantity(quantity + 1)}>+</button>
+            {' '}
+            <button onClick={() => setQuantity(quantity + 1)} className="quantityBtn">+</button>
           </div>
           <div className="cart">
             <button onClick={handleAddToCart} className="cartButton">
