@@ -8,7 +8,6 @@ import {
   GENRE_FILTER,
   GET_AUTHOR_BOOKS,
   GET_AUTHOR_DETAILS,
-  GET_AUTHOR_DETAILS_NAME,
   GET_BOOKS,
   GET_BOOK_DETAILS,
   GET_GENRES,
@@ -61,11 +60,11 @@ export default function reducer(state = initialState, action) {
         authorDetails: action.payload,
         authorBooks: filterByAuthors,
       };
-    case GET_AUTHOR_DETAILS_NAME:
-      return {
-        ...state,
-        authorDetails: action.payload,
-      };
+    // case GET_AUTHOR_DETAILS_NAME:
+    //   return {
+    //     ...state,
+    //     authorDetails: action.payload,
+    //   };
     case GET_AUTHOR_BOOKS:
       const allBooksAuthor = state.allBooks;
       const filterByAuthor = allBooksAuthor.filter(
@@ -74,6 +73,11 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
         authorBooks: filterByAuthor,
+        authorDetails: [
+          state.bookDetails.authorDescription,
+          state.bookDetails.authorImg,
+          state.bookDetails.author,
+        ],
       };
     case POST_BOOK:
       return {
@@ -95,7 +99,13 @@ export default function reducer(state = initialState, action) {
         ...state,
         bookDetails: initialState.bookDetails,
         author: initialState.author,
+        authorDetails: initialState.authorDetails,
       };
+    // case CLEAN_CACHE_AUTHOR:
+    //   return {
+    //     ...state,
+    //     authorDetails: initialState.authorDetails,
+    //   };
     case ALPHABETICAL_SORT:
       let sortedBooks = [...state.books];
       sortedBooks =
