@@ -71,6 +71,7 @@
   background-color: #d54444;
   margin-top: 3rem;
   max-width: 4rem;
+  cursor: pointer;
 }
 .shopTitle {
   padding-left: 4rem;

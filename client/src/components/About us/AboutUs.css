@@ -2,8 +2,12 @@
     display: block;
     justify-content: space-between;
     background: rgb(255,255,255);
-    background: linear-gradient(5deg, rgba(255,255,255,1) 2%, rgba(83,175,194,1) 89%);
-    scroll-behavior: auto;
+    background: linear-gradient(5deg, rgba(255,255,255,1) 2%, rgba(83,175,194,1) 45%);
+    /* height: 180vh; */
+}
+
+.scroll{
+    margin-right: 4%;
 }
 
 .header{

@@ -5,6 +5,10 @@
     margin: 20px;
 }
 
+.scroll{
+    margin-right: 4%;
+}
+
 .cards {
     display: flex;
 

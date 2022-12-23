@@ -4,6 +4,7 @@ import logo from './oasis.jpg';
 import {data} from "./data.js";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import ScrollToTop from "react-scroll-to-top";
 
 export default function AboutUs(){
     return(
@@ -20,6 +21,8 @@ export default function AboutUs(){
             <div className="cardsAbout">
                 {data.map((user) => {
                     return(
+                        <div>
+                        <ScrollToTop smooth className="scroll" />
                         <div className="cardsInfo">
                             <div className="logos">
                                 <a href={user.linkedin} id='icono' className="logo-container">
@@ -32,6 +35,7 @@ export default function AboutUs(){
                             <h3>Full Stack Developer</h3>
                             <h2 className="letraName">{user.name}</h2>
                             <img src={user.img} width="195" alt="profile" />
+                        </div>
                         </div>
                     )
                 })}
