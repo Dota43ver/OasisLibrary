@@ -40,6 +40,8 @@ export default function Home() {
   const [order, setOrder] = useState("");
   const [quantity, setQuantity] = useState(1);
 
+  const [productIds, setProductIds] = useState([]); // lista de IDs de productos
+
   useEffect(() => {
     dispatch(getBooks());
     dispatch(getGenres());
@@ -70,6 +72,12 @@ export default function Home() {
         image: favsBooks.image,
       })
     );
+  }
+
+  function handleRandomId() {
+    const randomIndex = Math.floor(Math.random() * allBooks.length);
+    const productIds = allBooks[randomIndex];
+    setProductIds(productIds); // guarda el ID seleccionado al azar en el estado
   }
 
   function handleClick(e) {
@@ -137,7 +145,7 @@ export default function Home() {
     <div>
       <NavBar />
       <div className="carrusel">
-      <CarouselBook/>
+        <CarouselBook />
       </div>
       <div className="all">
         <div className="filtersDiv">
@@ -232,6 +240,15 @@ export default function Home() {
               <option value="Ingles">Inglés</option>
             </select>
           </div>
+          <br></br>
+
+          <p> ¿No sabes qué leer? </p>
+          <button onClick={handleRandomId} className="azarButton"> Encontrá un libro al azar </button>
+          {
+            productIds ? <span className="azar">{productIds.name}</span>
+            : null
+          }
+
         </div>
         <div className="home">
           {currentBooks.length > 0
@@ -240,14 +257,14 @@ export default function Home() {
                 <div className="linkDetail">
                   <div className="content">
                     <div className="topCards">
-                      <h4>{el.name.length > 32? el.name.substr(0 , 33) + "...": el.name}</h4>
+                      <h4>{el.name.length > 32 ? el.name.substr(0, 33) + "..." : el.name}</h4>
                       {
                         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
                       }
-                      <button value={el.id} 
-                      onClick={(el) => handleAddFavs(el)} 
-                      // onClick={() => setBtnActive(!btnActive)} 
-                      className={btnActive ? 'borderless-button' : 'borderless-button'}>
+                      <button value={el.id}
+                        onClick={(el) => handleAddFavs(el)}
+                        // onClick={() => setBtnActive(!btnActive)} 
+                        className={btnActive ? 'borderless-button' : 'borderless-button'}>
                         <i id={el.id} class="material-icons">favorite</i>
                       </button>
                     </div>
@@ -267,7 +284,7 @@ export default function Home() {
                 </div>
               );
             })
-            : <div className="loading"><div><img src="https://media.tenor.com/nuCeLTABSTsAAAAM/jalan-book.gif" height="300px" width="200px"/></div></div>}
+            : <div className="loading"><div><img src="https://media.tenor.com/nuCeLTABSTsAAAAM/jalan-book.gif" height="300px" width="200px" /></div></div>}
         </div>
         {/* <div onClick={e => prevPage(e)}>Previous</div> */}
 
@@ -282,9 +299,9 @@ export default function Home() {
       </div>
       <div className="about">
         <div >
-            <Link to = '/about'>
-              <p className="aboutBtn">About Us</p>
-            </Link>
+          <Link to='/about'>
+            <p className="aboutBtn">About Us</p>
+          </Link>
         </div>
       </div>
     </div>

@@ -13,7 +13,6 @@ import Checkout from "./components/Checkout/Checkout";
 import AboutUs from "./components/About us/AboutUs";
 import Success from "./components/Success/Success";
 import Dashboard from "./components/Dashboard Admin/Dashboard";
-import CarouselBook from "./components/Carousel/Carousel"
 
 
 function App() {
@@ -34,8 +33,7 @@ function App() {
           <Route path="/about" component={AboutUs}/>
           <Route path="/success" component={Success}/>
           <Route exact path="/dashboard" component={Dashboard}/>
-          <Route path="/carousel" component={CarouselBook}/>
-
+         
         </Switch>
       </div>
     </BrowserRouter>
