@@ -9,7 +9,7 @@ import {
   GENRE_FILTER,
   GET_AUTHOR_BOOKS,
   GET_AUTHOR_DETAILS,
-  GET_AUTHOR_DETAILS_NAME,
+  // GET_AUTHOR_DETAILS_NAME,
   GET_BOOKS,
   GET_BOOK_DETAILS,
   GET_GENRES,
@@ -42,7 +42,11 @@ export function cleanCache() {
     type: CLEAN_CACHE,
   };
 }
-
+// export function cleanCacheAuthor() {
+//   return {
+//     type: CLEAN_CACHE_AUTHOR,
+//   };
+// }
 export function getBookDetails(id) {
   return async function (dispatch) {
     try {
@@ -66,19 +70,19 @@ export function getAuthorDetails(id) {
     }
   };
 }
-export function getAuthorDetailsName(name) {
-  return async function (dispatch) {
-    try {
-      var response = await axios.get(`${LOCAL_HOST}/authors/name/${name}`);
-      return dispatch({
-        type: GET_AUTHOR_DETAILS_NAME,
-        payload: response.data,
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  };
-}
+// export function getAuthorDetailsName(name) {
+//   return async function (dispatch) {
+//     try {
+//       var response = await axios.get(`${LOCAL_HOST}/authors/name/${name}`);
+//       return dispatch({
+//         type: GET_AUTHOR_DETAILS_NAME,
+//         payload: response.data,
+//       });
+//     } catch (error) {
+//       console.log(error);
+//     }
+//   };
+// }
 
 export function getNameBooks(name) {
   return async function (dispatch) {
@@ -214,10 +218,10 @@ export function checkoutCart(cart, user) {
   //pasar el user y cart
 
   const body = {
-    name: 'mili',
-    email: 'mili@hotmail.com',
-    shoppingCart: cart
-  }
+    name: "mili",
+    email: "mili@hotmail.com",
+    shoppingCart: cart,
+  };
 
   console.log(body);
 
