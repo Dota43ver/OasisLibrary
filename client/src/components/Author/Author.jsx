@@ -1,13 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import {
-  addFavs,
-  addToCart,
-  cleanCache,
-  getAuthorBooks,
-  getAuthorDetailsName,
-} from "../../actions";
+import { addFavs, addToCart, getAuthorBooks } from "../../actions";
 import "../Author/Author.css";
 import Card from "../Card/Card";
 import NavBar from "../NavBar/NavBar.jsx";
@@ -18,14 +12,17 @@ export default function Author(props) {
   const [quantity, setQuantity] = useState(1);
   const [btnActive, setBtnActive] = useState(false);
   useEffect(() => {
-    dispatch(getAuthorDetailsName(name));
+    // dispatch(getAuthorDetailsName(name));
     dispatch(getAuthorBooks(name));
-    dispatch(cleanCache());
+    // dispatch(cleanCacheAuthor());
   }, [dispatch, name]);
 
   const authorDetails = useSelector((state) => state.authorDetails);
   const allAuthorBooks = useSelector((state) => state.authorBooks);
 
+  const authorDescription = authorDetails[0];
+  const authorImg = authorDetails[1];
+  const authorName = authorDetails[2];
   const handleAddToCart = (el) => {
     const addBooks = allAuthorBooks.find((e) => e.id === el.target.value);
     dispatch(
@@ -55,26 +52,11 @@ export default function Author(props) {
       <NavBar />
       <h1 className="titles">Información del autor</h1>
       <div className="authorInfo">
-        <h2 className="authorName">{authorDetails.name}</h2>
+        <h2 className="authorName">{authorName}</h2>
         <div className="imgDivv">
-          <img
-            className="authorImg"
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Denis_Diderot_by_Louis-Michel_van_Loo.jpg/235px-Denis_Diderot_by_Louis-Michel_van_Loo.jpg"
-            alt="wikiimg"
-          />
+          <img className="authorImg" src={authorImg} alt="wikiimg" />
         </div>
-        <p className="authorBio">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae
-          minus autem optio, eveniet repellendus molestias eius fuga quia
-          reprehenderit aut repellat accusamus harum. Consequatur voluptatum
-          doloremque distinctio totam reiciendis nulla officia magni delectus
-          vitae nisi odio voluptatibus facilis placeat est sapiente, provident
-          inventore sit dolorem ea! Impedit, eligendi! Ex rerum harum voluptatum
-          aspernatur deserunt magnam provident beatae fugiat. Inventore sint
-          ipsa perspiciatis quo. Aliquam qui sed nam ducimus enim impedit
-          voluptatum, alias dicta error commodi facere omnis debitis, autem
-          ullam.
-        </p>
+        <p className="authorBio">{authorDescription}</p>
       </div>
 
       <h1 className="titles">Libros del autor:</h1>

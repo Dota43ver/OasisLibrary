@@ -1,0 +1,262 @@
+[
+  {
+    "name": "Mariano Sigman",
+
+    "biography": "Mariano Sigman obtuvo su licenciatura en Física de la Universidad de Buenos Aires (1997), Doctorado en Neurociencia (Phd) en Rockefeller University (New York) e hizo un post-doctorado en Ciencias Cognitivas (2002-2005) en el College de France (Paris). En el 2006 fundó el Laboratorio de Neurociencia Integrativa de la Universidad de Buenos Aires, que dirige desde entonces. Ha sido galardonado con los premios académicos internacionales más prestigiosos en su disciplina, incluyendo el premio al joven investigador otorgado por el College de France, Paris (2006), el Career Development  Award otorgado por  Human Frontiers Science Program, que incluye un subsidio de 300.000 US$ (2007) el Premio Enrique Gaviola otorgado por la Academia Nacional de Ciencias Exactas, Físicas y Naturales (2011) y el Scholar Award otorgado por James S. McDonnell Foundation Scholar (2012), que incluye un subsidio de 600.000 US$. Es autor de más de 90 publicaciones en las revistas más prestigiosas de la neurociencia.",
+    "authorImg": "https://divinamente.com.co/wp-content/uploads/2020/09/Foto-Mariano-Sigman.jpg",
+    "books": ["El poder de las palabras"]
+  },
+  {
+    "name": "Robin Sharma",
+
+    "biography": "Robin S. Sharma nació el 16 de junio de 1964 en Canadá, se licenció en derecho en la Universidad de Dalhousie (Dalhousie University) y estuvo ejerciendo unos años como profesor de derecho, tras esto prosiguió con su carrera de abogado antes de convertirse en un distinguido coach (entrenador) de liderazgo. En la actualidad, viaja con frecuencia como conferenciante por diferentes países del mundo promoviendo el mensaje de Lidera sin título, una de sus frases más conocidas.",
+    "authorImg": "https://thinkingheads.com/wp-content/uploads/2018/01/robin-sharma-conferenciante.jpg",
+    "books": ["El monje que vendió su ferrari"]
+  },
+  {
+    "name": "Pablo D'Ors",
+
+    "biography": "Sacerdote católico y escritor, Pablo d'Ors nació en Madrid en 1963 en una familia de artistas, entre ellos su abuelo Eugenio d'Ors, ensayista y crítico de arte. Inició estudios de Derecho que abandonó para estudiar Filosofía y Teología, ordenándose presbítero en 1991, y marchándose a Honduras para ejercer como misionero. Más tarde, estudió Filología Germánica en Viena y Praga, y se doctoró en teología en Roma. D'Ors ha sido profesor de Teología en la sede en Madrid de la Universidad Pontificia de Salamanca.",
+    "authorImg": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Pablo_d%27Ors.jpg",
+    "books": ["Biografía Del Silencio"]
+  },
+  {
+    "name": "Neil Gaiman",
+
+    "biography": "(Portchester, 10 de noviembre de 1960) es un autor de ficción, novelas, cómics, novelas gráficas, no ficción, teatro de audio, películas e historietas y escritor británico. Cultiva el género fantástico. Sus obras incluyen la serie de cómics The Sandman y novelas Stardust, Coraline y El libro del Cementerio. Ha ganado numerosos premios, incluyendo los premios Hugo, Nebula y Bram Stoker, así como las medallas Newbery y Carnegie.",
+    "authorImg": "https://librosdelzorrorojo.com/wp-content/uploads/2021/09/Neil-Gaiman_cr.-Beowulf-Sheehan-scaled.jpg",
+    "books": ["Caroline"]
+  },
+  {
+    "name": "Julian Lopez ",
+
+    "biography": "Nació en Buenos Aires en 1965. Es escritor, actor y periodista. Integra diversas antologías de poesía y desde 2006 forma parte de la dirección del ciclo literario Carne Argentina, que organiza junto a Selva Almada y Alejandra Zina.",
+    "authorImg": "https://www.palomajuanes.com/wp-content/uploads/2012/06/Julian_Book_9043-Editar-683x1024.jpg",
+    "books": ["El bosque infinitesimal"]
+  },
+  {
+    "name": "Jose Hernandez",
+
+    "biography": "José Rafael Hernández (Chacras de Perdriel, 10 de noviembre de 1834 - Buenos Aires, 21 de octubre de 1886) fue un poeta, político, periodista y militar argentino, especialmente conocido como el autor del Martín Fierro, obra máxima de la literatura gauchesca. En su homenaje, el 10 de noviembre se festeja en la Argentina el Día de la Tradición.",
+    "books": ["Martín Fierro"]
+  },
+  {
+    "name": "J K Rowling",
+
+    "biography": "Rowling estudió Filología Clásica y Francesa, trabajando como investigadora y secretaria para Amnistía Internacional antes de trabajar en Portugal como profesora de inglés en 1992. Antes de irse a Portugal, en 1990 le vino la inspiración del personaje de Harry Potter en un viaje de Mánchester a Londres. Al llegar a casa se puso a crear el mundo mágico más influyente de la literatura juvenil y, mientras escribía, su madre falleció, ayudándole a comprender mejor la pérdida que sufrió Harry Potter en sus libros. Tras un corto matrimonio volvió a Edimburgo con su hija, sin empleo y en una situación ciertamente preocupante. Durante este período, Rowling terminó su primer libro de la serie, Harry Potter y la piedra filosofal, manuscrito que fue presentado a numerosas editoriales y rechazado, hasta que Bloomsbury decidió publicarlo. Tras el éxito, basado en el boca a boca, del libro, Rowling recibió una beca y un año después el libro comenzó a venderse en Estados Unidos.",
+    "books": [
+      "Harry Potter y la Piedra Filosofal",
+      "Harry Potter y el cáliz de fuego",
+      "Harry Potter y la Orden del Fénix",
+      "Harry Potter y la camara secreta",
+      "Harry Potter y el prisionero de Azkaban",
+      "Harry Potter y el misterio del principe",
+      "Harry Potter y las reliquias de la muerte"
+    ]
+  },
+  {
+    "name": "George R. R. Martin",
+
+    "biography": "Escritor y guionista americano, George R. R. Martin, de nombre real George Raymond Richard Martin, es conocido por sus novelas y relatos de terror, fantasía, histórica o ciencia ficción. Alcanzó su fama gracias a ser el autor de la conocida serie de fantasía medieval, Canción de Hielo y Fuego, adaptada a la televisión bajo el título Juego de Tronos. Martin creció en una familia obrera siendo el mayor de tres hermanos, desde pequeño se vio cautivado por el mundo de las palabras, leyendo y escribiendo relatos. Estudió Periodismo en la Universidad de Evanston, aunque no ejercería mucho tiempo esta profesión, prefiriendo la docencia en el Instituto Clarke de Dubuque y siendo juez de torneos de ajedrez, mientras preparaba sus primeros trabajos literarios.",
+    "books": [
+      "Choque de Reyes(cancion de Hielo y Fuego II)",
+      "Festin de Cuervos(cancion de Hielo y Fuego IV)",
+      "Tormenta de Espadas(cancion de Hielo y Fuego III)",
+      "Juego de Tronos(cancion de Hielo y Fuego I)",
+      "Danza de dragones(cancion de Hielo y Fuego V)"
+    ]
+  },
+  {
+    "name": "Miguel de Cervantes Saavedra",
+
+    "biography": "Desde el siglo xviii está admitido que el lugar de nacimiento de Miguel de Cervantes fue Alcalá de Henares, dado que allí fue bautizado, según su acta bautismal, y que de allí aclaró ser natural en la llamada Información de Argel (1580). El día exacto de su nacimiento es menos seguro, aunque lo normal es que naciera el 29 de septiembre, fecha en que se celebra la fiesta del arcángel San Miguel, dada la tradición de recibir el nombre del santoral del día del nacimiento. Miguel de Cervantes fue bautizado el 9 de octubre de 1547 en la parroquia de Santa María la Mayor.",
+    "books": ["Don Quijote de la Mancha"]
+  },
+  {
+    "name": "J. R. R. Tolkien",
+
+    "biography": "John Ronald Reuel Tolkien, conocido popularmente como J.R.R. Tolkien, nació el 3 de enero de 1892 en la ciudad de Bloemfontein, en el Estado Libre de Orange (actual Sudáfrica). Sus padres eran Arthur Reuel Tolkien y Mabel Suffield. Por una tradición familiar, el pequeño recibió el mismo nombre que el de su abuelo paterno, John. Su segundo nombre, Ronald, fue idea de su madre, quien estaba convencida de que iba a ser una niña a la que quería llamar Rosalind.",
+    "books": [
+      "El señor de los anillos: Las dos Torres",
+      "El señor de los anillos: La comunidad del Anillo",
+      "El señor de los anillos: El retorno del Rey"
+    ]
+  },
+  {
+    "name": "Bronte Emily",
+
+    "biography": "(Thornton, 30 de julio de 1818-Haworth, 19 de diciembre de 1848) fue una escritora británica. Su obra más importante es la novela Cumbres borrascosas (1847), considerada un clásico de la literatura inglesa, que fue publicada bajo el pseudónimo masculino de Ellis Bell para sortear así las dificultades que tenían las mujeres del siglo xix en el reconocimiento de su trabajo literario. La novela, considerada inicialmente como salvaje y burda por los críticos, fue reconocida con el tiempo como la expresión más genuina, profunda y contenida del alma romántica inglesa y una de las obras más importantes de la época victoriana.",
+    "books": ["Cumbres Borrascosas"]
+  },
+  {
+    "name": "Judson Brewer",
+
+    "biography": "Psiquiatra, neurocientífico y escritor estadounidense, el doctor Judson Brewer es director de Investigación e Innovación en el Mindfulness Center, además de profesor asociado de Psiquiatría en la Facultad de Medicina de la Universidad de Brown e investigador afiliado del Massachusetts Institute of Technology. A lo largo de su carrera ha investigado e impartido clases en la Universidad de Yale, así como en el Centro de Mindfulness de la Universidad de Massachusetts",
+    "books": ["Deshacer la ansiedad"]
+  },
+  {
+    "name": "Nicolas Maquiavelo",
+
+    "biography": "Nació en el pequeño pueblo de San Casciano in Val di Pesa, a unos 15 km de Florencia, el 3 de mayo de 1469, hijo de Bernardo Machiavelli, un abogado perteneciente a una empobrecida rama de una antigua familia influyente de Florencia, y de Bartolomea di Stefano Nelli, ambos de familias cultas y de orígenes nobiliarios, pero con pocos recursos a causa de las deudas del padre. Entre 1498 y 1512 estuvo a cargo de una oficina pública y visitó varias cortes en Francia, Alemania y otras ciudades-estado italianas en misiones diplomáticas. En 1512 fue encarcelado por un breve periodo en Florencia, y después fue exiliado y despachado a San Casciano. Murió en Florencia en 1527 y fue sepultado en la Santa Cruz.",
+    "books": ["El príncipe"]
+  },
+  {
+    "name": "Julio Cortazar",
+
+    "biography": "fue un escritor, profesor y traductor —oficio que desempeñó para la Unesco y varias editoriales—. En 1981, sin renunciar a su nacionalidad argentina, optó por la francesa en protesta contra la dictadura militar en su país, que prohibió sus libros y que él denunció a la prensa internacional desde su residencia en París.",
+    "books": ["Final del Juego", "Rayuela"]
+  },
+  {
+    "name": "Miguel Ruiz ",
+
+    "biography": "Escritor y ensayista mexicano, Miguel Ruiz es conocido por sus obras dedicadas a la espiritualidad y al desarrollo personal. Ruiz ha seguido el camino del neochamanismo, con una clara influencia del autor Carlos Castaneda, a la hora de elaborar su obra más conocida, Los cuatro acuerdos. El éxito de este libro se extendió fuera de las fronteras mexicanas, convirtiéndose en un lanzamiento internacional, que incluso fue presentado en Estados Unidos a través del prestigioso programa televisivo Oprah. A lo largo de su carrera, Ruiz ha publicado varios libros sobre espiritualidad, chamanismo, crecimiento e incluso algunos temas esotéricos relacionados con la Atlántida y el poder de las pirámides.",
+    "books": ["Los cuatro acuerdos"]
+  },
+  {
+    "name": "Bill Watterson",
+
+    "biography": "A los seis años, Watterson se mudó a Chagrin Falls, Ohio. Durante su infancia vivió con su padre, empleado de una oficina de patentes, y su madre, miembro del consejo de la ciudad. También tiene un hermano menor. En 1980, Watterson se graduó en Kenyon College, en Gambier, de la carrera de ciencias políticas. Inmediatamente fue contratado a prueba por seis meses, por el Cincinnati Post como dibujante de caricaturas políticas",
+    "books": ["Calvin y hobbes 4"]
+  },
+  {
+    "name": "Matt Haig",
+
+    "biography": "Matt Haig nació en Inglaterra en 1975. Estudió Filología Inglesa e Historia en la Universidad de Hull. Es autor de cinco novelas, entre ellas Los Radley, ganadora del ALA Alex Award en Estados Unidos, y Los humanos; ambas han recibido el apoyo unánime de la crítica y son un éxito de ventas. También ha escrito literatura infantil y juvenil. Su obra ha sido traducida a más de treinta idiomas.",
+    "books": ["La biblioteca de la media noche"]
+  },
+  {
+    "name": "Taylor Jenkins Reid",
+
+    "biography": "Nació en Acton (Massachusetts), luego fue criada en Los Ángeles. Inició su carrera en la producción cinematográfica. Trabajó como asistente de casting durante tres años, luego de graduarse de la universidad antes de intentar otros trabajos. Comenzó a escribir a tiempo parcial mientras trabajaba en una escuela secundaria hasta que consiguió un contrato por un libro. Por siempre, unidos fue su primera novela publicada en 2013.",
+    "books": ["Los siete maridos de Evelin Hugo"]
+  },
+  {
+    "name": "Mariana Enriquez",
+
+    "biography": "Mariana Enríquez nació en Buenos Aires, Argentina, en 1973. Se licenció en Comunicación Social en la Universidad Nacional de La Plata. Como periodista es subeditora del suplemento ha colaborado en Radar del diario Página/12 y ha colaborado en las revistas TXT, La Mano, La Mujer de mi Vida y El Guardián. También participó en radio, en el programa Gente de a pie, de Radio Nacional.",
+    "books": ["Nuestra parte de Noche"]
+  },
+  {
+    "name": "Martin Blasco",
+
+    "biography": "Nació en Buenos Aires el 24 de febrero de 1976. Cursó el secundario en el Normal Nº 1, estudió música en el Instituto Vocacional de Arte “Manuel José de Labardén”, para luego estudiar dirección y guion de cine y televisión. Trabajó en algunas películas y en programas de televisión, como guionista y productor, en Canal 13, Telefe, Canal 9, Canal 7 y la señal educativa Encuentro. Su cuento “¿Para qué sirve la corbata?” ganó el segundo premio en el concurso de Imaginaria-EducaRed y se convirtió luego en su primer libro, Maxi Marote, en el que el autor incluye situaciones “rescatadas” de la realidad y homenajea a algunos de sus compañeros de la escuela primaria al dar nombre a los personajes.",
+    "books": ["Los Extrañamientos"]
+  },
+  {
+    "name": "Homero",
+
+    "biography": "Poeta griego al que se atribuye la autoría de la Ilíada y la Odisea, los dos grandes poemas épicos de la antigua Grecia. En palabras de Hegel, Homero es «el elemento en el que vive el mundo griego como el hombre vive en el aire». Admirado, imitado y citado por todos los poetas, filósofos y artistas griegos que le siguieron, es el poeta por antonomasia de la literatura clásica, a pesar de lo cual la biografía de Homero aparece rodeada del más profundo misterio, hasta el punto de que su propia existencia histórica ha sido puesta en tela de juicio.",
+    "books": ["Odisea"]
+  },
+  {
+    "name": "Kristin Harmel",
+
+    "biography": "Autora y periodista estadounidense, Kristin Harmel nació en Newton, Massachusetts, el 4 de mayo de 1979. Es la cofundadora y copresentadora de la serie web Friends and Fiction. Harmel comenzó a publicar cuando apenas contaba con 16 años de edad a través de las páginas del St. Petersburg Times, mientras aún cursaba estudios de secundaria. Esta afición precoz por el periodismo llevó a la autora a estudiar en la Universidad de Florida, tras lo que pasó varios años trabajando para medios como las revistas People, Glamour, Men's Health o YM, entre otras. En lo literario, Harmel es conocida por sus novelas con un gran componente romántico y que han sido traducidas a varios idiomas. De entre su obra habría que destacar algunos títulos como La lista de los nombres olvidados o La teoría de las rubias. Además ha publicado literatura para jóvenes adultos bajo el seudónimo Kiki Sullivan.",
+    "books": ["En el corazon del Bosque"]
+  },
+  {
+    "name": "Mary C. Tornes",
+
+    "biography": "Mary C. Tornes nació en California en 1983. Su gusto por la cocina lo demostró desde muy pequeño gracias a sus raíces cartegeneras e italianas. Gusto que fue fortaleciéndose con cada experiencia gastronómica que pasaba y la influencia cocinera de su abuela paterna y materna. Sus primeros pasos universitarios fueron en el área de Mercadeo y Publicidad dentro del Politécnico. Sin embargo cambió de parecer y se enfocó en la gastronomía, primero en La Salle College de Artes Culinarias de Neo Yorquinas y luego en Vancouver (Canadá) dentro del Pacific Institute of Culinary Arts. Una etapa que le sirvió para ampliar su entendimiento sobre la cocina mundial por la gran diversidad cultural que caracteriza a dicha ciudad.",
+    "books": ["Recetas faciles para dias de frio"]
+  },
+  {
+    "name": "Walter Sosa Escudero",
+
+    "biography": "PhD in Economics (University of Illinois at Urbana-Champaign), Lic. en Economía (UBA), se especializa en econometría y estadística aplicada a cuestiones sociales. Sus trabajos de investigación se encuentran en publicaciones nacionales e internacionales incluyendo Journal of Econometrics, Journal of Economic Inequality  y Econometric Theory. Es profesor plenario y director del departamento de economia de la Universidad de San Andrés. Es profesor titular de econometría en la Universidad Nacional de La Plata e investigador invitado del Centro de Estudios Distributivos, Laborales y Sociales (CEDLAS)",
+    "books": ["Big data", "Borges, big data y yo"]
+  },
+  {
+    "name": "Colleen Hoover",
+
+    "biography": "Creció en Saltillo, Texas, y se graduó de Saltillo High School en 1998. Continuó sus estudios en Texas A&M University-Commerce donde cursó la carrera de trabajo social. En el 2000, se casó con Heath Hoover, con quién tiene tres hijos. Empezó a escribir con cinco años pero no fue hasta el año 2012 que publicó su primera novela, Amor en verso, que en poco tiempo consiguió estar en el New York Times best-seller list. Ese episodio fue el inicio que le potenció a ejercer su carrera como escritora y hasta el momento, no ha parado de seguir publicando novelas exitosas que alcanzan a la lista de los libros más vendidos de Estados Unidos. ",
+    "books": ["Romper el Circulo", "El pajaro canta hasta morir"]
+  },
+  {
+    "name": "Arturo Perez Reverte",
+
+    "biography": "(Cartagena, España, noviembre de 1951) se dedica en exclusiva a la literatura, tras vivir 21 años (1973-1994) como reportero de prensa, radio y televisión, cubriendo informativamente los conflictos internacionales en ese periodo. Trabajó doce años como reportero en el diario Pueblo, y nueve en los servicios informativos de Televisión Española (TVE), como especialista en conflictos armados. ",
+    "books": ["Revolución"]
+  },
+  {
+    "name": "Gonzalo Velazquez",
+
+    "biography": null,
+    "books": ["Vendo Todo, Me Voy A La Mierda"]
+  },
+  {
+    "name": "Maria Fernanda Maquiera",
+
+    "biography": "Nació en 1966 en Avellaneda, provincia de Buenos Aires. Es Licenciada y Profesora en Letras (Universidad de Buenos Aires, 1990) y Máster en  Edición (Instituto Universitario de Posgrado, Universidad de Salamanca, 2010). Cursó la  especialización “Libros Infantiles y Juveniles: producción, usos y recepción” (Universidad  Autónoma de Barcelona, 2018) y el Diploma Superior en “Culturas y narrativas para la  infancia y la juventud” (FLACSO, 2020). Fue docente en todos los niveles educativos, participó en seminarios y ferias del  libro en el país y en el exterior.  ",
+    "books": ["Rompecabezas"]
+  },
+  {
+    "name": "Alice Kellen",
+
+    "biography": "No se sabe mucho de la vida personal de la autora, ni siquiera su nombre real, ya que prefiere mantener separada su vida privada de su vida profesional como escritora; este pseudónimo lo eligió por Alicia en el país de las maravillas y Marian Keyes.",
+    "books": ["13 Locuras que regalarte"]
+  },
+  {
+    "name": "Roberto Fontanarrosa",
+
+    "biography": "Roberto Fontanarrosa nació en la ciudad de Rosario, en 1944. Durante su infancia vivió en el centro de la ciudad, en un antiguo edificio en Catamarca 1421 esquina con Corrientes. Fue a la escuela primaria Mariano Moreno y comenzó la secundaria en la escuela Industrial (hoy Politécnico). Su carrera comenzó a finales de los años 1960 como dibujante humorístico en la Revista Boom de Rosario (1968) luego en Zoom y Deporte 70 destacándose rápidamente por su calidad y por la rapidez y seguridad con que ejecutaba sus dibujos. Estas cualidades hicieron que su producción gráfica fuera copiosa. Por el año 1973 dibuja en las revistas Hortensia y Satiricón y en el diario Clarín. Entre sus personajes más conocidos están el matón Boogie El Aceitoso y el gaucho Inodoro Pereyra y su perro Mendieta. Sobre la introducción de este último personaje en sus tiras, Fontanarrosa explicó: “Es muy difícil meter un caballo en un cuadrito de historieta, por lo tanto apareció un perro. Y se llama Mendieta porque me causaban gracia los perros con nombres humanos.”",
+    "books": ["Fontanarrosa continuará?"]
+  },
+
+  {
+    "name": "Madeline Miller",
+
+    "biography": "Madeline Miller es una escritora estadounidense. Es conocida por sus novelas históricas y mitológicas, incluyendo The Song of Achilles y Circe. Obtuvo un Bachelor of Arts en Classics de la Universidad de Brown y una maestría en la Universidad de Yale.",
+    "books": ["La canción de Aquiles"]
+  },
+  {
+    "name": "Stephen King",
+
+    "biography": "Stephen King es un escritor de terror, fantasía y ciencia ficción muy popular. Ha escrito más de 50 novelas y 200 relatos cortos, y ha ganado varios premios por su trabajo. Algunas de sus obras más famosas son The Shining, IT y The Dark Tower series.",
+    "books": ["Cuento de Hadas"]
+  },
+  {
+    "name": "Carolina Amoroso",
+
+    "biography": "Carolina Amoroso es una escritora y periodista argentina. Ha publicado varios libros de cuentos y novelas, incluyendo Los años de Laura y La educación de una señorita. También ha trabajado como editora y ha escrito para diversos periódicos y revistas.",
+    "books": ["Hackear la Argentina"]
+  },
+  {
+    "name": "Anabella Talpone",
+
+    "biography": "Anabella Talpone es una escritora y periodista argentina. Ha publicado varios libros, incluyendo El regreso de los dioses y El dios de la lluvia. Además de su trabajo literario, ha trabajado en diversos programas de radio y televisión.",
+    "books": ["Lecturas En El Tejado 3"]
+  },
+  {
+    "name": "Antoine De Saint-Exupery",
+
+    "biography": "Antoine de Saint-Exupéry fue un escritor, aviador y filósofo francés. Es conocido por sus obras de literatura infantil y juvenil, incluyendo El principito y Citadelle. También fue un piloto de aviación y trabajó como corresponsal de guerra durante la Segunda Guerra Mundial.",
+    "books": ["El Principito"]
+  },
+
+  {
+    "name": "Sara Gallardo",
+
+    "biography": "Sara Gallardo fue una escritora y poeta argentina. Es conocida por sus libros de cuentos y poemas, incluyendo El país de la lluvia y El otoño del patriarca. Fue miembro de la Generación del 60, un grupo de escritores que se destacaron en Argentina durante la década de 1960.",
+    "books": ["Vivir de viaje"]
+  },
+  {
+    "name": "Antony Beevor",
+
+    "biography": "Antony Beevor es un historiador y escritor británico especializado en la Segunda Guerra Mundial. Ha escrito varios libros sobre el tema, incluyendo Stalingrad y Berlín: La caída 1945. También ha trabajado como editor y ha sido nombrado Oficial de la Orden del Imperio Británico por su trabajo literario.",
+    "books": ["Rusia"]
+  },
+
+  {
+    "name": "Ana Frank",
+
+    "biography": "Ana Frank fue una escritora y diarista judía alemana. Es conocida por su diario El diario de Ana Frank, que documentó sus experiencias durante el Holocausto mientras se escondía de los nazis en Ámsterdam. Su diario se ha traducido a más de 70 idiomas y ha sido considerado un testimonio importante del Holocausto.",
+    "books": ["Diario de Ana Frank"]
+  },
+  {
+    "name": "Bill Bryson",
+
+    "biography": "Bill Bryson es un escritor y periodista británico-estadounidense. Es conocido por sus libros de viajes y ensayos, incluyendo A Walk in the Woods y Notes from a Small Island. También ha escrito sobre temas de ciencia y historia, como A Short History of Nearly Everything y At Home: A Short History of Private Life. Ha ganado varios premios literarios y ha sido nombrado Oficial de la Orden del Imperio Británico por su trabajo.",
+    "books": ["Una breve historia de casi todo"]
+  }
+]

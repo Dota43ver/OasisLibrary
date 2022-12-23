@@ -41,6 +41,12 @@ module.exports = (sequelize) => {
         type: DataTypes.TEXT,
         allowNull: false,
       },
+      authorDescription: {
+        type: DataTypes.TEXT,
+      },
+      authorImg: {
+        type: DataTypes.TEXT,
+      },
       language: {
         type: DataTypes.STRING,
         // allowNull: false,                  //Algunos libros no tienen language.
