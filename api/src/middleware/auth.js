@@ -6,8 +6,7 @@ async function verify(req, res, next) {
     try {
         // const token = req.header("auth-token");
 
-        let token = req.headers['x-access-token'] || req.headers['authorization'];
-        token = token.slice(7, token.length);
+         let token = req.header('token');
         if(!token) {
             res.status(404).send("There is no token");
         }

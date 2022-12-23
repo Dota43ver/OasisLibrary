@@ -1,60 +1,64 @@
-import React from 'react';
-import {useState} from 'react';
-import {useDispatch} from 'react-redux';
-import {Link, useHistory} from 'react-router-dom';
+
 import style from "./Register.module.css"
+import React, {useState} from "react"
+import {useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {Link, useHistory} from 'react-router-dom';
 import oasis from "../NavBar/oasis.jpg"
 
+const Register = ({setAuth}) => {
 
+const [inputs,setInputs] = useState({
+    name:"",
+    lastName:"",
+    email:"",
+    password:""
+})
 
+    const {email , password , name , lastName} = inputs
 
-
-function validate(input){
-    let errors = {}
-    if(!/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(input.email)){
-        errors.email = "debe ingresar un email valido"
-    }else{
-        errors.email = false
+    const onChange = e => {
+        setInputs({...inputs,[e.target.name]
+        : e.target.value})
     }
 
-    if(input.password.length < 6){
-        errors.password = "debe ser al menos 6 caracteres"
-    }else{
-        errors.password = false
+    const onSubmitForm = async(e) => {
+        e.preventDefault()
+
+        try {
+        const body = {name , lastName, email, password}
+        const response = await fetch("http://localhost:3001/users/signup",{
+            method: "POST",
+            headers: {"Content-Type" : "application/json"}
+            ,
+            body: JSON.stringify(body)
+        });
+
+        const parseRes = await response.json()
+
+        localStorage.setItem("token",parseRes.token)
+
+        setAuth(true)
+            
+
+        } catch (err) {
+            console.error(err.message)
+        }
+
     }
 
-    if((errors.email === false) && (errors.password === false)){
-        errors = false
-    }
-
-    return errors
-}
-
-export default function Register(){
-    const dispatch = useDispatch()
-    const history = useHistory()
-    const [errors,setErrors] = useState({})
-    const [input, setInput] = useState({
-        email:"",
-        password:""
-    })
-
-    function handleChange(e){
-        setInput({
-            ...input,
-            [e.target.name] : e.target.value
-        })
-        setErrors(validate({
-            ...input,
-            [e.target.name]: e.target.value
-        }))
-        console.log("esto es errors",errors)
-    }
-
-
-
-return(
-    <div className={style.main_container}>
+    return (
+        // <div>
+        // <h1>Register</h1>
+        // <form onSubmit={onSubmitForm}>
+        // <input type="text" name="name" placeholder="name" value={name} onChange={e => onChange(e)} />
+        // <input type="text" name="lastName" placeholder="lastName" value={lastName} onChange={e => onChange(e)} />
+        // <input type="email" name="email" placeholder="email" value={email} onChange={e => onChange(e)} />
+        // <input type="password" name="password" placeholder="password" value={password} onChange={e => onChange(e)} />
+        // <button>submit</button>
+        // </form>
+        // </div>
+        <div className={style.main_container}>
         <div className={style.cabecera}>
             <Link to = '/home'>
                 <img src={oasis} alt=""  height="85px" width="90px"/>
@@ -62,31 +66,35 @@ return(
             <h3 className={style.text}>OASIS LIBRARY</h3>
         </div>
         <div className={style.main_container2}>
-        <form className={style.formRegistro}>
+        <form className={style.formRegistro} onSubmit={onSubmitForm}>
             <div className={style.button}>
             {/* <button className={style.button1}>Login</button> */}
-            <button className={style.button1}>Registrarte</button>
+            <Link to="/Login">
+            <button className={style.button1}>Login</button>
+            </Link>
             </div>
             <div className={style.text}>
             <h3 className={style.text1}>Hello!</h3>
-            <h4 className={style.text2}>Sign into your account</h4>
+            <h4 className={style.text2}>create your account</h4>
             </div>
             <div className={style.inputContainer}>
-            <input type="text" name="email" value={input.email} id="" placeholder='Email' onChange={(e)=>handleChange(e)} className={style.inputs}></input>
-            <div className={style.container_errors}>
+            <input type="text" name="name" value={inputs.name} id="" placeholder='Name' onChange={(e)=>onChange(e)} className={style.inputs}></input>
+            <input type="text" name="lastName" value={inputs.lastName} id="" placeholder='lastName' onChange={(e)=>onChange(e)} className={style.inputs}></input>
+            <input type="email" name="email" value={inputs.email} id="" placeholder='Email' onChange={(e)=>onChange(e)} className={style.inputs}></input>
+            {/* <div className={style.container_errors}>
             {errors.email && (
                 <p className={style.errors}>{errors.email}</p>
                 )}
-                </div>
-            <input type="password" name="password" value={input.password} id="" placeholder='Password' onChange={(e)=>handleChange(e)} className={style.inputs}></input>
-            <div className={style.container_errors}>
+                </div> */}
+            <input type="password" name="password" value={inputs.password} id="" placeholder='Password' onChange={(e)=>onChange(e)} className={style.inputs}></input>
+            {/* <div className={style.container_errors}>
             {errors.password && (
                 <p className={style.errors}>{errors.password}</p>
                 )}
-                </div>
+                </div> */}
             </div>
             <div className={style.button2}>
-            <button className={style.button3} disabled={!!errors}>Login</button>
+            <button className={style.button3}>Register</button>
             </div>
             <div className={style.divisor}>
             </div>
@@ -102,5 +110,8 @@ return(
         </form>
         </div>
     </div>
-)
+    )
 }
+
+
+export default Register;

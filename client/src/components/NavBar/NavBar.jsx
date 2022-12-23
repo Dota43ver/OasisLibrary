@@ -46,28 +46,27 @@ export default function NavBar() {
         <div className={style.buscar}>
           <div className={style.searchinner}>
 
-            <input
-              type="text"
-              className={style.inputs1}
-              onChange={(e) => handleInputChange(e)}
-              value={name}
-            />
-            <button className={style.button} onClick={(e) => handleSubmit(e)}>
-              Buscar
-            </button>
-
-          </div>
-        </div>
-        <div className={style.dropdown}>
-          {allBooks.filter(item => {
-            const term = name.toLowerCase();
-            const fullName = item.name.toLowerCase();
-
-            return term && fullName.startsWith(name)
-          })
-            .map((item) => (
-              <div onClick={(e) => onSearch(item.name)} className={style.drowpdownrow}>{item.name}</div>
-            ))}
+        <input
+          type="text"
+          className={style.inputs1}
+          onChange={(e) => handleInputChange(e)}
+          value={name}
+          />
+        <button className={style.button} onClick={(e) => handleSubmit(e)}>
+          Buscar
+        </button>
+        
+      </div>
+      </div>
+      <div className={style.dropdown}>
+        {allBooks.filter(item =>{
+          const term = name.toLowerCase();
+          const fullName = item.name.toLowerCase();   
+          return term && fullName.startsWith(name)
+        })
+        .map((item) =>(
+          <div onClick={(e)=>onSearch(item.name)} className={style.drowpdownrow}>{item.name}</div>
+          ))}
         </div>
       </div>
       <div className={style.buttonsDerecha}>

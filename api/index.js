@@ -20,9 +20,8 @@
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
 const preCharge = require('./src/controllers/preCharge.js');
-
 // Syncing all the models at once.
-conn.sync({ force: true }).then(() => {
+conn.sync({ force: false }).then(() => {
   server.listen(3001, async () => {
 
         // cargo las dietas en la BBDD cuando se inicia el servidor
