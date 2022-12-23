@@ -1,3 +1,9 @@
+@media screen and (max-width: 600px) {
+    .carrusel {
+        display: none;
+    }
+}
+
 .home {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(205px, 1fr));
@@ -193,6 +199,39 @@
     border-radius: 4px;
     
     max-width: 200px
+}
+
+.azar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.azar > a{
+    display: flex;
+    justify-content: center;
+
+    padding-block: 20px;
+    margin: 0px;
+
+    text-decoration: underline;
+
+    font-family: 'Roboto';
+    font-size: 16px;
+}
+
+.azar > a:hover {
+    color: #5E3613;
+    font-weight: 600;
+}
+
+.azar > p {
+    padding-bottom: 15px;
+    margin: 0px;
+
+    font-family: 'Roboto';
+    font-size: 14px;
 }
 
 .filtersDiv h2 {

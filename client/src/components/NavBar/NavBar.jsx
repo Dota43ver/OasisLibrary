@@ -41,7 +41,7 @@ export default function NavBar() {
           {/* <h2 className={style.title}> Oasis Library </h2> */}
         </div>
       </Link>
-      <div>
+      <div className={style.allSearch}>
 
         <div className={style.buscar}>
           <div className={style.searchinner}>
