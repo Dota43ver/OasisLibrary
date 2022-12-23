@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { checkoutCart } from "../../actions/index";
 import { Link } from 'react-router-dom';
@@ -10,6 +10,9 @@ export default function Checkout() {
   const cart = useSelector((state) => state.cart);
   const user = useSelector((state) => state.user);
   const purchasedCart = useSelector((state) => state.purchasedCart)
+
+  const [couponCode, setCouponCode] = useState('');
+  const [total, setTotal] = useState(0);
 
   const totalPrice = cart.reduce(
     (total, item) => total + item.price * item.quantity,
@@ -23,6 +26,18 @@ export default function Checkout() {
   const handeleCheckout = () => {
     dispatch(checkoutCart(cart, user));
   };
+
+  // const voucher = ['oasislibrary2022'] (hacer un array con todos los cupones)
+
+  function applyCoupon(couponCode) {
+    if (couponCode == "oasislibrary2022") {
+      var newPrice = totalPrice * 0.2;
+      setTotal(newPrice);
+    } else {
+      alert("Código de cupón no válido");
+    }
+  }
+
 
   return (
     <div>
@@ -83,8 +98,21 @@ export default function Checkout() {
             </Link>
           </div>}
 
-          <h4> Total final: ${totalPrice} </h4>
+          <p> Cupón de descuento: </p>
+
+          <form>
+
+            <input type="text" value={couponCode} onChange={e => setCouponCode(e.target.value)} />
+
+            <button type="button" onClick={() => applyCoupon(couponCode)}>Aplicar cupón</button>
+          </form>
+
+          {couponCode ?
+            <h4> Total final: ${totalPrice - total} </h4>
+            : <h4> Total final: ${totalPrice} </h4>}
+
           <button className="buttonCompra" onClick={handeleCheckout}> Completar compra </button>
+
 
         </div>
       </div>

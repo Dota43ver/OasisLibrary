@@ -251,7 +251,12 @@ export default function Home() {
             <p> ¿No sabes qué leer? </p>
             <button onClick={handleRandomId} className="azarButton"> Encontrá un libro al azar </button>
             {
-              productIds ? <span className="azar">{productIds.name}</span>
+              productIds ?
+                <div className="azar">
+                  <a href={`/book/${productIds.id}`}>{productIds.name}</a>
+                  {/* <p>{productIds.genre}</p> */}
+                  <img src={productIds.image} width='150px' />
+                </div>
                 : null
             }
           </div>

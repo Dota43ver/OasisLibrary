@@ -1,27 +1,52 @@
 @media screen and (max-width: 600px) {
-  
+
   .main_container {
-    width:fit-content
+    width: fit-content;
   }
 
-  .searchinner{
-    width: 80%;
+  .allSearch {
+    width: 40%;
+  }
+
+  .searchinner {
+    width: 50%;
+  }
+
+  .buscar {
+    width: 20%
+  }
+
+  .inputs1 {
+    width: 20%;
+  }
+
+  .button {
+    width: 50%;
   }
 
   .micuenta {
     display: none;
   }
 
-  .container_favs > button {
+  .container_image {
+    margin-inline: 0px;
+  }
+
+  .container_image>img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .container_favs>button {
     display: none;
   }
 
-  .container_cart > button {
+  .container_cart>button {
     display: none;
   }
 
   .buttonsDerecha {
-   width: 60%
+    width: 60%
   }
 
 }
@@ -34,7 +59,6 @@
 .main_container {
   display: flex;
   align-items: center;
-  gap: 40px;
   background-color: #ECEBEB;
   height: 120px;
   justify-content: space-between;
@@ -54,6 +78,7 @@
 .container_image>img {
   padding-right: 10px;
 }
+
 /* 
 .title {
   font-family: "Roboto";
@@ -200,12 +225,12 @@
   cursor: pointer;
 }
 
-.dropdown > div {
+.dropdown>div {
   padding: 4px;
 }
 
-.dropdown > div:hover {
-  background-color:#ECEBEB
+.dropdown>div:hover {
+  background-color: #ECEBEB
 }
 
 .searchinner {
@@ -214,7 +239,7 @@
   height: 25px;
 }
 
-.buttonsDerecha{
+.buttonsDerecha {
   display: flex;
   margin-inline: 30px;
 }
