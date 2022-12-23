@@ -18,6 +18,7 @@ import NavBar from "../NavBar/NavBar";
 import Paginated from "../Paginated/Paginated";
 import "./Home.css";
 import CarouselBook from "../Carousel/Carousel";
+import Float from "../FloatWApp/Float";
 
 export default function Home() {
   const allBooks = useSelector((state) => state.books);
@@ -147,107 +148,111 @@ export default function Home() {
       <div className="carrusel">
         <CarouselBook />
       </div>
+      <Float/>
       <div className="all">
-        <div className="filtersDiv">
-          <h2> Filter by: </h2>
-          <button className="refreshButton" onClick={handleClick}>
-            Refresh books
-          </button>
-          <div>
-            <label>Ordenamieto</label>
-            <select
-              className="select"
-              name="alphabetical"
-              onChange={(e) => handleAlphabeticalSort(e)}
-              value={refresh}
-            >
-              <option disabled selected value="default">
-                Alphabetical
-              </option>
-              <option value="atoz">A - Z</option>
-              <option value="ztoa">Z - A</option>
-            </select>
-          </div>
-          <div>
-            <label> Precio </label>
-            <select
-              className="select"
-              name="price"
-              onChange={(e) => handlePriceSort(e)}
-              value={refresh}
-            >
-              <option disabled selected value="default">
-                Precio
-              </option>
-              <option value="asc">Menor</option>
-              <option value="desc">Mayor</option>
-            </select>
-          </div>
-          <div>
-            <label> Puntuación </label>
-            <select
-              className="select"
-              name="score"
-              onChange={(e) => handleScoreSort(e)}
-              value={refresh}
-            >
-              <option disabled selected value="default">
-                Puntuación
-              </option>
-              <option value="desc">Menor</option>
-              <option value="asc">Mayor</option>
-            </select>
-          </div>
-          <div>
-            <label>Géneros </label>
-            <select
-              className="select"
-              onChange={(e) => handlerFilterByGenre(e)}
-              value={refresh}
-            >
-              <option value="all">Todos</option>
-              {allGenres?.map((genre) => (
-                <option key={genre.id} value={genre.name}>
-                  {genre.name}
+        <div className="side">
+          <div className="filtersDiv">
+            <h2> Filter by: </h2>
+            <button className="refreshButton" onClick={handleClick}>
+              Refresh books
+            </button>
+            <div>
+              <label>Ordenamieto</label>
+              <select
+                className="select"
+                name="alphabetical"
+                onChange={(e) => handleAlphabeticalSort(e)}
+                value={refresh}
+              >
+                <option disabled selected value="default">
+                  Alphabetical
                 </option>
-              ))}
-            </select>
+                <option value="atoz">A - Z</option>
+                <option value="ztoa">Z - A</option>
+              </select>
+            </div>
+            <div>
+              <label> Precio </label>
+              <select
+                className="select"
+                name="price"
+                onChange={(e) => handlePriceSort(e)}
+                value={refresh}
+              >
+                <option disabled selected value="default">
+                  Precio
+                </option>
+                <option value="asc">Menor</option>
+                <option value="desc">Mayor</option>
+              </select>
+            </div>
+            <div>
+              <label> Puntuación </label>
+              <select
+                className="select"
+                name="score"
+                onChange={(e) => handleScoreSort(e)}
+                value={refresh}
+              >
+                <option disabled selected value="default">
+                  Puntuación
+                </option>
+                <option value="desc">Menor</option>
+                <option value="asc">Mayor</option>
+              </select>
+            </div>
+            <div>
+              <label>Géneros </label>
+              <select
+                className="select"
+                onChange={(e) => handlerFilterByGenre(e)}
+                value={refresh}
+              >
+                <option value="all">Todos</option>
+                {allGenres?.map((genre) => (
+                  <option key={genre.id} value={genre.name}>
+                    {genre.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label>Saga </label>
+              <select
+                className="select"
+                onChange={(e) => handlerFilterBySaga(e)}
+                value={refresh}
+              >
+                <option value="all">Ninguna</option>
+                <option value="El señor de los anillos">
+                  Señor de los anillos
+                </option>
+                <option value="Harry Potter">Harry Potter</option>
+                <option value="Juego de Tronos">Juego de tronos</option>
+              </select>
+            </div>
+            <div>
+              <label>Idioma </label>
+              <select
+                className="select"
+                onChange={(e) => handlerFilterByLanguage(e)}
+                value={refresh}
+              >
+                <option value="all">Todos</option>
+                <option value="Español">Español</option>
+                <option value="Ingles">Inglés</option>
+              </select>
+            </div>
           </div>
-          <div>
-            <label>Saga </label>
-            <select
-              className="select"
-              onChange={(e) => handlerFilterBySaga(e)}
-              value={refresh}
-            >
-              <option value="all">Ninguna</option>
-              <option value="El señor de los anillos">
-                Señor de los anillos
-              </option>
-              <option value="Harry Potter">Harry Potter</option>
-              <option value="Juego de Tronos">Juego de tronos</option>
-            </select>
-          </div>
-          <div>
-            <label>Idioma </label>
-            <select
-              className="select"
-              onChange={(e) => handlerFilterByLanguage(e)}
-              value={refresh}
-            >
-              <option value="all">Todos</option>
-              <option value="Español">Español</option>
-              <option value="Ingles">Inglés</option>
-            </select>
-          </div>
-          <br></br>
 
-          <p> ¿No sabes qué leer? </p>
-          <button onClick={handleRandomId} className="azarButton"> Encontrá un libro al azar </button>
-          {
-            productIds ? <span className="azar">{productIds.name}</span>
-            : null
-          }
+          <div className="azarAll">
+            <p> ¿No sabes qué leer? </p>
+            <button onClick={handleRandomId} className="azarButton"> Encontrá un libro al azar </button>
+            {
+              productIds ? <span className="azar">{productIds.name}</span>
+                : null
+            }
+          </div>
 
         </div>
         <div className="home">

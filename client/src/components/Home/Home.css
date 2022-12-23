@@ -172,6 +172,29 @@
     justify-content: space-between;
 }
 
+.side {
+    display: flex;
+    flex-direction: column;
+}
+
+.azarAll {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-block-start: 31px;
+    margin-left: 10px;
+    padding-block: 18px;
+    padding-inline: 20px;
+
+    
+    background-color: #ECEBEB;
+    border-radius: 4px;
+    
+    max-width: 200px
+}
+
 .filtersDiv h2 {
     font-size: 20px;
     font-weight: 500;
