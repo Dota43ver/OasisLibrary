@@ -54,7 +54,7 @@ function App() {
           <Route exact path="/home" component={Home} />
           <Route path="/book/:id" component={BookDetails} />
           <Route exact path="/account" render={props => isAuthenticated ? <Account {...props} setAuth={setAuth}/> : <Redirect to="/login" />} />
-          <Route path="/bookcreate" component={BookCreate} />
+          <Route path="/dashboard/bookcreate" component={BookCreate} />
           <Route path="/cart" component={Cart} />
           <Route path="/favorites" component={Favorites} />
           <Route path="/author/:name" component={Author} />
