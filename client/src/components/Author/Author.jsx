@@ -76,6 +76,7 @@ export default function Author(props) {
           ullam.
         </p>
       </div>
+
       <h1 className="titles">Libros del autor:</h1>
       <div className="home">
         {allAuthorBooks.length > 0 ? (

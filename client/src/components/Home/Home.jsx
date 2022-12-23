@@ -19,6 +19,7 @@ import Paginated from "../Paginated/Paginated";
 import "./Home.css";
 import CarouselBook from "../Carousel/Carousel";
 import Float from "../FloatWApp/Float";
+import ScrollToTop from "react-scroll-to-top";
 
 export default function Home() {
   const allBooks = useSelector((state) => state.books);
@@ -149,6 +150,7 @@ export default function Home() {
         <CarouselBook />
       </div>
       <Float/>
+      <ScrollToTop smooth className="scroll"/>
       <div className="all">
         <div className="side">
           <div className="filtersDiv">
