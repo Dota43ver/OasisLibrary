@@ -1,24 +1,35 @@
 .account {
     margin: 2%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .left {
-    border: 1px solid #49D6DF;
-    border-radius: 18px;
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
-    width: 250px;
-    height: 150px;
+    width: 20%;
+    height: 125px;
+    background: #ECEBEB;
+    align-items: flex-start;
 }
 .info {
     display: flex;
     flex-direction: column;
-    border: 1px solid #49D6DF;
-    border-radius: 18px;
-    width: 900px;
-    height: 300px;
+    border-radius: 8px;
+    width: max-content;
+    height: max-content;
+
+    justify-content: space-evenly;
+    align-items: stretch;
+
+    background: #ECEBEB;
+
+    padding: 2%;
+}
+
+.info > div {
+    font-family: 'Roboto';
 }
 
 .headatos {
@@ -30,11 +41,12 @@
 
 .usuario {
     width: 600px;
-    height: 300px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    padding-left: 17%;
 }
 
 .orders {
@@ -44,4 +56,19 @@
 .dato {
     font-size: 16px;
     font-weight: 400;
+}
+
+.logoutBtn {
+    cursor: pointer;
+    margin: 4px;
+    width: 125px;
+    height: 28px;
+
+    text-decoration: none;
+    background: #1C555E;
+    color: #ECEBEB;
+    border: none;
+    border-radius: 4px;
+
+    margin-inline: 45%;
 }

@@ -92,9 +92,9 @@ export default function Account({setAuth}) {
                         <h3 className="dato" name="name" value={name}> Name: {name} </h3>
                         <h3 className="dato" name="lastName" value={lastName}> Last Name: {lastName} </h3>
                         <h3 className="dato" name="email" value={email}> Mail: {email} </h3>
-                        <h3 className="dato" name="password" value={password}> Password: {password} </h3>
+                        <h3 className="dato" name="password" value={password}> Password: ******** </h3>
                     </div>
-                    <button onClick={e => logout(e)}>Logout</button>
+                    <button className="logoutBtn" onClick={e => logout(e)}>Logout</button>
                     {/* <button> Guardar Cambios </button> */}
 
                 </div>
