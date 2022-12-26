@@ -12,7 +12,7 @@ const LandingPage = () => {
             <div className={style.container}>
                 <div className={style.buttons}>
                     <div className={style.log}>
-                        <Link to='/a'>
+                        <Link to='/login'>
                             <button className={style.signBtn}>Sign in</button>
                         </Link>
                     </div>
