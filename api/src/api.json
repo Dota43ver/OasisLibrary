@@ -770,19 +770,5 @@
     "language": "Ingles",
     "stock": 5,
     "image": "https://covers.alibrate.com/b/59872e94cba2bce50c1bcc9f/71a8b87f-2fc6-4a55-9007-fe4285ce8be5/share"
-  },
-  {
-    "name": "Fuego y Sangre",
-    "year": 2018,
-    "genre": ["Novela", "Ficcion politica", "Fantasia"],
-    "author": "George R. R. Martin",
-    "authorDescription": "George Raymond Richard Martin (Bayonne, Nueva Jersey, 20 de septiembre de 1948), conocido como George R. R. Martin y en ocasiones por sus seguidores como GRRM, es un escritor y guionista estadounidense de literatura fantástica, ciencia ficción y terror. Es conocido especialmente por ser el autor de la serie de novelas Canción de hielo y fuego, adaptadas para la televisión con los títulos de Juego de tronos (Game of Thrones) y La casa del dragón (House of the Dragon). También ha colaborado en el apartado artístico y de guión en el videojuego de From Software Elden Ring.",
-    "authorImg": "https://cdn.britannica.com/05/223205-050-8931FF28/American-writer-George-RR-Martin-2011.jpg",
-    "price": 5546,
-    "score": 4,
-    "description": "Fuego y sangre (Fire and blood, en inglés) es una novela fantástica del escritor estadounidense George R. R. Martin. Se trata de una historia completa de la casa Targaryen, una estirpe real que aparece en la saga Canción de hielo y fuego. Originalmente se pensó publicar al acabar la saga principal, pero a medida que el material ha ido creciendo, el escritor ha manifestado su intención de publicar dos volúmenes, siendo Fuego y sangre el primero de ellos, que se publicó por primera vez (en inglés) el 20 de octubre de 2018.",
-    "language": "Español",
-    "stock": true,
-    "image": "https://www.tematika.com/media/catalog/Ilhsa/Imagenes/657858.jpg"
   }
 ]
