@@ -20,11 +20,8 @@ import {
   REMOVE_FROM_FAVS,
   SAGA_FILTER,
   SCORE_SORT,
-<<<<<<< HEAD
   GET_USERS,
-=======
   UPDATE_BOOK_STOCK,
->>>>>>> 51dc584120962a3f7a434517567d5297b1b5426f
 } from "../actions/types";
 
 const initialState = {
