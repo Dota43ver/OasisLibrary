@@ -12,14 +12,20 @@ function preCharge() {
           genre: book.genre.map((e) => e),
           author: book.author,
           price: book.price,
-          score: book.score ? book.score : 0.1,
-          description: book.description ? book.description : "Sin descripcion",
+          score: typeof book.score !== "undefined" ? book.score : 0.1,
+          description:
+            typeof book.description !== "undefined"
+              ? book.description
+              : "Sin descripcion",
           authorDescription: book.authorDescription,
           authorImg: book.authorImg,
-          language: book.language ? book.language : "No especificado",
-          stock: book.stock ? book.stock : false,
+          language:
+            typeof book.language !== "undefined"
+              ? book.language
+              : "No especificado",
+          stock: book.stock,
           image: book.image,
-          saga: book.saga ? book.saga : null,
+          saga: typeof book.saga !== "undefined" ? book.saga : null,
         },
       });
     });

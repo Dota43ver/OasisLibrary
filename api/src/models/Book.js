@@ -52,9 +52,10 @@ module.exports = (sequelize) => {
         // allowNull: false,                  //Algunos libros no tienen language.
       },
       stock: {
-        type: DataTypes.BOOLEAN,
-        // allowNull: false,                  //Algunos libros no tienen score.
+        type: DataTypes.INTEGER,
+        defaultValue: 5,
       },
+
       image: {
         type: DataTypes.STRING,
         /* allowNull: false, */

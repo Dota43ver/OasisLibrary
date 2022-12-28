@@ -22,7 +22,11 @@ import {
   REMOVE_FROM_FAVS,
   SAGA_FILTER,
   SCORE_SORT,
+<<<<<<< HEAD
   GET_USERS,
+=======
+  UPDATE_BOOK_STOCK,
+>>>>>>> 51dc584120962a3f7a434517567d5297b1b5426f
 } from "./types";
 
 export const getBooks = () => (dispatch) => {
@@ -168,10 +172,12 @@ export function languageFilter(payload) {
     payload,
   };
 }
-export function addToCart(item) {
-  return {
-    type: ADD_TO_CART,
-    payload: item,
+export function addToCart(book) {
+  return (dispatch, getState) => {
+    dispatch({ type: ADD_TO_CART, payload: book });
+    const currentBook = getState().bookDetails;
+    const newStock = currentBook.stock - book.quantity;
+    dispatch(updateBookStock(currentBook.id, newStock));
   };
 }
 
@@ -277,3 +283,34 @@ export const getUsers = () => async (dispatch) => {
 //   }
 // }
 
+export function updateBookStock(id, newStock) {
+  return {
+    type: UPDATE_BOOK_STOCK,
+    payload: {
+      id,
+      newStock,
+    },
+  };
+}
+// export function updateBookStock(id, newStock) {
+//   return (dispatch) => {
+//     try {
+//       axios
+//         .put(`${LOCAL_HOST}/books/${id}`, {
+//           stock: newStock,
+//         })
+//         .then(() => {
+//           console.log(`${LOCAL_HOST}/books/${id}`);
+//           dispatch({
+//             type: UPDATE_BOOK_STOCK,
+//             payload: {
+//               id,
+//               newStock,
+//             },
+//           });
+//         });
+//     } catch (error) {
+//       console.error(error);
+//     }
+//   };
+// }
