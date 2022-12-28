@@ -6,11 +6,11 @@ const{fn, col} = require('sequelize')
 const router = Router()
 
 router.post('/', async (req, res) => {
-    let {descript, votes, UserId, idBook} = req.body;
+    let {descript, votes, userId, idBook} = req.body;
     try {
         let newReview = await Reviews.create({
-            UserId: UserId,
-            idBook: idBook,
+            userId: userId,
+            bookId: idBook,
             descript: descript,
             votes: votes
         })
@@ -30,8 +30,8 @@ router.get('/', async (req, res) => {
         let viewReviews = await Reviews.findAll({
             attributes:[
                 'id',
-                'UserId',
-                'idBook',
+                'userId',
+                'bookId',
                 'descript',
                 'votes'
             ],
