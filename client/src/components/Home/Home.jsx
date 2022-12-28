@@ -230,6 +230,7 @@ export default function Home() {
                 </option>
                 <option value="Harry Potter">Harry Potter</option>
                 <option value="Juego de Tronos">Juego de tronos</option>
+                <option value="Los Juegos Del Hambre">Los Juegos Del Hambre</option>
               </select>
             </div>
             <div>
