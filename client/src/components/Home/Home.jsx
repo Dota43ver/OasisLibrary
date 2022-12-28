@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import ScrollToTop from "react-scroll-to-top";
 import {
+  addFavs,
+  addToCart,
   aplhabeticalSort,
   genreFilter,
   getBooks,
@@ -10,16 +13,13 @@ import {
   priceSort,
   sagaFilter,
   scoreSort,
-  addToCart,
-  addFavs,
 } from "../../actions";
 import Card from "../Card/Card";
+import CarouselBook from "../Carousel/Carousel";
+import Float from "../FloatWApp/Float";
 import NavBar from "../NavBar/NavBar";
 import Paginated from "../Paginated/Paginated";
 import "./Home.css";
-import CarouselBook from "../Carousel/Carousel";
-import Float from "../FloatWApp/Float";
-import ScrollToTop from "react-scroll-to-top";
 
 export default function Home() {
   const allBooks = useSelector((state) => state.books);
@@ -50,7 +50,7 @@ export default function Home() {
   }, [dispatch]);
 
   const handleAddToCart = (el) => {
-    const addBooks = allBooks.find(e => e.id === el.target.value)
+    const addBooks = allBooks.find((e) => e.id === el.target.value);
     dispatch(
       addToCart({
         id: el.target.value,
@@ -58,14 +58,13 @@ export default function Home() {
         price: addBooks.price,
         image: addBooks.image,
         quantity: quantity,
-
       })
     );
-    alert('Item agregado')
+    alert("Item agregado");
   };
 
   const handleAddFavs = (el) => {
-    const favsBooks = allBooks.find(e => e.id === el.target.id)
+    const favsBooks = allBooks.find((e) => e.id === el.target.id);
     dispatch(
       addFavs({
         id: el.target.id,
@@ -74,7 +73,7 @@ export default function Home() {
         image: favsBooks.image,
       })
     );
-  }
+  };
 
   function handleRandomId() {
     const randomIndex = Math.floor(Math.random() * allBooks.length);
@@ -149,14 +148,14 @@ export default function Home() {
       <div className="carrusel">
         <CarouselBook />
       </div>
-      <Float/>
-      <ScrollToTop smooth className="scroll"/>
+      <Float />
+      <ScrollToTop smooth className="scroll" />
       <div className="all">
         <div className="side">
           <div className="filtersDiv">
-            <h2> Filter by: </h2>
+            <h2> Filtrar por: </h2>
             <button className="refreshButton" onClick={handleClick}>
-              Refresh books
+              Refrescar libros
             </button>
             <div>
               <label>Ordenamieto</label>
@@ -249,41 +248,60 @@ export default function Home() {
 
           <div className="azarAll">
             <p> ¿No sabes qué leer? </p>
-            <button onClick={handleRandomId} className="azarButton"> Encontrá un libro al azar </button>
-            {
-              productIds ?
-                <div className="azar">
-                  <a href={`/book/${productIds.id}`}>{productIds.name}</a>
-                  {/* <p>{productIds.genre}</p> */}
-                  <img src={productIds.image} width='150px' />
-                </div>
-                : null
-            }
+            <button onClick={handleRandomId} className="azarButton">
+              {" "}
+              Encontrá un libro al azar{" "}
+            </button>
+            {productIds ? (
+              <div className="azar">
+                <a href={`/book/${productIds.id}`}>{productIds.name}</a>
+                {/* <p>{productIds.genre}</p> */}
+                <img src={productIds.image} width="150px" />
+              </div>
+            ) : null}
           </div>
-
         </div>
         <div className="home">
-          {currentBooks.length > 0
-            ? currentBooks.map((el) => {
+          {currentBooks.length > 0 ? (
+            currentBooks.map((el) => {
               return (
                 <div className="linkDetail">
                   <div className="content">
                     <div className="topCards">
-                      <h4>{el.name.length > 32 ? el.name.substr(0, 33) + "..." : el.name}</h4>
+                      <h4>
+                        {el.name.length > 32
+                          ? el.name.substr(0, 33) + "..."
+                          : el.name}
+                      </h4>
                       {
-                        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
+                        <link
+                          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+                          rel="stylesheet"
+                        ></link>
                       }
-                      <button value={el.id}
+                      <button
+                        value={el.id}
                         onClick={(el) => handleAddFavs(el)}
-                        // onClick={() => setBtnActive(!btnActive)} 
-                        className={btnActive ? 'borderless-button' : 'borderless-button'}>
-                        <i id={el.id} class="material-icons">favorite</i>
+                        // onClick={() => setBtnActive(!btnActive)}
+                        className={
+                          btnActive ? "borderless-button" : "borderless-button"
+                        }
+                      >
+                        <i id={el.id} class="material-icons">
+                          favorite
+                        </i>
                       </button>
                     </div>
                     <Link to={`/book/${el.id}`}>
                       <button className="detailButton"> Ver detalles </button>
                     </Link>
-                    <button value={el.id} onClick={(el) => handleAddToCart(el)} className="addButton">Agregar al carrito</button>
+                    <button
+                      value={el.id}
+                      onClick={(el) => handleAddToCart(el)}
+                      className="addButton"
+                    >
+                      Agregar al carrito
+                    </button>
                   </div>
                   <div className="cards">
                     <Card
@@ -296,7 +314,17 @@ export default function Home() {
                 </div>
               );
             })
-            : <div className="loading"><div><img src="https://media.tenor.com/nuCeLTABSTsAAAAM/jalan-book.gif" height="300px" width="200px" /></div></div>}
+          ) : (
+            <div className="loading">
+              <div>
+                <img
+                  src="https://media.tenor.com/nuCeLTABSTsAAAAM/jalan-book.gif"
+                  height="300px"
+                  width="200px"
+                />
+              </div>
+            </div>
+          )}
         </div>
         {/* <div onClick={e => prevPage(e)}>Previous</div> */}
 
@@ -310,8 +338,8 @@ export default function Home() {
         />
       </div>
       <div className="about">
-        <div >
-          <Link to='/about'>
+        <div>
+          <Link to="/about">
             <p className="aboutBtn">About Us</p>
           </Link>
         </div>

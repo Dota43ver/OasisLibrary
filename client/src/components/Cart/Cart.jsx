@@ -21,11 +21,21 @@ export default function Cart() {
     dispatch(removeFromCart(id));
   };
   const handleIncreaseQuantity = (id) => {
-    dispatch(increaseQuantity(id));
+    const book = cart.find((item) => item.id === id);
+    if (book.quantity >= book.stock) {
+      alert("No hay suficiente stock disponible para aumentar la cantidad.");
+    } else {
+      dispatch(increaseQuantity(id));
+    }
   };
 
   const handleDecreaseQuantity = (id) => {
-    dispatch(decreaseQuantity(id));
+    const book = cart.find((item) => item.id === id);
+    if (book.quantity <= 1) {
+      dispatch(removeFromCart(id));
+    } else {
+      dispatch(decreaseQuantity(id));
+    }
   };
   return (
     <div>
@@ -38,8 +48,8 @@ export default function Cart() {
               Tienes {totalBooks} libros por un total de ${totalPrice}
             </h2>
             <div className="checkDiv">
-              <Link to={'/checkout'}>
-              <button className="checkoutBtn">Checkout</button>
+              <Link to={"/checkout"}>
+                <button className="checkoutBtn">Checkout</button>
               </Link>
             </div>
           </div>
