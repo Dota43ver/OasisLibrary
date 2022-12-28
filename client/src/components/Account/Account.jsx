@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { getUsers } from "../../actions";
 import NavBar from "../NavBar/NavBar";
 import "./Account.css";
 
 
 export default function Account({setAuth}) {
     const dispatch = useDispatch();
+    const user = useSelector((state) => state.user)
+
     // const [account, setAccount] = useState({
     //     name: "",
     //     lastname: "",
@@ -16,34 +19,14 @@ export default function Account({setAuth}) {
     //     orderStatus: "",
     // });
 
-    const[name, setName] = useState("")
-    const[lastName, setLastName] = useState("")
-    const[email, setEmail] = useState("")
-    const[password, setPassword] = useState("")
-    async function getName() {
-        try {
-            const response = await fetch("http://localhost:3001/users/profile",{
-                method: "GET",
-                headers: {token: localStorage.token}
-            });
-            const parseRes = await response.json();
-            setName(parseRes.name)
-            setLastName(parseRes.lastName)
-            setEmail(parseRes.email)
-            setPassword(parseRes.password)
-        } catch (err) {
-            console.error(err.message)
-        }
-    }
     const logout = e => {
         e.preventDefault();
         localStorage.removeItem("token");
-        setAuth(false)
-        
+        setAuth(false)     
     }
 
     useEffect(() =>{
-        getName();
+        dispatch(getUsers())
     })
 
     // const handleSubmit = (e) => {
@@ -89,10 +72,10 @@ export default function Account({setAuth}) {
             </form> */}
 
                     <div className="usuario">
-                        <h3 className="dato" name="name" value={name}> Name: {name} </h3>
-                        <h3 className="dato" name="lastName" value={lastName}> Last Name: {lastName} </h3>
-                        <h3 className="dato" name="email" value={email}> Mail: {email} </h3>
-                        <h3 className="dato" name="password" value={password}> Password: ******** </h3>
+                        <h3 className="dato" name="name" value={user.name}> Name: {user.name} </h3>
+                        <h3 className="dato" name="lastName" value={user.lastName}> Last Name: {user.lastName} </h3>
+                        <h3 className="dato" name="email" value={user.email}> Mail: {user.email} </h3>
+                        <h3 className="dato" name="password" value={user.password}> Password: ******** </h3>
                     </div>
                     <button className="logoutBtn" onClick={e => logout(e)}>Logout</button>
                     {/* <button> Guardar Cambios </button> */}

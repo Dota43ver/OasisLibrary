@@ -20,6 +20,7 @@ import {
   REMOVE_FROM_FAVS,
   SAGA_FILTER,
   SCORE_SORT,
+  GET_USERS,
 } from "../actions/types";
 
 const initialState = {
@@ -268,6 +269,13 @@ export default function reducer(state = initialState, action) {
         cart: [],
       };
     }
+
+    case GET_USERS: { 
+      return {
+        ...state,
+        user: action.payload
+      }
+    } 
 
     default:
       return state;
