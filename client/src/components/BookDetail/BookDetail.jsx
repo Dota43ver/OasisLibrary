@@ -51,11 +51,12 @@ export default function BookDetails(props) {
             })}{" "}
           </h3>
           <h1>${bookDetails.price}</h1>
-            <h2>Autor: {' '}
-               <Link to={`/author/${bookDetails.author}`} className="author">
-                  {bookDetails.author}
-              </Link>
-            </h2>
+          <h2>
+            Autor:{" "}
+            <Link to={`/author/${bookDetails.author}`} className="author">
+              {bookDetails.author}
+            </Link>
+          </h2>
           <h2>Géneros: {genreString}</h2>
           <h2>Idioma: {bookDetails.language}</h2>
           <h2>Año: {bookDetails.year}</h2>
@@ -63,20 +64,29 @@ export default function BookDetails(props) {
         <div className="secondCont">
           <div className="back">
             <Link to="/home">
-              <button className="backButton">Back to home</button>
+              <button className="backButton">Volver a Inicio</button>
             </Link>
           </div>
           <h1 className="quantity">Cantidad: {quantity}</h1>
           <div className="quantityControls">
             {quantity >= 1 && (
-              <button onClick={() => setQuantity(quantity - 1)} className="quantityBtn">-</button>
-            )}
-            {' '}
-            <button onClick={() => setQuantity(quantity + 1)} className="quantityBtn">+</button>
+              <button
+                onClick={() => setQuantity(quantity - 1)}
+                className="quantityBtn"
+              >
+                -
+              </button>
+            )}{" "}
+            <button
+              onClick={() => setQuantity(quantity + 1)}
+              className="quantityBtn"
+            >
+              +
+            </button>
           </div>
           <div className="cart">
             <button onClick={handleAddToCart} className="cartButton">
-              Add to cart
+              Añadir al carro
             </button>
           </div>
         </div>

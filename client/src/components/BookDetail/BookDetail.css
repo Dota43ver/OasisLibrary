@@ -8,7 +8,7 @@
     "first third third";
 }
 
-.author:hover{
+.author:hover {
   color: #1c555e;
 }
 
@@ -101,9 +101,9 @@ a {
 .cartButton {
   background-color: #1c555e;
   color: white;
-  font-size: 25px;
+  font-size: 20px;
   border-radius: 5px;
-  cursor: pointer;
+  cursor: pointer;  
   width: 163px;
   height: 43px;
 }
@@ -125,7 +125,7 @@ a {
   color: white;
 }
 
-.quantityBtn{
+.quantityBtn {
   cursor: pointer;
   font-size: larger;
 }
