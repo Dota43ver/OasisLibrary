@@ -22,6 +22,7 @@ import {
   REMOVE_FROM_FAVS,
   SAGA_FILTER,
   SCORE_SORT,
+  UPDATE_BOOK_STOCK,
 } from "./types";
 
 export const getBooks = () => (dispatch) => {
@@ -167,10 +168,12 @@ export function languageFilter(payload) {
     payload,
   };
 }
-export function addToCart(item) {
-  return {
-    type: ADD_TO_CART,
-    payload: item,
+export function addToCart(book) {
+  return (dispatch, getState) => {
+    dispatch({ type: ADD_TO_CART, payload: book });
+    const currentBook = getState().bookDetails;
+    const newStock = currentBook.stock - book.quantity;
+    dispatch(updateBookStock(currentBook.id, newStock));
   };
 }
 
@@ -244,3 +247,34 @@ export function checkoutCart(cart, user) {
     });
   };
 }
+export function updateBookStock(id, newStock) {
+  return {
+    type: UPDATE_BOOK_STOCK,
+    payload: {
+      id,
+      newStock,
+    },
+  };
+}
+// export function updateBookStock(id, newStock) {
+//   return (dispatch) => {
+//     try {
+//       axios
+//         .put(`${LOCAL_HOST}/books/${id}`, {
+//           stock: newStock,
+//         })
+//         .then(() => {
+//           console.log(`${LOCAL_HOST}/books/${id}`);
+//           dispatch({
+//             type: UPDATE_BOOK_STOCK,
+//             payload: {
+//               id,
+//               newStock,
+//             },
+//           });
+//         });
+//     } catch (error) {
+//       console.error(error);
+//     }
+//   };
+// }

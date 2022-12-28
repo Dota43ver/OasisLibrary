@@ -20,6 +20,7 @@ import {
   REMOVE_FROM_FAVS,
   SAGA_FILTER,
   SCORE_SORT,
+  UPDATE_BOOK_STOCK,
 } from "../actions/types";
 
 const initialState = {
@@ -97,7 +98,11 @@ export default function reducer(state = initialState, action) {
     case CLEAN_CACHE:
       return {
         ...state,
-        bookDetails: initialState.bookDetails,
+        bookDetails: {
+          ...state.bookDetails,
+          // excluye el estado del stock del libro del estado inicial
+          stock: state.bookDetails.stock,
+        },
         author: initialState.author,
         authorDetails: initialState.authorDetails,
       };
@@ -268,7 +273,15 @@ export default function reducer(state = initialState, action) {
         cart: [],
       };
     }
-
+    case UPDATE_BOOK_STOCK:
+      // Modifica el estado para actualizar el stock del libro
+      return {
+        ...state,
+        bookDetails: {
+          ...state.bookDetails,
+          stock: action.payload.newStock,
+        },
+      };
     default:
       return state;
   }

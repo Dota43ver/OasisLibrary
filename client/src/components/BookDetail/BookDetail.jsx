@@ -15,15 +15,23 @@ export default function BookDetails(props) {
     dispatch(cleanCache());
   }, [dispatch, id]);
   const handleAddToCart = () => {
-    dispatch(
-      addToCart({
-        id: bookDetails.id,
-        name: bookDetails.name,
-        price: bookDetails.price,
-        image: bookDetails.image,
-        quantity: quantity,
-      })
-    );
+    if (quantity > bookDetails.stock) {
+      alert(
+        "No hay suficiente stock disponible para agregar esta cantidad al carrito."
+      );
+    } else {
+      dispatch(
+        addToCart({
+          id: bookDetails.id,
+          name: bookDetails.name,
+          price: bookDetails.price,
+          image: bookDetails.image,
+          stock: bookDetails.stock,
+          quantity: quantity,
+        })
+      );
+      setQuantity(1); // Establece la cantidad en 0 después de agregar el libro al carrito
+    }
   };
 
   const bookDetails = useSelector((state) => state.bookDetails);
@@ -67,7 +75,8 @@ export default function BookDetails(props) {
               <button className="backButton">Volver a Inicio</button>
             </Link>
           </div>
-          <h1 className="quantity">Cantidad: {quantity}</h1>
+          <h1>Stock: {bookDetails.stock}</h1>
+          <h1 className="quantity">Agregar: {quantity}</h1>
           <div className="quantityControls">
             {quantity >= 1 && (
               <button
