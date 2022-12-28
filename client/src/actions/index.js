@@ -22,6 +22,7 @@ import {
   REMOVE_FROM_FAVS,
   SAGA_FILTER,
   SCORE_SORT,
+  GET_USERS,
   UPDATE_BOOK_STOCK,
 } from "./types";
 
@@ -247,6 +248,38 @@ export function checkoutCart(cart, user) {
     });
   };
 }
+
+export const getUsers = () => async (dispatch) => {
+  try {
+    const usuarios = await fetch("http://localhost:3001/users/profile", {
+      method: "GET",
+      headers: { token: localStorage.token }
+    });
+
+    const parseRes = await usuarios.json()
+
+    return dispatch({
+      type: GET_USERS,
+      payload: parseRes,
+    })
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+// export const getUsers = () => async (dispatch) => {
+//   try {
+//     const usuarios = await axios.get(`/users`);
+
+//     return dispatch({
+//       type: 'GET_USERS',
+//       payload: usuarios.data
+//     })
+//   } catch (error) {
+//     console.log(error)
+//   }
+// }
+
 export function updateBookStock(id, newStock) {
   return {
     type: UPDATE_BOOK_STOCK,

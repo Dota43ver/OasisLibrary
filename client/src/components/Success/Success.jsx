@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import './Success.css';
 import { Link } from 'react-router-dom';
 
@@ -15,7 +15,7 @@ export default function Success() {
             </div>
 
             <div className="imgSc">
-                <img src="https://i.pinimg.com/originals/5a/d0/47/5ad047a18772cf0488a908d98942f9bf.gif"></img>
+                <img src="https://i.pinimg.com/originals/5a/d0/47/5ad047a18772cf0488a908d98942f9bf.gif" alt="not found"></img>
             </div>
         </div>
     )

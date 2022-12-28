@@ -20,6 +20,7 @@ import {
   REMOVE_FROM_FAVS,
   SAGA_FILTER,
   SCORE_SORT,
+  GET_USERS,
   UPDATE_BOOK_STOCK,
 } from "../actions/types";
 
@@ -273,6 +274,14 @@ export default function reducer(state = initialState, action) {
         cart: [],
       };
     }
+
+    case GET_USERS: { 
+      return {
+        ...state,
+        user: action.payload
+      }
+    } 
+
     case UPDATE_BOOK_STOCK:
       // Modifica el estado para actualizar el stock del libro
       return {
