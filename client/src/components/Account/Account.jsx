@@ -27,7 +27,7 @@ export default function Account({setAuth}) {
 
     useEffect(() =>{
         dispatch(getUsers())
-    })
+    }, [dispatch])
 
     // const handleSubmit = (e) => {
     //     e.preventDefault();
