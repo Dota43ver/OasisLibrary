@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { checkoutCart } from "../../actions/index";
+import { checkoutCart , getUsers } from "../../actions/index";
 import { Link } from 'react-router-dom';
 import NavBar from "../NavBar/NavBar";
 import './Checkout.css'
@@ -8,8 +8,10 @@ import './Checkout.css'
 export default function Checkout() {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
-  const user = useSelector((state) => state.user);
   const purchasedCart = useSelector((state) => state.purchasedCart)
+  const user = useSelector((state) => state.user)
+
+  console.log(user);
 
   const [couponCode, setCouponCode] = useState('');
   const [total, setTotal] = useState(0);
@@ -26,6 +28,10 @@ export default function Checkout() {
   const handeleCheckout = () => {
     dispatch(checkoutCart(cart, user));
   };
+
+  useEffect(() => {
+    dispatch(getUsers())
+  }, [dispatch])
 
   // const voucher = ['oasislibrary2022'] (hacer un array con todos los cupones)
 
@@ -55,13 +61,13 @@ export default function Checkout() {
       <div className="checkInfo">
         <div className="checkUsuario">
           <h3> Información personal </h3>
-          {user.length ? (user.map((user) =>
+          {user ? 
             <div>
-              <p> Nombre: </p>
-              <p> Apellido: </p>
-              <p> Email: </p>
+              <p> Nombre: {user.name} </p>
+              <p> Apellido: {user.lastName} </p>
+              <p> Email: {user.email} </p>
             </div>
-          )) :
+           :
             <div className="checkerror">
               <div>
                 <p>  Registrate para poder continuar con la compra </p>

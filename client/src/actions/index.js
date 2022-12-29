@@ -23,6 +23,7 @@ import {
   SAGA_FILTER,
   SCORE_SORT,
   GET_USERS,
+  UPDATE_USERS,
   UPDATE_BOOK_STOCK,
 } from "./types";
 
@@ -251,13 +252,35 @@ export function checkoutCart(cart, user) {
 
 export const getUsers = () => async (dispatch) => {
   try {
-    const usuarios = await axios.get("http://localhost:3001/users/profile", {
+    const usuarios = await axios.get(`${LOCAL_HOST}/users/profile`, {
       headers: { token: localStorage.token }
     });
 
     return dispatch({
       type: GET_USERS,
       payload: usuarios.data,
+    })
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export const updateUser = (id, data) => async (dispatch) => {
+  try {
+
+    const config = {
+      headers: {
+        token: localStorage.token
+      }
+    };
+
+    const usuarios = await axios.put(`${LOCAL_HOST}/users/profile?id=${id}`, data, config)
+
+    console.log(usuarios.data);
+
+    return dispatch({
+      type: UPDATE_USERS,
+      payload: usuarios.data
     })
   } catch (error) {
     console.log(error)

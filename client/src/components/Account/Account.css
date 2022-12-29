@@ -36,26 +36,45 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-
 }
 
 .usuario {
-    width: 600px;
+    width: 700px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
 
-    padding-left: 17%;
+    padding-left: 10%;
+}
+
+.usuario > div {
+    margin: 5%;
+}
+
+.datoimg {
+    border-radius: 50%;
+    border: solid #1C555E; ;
+}
+
+.dato{
+    font-family: 'Roboto';
+    padding-block: 1%;
+    font-size: 16px;
+    font-weight: 400;
 }
 
 .orders {
     margin: 5%;
 }
 
-.dato {
-    font-size: 16px;
-    font-weight: 400;
+.editAcc {
+    color: #1C555E;
+    font-weight: 600;
+}
+
+.editAcc:hover {
+    text-decoration: underline;
 }
 
 .logoutBtn {
