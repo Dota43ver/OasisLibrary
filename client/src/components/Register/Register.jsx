@@ -36,9 +36,9 @@ const [inputs,setInputs] = useState({
 
         const parseRes = await response.json()
 
-        localStorage.setItem("token",parseRes.token)
+        localStorage.setItem("Atoken",parseRes.token)
 
-        setAuth(true)
+        // setAuth(true)
             
 
         } catch (err) {

@@ -32,10 +32,10 @@ async function createUser(body) {
         })
         
         //Generamos nuestro token a partir del ID del nuevo usuario
-        const token = jwt.sign({ id: user.id}, process.env.SECRET, { expiresIn: '1h'});
+        const Atoken = jwt.sign({ id: user.id}, process.env.SECRET, { expiresIn: '1h'});
 
         //Le mandamos el mail de activacion ╰(*°▽°*)╯
-        await sendEmail(email, "Token Validation", token);
+        await sendEmail(email, "Token Validation", Atoken);
 
         return {
             token,
@@ -76,17 +76,14 @@ async function logIn(email, password) {
           email
         },
     });
-    const match = bcrypt.compare(password, user.password) //compara la contraseña que manda el usuario con la que tenemos hasheada y guardada en la BD.
     if (!user) {
-        return res.status(404).send({ errorMsg: 'Email or password is wrong.' });
-      } else if(!match) {
-        return error = {
-            msg: 'Password is wrong'
-        }
+        return res.status(401).json('Email or password is wrong.');
+    }
+    const match = await bcrypt.compare(password, user.password) //compara la contraseña que manda el usuario con la que tenemos hasheada y guardada en la BD.
+      if(!match) {
+        return res.status(401).json("password or email is incorrect")
     } else if (!user.isActive) {
-        return error = {
-            msg: 'User is not active'
-        }
+        return res.status(401).json("user is inactive")
     }
     //Genero nuevo token por inicio de sesión
     const token = jwt.sign({ id: user.id }, process.env.SECRET);
