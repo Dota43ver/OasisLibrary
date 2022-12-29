@@ -18,6 +18,7 @@ import Success from "./components/Success/Success";
 import Dashboard from "./components/Dashboard Admin/Dashboard";
 
 
+
 function App() {
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -25,24 +26,24 @@ function App() {
     setIsAuthenticated(boolean);
   }
 
-  // async function isAuth(){
-  //   try {
-  //     const response = await fetch("http://localhost:3001/users/is-verify",{
-  //       method: "GET",
-  //       headers: {token: localStorage.token}
-  //     });
+  async function isAuth(){
+    try {
+      const response = await fetch("http://localhost:3001/users/is-verify",{
+        method: "GET",
+        headers: {token: localStorage.token}
+      });
 
-  //     const parseRes = await response.json()
+      const parseRes = await response.json()
 
-  //     parseRes === true ? setIsAuthenticated(true) : setIsAuthenticated(false)
-  //   } catch (err) {
-  //     console.error(err.message)
-  //   }
-  // }
+      parseRes === true ? setIsAuthenticated(true) : setIsAuthenticated(false)
+    } catch (err) {
+      console.error(err.message)
+    }
+  }
 
-  // useEffect(()=>{
-  //   isAuth()
-  // })
+  useEffect(()=>{
+    isAuth()
+  })
 
   return (
     <BrowserRouter>
