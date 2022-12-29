@@ -251,16 +251,13 @@ export function checkoutCart(cart, user) {
 
 export const getUsers = () => async (dispatch) => {
   try {
-    const usuarios = await fetch("http://localhost:3001/users/profile", {
-      method: "GET",
+    const usuarios = await axios.get("http://localhost:3001/users/profile", {
       headers: { token: localStorage.token }
     });
 
-    const parseRes = await usuarios.json()
-
     return dispatch({
       type: GET_USERS,
-      payload: parseRes,
+      payload: usuarios.data,
     })
   } catch (error) {
     console.log(error)
