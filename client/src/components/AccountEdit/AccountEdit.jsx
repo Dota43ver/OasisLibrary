@@ -41,24 +41,25 @@ export default function Edit() {
     return (
         <div className="editAccount">
             <form className='editForm' onSubmit={handleUpdate}>
+                <h3>Editar información personal</h3>
                 <div>
                     <label> Nombre: </label>
-                    <input type="text" name="name" placeholder="name" value={updateAccount.name} onChange={handleSubmit} />
+                    <input type="text" name="name" placeholder={user.name} value={updateAccount.name} onChange={handleSubmit} />
                 </div>
 
                 <div>
                     <label> Apellido: </label>
-                    <input type="text" name="lastName" placeholder="lastName" value={updateAccount.lastName} onChange={handleSubmit} />
+                    <input type="text" name="lastName" placeholder={user.lastName} value={updateAccount.lastName} onChange={handleSubmit} />
                 </div>
 
                 <div>
                     <label> Mail: </label>
-                    <input type='email' name="email" placeholder="email" value={updateAccount.email} onChange={handleSubmit} />
+                    <input type='email' name="email" placeholder={user.email} value={updateAccount.email} onChange={handleSubmit} />
                 </div>
 
                 <div>
                     <label> Contraseña: </label>
-                    <input type='password' name="password" placeholder="password" value={updateAccount.password} onChange={handleSubmit} />
+                    <input type='password' name="password" placeholder="Contraseña" value={updateAccount.password} onChange={handleSubmit} />
                 </div>
 
                 <button className="guardarBtn" onClick={handleUpdate}> Guardar Cambios </button>
