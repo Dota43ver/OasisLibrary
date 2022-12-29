@@ -1,0 +1,39 @@
+.editAccount {
+    margin: 2%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.editForm {
+    display: flex;
+    flex-direction: column;
+    
+    border-radius: 8px;
+    width: 700px;
+    height: max-content;
+
+    justify-content: space-evenly;
+    align-items: center;
+
+    background: #ECEBEB;
+
+    padding: 2%;
+}
+
+.editForm > div {
+    margin: 10px;
+}
+
+.guardarBtn {
+    cursor: pointer;
+    margin: 10px;
+
+    width: 165px;
+    height: 28px;
+
+    text-decoration: none;
+    background: #1C555E;
+    color: #ECEBEB;
+    border: none;
+    border-radius: 4px;
+}
