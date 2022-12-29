@@ -31,8 +31,9 @@ export default function Account({ setAuth }) {
             <NavBar></NavBar>
             <div className="account">
                 <div className="left">
-                    <Link className="orders"> Orders </Link>
-                    <Link className="orders"> Wishlist </Link>
+                    <Link className="orders"> Ordenes previas </Link>
+                    <Link className="orders"> Favoritos </Link>
+                    <Link className="orders"> Carrito </Link>
                 </div>
                 <div className="info">
 
@@ -43,14 +44,15 @@ export default function Account({ setAuth }) {
 
 
                     <div className="usuario">
-                        <div>
-                        <img className="datoimg" name='image' value={user.image} src={user.image? user.image : imagedefault} width='120px'></img>
+                        <div className="usuarioimg">
+                            <img className="datoimg" name='image' value={user.image} src={user.image ? user.image : imagedefault} width='120px'></img>
+                            {/* <Link> <p className="editimg"> Editar foto </p></Link> */}
                         </div>
                         <div>
-                        <h3 className="dato" name="name" value={user.name}> Nombre: {user.name} </h3>
-                        <h3 className="dato" name="lastName" value={user.lastName}> Apellido: {user.lastName} </h3>
-                        <h3 className="dato" name="email" value={user.email}> Mail: {user.email} </h3>
-                        <h3 className="dato" name="password" value={user.password}> Contraseña: ********** </h3>
+                            <h3 className="dato" name="name" value={user.name}> Nombre: {user.name} </h3>
+                            <h3 className="dato" name="lastName" value={user.lastName}> Apellido: {user.lastName} </h3>
+                            <h3 className="dato" name="email" value={user.email}> Mail: {user.email} </h3>
+                            <h3 className="dato" name="password" value={user.password}> Contraseña: ********** </h3>
                         </div>
                     </div>
                     <button className="logoutBtn" onClick={e => logout(e)}>Logout</button>

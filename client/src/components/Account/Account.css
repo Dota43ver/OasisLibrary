@@ -9,10 +9,12 @@
     display: flex;
     flex-direction: column;
     width: 20%;
-    height: 125px;
+    height: 155px;
     background: #ECEBEB;
+    box-shadow: 0 2px 3px 5px #d7d7d7a4;
     align-items: flex-start;
 }
+
 .info {
     display: flex;
     flex-direction: column;
@@ -24,11 +26,12 @@
     align-items: stretch;
 
     background: #ECEBEB;
+    box-shadow: 0 2px 3px 5px #d7d7d7a4;
 
     padding: 2%;
 }
 
-.info > div {
+.info>div {
     font-family: 'Roboto';
 }
 
@@ -48,16 +51,37 @@
     padding-left: 10%;
 }
 
-.usuario > div {
+.usuario>div {
     margin: 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+.usuarioimg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.editimg {
+    margin: 12px;
+    color: #1C555E;
+}
+
+.editimg:hover{
+    text-decoration: underline;
+    font-weight: 600;
 }
 
 .datoimg {
     border-radius: 50%;
-    border: solid #1C555E; ;
+    border: solid #1C555E;
+    ;
+    box-shadow: 0 2px 3px 5px #d7d7d7a4;
 }
 
-.dato{
+.dato {
     font-family: 'Roboto';
     padding-block: 1%;
     font-size: 16px;
