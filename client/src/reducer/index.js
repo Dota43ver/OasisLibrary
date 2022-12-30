@@ -21,6 +21,7 @@ import {
   SAGA_FILTER,
   SCORE_SORT,
   GET_USERS,
+  UPDATE_USERS,
   UPDATE_BOOK_STOCK,
   POST_REVIEW,
 } from "../actions/types";
@@ -287,6 +288,13 @@ export default function reducer(state = initialState, action) {
         user: action.payload
       }
     } 
+
+    case UPDATE_USERS: {
+      return {
+        ...state,
+        user: action.payload
+      }
+    }
 
     case UPDATE_BOOK_STOCK:
       // Modifica el estado para actualizar el stock del libro

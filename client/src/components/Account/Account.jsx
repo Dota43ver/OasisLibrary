@@ -6,83 +6,61 @@ import NavBar from "../NavBar/NavBar";
 import "./Account.css";
 
 
-export default function Account({setAuth}) {
+export default function Account({ setAuth }) {
     const dispatch = useDispatch();
     const user = useSelector((state) => state.user)
-
-    // const [account, setAccount] = useState({
-    //     name: "",
-    //     lastname: "",
-    //     mail: "",
-    //     password: "",
-    //     favorites: "",
-    //     orderStatus: "",
-    // });
 
     const logout = e => {
         e.preventDefault();
         localStorage.removeItem("token");
-        setAuth(false)     
+        setAuth(false)
     }
 
-    useEffect(() =>{
+    useEffect(() => {
         dispatch(getUsers())
-    })
+    }, [dispatch])
 
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     //if (Object.keys(errors).length === 0) 
-    //     //dispatch(postUsuario())
-    //     {
-    //         alert('Cambios guardados')
-    //         setAccount({
-    //             name: "",
-    //             lastname: "",
-    //             mail: "",
-    //             password: "",
-    //             favorites: "",
-    //             orderStatus: "",
-    //         })
-    //     }
-    //     // else {
-    //     //     alert('Wrong or missing data')
-    //     // }
-    // }
+    function handleEdit() {
+        window.location.assign("http://localhost:3000/edit")
+    }
+
+    const imagedefault = 'https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.webp'
 
     return (
-        <div> 
+        <div>
             <NavBar></NavBar>
             <div className="account">
                 <div className="left">
-                    <Link className="orders"> Orders </Link>
-                    <Link className="orders"> Wishlist </Link>
+                    <Link className="orders"> Ordenes previas </Link>
+                    <Link className="orders"> Favoritos </Link>
+                    <Link className="orders"> Carrito </Link>
                 </div>
                 <div className="info">
 
                     <div className="headatos">
-                        <h3 className="crear"> Personal Details </h3>
-                        <Link className="crear"> Editar </Link>
+                        <h3 className="tituloAccount"> Datos personales </h3>
+                        <Link className="editAcc" onClick={handleEdit}> Editar datos </Link>
                     </div>
 
-                    {/* <form onSubmit={handleSubmit}>
-            <label> Name: </label>
-            <label> Lastname: </label>
-            <label> Mail: </label>
-            <label> Password: </label>
-            </form> */}
 
                     <div className="usuario">
-                        <h3 className="dato" name="name" value={user.name}> Name: {user.name} </h3>
-                        <h3 className="dato" name="lastName" value={user.lastName}> Last Name: {user.lastName} </h3>
-                        <h3 className="dato" name="email" value={user.email}> Mail: {user.email} </h3>
-                        <h3 className="dato" name="password" value={user.password}> Password: ******** </h3>
+                        <div className="usuarioimg">
+                            <img className="datoimg" name='image' value={user.image} src={user.image ? user.image : imagedefault} width='120px'></img>
+                            {/* <Link> <p className="editimg"> Editar foto </p></Link> */}
+                        </div>
+                        <div>
+                            <h3 className="dato" name="name" value={user.name}> Nombre: {user.name} </h3>
+                            <h3 className="dato" name="lastName" value={user.lastName}> Apellido: {user.lastName} </h3>
+                            <h3 className="dato" name="email" value={user.email}> Mail: {user.email} </h3>
+                            <h3 className="dato" name="password" value={user.password}> Contraseña: ********** </h3>
+                        </div>
                     </div>
                     <button className="logoutBtn" onClick={e => logout(e)}>Logout</button>
-                    {/* <button> Guardar Cambios </button> */}
+
 
                 </div>
             </div>
-           
+
         </div>
     )
 

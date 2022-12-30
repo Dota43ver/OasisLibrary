@@ -17,6 +17,7 @@ import Register from "./components/Register/Register";
 import Success from "./components/Success/Success";
 import Dashboard from "./components/Dashboard Admin/Dashboard";
 import Reviews from "./components/Reviews/Reviews";
+import Edit from "./components/AccountEdit/AccountEdit";
 
 
 function App() {
@@ -26,24 +27,24 @@ function App() {
     setIsAuthenticated(boolean);
   }
 
-  // async function isAuth(){
-  //   try {
-  //     const response = await fetch("http://localhost:3001/users/is-verify",{
-  //       method: "GET",
-  //       headers: {token: localStorage.token}
-  //     });
+  async function isAuth(){
+    try {
+      const response = await fetch("http://localhost:3001/users/is-verify",{
+        method: "GET",
+        headers: {token: localStorage.token}
+      });
 
-  //     const parseRes = await response.json()
+      const parseRes = await response.json()
 
-  //     parseRes === true ? setIsAuthenticated(true) : setIsAuthenticated(false)
-  //   } catch (err) {
-  //     console.error(err.message)
-  //   }
-  // }
+      parseRes === true ? setIsAuthenticated(true) : setIsAuthenticated(false)
+    } catch (err) {
+      console.error(err.message)
+    }
+  }
 
-  // useEffect(()=>{
-  //   isAuth()
-  // })
+  useEffect(()=>{
+    isAuth()
+  })
 
   return (
     <BrowserRouter>
@@ -64,8 +65,9 @@ function App() {
           <Route path="/success" component={Success}/>
           <Route exact path="/dashboard" component={Dashboard}/>
           <Route path="/review" component={Reviews}/>
-         
-        </Switch>
+          <Route exact path='/edit' component={Edit}/>
+
+         </Switch>
       </div>
     </BrowserRouter>
   );
