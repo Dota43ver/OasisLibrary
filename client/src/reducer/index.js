@@ -22,6 +22,7 @@ import {
   SCORE_SORT,
   GET_USERS,
   UPDATE_BOOK_STOCK,
+  POST_REVIEW,
 } from "../actions/types";
 
 const initialState = {
@@ -36,6 +37,7 @@ const initialState = {
   authorDetails: [],
   authorBooks: [],
   user: [],
+  reviews: [],
 };
 
 export default function reducer(state = initialState, action) {
@@ -85,6 +87,10 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
       };
+    case POST_REVIEW:
+      return {
+        ...state,
+      }
     case GET_GENRES:
       let sortedGenres = action.payload.data;
       sortedGenres = action.payload.data.sort(function (a, b) {

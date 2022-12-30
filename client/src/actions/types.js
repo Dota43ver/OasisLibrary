@@ -24,3 +24,4 @@ export const CHECKOUT_CART = "CHECKOUT_CART";
 // export const CLEAN_CACHE_AUTHOR = "CLEAN_CACHE_AUTHOR";
 export const GET_USERS = 'GET_USERS'
 export const UPDATE_BOOK_STOCK = "UPDATE_BOOK_STOCK";
+export const POST_REVIEW = 'POST_REVIEW'
