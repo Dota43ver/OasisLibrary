@@ -123,7 +123,7 @@ return(
                 </div>
             </div>
             <div className={style.button2}>
-            <button className={style.button3} disabled={!!errors}>Login</button>
+            <button className={style.button3} disabled={errors.email || errors.password}>Login</button>
             </div>
             <div className={style.divisor}>
             </div>
