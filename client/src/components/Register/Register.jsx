@@ -15,6 +15,7 @@ const [inputs,setInputs] = useState({
     password:""
 })
 
+const history = useHistory()
     const {email , password , name , lastName} = inputs
 
     const onChange = e => {
@@ -34,10 +35,11 @@ const [inputs,setInputs] = useState({
             body: JSON.stringify(body)
         });
 
+        alert('usuario creado, revise su mail para verificar')
+        history.push('/Login')
         const parseRes = await response.json()
 
         localStorage.setItem("Atoken",parseRes.token)
-
         // setAuth(true)
             
 
