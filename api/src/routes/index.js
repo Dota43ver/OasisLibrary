@@ -9,6 +9,7 @@ const authorRouter = require('./authorRouter')
 const usersRouter = require('./usersRouter')
 const checkoutRouter = require('./checkout')
 const reviewRouter = require('./reviewRouter')
+const wScrapperRouter = require('./webScrapper')
 
 const router = Router();
 
@@ -21,6 +22,6 @@ router.use("/authors", authorRouter)
 router.use("/users", usersRouter)
 router.use("/checkout", checkoutRouter)
 router.use("/reviews", reviewRouter)
-
+router.use("/webScrapper", wScrapperRouter)
 
 module.exports = router;
