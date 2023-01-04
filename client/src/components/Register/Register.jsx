@@ -15,7 +15,6 @@ const Register = ({setAuth}) => {
         password:""
     })
 
-    const history = useHistory()
     const [errors,setErrors] = useState({})
     const {email , password , name , lastName} = inputs
 
@@ -40,8 +39,6 @@ const Register = ({setAuth}) => {
             body: JSON.stringify(body)
         });
 
-        alert('usuario creado, revise su mail para verificar')
-        history.push('/Login')
         const parseRes = await response.json()
 
         localStorage.setItem("Atoken",parseRes.token)
