@@ -153,16 +153,6 @@ export default function Home() {
     setOrder(`Order ${e.target.value}`);
     setRefresh();
   }
-
-//  let result = allAuthors?.map((author) => {
-//    author.name.filter((item, index) => {
-//     return author.name.indexOf(item) === index
-//   })
-//   })
-
-  
-
-
   return (
     <div>
       <NavBar />
@@ -246,21 +236,11 @@ export default function Home() {
                 value={refresh}
               >
                 <option value="all">Todos</option>
-                {allAuthors?.map((author) => {
-                  author.name.filter((item, index) => {
-                    return <option key={author.id} value={author.name}>{author.name.indexOf(item) === index}</option>
-                  })
-                }/*(
+                {allAuthors?.map((author) => (
                   <option key={author.id} value={author.name}>
-                    {
-                      allAuthors?.map((author) => {
-                        author.name.filter((item, index) => {
-                         return author.name.indexOf(item) === index
-                       })
-                       })
-                    }
+                    {author.name}
                   </option>
-                  )*/)}
+                ))}
               </select>
             </div>
             <div>
