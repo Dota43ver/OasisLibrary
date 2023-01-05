@@ -1,29 +1,17 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { postReview, getUsers } from "../../actions";
+import React from "react";
+import {AiOutlineStar, AiFillStar} from "react-icons/ai"
 
-export default function Reviews() {
-    const dispatch = useDispatch()
-    const user = useSelector((state) => state.user)
-    useEffect(() => {
-        dispatch(getUsers)
-    });
 
-    const [input, setInput] = useState({
-        descript:"",
-        votes:"",
-        userId:"",
-        bookId:"",
-    })
-    console.log(user.name);
-    
-    return(
-        <div>
-            <div>
-                <h1>Valora El Libro</h1>
-                <form>
-                    <h3 className="dato" name="name" value={user.name}> Name: {user.name} </h3>
-                </form>
+export default function Review({ user, votes, descript}) {
+    return (
+        <div className="card">
+
+            
+            <h2 className="name"> {user} </h2>
+
+            <div className="datos">
+                <h3 className="price"> {descript} </h3>
+                <h3 className="score"> {votes}</h3>
             </div>
         </div>
     )

@@ -26,6 +26,7 @@ import {
   UPDATE_BOOK_STOCK,
   POST_REVIEW,
   AUTHOR_FILTER,
+  GET_REVIEW
 } from "../actions/types";
 
 const initialState = {
@@ -99,6 +100,11 @@ export default function reducer(state = initialState, action) {
     case POST_REVIEW:
       return {
         ...state,
+      }
+    case GET_REVIEW:
+      return{
+        ...state,
+        reviews: action.payload
       }
     case GET_GENRES:
       let sortedGenres = action.payload.data;
