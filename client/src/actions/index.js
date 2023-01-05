@@ -26,6 +26,8 @@ import {
   UPDATE_USERS,
   UPDATE_BOOK_STOCK,
   POST_REVIEW,
+  GET_CART,
+  ADD_CART
 } from "./types";
 
 export const getBooks = () => (dispatch) => {
@@ -109,7 +111,7 @@ export function postBook(info) {
   };
 }
 
-export function postReview(info){
+export function postReview(info) {
   return async function (dispatch) {
     var json = await axios.post(`${POST_REVIEW}/reviews`, info);
     return json;
@@ -227,16 +229,13 @@ export function getAuthorBooks(payload) {
   };
 }
 
-export function checkoutCart(cart, user) {
+export function checkoutCart(cart, user, cupon) {
   //pasar el user y cart
 
   const body = {
-    name: "mili",
-    email: "mili@hotmail.com",
-    shoppingCart: cart,
+    user,
+    shoppingCart: { productList: cart, cupon },
   };
-
-  console.log(body);
 
   const config = {
     headers: {
@@ -284,8 +283,6 @@ export const updateUser = (id, data) => async (dispatch) => {
 
     const usuarios = await axios.put(`${LOCAL_HOST}/users/profile?id=${id}`, data, config)
 
-    console.log(usuarios.data);
-
     return dispatch({
       type: UPDATE_USERS,
       payload: usuarios.data
@@ -295,18 +292,41 @@ export const updateUser = (id, data) => async (dispatch) => {
   }
 }
 
-// export const getUsers = () => async (dispatch) => {
-//   try {
-//     const usuarios = await axios.get(`/users`);
+export const getCart = (userId) => async (dispatch) => {
+  try {
+    const cart = await axios.get(`${LOCAL_HOST}/cart/${userId}`)
 
-//     return dispatch({
-//       type: 'GET_USERS',
-//       payload: usuarios.data
-//     })
-//   } catch (error) {
-//     console.log(error)
-//   }
-// }
+    return dispatch({
+      type: GET_CART,
+      payload: cart.data
+    })
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export const addCart = (data) => async (dispatch) => {
+  try {
+    const { bookId, name, price, image, quantity, userId } = data;
+    const cart = await axios.post('http://localhost:3001/cart', { userId, bookId, quantity });
+
+    // return dispatch({
+    //   type: ADD_CART,
+    //   payload: cart.data
+    // })
+    return dispatch(
+      addToCart({
+        id: bookId,
+        name,
+        price,
+        image,
+        quantity,
+      })
+    );
+  } catch (error) {
+    console.log(error)
+  }
+}
 
 export function updateBookStock(id, newStock) {
   return {

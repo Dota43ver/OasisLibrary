@@ -6,7 +6,6 @@ import style from "./NavBar.module.css";
 import "@fontsource/roboto"
 import oasis from "./oasis.jpg";
 import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
-import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 
 
 export default function NavBar() {

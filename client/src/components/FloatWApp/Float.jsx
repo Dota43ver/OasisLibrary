@@ -13,14 +13,9 @@ export default function Float() {
     return (
 
         <div>
-
-
             <script type="text/javascript">
 
             </script>
-
-
-
         </div>
 
     )

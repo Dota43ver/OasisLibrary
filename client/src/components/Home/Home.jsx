@@ -13,6 +13,8 @@ import {
   priceSort,
   sagaFilter,
   scoreSort,
+  addCart,
+  getUsers
 } from "../../actions";
 import Card from "../Card/Card";
 import CarouselBook from "../Carousel/Carousel";
@@ -24,6 +26,7 @@ import "./Home.css";
 export default function Home() {
   const allBooks = useSelector((state) => state.books);
   const allGenres = useSelector((state) => state.genres);
+  const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -45,21 +48,21 @@ export default function Home() {
   const [productIds, setProductIds] = useState([]); // lista de IDs de productos
 
   useEffect(() => {
+    dispatch(getUsers())
     dispatch(getBooks());
     dispatch(getGenres());
   }, [dispatch]);
 
   const handleAddToCart = (el) => {
     const addBooks = allBooks.find((e) => e.id === el.target.value);
-    dispatch(
-      addToCart({
-        id: el.target.value,
-        name: addBooks.name,
-        price: addBooks.price,
-        image: addBooks.image,
-        quantity: quantity,
-      })
-    );
+    dispatch(addCart({
+      bookId: el.target.value,
+      name: addBooks.name,
+      price: addBooks.price,
+      image: addBooks.image,
+      quantity: quantity,
+      userId: user.id
+    }));
     alert("Item agregado");
   };
 

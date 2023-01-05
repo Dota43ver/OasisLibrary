@@ -24,6 +24,8 @@ import {
   UPDATE_USERS,
   UPDATE_BOOK_STOCK,
   POST_REVIEW,
+  GET_CART,
+  ADD_CART
 } from "../actions/types";
 
 const initialState = {
@@ -124,15 +126,15 @@ export default function reducer(state = initialState, action) {
       sortedBooks =
         action.payload === "atoz"
           ? state.books.sort(function (a, b) {
-              if (a.name.toLowerCase() > b.name.toLowerCase()) return 1;
-              if (a.name.toLowerCase() < b.name.toLowerCase()) return -1;
-              return 0;
-            })
+            if (a.name.toLowerCase() > b.name.toLowerCase()) return 1;
+            if (a.name.toLowerCase() < b.name.toLowerCase()) return -1;
+            return 0;
+          })
           : state.books.sort(function (a, b) {
-              if (a.name.toLowerCase() < b.name.toLowerCase()) return 1;
-              if (a.name.toLowerCase() > b.name.toLowerCase()) return -1;
-              return 0;
-            });
+            if (a.name.toLowerCase() < b.name.toLowerCase()) return 1;
+            if (a.name.toLowerCase() > b.name.toLowerCase()) return -1;
+            return 0;
+          });
       return {
         ...state,
         books: sortedBooks,
@@ -142,15 +144,15 @@ export default function reducer(state = initialState, action) {
       sortedBooksByScore =
         action.payload === "desc"
           ? state.books.sort(function (a, b) {
-              if (a.score > b.score) return 1;
-              if (a.score < b.score) return -1;
-              return 0;
-            })
+            if (a.score > b.score) return 1;
+            if (a.score < b.score) return -1;
+            return 0;
+          })
           : state.books.sort(function (a, b) {
-              if (a.score < b.score) return 1;
-              if (a.score > b.score) return -1;
-              return 0;
-            });
+            if (a.score < b.score) return 1;
+            if (a.score > b.score) return -1;
+            return 0;
+          });
       return {
         ...state,
         books: sortedBooksByScore,
@@ -166,15 +168,15 @@ export default function reducer(state = initialState, action) {
       sortedBooksByPrice =
         action.payload === "asc"
           ? state.books.sort(function (a, b) {
-              if (a.price > b.price) return 1;
-              if (a.price < b.price) return -1;
-              return 0;
-            })
+            if (a.price > b.price) return 1;
+            if (a.price < b.price) return -1;
+            return 0;
+          })
           : state.books.sort(function (a, b) {
-              if (a.price < b.price) return 1;
-              if (a.price > b.price) return -1;
-              return 0;
-            });
+            if (a.price < b.price) return 1;
+            if (a.price > b.price) return -1;
+            return 0;
+          });
       return {
         ...state,
         books: sortedBooksByPrice,
@@ -209,6 +211,7 @@ export default function reducer(state = initialState, action) {
         ...state,
         books: filteredByLang,
       };
+
     case ADD_TO_CART:
       const book = state.cart.find((b) => b.id === action.payload.id);
       if (book) {
@@ -224,6 +227,7 @@ export default function reducer(state = initialState, action) {
       } else {
         return { ...state, cart: [...state.cart, action.payload] };
       }
+
     case REMOVE_FROM_CART:
       return {
         ...state,
@@ -282,12 +286,12 @@ export default function reducer(state = initialState, action) {
       };
     }
 
-    case GET_USERS: { 
+    case GET_USERS: {
       return {
         ...state,
         user: action.payload
       }
-    } 
+    }
 
     case UPDATE_USERS: {
       return {
@@ -305,6 +309,18 @@ export default function reducer(state = initialState, action) {
           stock: action.payload.newStock,
         },
       };
+
+    case ADD_CART:
+      return {
+        ...state,
+        shoppingCart: action.payload
+      }
+
+    case GET_CART:
+      return {
+        ...state,
+        cart: action.payload
+      }
     default:
       return state;
   }

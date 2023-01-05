@@ -60,7 +60,7 @@ export default function Favorites() {
 
                 {allFavs.map(i => (
                     <div className="detailFavs">
-                        <img src={i.image} width='150px'></img>
+                        <img src={i.image} width='150px' alt="not found"></img>
                         <div className="infoFavs">
                             <h3>{i.name}</h3>
                             <h3>Precio: ${i.price}</h3>

@@ -128,7 +128,7 @@ async function updateUser(id, data) {
 			await User.update({ password: newPassword }, { where: { id: id } });
 		}
         
-        return userFound
+        return 'User update'
     }
 }
 

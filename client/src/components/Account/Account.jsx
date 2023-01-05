@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getUsers } from "../../actions";
 import NavBar from "../NavBar/NavBar";
+import LogoutIcon from '@mui/icons-material/Logout';
+import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
 import "./Account.css";
 
 
@@ -30,38 +32,48 @@ export default function Account({ setAuth }) {
         <div>
             <NavBar></NavBar>
             <div className="account">
-                <div className="left">
-                    <Link className="orders"> Ordenes previas </Link>
-                    <Link className="orders"> Favoritos </Link>
-                    <Link className="orders"> Carrito </Link>
-                </div>
-                <div className="info">
-
-                    <div className="headatos">
-                        <h3 className="tituloAccount"> Datos personales </h3>
-                        <Link className="editAcc" onClick={handleEdit}> Editar datos </Link>
+                <div className="perfilBtn">
+                    <div className="left">
+                        <p className="titlePerfil"> <ArchiveOutlinedIcon />
+                            <p className="textPerfil"> Historial </p> </p>
+                        <Link to={'/order'} className="orders"> Ordenes previas </Link>
+                        <Link className="orders"> Mis opiniones </Link>
                     </div>
-
-
-                    <div className="usuario">
-                        <div className="usuarioimg">
-                            <img className="datoimg" name='image' value={user.image} src={user.image ? user.image : imagedefault} width='120px'></img>
-                            {/* <Link> <p className="editimg"> Editar foto </p></Link> */}
-                        </div>
-                        <div>
-                            <h3 className="dato" name="name" value={user.name}> Nombre: {user.name} </h3>
-                            <h3 className="dato" name="lastName" value={user.lastName}> Apellido: {user.lastName} </h3>
-                            <h3 className="dato" name="email" value={user.email}> Mail: {user.email} </h3>
-                            <h3 className="dato" name="password" value={user.password}> Contraseña: ********** </h3>
-                        </div>
-                    </div>
-                    <button className="logoutBtn" onClick={e => logout(e)}>Logout</button>
-
-
+                    <div className="left">
+                        <p className="titlePerfil"> <LogoutIcon />
+                            <p className="textPerfil"> Sesión </p>
+                        </p> 
+                    <Link className="orders"> Cerrar sesión </Link>
+                    <Link className="orders"> Eliminar cuenta </Link>
                 </div>
             </div>
+            <div className="info">
 
+                <div className="headatos">
+                    <h3 className="tituloAccount"> Datos personales </h3>
+                    <Link className="editAcc" onClick={handleEdit}> Editar datos </Link>
+                </div>
+
+
+                <div className="usuario">
+                    <div className="usuarioimg">
+                        <img className="datoimg" name='image' value={user.image} src={user.image ? user.image : imagedefault} width='120px' alt="not found"></img>
+                        {/* <Link> <p className="editimg"> Editar foto </p></Link> */}
+                    </div>
+                    <div>
+                        <h3 className="dato" name="name" value={user.name}> Nombre: {user.name} </h3>
+                        <h3 className="dato" name="lastName" value={user.lastName}> Apellido: {user.lastName} </h3>
+                        <h3 className="dato" name="email" value={user.email}> Mail: {user.email} </h3>
+                        <h3 className="dato" name="password" value={user.password}> Contraseña: ********** </h3>
+                    </div>
+                </div>
+                <button className="logoutBtn" onClick={e => logout(e)}>Logout</button>
+
+
+            </div>
         </div>
+
+        </div >
     )
 
 }

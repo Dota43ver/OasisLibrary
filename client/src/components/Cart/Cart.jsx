@@ -1,33 +1,56 @@
 import React from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import {
   decreaseQuantity,
+  getCart,
+  getUsers,
+  addCart,
   increaseQuantity,
   removeFromCart,
+  getBooks,
 } from "../../actions";
 import NavBar from "../NavBar/NavBar";
 import "./Cart.css";
 export default function Cart() {
+  const user = useSelector((state) => state.user)
+  const allBooks = useSelector((state => state.books))
   const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+  //   const totalPriceById = cart.map((item) => item.price * item.quantity);
+
+  const [quantity, setQuantity] = useState(1);
+
+  useEffect(() => {
+    if (user.length === 0)
+    dispatch(getUsers())
+    else
+    dispatch(getCart(user.id))
+    dispatch(getBooks())
+  }, [user])
+
   const totalBooks = cart.reduce((total, item) => total + item.quantity, 0);
   const totalPrice = cart.reduce(
     (total, item) => total + item.price * item.quantity,
     0
   );
-  const dispatch = useDispatch();
-  //   const totalPriceById = cart.map((item) => item.price * item.quantity);
   const handleRemoveFromCart = (id) => {
     dispatch(removeFromCart(id));
   };
-  const handleIncreaseQuantity = (id) => {
-    const book = cart.find((item) => item.id === id);
-    if (book.quantity >= book.stock) {
-      alert("No hay suficiente stock disponible para aumentar la cantidad.");
-    } else {
-      dispatch(increaseQuantity(id));
-    }
-  };
+
+const handleIncreaseQuantity = (id) => {
+  const addBooks = allBooks.find((e) => e.id === id);
+  console.log(id);
+    dispatch(addCart({
+      bookId: id,
+      name: addBooks.name,
+      price: addBooks.price,
+      image: addBooks.image,
+      quantity: quantity,
+      userId: user.id
+    }));
+}
 
   const handleDecreaseQuantity = (id) => {
     const book = cart.find((item) => item.id === id);
@@ -40,7 +63,7 @@ export default function Cart() {
   return (
     <div>
       <NavBar />
-      {cart.length ? (
+      {cart && cart.length !== 0 ? (
         <div>
           <h1 className="shopTitle">Shop Cart</h1>
           <div className="totalPrice">

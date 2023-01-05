@@ -18,6 +18,7 @@ import Success from "./components/Success/Success";
 import Dashboard from "./components/Dashboard Admin/Dashboard";
 import Reviews from "./components/Reviews/Reviews";
 import Edit from "./components/AccountEdit/AccountEdit";
+import OrderCart from "./components/Orders/Orders";
 
 
 function App() {
@@ -66,6 +67,7 @@ function App() {
           <Route exact path="/dashboard" component={Dashboard}/>
           <Route path="/review" component={Reviews}/>
           <Route exact path='/edit' component={Edit}/>
+          <Route exact path='/order' component={OrderCart}/>
 
          </Switch>
       </div>
