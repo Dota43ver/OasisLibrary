@@ -25,7 +25,7 @@ import {
   GET_USERS,
   UPDATE_USERS,
   UPDATE_BOOK_STOCK,
-  POST_REVIEW,
+  GET_REVIEW
 } from "./types";
 
 export const getBooks = () => (dispatch) => {
@@ -111,7 +111,7 @@ export function postBook(info) {
 
 export function postReview(info){
   return async function (dispatch) {
-    var json = await axios.post(`${POST_REVIEW}/reviews`, info);
+    var json = await axios.post(`${LOCAL_HOST}/reviews`, info);
     return json;
   }
 }
@@ -139,6 +139,15 @@ export const getGenres = () => (dispatch) => {
       console.log(error);
     });
 };
+
+export const getReview = () => (dispatch) => {
+  return axios.get(`${LOCAL_HOST}/reviews`).then((review) => {
+    dispatch({
+      type: GET_REVIEW,
+      payload: review
+    })
+  })
+}
 export function aplhabeticalSort(payload) {
   return {
     type: ALPHABETICAL_SORT,
