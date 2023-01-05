@@ -6,11 +6,11 @@ const{fn, col} = require('sequelize')
 const router = Router()
 
 router.post('/', async (req, res) => {
-    let {descript, votes, userId, idBook} = req.body;
+    let {descript, votes, userId, bookId} = req.body;
     try {
         let newReview = await Reviews.create({
             userId: userId,
-            bookId: idBook,
+            bookId: bookId,
             descript: descript,
             votes: votes
         })
