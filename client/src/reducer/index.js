@@ -6,6 +6,7 @@ import {
   CLEAN_CACHE,
   DECREASE_QUANTITY,
   GENRE_FILTER,
+  GET_AUTHORS,
   GET_AUTHOR_BOOKS,
   GET_AUTHOR_DETAILS,
   GET_BOOKS,
@@ -24,6 +25,7 @@ import {
   UPDATE_USERS,
   UPDATE_BOOK_STOCK,
   POST_REVIEW,
+  AUTHOR_FILTER,
 } from "../actions/types";
 
 const initialState = {
@@ -39,6 +41,7 @@ const initialState = {
   authorBooks: [],
   user: [],
   reviews: [],
+  authors: []
 };
 
 export default function reducer(state = initialState, action) {
@@ -49,6 +52,11 @@ export default function reducer(state = initialState, action) {
         books: action.payload.data,
         allBooks: action.payload.data,
       };
+    case GET_AUTHORS:
+      return {
+        ...state,
+        authors: action.payload.data
+      }
     case GET_BOOK_DETAILS:
       return {
         ...state,
@@ -208,6 +216,16 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
         books: filteredByLang,
+      };
+    case AUTHOR_FILTER:
+      const allAuthors = state.allBooks;
+      if (action.payload === "all") return { ...state, books: state.allBooks };
+      const filteredByAuthor = allAuthors.filter(
+        (b) => b.author === action.payload
+      );
+      return {
+        ...state,
+        books: filteredByAuthor,
       };
     case ADD_TO_CART:
       const book = state.cart.find((b) => b.id === action.payload.id);

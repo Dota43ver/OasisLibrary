@@ -6,7 +6,9 @@ import {
   addFavs,
   addToCart,
   aplhabeticalSort,
+  authorFilter,
   genreFilter,
+  getAuthors,
   getBooks,
   getGenres,
   languageFilter,
@@ -24,8 +26,9 @@ import "./Home.css";
 export default function Home() {
   const allBooks = useSelector((state) => state.books);
   const allGenres = useSelector((state) => state.genres);
+  const allAuthors = useSelector((state) => state.authors);
   const dispatch = useDispatch();
-
+ console.log(allAuthors);
   const [currentPage, setCurrentPage] = useState(1);
   const [booksPerPage, setBooksPerPage] = useState(20);
   const indexLast = currentPage * booksPerPage;
@@ -47,6 +50,7 @@ export default function Home() {
   useEffect(() => {
     dispatch(getBooks());
     dispatch(getGenres());
+    dispatch(getAuthors());
   }, [dispatch]);
 
   const handleAddToCart = (el) => {
@@ -142,6 +146,23 @@ export default function Home() {
     setOrder(`Order ${e.target.value}`);
     setRefresh();
   }
+  function handleFilterByAuthor(e) {
+    e.preventDefault();
+    dispatch(authorFilter(e.target.value));
+    setCurrentPage(1);
+    setOrder(`Order ${e.target.value}`);
+    setRefresh();
+  }
+
+//  let result = allAuthors?.map((author) => {
+//    author.name.filter((item, index) => {
+//     return author.name.indexOf(item) === index
+//   })
+//   })
+
+  
+
+
   return (
     <div>
       <NavBar />
@@ -215,6 +236,31 @@ export default function Home() {
                     {genre.name}
                   </option>
                 ))}
+              </select>
+            </div>
+            <div>
+              <label>Autores</label>
+              <select
+                className="select"
+                onChange={(e) => handleFilterByAuthor(e)}
+                value={refresh}
+              >
+                <option value="all">Todos</option>
+                {allAuthors?.map((author) => {
+                  author.name.filter((item, index) => {
+                    return <option key={author.id} value={author.name}>{author.name.indexOf(item) === index}</option>
+                  })
+                }/*(
+                  <option key={author.id} value={author.name}>
+                    {
+                      allAuthors?.map((author) => {
+                        author.name.filter((item, index) => {
+                         return author.name.indexOf(item) === index
+                       })
+                       })
+                    }
+                  </option>
+                  )*/)}
               </select>
             </div>
             <div>
