@@ -45,6 +45,16 @@ a {
   display: flex;
   justify-content: center;
 }
+.reviewImg{
+  min-width: 5rem;
+  min-height: 15rem;
+  max-width: 10rem;
+  max-height: 20rem;
+  padding: 2rem;
+  padding-bottom: 15px;
+  display: flex;
+  justify-content: center;
+}
 .secondCont {
   background-color: #d9d9d9;
   grid-area: second;
@@ -135,4 +145,106 @@ a {
   display: flex;
   justify-content: center;
   color: #1c555e;
+}
+
+.reviewContent{
+  display: flex;
+  
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: relative;
+  transform: none;
+  background-color: #d9d9d9;
+  width: 40%;
+  margin-block: 1%;
+  margin-right: 10%;
+  margin-left: 25%;
+  padding-inline: 2%;
+  grid-gap: 10px;
+  border-radius: 20px;
+  filter: drop-shadow(5px 5px 10px black);
+  padding-bottom: 10px;
+}
+.forms{
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.forms h1{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: #1847b5;
+}
+.forms h2{
+  font-size: 21px;
+  font-family: "Pacifico",cursive;
+  color: rgb(37, 145, 162);
+}
+.formss{
+  position: initial;
+    transform: none;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    margin-block: 2%;
+    margin-right: 10%;
+    margin-left: 5%;
+    padding-inline: 5%;
+    grid-gap: 10px;
+    gap: 10px;
+    border-radius: 20px;
+    filter: drop-shadow(5px 5px 10px black);
+    background-color: #d9d9d9;
+    padding-bottom: 20px;
+    height: 100%;
+}
+
+.overlay{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0,.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeWindow{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  width: 30px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: #5e3614;
+}
+
+.closeWindow:hover{
+  background-color: #aa7446;
+}
+
+.dates{
+  font-size: 20px;
+}
+
+.date{
+  display: grid;
+  grid-gap: 25px;
+  gap: 25px;
+  padding: 5px;
+  width: 95%;
+}
+
+.submitReview{
+  display: grid;
+  grid-gap: 25px;
+  gap: 25px;
+  padding: 5px;
+  width: 100%;
 }
