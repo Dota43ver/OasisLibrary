@@ -7,6 +7,7 @@ import {
   getCart,
   getUsers,
   addCart,
+  deleteCart,
   increaseQuantity,
   removeFromCart,
   getBooks,
@@ -24,9 +25,9 @@ export default function Cart() {
 
   useEffect(() => {
     if (user.length === 0)
-    dispatch(getUsers())
+      dispatch(getUsers())
     else
-    dispatch(getCart(user.id))
+      dispatch(getCart(user.id))
     dispatch(getBooks())
   }, [user])
 
@@ -36,12 +37,16 @@ export default function Cart() {
     0
   );
   const handleRemoveFromCart = (id) => {
-    dispatch(removeFromCart(id));
+    const deleteBook = cart.find((e) => e.id === id);
+      dispatch(deleteCart({
+        userId: user.id,
+        bookId: id,
+        quantity: deleteBook.quantity,
+      }));
   };
 
-const handleIncreaseQuantity = (id) => {
-  const addBooks = allBooks.find((e) => e.id === id);
-  console.log(id);
+  const handleIncreaseQuantity = (id) => {
+    const addBooks = allBooks.find((e) => e.id === id);
     dispatch(addCart({
       bookId: id,
       name: addBooks.name,
@@ -50,16 +55,20 @@ const handleIncreaseQuantity = (id) => {
       quantity: quantity,
       userId: user.id
     }));
-}
+  }
 
   const handleDecreaseQuantity = (id) => {
-    const book = cart.find((item) => item.id === id);
-    if (book.quantity <= 1) {
-      dispatch(removeFromCart(id));
-    } else {
-      dispatch(decreaseQuantity(id));
-    }
+    const deleteBooks = cart.find((e) => e.id === id);
+      dispatch(deleteCart({
+        bookId: id,
+        name: deleteBooks.name,
+        price: deleteBooks.price,
+        image: deleteBooks.image,
+        quantity: quantity,
+        userId: user.id
+      }));
   };
+
   return (
     <div>
       <NavBar />

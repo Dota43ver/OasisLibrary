@@ -27,7 +27,6 @@ import {
   UPDATE_BOOK_STOCK,
   POST_REVIEW,
   GET_CART,
-  ADD_CART,
   GET_REVIEW
 
 } from "./types";
@@ -321,10 +320,6 @@ export const addCart = (data) => async (dispatch) => {
     const { bookId, name, price, image, quantity, userId } = data;
     const cart = await axios.post('http://localhost:3001/cart', { userId, bookId, quantity });
 
-    // return dispatch({
-    //   type: ADD_CART,
-    //   payload: cart.data
-    // })
     return dispatch(
       addToCart({
         id: bookId,
@@ -334,6 +329,26 @@ export const addCart = (data) => async (dispatch) => {
         quantity,
       })
     );
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export const deleteCart = (data) => async (dispatch) => {
+  try {
+    const { bookId, name, price, image, quantity } = data;
+    const response = await axios.delete('http://localhost:3001/cart', { data });
+
+    return dispatch(
+      removeFromCart({
+        id: bookId,
+        name,
+        price,
+        image,
+        quantity,
+      })
+    );
+
   } catch (error) {
     console.log(error)
   }

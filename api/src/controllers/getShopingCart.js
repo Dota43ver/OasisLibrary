@@ -52,8 +52,8 @@ async function deleteItem(userId, bookId, quantity) {
             },
             attributes: ['quantity']
         });
-        console.log(cart.quantity);
-        if (cart) {
+
+        if (cart && cart.quantity > 0) {
             return await Shopping_cart.update(
                 { quantity: cart.quantity - quantity }, {
                 where: {
@@ -66,7 +66,7 @@ async function deleteItem(userId, bookId, quantity) {
             }
             );
         } else {
-            // await Shopping_cart.destroy({
+            // await Shopping_cart.update({
             //     where: {
             //         userId: userId,
             //         bookId: bookId,
@@ -100,18 +100,36 @@ async function getCart(userId) {
                 attributes: ['bookId', 'quantity']
             },
         )
+
+        const cartNull = await Shopping_cart.findAll(
+            {
+                where: {
+                    quantity: {
+                        [Op.gt]: 0
+                    }
+                },
+            }
+        )
+
         if (cart.length === 0) {
-            return [];
+            return []
         }
 
         let bookMap = new Map();
+
         const bookIds = cart.map((el) => {
             if (el.quantity < 1) {
-                return []
+                cartNull.map((el) => {
+                    bookMap.set(el.bookId, { id: el.bookId, quantity: el.quantity })
+                    return el.bookId;
+                })
+            } else {
+                bookMap.set(el.bookId, { id: el.bookId, quantity: el.quantity })
+                return el.bookId;
             }
-            bookMap.set(el.bookId, { id: el.bookId, quantity: el.quantity })
-            return el.bookId;
         })
+
+
         const bookCart = await Book.findAll({
             where: {
                 id: bookIds

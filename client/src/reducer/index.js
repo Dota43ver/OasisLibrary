@@ -25,7 +25,6 @@ import {
   UPDATE_BOOK_STOCK,
   POST_REVIEW,
   GET_CART,
-  ADD_CART,
   GET_REVIEW
 } from "../actions/types";
 
@@ -235,10 +234,27 @@ export default function reducer(state = initialState, action) {
       }
 
     case REMOVE_FROM_CART:
-      return {
-        ...state,
-        cart: state.cart.filter((book) => book.id !== action.payload),
-      };
+      const deleteBook = state.cart.find((b) => b.id === action.payload.id);
+      if (deleteBook) {
+        if(deleteBook.quantity < 2) {
+          console.log(state.cart.filter((i) => i.id !== action.payload.id));
+          return {
+            ...state, cart: state.cart.filter((i) => i.id !== action.payload.id)
+          }
+        }
+        return {
+          ...state,
+          cart: state.cart.map((b) => {
+            if (b.id === action.payload.id) {
+              return { ...b, quantity: b.quantity - action.payload.quantity };
+            }
+            return b;
+          }),
+        };
+      } else {
+        return { ...state, cart: [...state.cart, action.payload] };
+      }
+
     case DECREASE_QUANTITY:
       const updatedCart = state.cart.map((item) => {
         if (item.id === action.payload) {
@@ -315,12 +331,6 @@ export default function reducer(state = initialState, action) {
           stock: action.payload.newStock,
         },
       };
-
-    case ADD_CART:
-      return {
-        ...state,
-        shoppingCart: action.payload
-      }
 
     case GET_CART:
       return {

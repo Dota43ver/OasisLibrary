@@ -27,5 +27,4 @@ export const UPDATE_USERS = 'UPDATE_USERS';
 export const UPDATE_BOOK_STOCK = "UPDATE_BOOK_STOCK";
 export const POST_REVIEW = 'POST_REVIEW';
 export const GET_CART = 'GET_CART';
-export const ADD_CART = 'ADD_CART'
 export const GET_REVIEW = 'GET_REVIEW'
