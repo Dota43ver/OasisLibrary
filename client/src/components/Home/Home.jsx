@@ -17,7 +17,7 @@ import {
   sagaFilter,
   scoreSort,
   addCart,
-  getUsers
+  getUsers,
 } from "../../actions";
 import Card from "../Card/Card";
 import CarouselBook from "../Carousel/Carousel";
@@ -32,7 +32,6 @@ const Swal = require("sweetalert2");
 export default function Home() {
   const allBooks = useSelector((state) => state.books);
   const allGenres = useSelector((state) => state.genres);
-
   const user = useSelector((state) => state.user);
   const allAuthors = useSelector((state) => state.authors);
   const allFavs = useSelector((state) => state.favs);
