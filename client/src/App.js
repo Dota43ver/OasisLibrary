@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
-// import Home from "./components/Home/Home"
+import jwt_decode from "jwt-decode";
 import "./App.css";
 import AboutUs from "./components/About us/AboutUs";
 import Account from "./components/Account/Account";
@@ -19,6 +19,8 @@ import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import Reviews from "./components/Reviews/Reviews";
 import Success from "./components/Success/Success";
+import Edit from "./components/AccountEdit/AccountEdit";
+import { AiFillGoogleCircle } from "react-icons/ai";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -41,9 +43,29 @@ function App() {
     }
   }
 
+
   useEffect(() => {
     isAuth();
   });
+
+  function handleCallbackResponse(response) {
+    const userObject = jwt_decode(response.credential);
+    console.log(userObject)
+  }
+
+  useEffect(()=>{
+    isAuth()
+  })
+
+
+  useEffect(()=>{
+    /*global google */
+    google.accounts.id.initialize({
+      client_id: "340086857333-sbcjo4c3pta23d842q27q4fid3bnhod7.apps.googleusercontent.com",
+      callback: handleCallbackResponse
+    })
+
+  })
 
   return (
     <BrowserRouter>

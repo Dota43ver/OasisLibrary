@@ -25,8 +25,10 @@ export const CHECKOUT_CART = "CHECKOUT_CART";
 export const GET_USERS = "GET_USERS";
 export const UPDATE_USERS = "UPDATE_USERS";
 export const UPDATE_BOOK_STOCK = "UPDATE_BOOK_STOCK";
-export const POST_REVIEW = "POST_REVIEW";
+export const POST_REVIEW = 'POST_REVIEW';
 export const UPDATE_BOOK_STOCK_SUCCESS = "UPDATE_BOOK_STOCK_SUCCESS";
 export const CLEAR_CART = "CLEAR_CART";
 export const BOOK_FULL_UPDATE = "BOOK_FULL_UPDATE";
 export const UPDATE_BOOK = "UPDATE_BOOK";
+export const GET_REVIEW = 'GET_REVIEW'
+

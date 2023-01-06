@@ -27,6 +27,8 @@ import {
   UPDATE_BOOK_STOCK,
   UPDATE_BOOK_STOCK_SUCCESS,
   UPDATE_USERS,
+  POST_REVIEW,
+  GET_REVIEW
 } from "../actions/types";
 
 const initialState = {
@@ -95,6 +97,12 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
       };
+      
+    case GET_REVIEW:
+      return{
+        ...state,
+        reviews: action.payload
+      }
     case GET_GENRES:
       let sortedGenres = action.payload.data;
       sortedGenres = action.payload.data.sort(function (a, b) {
@@ -158,7 +166,7 @@ export default function reducer(state = initialState, action) {
         ...state,
         books: sortedBooksByScore,
       };
-    case GET_NAME_BOOKS:
+      case GET_NAME_BOOKS:
       return {
         ...state,
         books: action.payload,
