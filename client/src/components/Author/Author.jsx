@@ -5,7 +5,7 @@ import { addFavs, addToCart, getAuthorBooks } from "../../actions";
 import "../Author/Author.css";
 import Card from "../Card/Card";
 import NavBar from "../NavBar/NavBar.jsx";
-
+const Swal = require("sweetalert2");
 export default function Author(props) {
   const dispatch = useDispatch();
   const name = props.match.params.name;
@@ -34,7 +34,15 @@ export default function Author(props) {
         quantity: quantity,
       })
     );
-    alert("Item agregado");
+    Swal.fire({
+      position: "bottom-left",
+      icon: "success",
+      title: "Libro agregado al carrito",
+      showConfirmButton: false,
+      timerProgressBar: true,
+      timer: 4000,
+      toast: true,
+    });
   };
   const handleAddFavs = (el) => {
     const favsBooks = allAuthorBooks.find((e) => e.id === el.target.id);
@@ -46,6 +54,15 @@ export default function Author(props) {
         image: favsBooks.image,
       })
     );
+    Swal.fire({
+      position: "bottom-left",
+      icon: "success",
+      title: "Libro agregado a favoritos",
+      showConfirmButton: false,
+      timerProgressBar: true,
+      timer: 4000,
+      toast: true,
+    });
   };
   return (
     <div>

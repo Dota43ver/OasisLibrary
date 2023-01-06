@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { addToCart, cleanCache, getBookDetails, postReview, getUsers, getReview} from "../../actions";
 import "../BookDetail/BookDetail.css";
 import NavBar from "../NavBar/NavBar.jsx";
+const Swal = require("sweetalert2");
 import Review from "../Reviews/Reviews";
 
 function validate(input) {
@@ -29,11 +30,33 @@ export default function BookDetails(props) {
     dispatch(cleanCache());
   }, [dispatch, id]);
   const handleAddToCart = () => {
+    let possible = true;
     if (quantity > bookDetails.stock) {
-      alert(
-        "No hay suficiente stock disponible para agregar esta cantidad al carrito."
-      );
-    } else {
+      Swal.fire({
+        icon: "error",
+        title:
+          "No hay suficiente stock disponible para agregar esta cantidad al carrito.",
+      });
+
+      possible = false;
+    }
+    const targetId = bookDetails.id;
+    let quantityCart;
+
+    cart.forEach((item) => {
+      if (item.id === targetId) {
+        quantityCart = item.quantity;
+      }
+    });
+    if (quantity + quantityCart > bookDetails.stock) {
+      Swal.fire({
+        icon: "error",
+        title:
+          "No hay suficiente stock disponible para agregar esta cantidad al carrito.",
+      });
+
+      possible = false;
+    } else if (possible === true) {
       dispatch(
         addToCart({
           id: bookDetails.id,
@@ -44,6 +67,15 @@ export default function BookDetails(props) {
           quantity: quantity,
         })
       );
+      Swal.fire({
+        icon: "success",
+        title: `  ${
+          quantity > 1 ? ` ${quantity} libros agregados` : "Libro agregado"
+        } al carrito`,
+        showConfirmButton: false,
+        timerProgressBar: true,
+        timer: 2000,
+      });
       setQuantity(1); // Establece la cantidad en 0 después de agregar el libro al carrito
     }
   };
@@ -51,6 +83,7 @@ export default function BookDetails(props) {
   
   const reviews = useSelector((state) => state.reviews)
   const bookDetails = useSelector((state) => state.bookDetails);
+  const cart = useSelector((state) => state.cart);
   const user = useSelector((state) => state.user)
  
   
