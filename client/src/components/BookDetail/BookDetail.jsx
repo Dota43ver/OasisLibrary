@@ -6,7 +6,7 @@ import { addToCart, cleanCache, getBookDetails, postReview, getUsers, getReview}
 import "../BookDetail/BookDetail.css";
 import NavBar from "../NavBar/NavBar.jsx";
 const Swal = require("sweetalert2");
-import Review from "../Reviews/Reviews";
+//import Review from "../Reviews/Reviews";
 
 function validate(input) {
   let errors = {};
