@@ -54,11 +54,6 @@ function App() {
   }
 
   useEffect(()=>{
-    isAuth()
-  })
-
-
-  useEffect(()=>{
     /*global google */
     google.accounts.id.initialize({
       client_id: "340086857333-sbcjo4c3pta23d842q27q4fid3bnhod7.apps.googleusercontent.com",

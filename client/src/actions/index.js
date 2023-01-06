@@ -220,7 +220,7 @@ export function addToCart(book) {
     dispatch({ type: ADD_TO_CART, payload: book });
     const currentBook = getState().bookDetails;
     const newStock = currentBook.stock - book.quantity;
-    //dispatch(updateBookStock(currentBook.id, newStock));
+    // dispatch(updateBookStock(currentBook.id, newStock));
   };
 }
 
@@ -378,7 +378,7 @@ export function updateBook(book) {
 export const getUsers = () => async (dispatch) => {
   try {
     const usuarios = await axios.get(`${LOCAL_HOST}/users/profile`, {
-      headers: { token: localStorage.token },
+      headers: { "token": localStorage.token },
     });
 
     return dispatch({

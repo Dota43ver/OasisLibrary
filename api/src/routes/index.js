@@ -11,6 +11,7 @@ const checkoutRouter = require('./checkout')
 const reviewRouter = require('./reviewRouter')
 const cartRouter = require('./shoppingCart')
 const wScrapperRouter = require('./webScrapper')
+const favsRouter = require('./favsRouter')
 
 
 const router = Router();
@@ -26,5 +27,6 @@ router.use("/checkout", checkoutRouter)
 router.use("/reviews", reviewRouter)
 router.use("/cart", cartRouter)
 router.use("/webScrapper", wScrapperRouter)
+router.use("/favs", favsRouter)
 
 module.exports = router;
