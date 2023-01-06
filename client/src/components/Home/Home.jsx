@@ -36,7 +36,6 @@ export default function Home() {
   const allAuthors = useSelector((state) => state.authors);
   const allFavs = useSelector((state) => state.favs);
   const dispatch = useDispatch();
- console.log(allAuthors);
   const [currentPage, setCurrentPage] = useState(1);
   const [booksPerPage, setBooksPerPage] = useState(20);
   const indexLast = currentPage * booksPerPage;
@@ -64,10 +63,11 @@ export default function Home() {
 
   const handleAddToCart = (el) => {
     const addBooks = allBooks.find((e) => e.id === el.target.value);
-
+console.log(el.target.value);
     dispatch(
-      addToCart({
-        id: el.target.value,
+      addCart({
+        userId: user.id,
+        bookId: addBooks.id,
         name: addBooks.name,
         price: addBooks.price,
         image: addBooks.image,
@@ -121,6 +121,7 @@ export default function Home() {
     const productIds = allBooks[randomIndex];
     setProductIds(productIds); // guarda el ID seleccionado al azar en el estado
   }
+
 
   function handleClick(e) {
     e.preventDefault();

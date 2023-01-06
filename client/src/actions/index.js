@@ -220,7 +220,7 @@ export function addToCart(book) {
     dispatch({ type: ADD_TO_CART, payload: book });
     const currentBook = getState().bookDetails;
     const newStock = currentBook.stock - book.quantity;
-    dispatch(updateBookStock(currentBook.id, newStock));
+    //dispatch(updateBookStock(currentBook.id, newStock));
   };
 }
 
@@ -417,6 +417,7 @@ export const getCart = (userId) => async (dispatch) => {
   try {
     const cart = await axios.get(`${LOCAL_HOST}/cart/${userId}`)
 
+    console.log(cart);
     return dispatch({
       type: GET_CART,
       payload: cart.data
