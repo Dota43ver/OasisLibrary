@@ -17,7 +17,6 @@ import {
   GET_USERS,
   INCREASE_QUANTITY,
   LANGUAGE_FILTER,
-  POST_REVIEW,
   PRICE_SORT,
   REMOVE_FROM_CART,
   REMOVE_FROM_FAVS,
@@ -25,16 +24,12 @@ import {
   SCORE_SORT,
   UPDATE_BOOK,
   UPDATE_BOOK_STOCK,
-<<<<<<< HEAD
   POST_REVIEW,
   AUTHOR_FILTER,
-  GET_REVIEW
-=======
   UPDATE_BOOK_STOCK_SUCCESS,
   UPDATE_USERS,
   GET_REVIEW,
   POST_BOOK
->>>>>>> 26c57f703114cc23c5ffe84cb7172c24f9aeb337
 } from "../actions/types";
 
 const initialState = {
