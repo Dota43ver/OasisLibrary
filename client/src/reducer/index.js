@@ -7,6 +7,7 @@ import {
   CLEAR_CART,
   DECREASE_QUANTITY,
   GENRE_FILTER,
+  GET_AUTHORS,
   GET_AUTHOR_BOOKS,
   GET_AUTHOR_DETAILS,
   GET_BOOKS,
@@ -16,7 +17,6 @@ import {
   GET_USERS,
   INCREASE_QUANTITY,
   LANGUAGE_FILTER,
-  POST_REVIEW,
   PRICE_SORT,
   REMOVE_FROM_CART,
   REMOVE_FROM_FAVS,
@@ -24,6 +24,8 @@ import {
   SCORE_SORT,
   UPDATE_BOOK,
   UPDATE_BOOK_STOCK,
+  POST_REVIEW,
+  AUTHOR_FILTER,
   UPDATE_BOOK_STOCK_SUCCESS,
   UPDATE_USERS,
   GET_REVIEW,
@@ -43,6 +45,7 @@ const initialState = {
   authorBooks: [],
   user: [],
   reviews: [],
+  authors: []
 };
 
 export default function reducer(state = initialState, action) {
@@ -53,6 +56,11 @@ export default function reducer(state = initialState, action) {
         books: action.payload.data,
         allBooks: action.payload.data,
       };
+    case GET_AUTHORS:
+      return {
+        ...state,
+        authors: action.payload.data
+      }
     case GET_BOOK_DETAILS:
       return {
         ...state,
@@ -218,6 +226,16 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
         books: filteredByLang,
+      };
+    case AUTHOR_FILTER:
+      const allAuthors = state.allBooks;
+      if (action.payload === "all") return { ...state, books: state.allBooks };
+      const filteredByAuthor = allAuthors.filter(
+        (b) => b.author === action.payload
+      );
+      return {
+        ...state,
+        books: filteredByAuthor,
       };
     case ADD_TO_CART:
       const book = state.cart.find((b) => b.id === action.payload.id);
