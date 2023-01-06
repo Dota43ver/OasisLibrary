@@ -378,7 +378,7 @@ export function updateBook(book) {
 export const getUsers = () => async (dispatch) => {
   try {
     const usuarios = await axios.get(`${LOCAL_HOST}/users/profile`, {
-      headers: { token: localStorage.token },
+      headers: { "token": localStorage.token },
     });
 
     return dispatch({

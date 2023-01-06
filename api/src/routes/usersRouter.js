@@ -137,6 +137,7 @@ usersRouter.get("/logout", verify, async (req, res) => {
     res.status(400).send("error al desloguear", error.message);
   }
 });
+
 usersRouter.get("/profile", verify, async (req, res) => {
   try {
     let id = req.userId;
