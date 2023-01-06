@@ -32,6 +32,7 @@ usersRouter.post("/signup", async (req, res) => { //Ruta postman: http://localho
         });
 
         if (user2) {
+            // console.log(user2.name);
             return res.status(401).send("user already exist")
         }
 
