@@ -22,6 +22,7 @@ import Float from "../FloatWApp/Float";
 import NavBar from "../NavBar/NavBar";
 import Paginated from "../Paginated/Paginated";
 import "./Home.css";
+const Swal = require("sweetalert2");
 
 export default function Home() {
   const allBooks = useSelector((state) => state.books);
@@ -55,15 +56,25 @@ export default function Home() {
 
   const handleAddToCart = (el) => {
     const addBooks = allBooks.find((e) => e.id === el.target.value);
-    dispatch(addCart({
-      bookId: el.target.value,
-      name: addBooks.name,
-      price: addBooks.price,
-      image: addBooks.image,
-      quantity: quantity,
-      userId: user.id
-    }));
-    alert("Item agregado");
+
+    dispatch(
+      addToCart({
+        id: el.target.value,
+        name: addBooks.name,
+        price: addBooks.price,
+        image: addBooks.image,
+        quantity: quantity,
+      })
+    );
+    Swal.fire({
+      position: "bottom-left",
+      icon: "success",
+      title: "Libro agregado al carrito",
+      showConfirmButton: false,
+      timerProgressBar: true,
+      timer: 4000,
+      toast: true,
+    });
   };
 
   const handleAddFavs = (el) => {
@@ -76,6 +87,15 @@ export default function Home() {
         image: favsBooks.image,
       })
     );
+    Swal.fire({
+      position: "bottom-left",
+      icon: "success",
+      title: "Libro agregado a favoritos",
+      showConfirmButton: false,
+      timerProgressBar: true,
+      timer: 4000,
+      toast: true,
+    });
   };
 
   function handleRandomId() {
@@ -233,7 +253,9 @@ export default function Home() {
                 </option>
                 <option value="Harry Potter">Harry Potter</option>
                 <option value="Juego de Tronos">Juego de tronos</option>
-                <option value="Los Juegos Del Hambre">Los Juegos Del Hambre</option>
+                <option value="Los Juegos Del Hambre">
+                  Los Juegos Del Hambre
+                </option>
               </select>
             </div>
             <div>

@@ -4,6 +4,7 @@ import {
   ALPHABETICAL_SORT,
   CHECKOUT_CART,
   CLEAN_CACHE,
+  CLEAR_CART,
   DECREASE_QUANTITY,
   GENRE_FILTER,
   GET_AUTHOR_BOOKS,
@@ -12,20 +13,22 @@ import {
   GET_BOOK_DETAILS,
   GET_GENRES,
   GET_NAME_BOOKS,
+  GET_USERS,
   INCREASE_QUANTITY,
   LANGUAGE_FILTER,
-  POST_BOOK,
+  POST_REVIEW,
   PRICE_SORT,
   REMOVE_FROM_CART,
   REMOVE_FROM_FAVS,
   SAGA_FILTER,
   SCORE_SORT,
-  GET_USERS,
-  UPDATE_USERS,
+  UPDATE_BOOK,
   UPDATE_BOOK_STOCK,
-  POST_REVIEW,
+  UPDATE_BOOK_STOCK_SUCCESS,
+  UPDATE_USERS,
   GET_CART,
-  GET_REVIEW
+  GET_REVIEW,
+  POST_BOOK,
 } from "../actions/types";
 
 const initialState = {
@@ -93,7 +96,8 @@ export default function reducer(state = initialState, action) {
     case POST_REVIEW:
       return {
         ...state,
-      }
+      };
+      
     case GET_REVIEW:
       return{
         ...state,
@@ -162,7 +166,7 @@ export default function reducer(state = initialState, action) {
         ...state,
         books: sortedBooksByScore,
       };
-    case GET_NAME_BOOKS:
+      case GET_NAME_BOOKS:
       return {
         ...state,
         books: action.payload,
@@ -311,17 +315,22 @@ export default function reducer(state = initialState, action) {
     case GET_USERS: {
       return {
         ...state,
-        user: action.payload
-      }
+        user: action.payload,
+      };
     }
 
     case UPDATE_USERS: {
       return {
         ...state,
-        user: action.payload
-      }
+        user: action.payload,
+      };
     }
-
+    case CLEAR_CART: {
+      return {
+        ...state,
+        cart: [],
+      };
+    }
     case UPDATE_BOOK_STOCK:
       // Modifica el estado para actualizar el stock del libro
       return {
@@ -337,6 +346,24 @@ export default function reducer(state = initialState, action) {
         ...state,
         cart: action.payload
       }
+
+    case UPDATE_BOOK:
+      return {
+        ...state,
+        // Reemplaza el libro en el estado con la información actualizada
+        books: state.books.map((book) =>
+          book.id === action.payload.id ? action.payload : book
+        ),
+      };
+    case UPDATE_BOOK_STOCK_SUCCESS:
+      return {
+        ...state,
+        bookDetails: {
+          ...state.bookDetails,
+          stock: action.payload.stock,
+        },
+      };
+
     default:
       return state;
   }
