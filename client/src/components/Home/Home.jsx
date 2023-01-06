@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import ScrollToTop from "react-scroll-to-top";
 import {
   addFavs,
+  removeFromFavs,
   addToCart,
   aplhabeticalSort,
   genreFilter,
@@ -20,11 +21,14 @@ import Float from "../FloatWApp/Float";
 import NavBar from "../NavBar/NavBar";
 import Paginated from "../Paginated/Paginated";
 import "./Home.css";
+
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 const Swal = require("sweetalert2");
 
 export default function Home() {
   const allBooks = useSelector((state) => state.books);
   const allGenres = useSelector((state) => state.genres);
+  const allFavs = useSelector((state) => state.favs);
   const dispatch = useDispatch();
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -72,26 +76,36 @@ export default function Home() {
     });
   };
 
-  const handleAddFavs = (el) => {
-    const favsBooks = allBooks.find((e) => e.id === el.target.id);
-    dispatch(
-      addFavs({
-        id: el.target.id,
-        name: favsBooks.name,
-        price: favsBooks.price,
-        image: favsBooks.image,
-      })
-    );
-    Swal.fire({
-      position: "bottom-left",
-      icon: "success",
-      title: "Libro agregado a favoritos",
-      showConfirmButton: false,
-      timerProgressBar: true,
-      timer: 4000,
-      toast: true,
-    });
-  };
+  const handleFavs = (el) => {
+    const liked = allFavs.find((e) => e.id === el.target.id)
+    let book = allBooks.find((e) => e.id === el.target.id);
+    if(liked) {
+        console.log(el.target.id);
+      dispatch(
+        removeFromFavs({
+          id: el.target.id
+        })
+        );
+      } else {
+        dispatch(
+          addFavs({
+            id: el.target.id,
+            name: book.name,
+            price: book.price,
+            image: book.image,
+          })
+          );
+          Swal.fire({
+            position: "bottom-left",
+            icon: "success",
+            title: "Libro agregado a favoritos",
+            showConfirmButton: false,
+            timerProgressBar: true,
+            timer: 4000,
+            toast: true,
+          });
+        }
+    }
 
   function handleRandomId() {
     const randomIndex = Math.floor(Math.random() * allBooks.length);
@@ -294,23 +308,18 @@ export default function Home() {
                           ? el.name.substr(0, 33) + "..."
                           : el.name}
                       </h4>
-                      {
-                        <link
-                          href="https://fonts.googleapis.com/icon?family=Material+Icons"
-                          rel="stylesheet"
-                        ></link>
-                      }
                       <button
                         value={el.id}
-                        onClick={(el) => handleAddFavs(el)}
+                        onClick={(el) => handleFavs(el)}
                         // onClick={() => setBtnActive(!btnActive)}
-                        className={
-                          btnActive ? "borderless-button" : "borderless-button"
-                        }
-                      >
-                        <i id={el.id} class="material-icons">
-                          favorite
-                        </i>
+                        className={"borderless-button"}
+                      >                      
+                          {  
+                          allFavs.find((e) => e.id === el.id) ? 
+                          <div className="heart"><AiFillHeart id={el.id}/></div> : 
+                          <div className="heart"><AiOutlineHeart id={el.id}/></div>
+                          }
+
                       </button>
                     </div>
                     <Link to={`/book/${el.id}`}>

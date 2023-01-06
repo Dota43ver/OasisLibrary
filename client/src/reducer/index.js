@@ -26,8 +26,8 @@ import {
   UPDATE_BOOK_STOCK,
   UPDATE_BOOK_STOCK_SUCCESS,
   UPDATE_USERS,
-  POST_REVIEW,
-  GET_REVIEW
+  GET_REVIEW,
+  POST_BOOK
 } from "../actions/types";
 
 const initialState = {
