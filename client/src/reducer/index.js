@@ -7,6 +7,7 @@ import {
   CLEAR_CART,
   DECREASE_QUANTITY,
   GENRE_FILTER,
+  GET_AUTHORS,
   GET_AUTHOR_BOOKS,
   GET_AUTHOR_DETAILS,
   GET_BOOKS,
@@ -16,7 +17,6 @@ import {
   GET_USERS,
   INCREASE_QUANTITY,
   LANGUAGE_FILTER,
-  POST_REVIEW,
   PRICE_SORT,
   REMOVE_FROM_CART,
   REMOVE_FROM_FAVS,
@@ -24,10 +24,13 @@ import {
   SCORE_SORT,
   UPDATE_BOOK,
   UPDATE_BOOK_STOCK,
+  POST_REVIEW,
+  AUTHOR_FILTER,
   UPDATE_BOOK_STOCK_SUCCESS,
   UPDATE_USERS,
+  GET_CART,
   GET_REVIEW,
-  POST_BOOK
+  POST_BOOK,
 } from "../actions/types";
 
 const initialState = {
@@ -43,6 +46,7 @@ const initialState = {
   authorBooks: [],
   user: [],
   reviews: [],
+  authors: []
 };
 
 export default function reducer(state = initialState, action) {
@@ -53,6 +57,11 @@ export default function reducer(state = initialState, action) {
         books: action.payload.data,
         allBooks: action.payload.data,
       };
+    case GET_AUTHORS:
+      return {
+        ...state,
+        authors: action.payload.data
+      }
     case GET_BOOK_DETAILS:
       return {
         ...state,
@@ -134,15 +143,15 @@ export default function reducer(state = initialState, action) {
       sortedBooks =
         action.payload === "atoz"
           ? state.books.sort(function (a, b) {
-              if (a.name.toLowerCase() > b.name.toLowerCase()) return 1;
-              if (a.name.toLowerCase() < b.name.toLowerCase()) return -1;
-              return 0;
-            })
+            if (a.name.toLowerCase() > b.name.toLowerCase()) return 1;
+            if (a.name.toLowerCase() < b.name.toLowerCase()) return -1;
+            return 0;
+          })
           : state.books.sort(function (a, b) {
-              if (a.name.toLowerCase() < b.name.toLowerCase()) return 1;
-              if (a.name.toLowerCase() > b.name.toLowerCase()) return -1;
-              return 0;
-            });
+            if (a.name.toLowerCase() < b.name.toLowerCase()) return 1;
+            if (a.name.toLowerCase() > b.name.toLowerCase()) return -1;
+            return 0;
+          });
       return {
         ...state,
         books: sortedBooks,
@@ -152,15 +161,15 @@ export default function reducer(state = initialState, action) {
       sortedBooksByScore =
         action.payload === "desc"
           ? state.books.sort(function (a, b) {
-              if (a.score > b.score) return 1;
-              if (a.score < b.score) return -1;
-              return 0;
-            })
+            if (a.score > b.score) return 1;
+            if (a.score < b.score) return -1;
+            return 0;
+          })
           : state.books.sort(function (a, b) {
-              if (a.score < b.score) return 1;
-              if (a.score > b.score) return -1;
-              return 0;
-            });
+            if (a.score < b.score) return 1;
+            if (a.score > b.score) return -1;
+            return 0;
+          });
       return {
         ...state,
         books: sortedBooksByScore,
@@ -176,15 +185,15 @@ export default function reducer(state = initialState, action) {
       sortedBooksByPrice =
         action.payload === "asc"
           ? state.books.sort(function (a, b) {
-              if (a.price > b.price) return 1;
-              if (a.price < b.price) return -1;
-              return 0;
-            })
+            if (a.price > b.price) return 1;
+            if (a.price < b.price) return -1;
+            return 0;
+          })
           : state.books.sort(function (a, b) {
-              if (a.price < b.price) return 1;
-              if (a.price > b.price) return -1;
-              return 0;
-            });
+            if (a.price < b.price) return 1;
+            if (a.price > b.price) return -1;
+            return 0;
+          });
       return {
         ...state,
         books: sortedBooksByPrice,
@@ -219,6 +228,18 @@ export default function reducer(state = initialState, action) {
         ...state,
         books: filteredByLang,
       };
+
+    case AUTHOR_FILTER:
+      const allAuthors = state.allBooks;
+      if (action.payload === "all") return { ...state, books: state.allBooks };
+      const filteredByAuthor = allAuthors.filter(
+        (b) => b.author === action.payload
+      );
+      return {
+        ...state,
+        books: filteredByAuthor,
+      };
+
     case ADD_TO_CART:
       const book = state.cart.find((b) => b.id === action.payload.id);
       if (book) {
@@ -234,11 +255,29 @@ export default function reducer(state = initialState, action) {
       } else {
         return { ...state, cart: [...state.cart, action.payload] };
       }
+
     case REMOVE_FROM_CART:
-      return {
-        ...state,
-        cart: state.cart.filter((book) => book.id !== action.payload),
-      };
+      const deleteBook = state.cart.find((b) => b.id === action.payload.id);
+      if (deleteBook) {
+        if(deleteBook.quantity < 2) {
+          console.log(state.cart.filter((i) => i.id !== action.payload.id));
+          return {
+            ...state, cart: state.cart.filter((i) => i.id !== action.payload.id)
+          }
+        }
+        return {
+          ...state,
+          cart: state.cart.map((b) => {
+            if (b.id === action.payload.id) {
+              return { ...b, quantity: b.quantity - action.payload.quantity };
+            }
+            return b;
+          }),
+        };
+      } else {
+        return { ...state, cart: [...state.cart, action.payload] };
+      }
+
     case DECREASE_QUANTITY:
       const updatedCart = state.cart.map((item) => {
         if (item.id === action.payload) {
@@ -320,6 +359,13 @@ export default function reducer(state = initialState, action) {
           stock: action.payload.newStock,
         },
       };
+
+    case GET_CART:
+      return {
+        ...state,
+        cart: action.payload
+      }
+
     case UPDATE_BOOK:
       return {
         ...state,
@@ -336,6 +382,7 @@ export default function reducer(state = initialState, action) {
           stock: action.payload.stock,
         },
       };
+
     default:
       return state;
   }

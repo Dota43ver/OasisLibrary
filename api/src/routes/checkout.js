@@ -6,7 +6,6 @@ const checkoutRouter = Router();
 checkoutRouter.post('/', async (req, res) => {
     try {
         const idMP = await checkoutMP(req.body)
-        console.log(idMP);
         res.send(idMP) 
     } catch (error) {
         console.log(error);

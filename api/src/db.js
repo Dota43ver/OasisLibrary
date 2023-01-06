@@ -47,11 +47,14 @@ Genre.belongsToMany(Book, { through: "BookGenre" });
 Author.hasMany(Book, {as: "libro"})
 Book.belongsTo(Author, {as: "autor"})
 
-Shopping_cart.belongsToMany(Book, { through: 'CartBook'});
-Book.belongsToMany(Shopping_cart, { through: 'CartBook'});
+// Shopping_cart.belongsToMany(Book, { through: 'CartBook'});
+// Book.belongsToMany(Shopping_cart, { through: 'CartBook'});
 
-User.hasMany(Shopping_cart);
-Shopping_cart.belongsTo(User);
+// User.hasMany(Shopping_cart);
+// Shopping_cart.belongsTo(User);
+
+Book.belongsToMany(User, { through: Shopping_cart })
+User.belongsToMany(Book, { through: Shopping_cart })
 
 User.hasMany(Reviews);
 Reviews.belongsTo(User);

@@ -8,13 +8,17 @@ const checkoutMP = async (data) => {
 
         const totalPurchase = [];
 
-        for (let i = 0; i < shoppingCart.length; i++) {
+        for (let i = 0; i < shoppingCart.productList.length; i++) {
+            const discount = shoppingCart.productList[i].price - (shoppingCart.productList[i].price * shoppingCart.cupon)
             totalPurchase.push({
-                name: shoppingCart[i].name,
-                unit_price: shoppingCart[i].price,
-                quantity: shoppingCart[i].quantity,
+                title: shoppingCart.productList[i].name,
+                name: shoppingCart.productList[i].name,
+                unit_price: discount,
+                quantity: shoppingCart.productList[i].quantity,
             });
         }
+
+        console.log(data);
 
         let preference = {
             payer: {
@@ -30,12 +34,11 @@ const checkoutMP = async (data) => {
             },
         };
 
-        
         return mercadopago.preferences
-        .create(preference)
-        .then(function (response) {
-            // En esta instancia deberás asignar el valor dentro de response.body.id por el ID de preferencia solicitado en el siguiente paso
-            return { redirectURL: response.body.init_point }
+            .create(preference)
+            .then(function (response) {
+                // En esta instancia deberás asignar el valor dentro de response.body.id por el ID de preferencia solicitado en el siguiente paso
+                return { redirectURL: response.body.init_point }
             })
             .catch(function (error) {
                 console.log(error);
