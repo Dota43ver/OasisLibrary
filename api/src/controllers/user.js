@@ -119,19 +119,16 @@ async function updateUser(id, data) {
       return (errorMsg = "User not found");
     }
 
-    if (data.name)
-      await User.update({ name: data.name }, { where: { id: id } });
-    if (data.lastName)
-      await User.update({ lastName: data.lastName }, { where: { id: id } });
-    if (data.email)
-      await User.update({ email: data.email }, { where: { id: id } });
-    if (data.password) {
-      let newPassword = await bcrypt.hash(data.password, 8);
-      await User.update({ password: newPassword }, { where: { id: id } });
+        if (data.name) await User.update({ name: data.name }, { where: { id: id } });
+        if (data.lastName) await User.update({ lastName: data.lastName }, { where: { id: id } });
+        if (data.email) await User.update({ email: data.email }, { where: { id: id } });
+        if (data.password) {
+			let newPassword = await bcrypt.hash(data.password, 8)
+			await User.update({ password: newPassword }, { where: { id: id } });
+		}
+        
+        return 'User update'
     }
-
-    return userFound;
-  }
 }
 
 async function adminGetUsers(id) {

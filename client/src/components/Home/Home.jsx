@@ -16,6 +16,8 @@ import {
   priceSort,
   sagaFilter,
   scoreSort,
+  addCart,
+  getUsers
 } from "../../actions";
 import Card from "../Card/Card";
 import CarouselBook from "../Carousel/Carousel";
@@ -30,6 +32,8 @@ const Swal = require("sweetalert2");
 export default function Home() {
   const allBooks = useSelector((state) => state.books);
   const allGenres = useSelector((state) => state.genres);
+
+  const user = useSelector((state) => state.user);
   const allAuthors = useSelector((state) => state.authors);
   const allFavs = useSelector((state) => state.favs);
   const dispatch = useDispatch();
@@ -53,6 +57,7 @@ export default function Home() {
   const [productIds, setProductIds] = useState([]); // lista de IDs de productos
 
   useEffect(() => {
+    dispatch(getUsers())
     dispatch(getBooks());
     dispatch(getGenres());
     dispatch(getAuthors());
@@ -60,6 +65,7 @@ export default function Home() {
 
   const handleAddToCart = (el) => {
     const addBooks = allBooks.find((e) => e.id === el.target.value);
+
     dispatch(
       addToCart({
         id: el.target.value,

@@ -77,33 +77,65 @@ export default function Favorites() {
                   />
                 }
 
-                <button class="material-symbols-outlined">delete</button>
-                <button
-                  onClick={() => handleRemoveFavs(i.id)}
-                  className="addAndDelete"
-                >
-                  {" "}
-                  Eliminar{" "}
-                </button>
-              </div>
+                {allFavs.map(i => (
+                  <div className="detailFavs">
+                    <img src={i.image} width='150px' alt="not found"></img>
+                    <div className="infoFavs">
+                      <h3>{i.name}</h3>
+                      <h3>Precio: ${i.price}</h3>
+                    </div>
 
-              <div className="buttonFav">
-                {
-                  <link
-                    rel="stylesheet"
-                    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
-                  />
-                }
+                    <div className="btnStyles">
 
-                <button class="material-symbols-outlined">add</button>
-                <button
-                  value={i.id}
-                  onClick={(i) => handleAddToCart(i)}
-                  className="addAndDelete"
-                >
-                  {" "}
-                  Agregar al carrito{" "}
-                </button>
+                      <div className="buttonFav">
+
+                        {
+                          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+                        }
+
+                        <button class="material-symbols-outlined">
+                          delete
+                        </button>
+                        <button onClick={() => handleRemoveFavs(i.id)} className="addAndDelete" > Eliminar </button>
+
+                      </div>
+
+                      <div className="buttonFav">
+
+                        {
+                          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+                        }
+
+                        <button class="material-symbols-outlined">
+                          add
+                        </button>
+                        <button value={i.id} onClick={(i) => handleAddToCart(i)} className="addAndDelete"> Agregar al carrito </button>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+                ))}
+
+                <div className="buttonFav">
+                  {
+                    <link
+                      rel="stylesheet"
+                      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+                    />
+                  }
+
+                  <button class="material-symbols-outlined">add</button>
+                  <button
+                    value={i.id}
+                    onClick={(i) => handleAddToCart(i)}
+                    className="addAndDelete"
+                  >
+                    {" "}
+                    Agregar al carrito{" "}
+                  </button>
+                </div>
               </div>
             </div>
           </div>

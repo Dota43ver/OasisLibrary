@@ -12,9 +12,7 @@ export default function Checkout() {
   const purchasedCart = useSelector((state) => state.purchasedCart);
   const user = useSelector((state) => state.user);
 
-  console.log(user);
-
-  const [couponCode, setCouponCode] = useState("");
+  const [couponCode, setCouponCode] = useState('');
   const [total, setTotal] = useState(0);
 
   const totalPrice = cart.reduce(
@@ -29,8 +27,11 @@ export default function Checkout() {
       window.location.replace(purchasedCart.redirectURL);
   }, [purchasedCart]);
 
+  let cupon = 0;
+  if (total !== 0) cupon = 0.2
+
   const handleCheckout = () => {
-    dispatch(checkoutCart(cart, user));
+    dispatch(checkoutCart(cart, user, cupon));
   };
 
   useEffect(() => {
@@ -40,7 +41,7 @@ export default function Checkout() {
   // const voucher = ['oasislibrary2022'] (hacer un array con todos los cupones)
 
   function applyCoupon(couponCode) {
-    if (couponCode == "oasislibrary2022") {
+    if (couponCode === "oasislibrary2022") {
       var newPrice = totalPrice * 0.2;
       setTotal(newPrice);
     } else {
@@ -71,13 +72,13 @@ export default function Checkout() {
       <div className="checkInfo">
         <div className="checkUsuario">
           <h3> Información personal </h3>
-          {user ? (
+          {user ?
             <div>
               <p> Nombre: {user.name} </p>
               <p> Apellido: {user.lastName} </p>
               <p> Email: {user.email} </p>
             </div>
-          ) : (
+            :
             <div className="checkerror">
               <div>
                 <p> Registrate para poder continuar con la compra </p>
@@ -86,7 +87,7 @@ export default function Checkout() {
                 <button className="buttoncheck"> Sing In </button>
               </Link>
             </div>
-          )}
+          }
         </div>
 
         <div className="checkCompra">
