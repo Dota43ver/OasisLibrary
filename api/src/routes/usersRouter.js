@@ -97,6 +97,9 @@ usersRouter.post("/login", async (req, res) => {
         if (!validPassword) {
             return res.status(401).json("Password or email is incorrect")
         }
+        if(user.isActive === false){
+            return res.status(401).json("your acount is inactive or has been banned")
+        }
         const token = jwt.sign({ id: user.id }, process.env.SECRET);
         res.json({ token })
     } catch (err) {

@@ -246,7 +246,7 @@ export function checkoutCart(cart, user) {
 
   return async function (dispatch) {
     let checkoutCartId = await axios.post(
-      "http://localhost:3001/checkout",
+      `${LOCAL_HOST}/checkout`,
       body,
       config
     );
