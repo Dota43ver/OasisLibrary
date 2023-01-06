@@ -8,6 +8,7 @@ import {
   CLEAR_CART,
   DECREASE_QUANTITY,
   GENRE_FILTER,
+  GET_AUTHORS,
   GET_AUTHOR_BOOKS,
   GET_AUTHOR_DETAILS,
   // GET_AUTHOR_DETAILS_NAME,
@@ -29,7 +30,11 @@ import {
   UPDATE_USERS,
   UPDATE_BOOK_STOCK,
   POST_REVIEW,
+<<<<<<< HEAD
   GET_CART,
+=======
+  AUTHOR_FILTER,
+>>>>>>> 6db55b8ceb243fb6737413af6f75b39e44880fd3
   GET_REVIEW
 
 } from "./types";
@@ -57,6 +62,20 @@ export function cleanCache() {
 //     type: CLEAN_CACHE_AUTHOR,
 //   };
 // }
+export const getAuthors = () => (dispatch) => {
+  return axios
+    .get(`${LOCAL_HOST}/authors`)
+    .then((author) => {
+      dispatch({
+        type: GET_AUTHORS,
+        payload: author,
+      });
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+
 export function getBookDetails(id) {
   return async function (dispatch) {
     try {
@@ -192,6 +211,12 @@ export function languageFilter(payload) {
     type: LANGUAGE_FILTER,
     payload,
   };
+}
+export function authorFilter(payload) {
+  return {
+    type: AUTHOR_FILTER, 
+    payload
+  }
 }
 export function addToCart(book) {
   return (dispatch, getState) => {

@@ -509,7 +509,7 @@
     "saga": "Harry Potter"
   },
   {
-    "name": "Juego de Tronos(cancion de Hielo y Fuego I)",
+    "name": "Juego de Tronos",
     "year": 1996,
     "genre": ["Novela", "Ficcion politica", "Fantasia"],
     "author": "George R. R. Martin",
@@ -524,7 +524,7 @@
     "saga": "Juego de Tronos"
   },
   {
-    "name": "Choque de Reyes(cancion de Hielo y Fuego II)",
+    "name": "Choque de Reyes",
     "year": 1998,
     "genre": ["Novela", "Ficcion politica", "Fantasia"],
     "author": "George R. R. Martin",
@@ -539,7 +539,7 @@
     "saga": "Juego de Tronos"
   },
   {
-    "name": "Tormenta de Espadas(cancion de Hielo y Fuego III)",
+    "name": "Tormenta de Espadas",
     "year": 2000,
     "genre": ["Novela", "Ficcion politica", "Fantasia"],
     "author": "George R. R. Martin",
@@ -554,7 +554,7 @@
     "saga": "Juego de Tronos"
   },
   {
-    "name": "Festin de Cuervos(cancion de Hielo y Fuego IV)",
+    "name": "Festin de Cuervos",
     "year": 2005,
     "genre": ["Novela", "Ficcion politica", "Fantasia"],
     "author": "George R. R. Martin",
@@ -569,7 +569,7 @@
     "saga": "Juego de Tronos"
   },
   {
-    "name": "Danza de dragones(cancion de Hielo y Fuego V)",
+    "name": "Danza de dragones",
     "year": 2011,
     "genre": ["Novela", "Ficcion politica", "Fantasia"],
     "author": "George R. R. Martin",

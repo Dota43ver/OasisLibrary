@@ -7,7 +7,9 @@ import {
   removeFromFavs,
   addToCart,
   aplhabeticalSort,
+  authorFilter,
   genreFilter,
+  getAuthors,
   getBooks,
   getGenres,
   languageFilter,
@@ -30,10 +32,12 @@ const Swal = require("sweetalert2");
 export default function Home() {
   const allBooks = useSelector((state) => state.books);
   const allGenres = useSelector((state) => state.genres);
+
   const user = useSelector((state) => state.user);
+  const allAuthors = useSelector((state) => state.authors);
   const allFavs = useSelector((state) => state.favs);
   const dispatch = useDispatch();
-
+ console.log(allAuthors);
   const [currentPage, setCurrentPage] = useState(1);
   const [booksPerPage, setBooksPerPage] = useState(20);
   const indexLast = currentPage * booksPerPage;
@@ -56,6 +60,7 @@ export default function Home() {
     dispatch(getUsers())
     dispatch(getBooks());
     dispatch(getGenres());
+    dispatch(getAuthors());
   }, [dispatch]);
 
   const handleAddToCart = (el) => {
@@ -179,6 +184,13 @@ export default function Home() {
     setOrder(`Order ${e.target.value}`);
     setRefresh();
   }
+  function handleFilterByAuthor(e) {
+    e.preventDefault();
+    dispatch(authorFilter(e.target.value));
+    setCurrentPage(1);
+    setOrder(`Order ${e.target.value}`);
+    setRefresh();
+  }
   return (
     <div>
       <NavBar />
@@ -250,6 +262,21 @@ export default function Home() {
                 {allGenres?.map((genre) => (
                   <option key={genre.id} value={genre.name}>
                     {genre.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label>Autores</label>
+              <select
+                className="select"
+                onChange={(e) => handleFilterByAuthor(e)}
+                value={refresh}
+              >
+                <option value="all">Todos</option>
+                {allAuthors?.map((author) => (
+                  <option key={author.id} value={author.name}>
+                    {author.name}
                   </option>
                 ))}
               </select>
