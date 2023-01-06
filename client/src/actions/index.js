@@ -30,11 +30,8 @@ import {
   UPDATE_USERS,
   UPDATE_BOOK_STOCK,
   POST_REVIEW,
-<<<<<<< HEAD
   GET_CART,
-=======
   AUTHOR_FILTER,
->>>>>>> 6db55b8ceb243fb6737413af6f75b39e44880fd3
   GET_REVIEW
 
 } from "./types";
