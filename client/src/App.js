@@ -19,7 +19,6 @@ import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import Reviews from "./components/Reviews/Reviews";
 import Success from "./components/Success/Success";
-import Edit from "./components/AccountEdit/AccountEdit";
 import { AiFillGoogleCircle } from "react-icons/ai";
 
 function App() {
