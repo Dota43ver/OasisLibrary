@@ -21,7 +21,9 @@ import Float from "../FloatWApp/Float";
 import NavBar from "../NavBar/NavBar";
 import Paginated from "../Paginated/Paginated";
 import "./Home.css";
+
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+const Swal = require("sweetalert2");
 
 export default function Home() {
   const allBooks = useSelector((state) => state.books);
@@ -63,7 +65,15 @@ export default function Home() {
         quantity: quantity,
       })
     );
-    alert("Item agregado");
+    Swal.fire({
+      position: "bottom-left",
+      icon: "success",
+      title: "Libro agregado al carrito",
+      showConfirmButton: false,
+      timerProgressBar: true,
+      timer: 4000,
+      toast: true,
+    });
   };
 
   const handleFavs = (el) => {
@@ -85,8 +95,17 @@ export default function Home() {
             image: book.image,
           })
           );
+          Swal.fire({
+            position: "bottom-left",
+            icon: "success",
+            title: "Libro agregado a favoritos",
+            showConfirmButton: false,
+            timerProgressBar: true,
+            timer: 4000,
+            toast: true,
+          });
+        }
     }
-  };
 
   function handleRandomId() {
     const randomIndex = Math.floor(Math.random() * allBooks.length);
@@ -243,7 +262,9 @@ export default function Home() {
                 </option>
                 <option value="Harry Potter">Harry Potter</option>
                 <option value="Juego de Tronos">Juego de tronos</option>
-                <option value="Los Juegos Del Hambre">Los Juegos Del Hambre</option>
+                <option value="Los Juegos Del Hambre">
+                  Los Juegos Del Hambre
+                </option>
               </select>
             </div>
             <div>

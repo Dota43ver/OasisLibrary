@@ -5,6 +5,7 @@ import {
   ALPHABETICAL_SORT,
   CHECKOUT_CART,
   CLEAN_CACHE,
+  CLEAR_CART,
   DECREASE_QUANTITY,
   GENRE_FILTER,
   GET_AUTHOR_BOOKS,
@@ -14,15 +15,18 @@ import {
   GET_BOOK_DETAILS,
   GET_GENRES,
   GET_NAME_BOOKS,
+  GET_USERS,
   INCREASE_QUANTITY,
   LANGUAGE_FILTER,
   LOCAL_HOST,
+  POST_REVIEW,
   PRICE_SORT,
   REMOVE_FROM_CART,
   REMOVE_FROM_FAVS,
   SAGA_FILTER,
   SCORE_SORT,
-  GET_USERS,
+  UPDATE_BOOK,
+  UPDATE_BOOK_STOCK_SUCCESS,
   UPDATE_USERS,
   UPDATE_BOOK_STOCK,
   GET_REVIEW
@@ -109,11 +113,11 @@ export function postBook(info) {
   };
 }
 
-export function postReview(info){
+export function postReview(info) {
   return async function (dispatch) {
     var json = await axios.post(`${LOCAL_HOST}/reviews`, info);
     return json;
-  }
+  };
 }
 
 /* export function getGenres(){
@@ -266,43 +270,129 @@ export function checkoutCart(cart, user) {
     });
   };
 }
+export function checkoutStock() {
+  return async function (dispatch, getState) {
+    try {
+      const cart = getState().cart;
+      const books = getState().books;
+      for (const book of cart) {
+        const updatedBook = books.find((b) => b.id === book.id);
+        console.log(updatedBook.stock);
+        console.log(book.quantity);
+        const updatedStock = updatedBook.stock - book.quantity;
+        await axios.patch(`${LOCAL_HOST}/books/${book.id}`, {
+          name: book.name,
+          stock: updatedStock,
+          price: book.price,
+          description: updatedBook.description,
+        });
+      }
+
+      // Dispatch una acción para limpiar el carrito y actualizar el estado de los libros
+      dispatch({ type: CLEAR_CART });
+      dispatch(getBooks());
+    } catch (error) {
+      console.log(error); // <-- Añade esta línea para ver el error en consola
+    }
+  };
+}
+export function updateBook(book) {
+  return async function (dispatch) {
+    try {
+      // Envía una solicitud PATCH al servidor con la información actualizada del libro
+      await axios.patch(`${LOCAL_HOST}/books/${book.id}`, {
+        name: book.name,
+        stock: book.stock,
+        price: book.price,
+        description: book.description,
+        year: book.year,
+        author: book.author,
+        saga: book.saga,
+        language: book.language,
+      });
+
+      // Dispatch una acción para actualizar el estado del libro
+      dispatch({ type: UPDATE_BOOK, payload: book });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+}
+// export function updateBook(
+//   id,
+//   name,
+//   stock,
+//   price,
+//   description,
+//   year,
+//   score,
+//   author,
+//   language,
+//   saga
+// ) {
+//   return async function (dispatch) {
+//     try {
+//       const response = await axios.patch(`${LOCAL_HOST}/books/${id}`, {
+//         name,
+//         stock,
+//         price,
+//         description,
+//         year,
+//         score,
+//         author,
+//         language,
+//         saga,
+//       });
+
+//       dispatch({
+//         type: BOOK_FULL_UPDATE,
+//         payload: response.data,
+//       });
+//     } catch (error) {
+//       console.log(error);
+//     }
+//   };
+// }
 
 export const getUsers = () => async (dispatch) => {
   try {
     const usuarios = await axios.get(`${LOCAL_HOST}/users/profile`, {
-      headers: { token: localStorage.token }
+      headers: { token: localStorage.token },
     });
 
     return dispatch({
       type: GET_USERS,
       payload: usuarios.data,
-    })
+    });
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-}
+};
 
 export const updateUser = (id, data) => async (dispatch) => {
   try {
-
     const config = {
       headers: {
-        token: localStorage.token
-      }
+        token: localStorage.token,
+      },
     };
 
-    const usuarios = await axios.put(`${LOCAL_HOST}/users/profile?id=${id}`, data, config)
+    const usuarios = await axios.put(
+      `${LOCAL_HOST}/users/profile?id=${id}`,
+      data,
+      config
+    );
 
     console.log(usuarios.data);
 
     return dispatch({
       type: UPDATE_USERS,
-      payload: usuarios.data
-    })
+      payload: usuarios.data,
+    });
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-}
+};
 
 // export const getUsers = () => async (dispatch) => {
 //   try {
@@ -318,12 +408,17 @@ export const updateUser = (id, data) => async (dispatch) => {
 // }
 
 export function updateBookStock(id, newStock) {
-  return {
-    type: UPDATE_BOOK_STOCK,
-    payload: {
-      id,
-      newStock,
-    },
+  return async function (dispatch) {
+    try {
+      // Envía la solicitud al servidor para actualizar el libro
+      var response = await axios.patch(`${LOCAL_HOST}/books/${id}`, {
+        stock: newStock,
+      });
+      // Dispatch una acción de tipo UPDATE_BOOK_STOCK_SUCCESS con el libro actualizado como payload
+      dispatch({ type: UPDATE_BOOK_STOCK_SUCCESS, payload: response.data });
+    } catch (error) {
+      console.log(error);
+    }
   };
 }
 // export function updateBookStock(id, newStock) {
