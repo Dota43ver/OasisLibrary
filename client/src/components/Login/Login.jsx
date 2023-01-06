@@ -105,8 +105,8 @@ return(
             </Link>
             </div>
             <div className={style.text}>
-            <h3 className={style.text1}>Hello!</h3>
-            <h4 className={style.text2}>Sign into your account</h4>
+            <h3 className={style.text1}>Hola!</h3>
+            <h4 className={style.text2}>Inicia tu sesión debajo</h4>
             </div>
             <div className={style.inputContainer}>
             <input type="text" name="email" value={input.email} id="" placeholder='Email' onChange={(e)=>handleChange(e)} className={style.inputs}></input>
@@ -115,7 +115,7 @@ return(
                 <p className={style.errors}>{errors.email}</p>
                 )}
                 </div>
-            <input type="password" name="password" value={input.password} id="" placeholder='Password' onChange={(e)=>handleChange(e)} className={style.inputs}></input>
+            <input type="password" name="password" value={input.password} id="" placeholder='Contraseña' onChange={(e)=>handleChange(e)} className={style.inputs}></input>
             <div className={style.container_errors}>
             {errors.password && (
                 <p className={style.errors}>{errors.password}</p>
@@ -123,7 +123,7 @@ return(
                 </div>
             </div>
             <div className={style.button2}>
-            <button className={style.button3} disabled={!!errors}>Login</button>
+            <button className={style.button3} disabled={errors.email || errors.password}>Iniciar Sesión</button>
             </div>
             <div className={style.divisor}>
             </div>

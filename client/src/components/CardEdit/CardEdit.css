@@ -1,0 +1,28 @@
+.cardEdits {
+  margin: 0.7rem;
+  width: 100%;
+  display: flex;
+  background-color: #d9d9d9;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+.cardEdits img {
+  min-width: 4rem;
+}
+.dataEdit {
+  padding: 0.7rem;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+}
+.dataEdit > * {
+  margin: 0 0.4rem;
+}
+
+.cardEdits input {
+  width: 3rem;
+}
+.nameEdit input {
+  width: auto;
+}

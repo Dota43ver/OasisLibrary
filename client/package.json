@@ -12,6 +12,7 @@
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^13.1.1",
     "axios": "^1.2.1",
+    "jwt-decode": "^3.1.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.7.1",
@@ -24,6 +25,7 @@
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "slick-carousel": "^1.8.1",
+    "sweetalert2": "^11.6.16",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

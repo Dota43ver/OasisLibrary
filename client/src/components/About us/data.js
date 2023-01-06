@@ -7,7 +7,7 @@ export const data = [
     },
     {
         name: "Milagros Dziuban",
-        img: "https://media.licdn.com/dms/image/D4D03AQF9jHE_2bGAhg/profile-displayphoto-shrink_800_800/0/1666212468821?e=1676505600&v=beta&t=AX-wkLcla1MCM_dp_o51rEV0RW4UNmyYV5qu_jMktn0",
+        img: "https://media.licdn.com/dms/image/D4D03AQEHDzkxZpZPmA/profile-displayphoto-shrink_400_400/0/1672086255626?e=1678320000&v=beta&t=RKQsSidtGslqmzMTPovDmw-kULSYy5rQiILMJlFfL4k",
         linkedin: "https://www.linkedin.com/in/milagros-dziuban-dise%C3%B1adora/",
         github:"https://github.com/milidziuban"
     },
