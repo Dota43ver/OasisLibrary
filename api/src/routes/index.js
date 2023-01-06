@@ -10,6 +10,7 @@ const usersRouter = require('./usersRouter')
 const checkoutRouter = require('./checkout')
 const reviewRouter = require('./reviewRouter')
 const wScrapperRouter = require('./webScrapper')
+const favsRouter = require('./favsRouter')
 
 const router = Router();
 
@@ -23,5 +24,6 @@ router.use("/users", usersRouter)
 router.use("/checkout", checkoutRouter)
 router.use("/reviews", reviewRouter)
 router.use("/webScrapper", wScrapperRouter)
+router.use("/favs", favsRouter)
 
 module.exports = router;

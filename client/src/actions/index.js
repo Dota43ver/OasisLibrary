@@ -196,7 +196,7 @@ export function addToCart(book) {
     dispatch({ type: ADD_TO_CART, payload: book });
     const currentBook = getState().bookDetails;
     const newStock = currentBook.stock - book.quantity;
-    dispatch(updateBookStock(currentBook.id, newStock));
+    // dispatch(updateBookStock(currentBook.id, newStock));
   };
 }
 
