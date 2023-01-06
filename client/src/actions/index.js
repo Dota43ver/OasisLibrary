@@ -417,6 +417,7 @@ export const getCart = (userId) => async (dispatch) => {
   try {
     const cart = await axios.get(`${LOCAL_HOST}/cart/${userId}`)
 
+    console.log(cart);
     return dispatch({
       type: GET_CART,
       payload: cart.data

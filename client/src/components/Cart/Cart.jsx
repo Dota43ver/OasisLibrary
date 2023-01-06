@@ -33,6 +33,8 @@ export default function Cart() {
     dispatch(getBooks())
   }, [user])
 
+  console.log(cart);
+
   const totalBooks = cart.reduce((total, item) => total + item.quantity, 0);
   const totalPrice = cart.reduce(
     (total, item) => total + item.price * item.quantity,
