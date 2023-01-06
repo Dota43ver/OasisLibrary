@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Switch, Redirect} from "react-router-dom";
 import React, {useState, useEffect} from "react";
+import jwt_decode from "jwt-decode";
 // import Home from "./components/Home/Home"
 import "./App.css";
 import Account from "./components/Account/Account";
@@ -18,6 +19,7 @@ import Success from "./components/Success/Success";
 import Dashboard from "./components/Dashboard Admin/Dashboard";
 import Reviews from "./components/Reviews/Reviews";
 import Edit from "./components/AccountEdit/AccountEdit";
+import { AiFillGoogleCircle } from "react-icons/ai";
 
 
 function App() {
@@ -42,8 +44,22 @@ function App() {
     }
   }
 
+  function handleCallbackResponse(response) {
+    const userObject = jwt_decode(response.credential);
+    console.log(userObject)
+  }
+
   useEffect(()=>{
     isAuth()
+  })
+
+  useEffect(()=>{
+    /*global google */
+    google.accounts.id.initialize({
+      client_id: "340086857333-sbcjo4c3pta23d842q27q4fid3bnhod7.apps.googleusercontent.com",
+      callback: handleCallbackResponse
+    })
+
   })
 
   return (

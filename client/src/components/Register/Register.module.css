@@ -13,7 +13,8 @@
 .formRegistro{
     width: 614px;
     /* height: 550px; */
-    height:610px;
+    /* height:610px; */
+    height:auto;
     border-radius: 10px;
     border: 2px solid #42829D;
 }
@@ -103,7 +104,7 @@
     border: 1px solid #42829D;
 }
 .button4{
-    margin-top: 45px;
+    margin-top: 25px;
     display: flex;
     align-items: center;
     text-align: center;
@@ -183,4 +184,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.notificationContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.notification {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    height: 2rem;
+    background-color: rgb(82, 247, 115);
+    border-radius: 10px;
 }
