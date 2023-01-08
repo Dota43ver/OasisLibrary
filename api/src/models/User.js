@@ -12,11 +12,11 @@ module.exports = (sequelize) => {
       },
       name: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
       },
       lastName: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
       },
       email: {
         type: DataTypes.STRING,
@@ -26,33 +26,34 @@ module.exports = (sequelize) => {
       //   type: DataTypes.STRING,
       //   allowNull: false
       // },
-      role: {  // Admin or User
+      role: {
+        // Admin or User
         type: DataTypes.STRING,
-        defaultValue: 'user',
+        defaultValue: "user",
         allowNull: true,
       },
       password: {
         type: DataTypes.STRING,
         defaultValue: "SignedInWithGoogle",
-        allowNull: false
+        allowNull: false,
       },
       isActive: {
         type: DataTypes.BOOLEAN,
         defaultValue: false,
-        allowNull: false
+        allowNull: false,
       }, //Para el borrador logico
       activationToken: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: true,
       },
       token: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: true,
       },
       image: {
         type: DataTypes.STRING,
-        allowNull: true
-      }
+        allowNull: true,
+      },
     },
     {
       timestamps: false,
