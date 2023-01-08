@@ -62,11 +62,11 @@ Reviews.belongsTo(User);
 Book.hasMany(Reviews);
 Reviews.belongsTo(Book);
 
-User.hasMany(Favorites);
-Favorites.belongsTo(User);
+User.hasMany(Favorites, { as: "favoritos", foreignKey: "usuarioId" });
+Favorites.belongsTo(User, { as: "usuario"});
 
-Book.hasMany(Favorites);
-Favorites.belongsTo(Book);
+Book.hasMany(Favorites, { as: "favoritos", foreignKey: "libroId" });
+Favorites.belongsTo(Book, { as: "libro"});
 
 // Product.hasMany(Reviews);
 //.

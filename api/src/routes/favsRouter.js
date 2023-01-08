@@ -8,8 +8,8 @@ router.post('/', async (req, res) => {
     const { userId, bookId, bookTitle } = req.body
     try {
         let newFavorite = await Favorites.create({
-            userId,
-            bookId,
+            usuarioId: userId,
+            libroId: bookId,
             bookTitle
         })
         newFavorite? res.status(201).json({
