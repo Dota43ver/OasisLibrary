@@ -24,8 +24,9 @@ async function verify(req, res, next) {
         next();
         
     } catch (error) {
-        // res.status(500).send({ errorMsg: error.message });
-        console.log(error.message);
+
+       console.error(error)
+
     }
 }
 
