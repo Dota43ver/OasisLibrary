@@ -8,6 +8,8 @@ const router = Router()
 router.post('/', async (req, res) => {
     let {descript, votes, userId, bookId} = req.body;
     try {
+        const user = await User.findByPk(userId)
+        console.log(user.name);
         let newReview = await Reviews.create({
             userId: userId,
             bookId: bookId,
@@ -28,23 +30,25 @@ router.post('/', async (req, res) => {
 router.get('/', async (req, res) => {
     try {
         let viewReviews = await Reviews.findAll({
-            attributes:[
-                'id',
-                'userId',
-                'bookId',
-                'descript',
-                'votes'
-            ],
-            include:[
+            include: [
                 {
                     model: User,
-                    attributes:[
-                        [fn('CONCAT', col('name'), ' ', col('lastName')), 'fullname']
+                    attributes: [
+                        "name",
+                        "lastName"
+                    ],
+                },
+                {
+                    model: Book,
+                    attributes: [
+                        "image"
                     ]
                 }
-            ]
+            ],
+                
         })
-        res.status(200).send({Msg: 'View you reviews', data: viewReviews})
+        
+        res.status(200).send({viewReviews})
     } catch (error) {
         console.log(error);
         res.status(401).send({error: error.message})
