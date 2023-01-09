@@ -4,15 +4,20 @@ import { Link } from "react-router-dom";
 import ScrollToTop from "react-scroll-to-top";
 import {
   addFavs,
+  removeFromFavs,
   addToCart,
   aplhabeticalSort,
+  authorFilter,
   genreFilter,
+  getAuthors,
   getBooks,
   getGenres,
   languageFilter,
   priceSort,
   sagaFilter,
   scoreSort,
+  addCart,
+  getUsers,
 } from "../../actions";
 import Card from "../Card/Card";
 import CarouselBook from "../Carousel/Carousel";
@@ -20,13 +25,17 @@ import Float from "../FloatWApp/Float";
 import NavBar from "../NavBar/NavBar";
 import Paginated from "../Paginated/Paginated";
 import "./Home.css";
+
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 const Swal = require("sweetalert2");
 
 export default function Home() {
   const allBooks = useSelector((state) => state.books);
   const allGenres = useSelector((state) => state.genres);
+  const user = useSelector((state) => state.user);
+  const allAuthors = useSelector((state) => state.authors);
+  const allFavs = useSelector((state) => state.favs);
   const dispatch = useDispatch();
-
   const [currentPage, setCurrentPage] = useState(1);
   const [booksPerPage, setBooksPerPage] = useState(20);
   const indexLast = currentPage * booksPerPage;
@@ -46,15 +55,19 @@ export default function Home() {
   const [productIds, setProductIds] = useState([]); // lista de IDs de productos
 
   useEffect(() => {
+    dispatch(getUsers())
     dispatch(getBooks());
     dispatch(getGenres());
+    dispatch(getAuthors());
   }, [dispatch]);
 
   const handleAddToCart = (el) => {
     const addBooks = allBooks.find((e) => e.id === el.target.value);
+console.log(el.target.value);
     dispatch(
-      addToCart({
-        id: el.target.value,
+      addCart({
+        userId: user.id,
+        bookId: addBooks.id,
         name: addBooks.name,
         price: addBooks.price,
         image: addBooks.image,
@@ -72,32 +85,43 @@ export default function Home() {
     });
   };
 
-  const handleAddFavs = (el) => {
-    const favsBooks = allBooks.find((e) => e.id === el.target.id);
-    dispatch(
-      addFavs({
-        id: el.target.id,
-        name: favsBooks.name,
-        price: favsBooks.price,
-        image: favsBooks.image,
-      })
-    );
-    Swal.fire({
-      position: "bottom-left",
-      icon: "success",
-      title: "Libro agregado a favoritos",
-      showConfirmButton: false,
-      timerProgressBar: true,
-      timer: 4000,
-      toast: true,
-    });
-  };
+  const handleFavs = (el) => {
+    const liked = allFavs.find((e) => e.id === el.target.id)
+    let book = allBooks.find((e) => e.id === el.target.id);
+    if(liked) {
+        console.log(el.target.id);
+      dispatch(
+        removeFromFavs({
+          id: el.target.id
+        })
+        );
+      } else {
+        dispatch(
+          addFavs({
+            id: el.target.id,
+            name: book.name,
+            price: book.price,
+            image: book.image,
+          })
+          );
+          Swal.fire({
+            position: "bottom-left",
+            icon: "success",
+            title: "Libro agregado a favoritos",
+            showConfirmButton: false,
+            timerProgressBar: true,
+            timer: 4000,
+            toast: true,
+          });
+        }
+    }
 
   function handleRandomId() {
     const randomIndex = Math.floor(Math.random() * allBooks.length);
     const productIds = allBooks[randomIndex];
     setProductIds(productIds); // guarda el ID seleccionado al azar en el estado
   }
+
 
   function handleClick(e) {
     e.preventDefault();
@@ -160,7 +184,15 @@ export default function Home() {
     setOrder(`Order ${e.target.value}`);
     setRefresh();
   }
+  function handleFilterByAuthor(e) {
+    e.preventDefault();
+    dispatch(authorFilter(e.target.value));
+    setCurrentPage(1);
+    setOrder(`Order ${e.target.value}`);
+    setRefresh();
+  }
   return (
+
     <div>
       <NavBar />
       <div className="carrusel">
@@ -236,6 +268,21 @@ export default function Home() {
               </select>
             </div>
             <div>
+              <label>Autores</label>
+              <select
+                className="select"
+                onChange={(e) => handleFilterByAuthor(e)}
+                value={refresh}
+              >
+                <option value="all">Todos</option>
+                {allAuthors?.map((author) => (
+                  <option key={author.id} value={author.name}>
+                    {author}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div>
               <label>Saga </label>
               <select
                 className="select"
@@ -294,23 +341,18 @@ export default function Home() {
                           ? el.name.substr(0, 33) + "..."
                           : el.name}
                       </h4>
-                      {
-                        <link
-                          href="https://fonts.googleapis.com/icon?family=Material+Icons"
-                          rel="stylesheet"
-                        ></link>
-                      }
                       <button
                         value={el.id}
-                        onClick={(el) => handleAddFavs(el)}
+                        onClick={(el) => handleFavs(el)}
                         // onClick={() => setBtnActive(!btnActive)}
-                        className={
-                          btnActive ? "borderless-button" : "borderless-button"
-                        }
-                      >
-                        <i id={el.id} class="material-icons">
-                          favorite
-                        </i>
+                        className={"borderless-button"}
+                      >                      
+                          {  
+                          allFavs.find((e) => e.id === el.id) ? 
+                          <div className="heart"><AiFillHeart id={el.id}/></div> : 
+                          <div className="heart"><AiOutlineHeart id={el.id}/></div>
+                          }
+
                       </button>
                     </div>
                     <Link to={`/book/${el.id}`}>

@@ -4,31 +4,27 @@ module.exports = (sequelize) => {
   sequelize.define(
     "shopping_cart",
     {
-      products: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
-      shippingCost: {
-        type: DataTypes.FLOAT,
-        allowNull: false
-      },
-      price: {
-        type: DataTypes.FLOAT,
-        allowNull: false
-      },
-      totalPrice: {
-        type: DataTypes.FLOAT,
-        allowNull: false
-      },
       id: {
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4,
         allowNull: false,
         primaryKey: true,
       },
+      shippingCost: {
+        type: DataTypes.FLOAT,
+        allowNull: true
+      },
+      quantity: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+      }
     },
     {
-      timestamps: false,
+      createdAt: 'createdAt',
+      updatedAt: 'updatedAt',
+      deletedAt: 'deletedAt',
+      paranoid: true,
+      timestamps: true,
     }
   );
 };

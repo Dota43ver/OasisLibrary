@@ -8,16 +8,14 @@ import "./Account.css";
 export default function Account({ setAuth }) {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
-
+  useEffect(() => {
+    dispatch(getUsers());
+  }, [dispatch]);
   const logout = (e) => {
     e.preventDefault();
     localStorage.removeItem("token");
     setAuth(false);
   };
-
-  useEffect(() => {
-    dispatch(getUsers());
-  }, [dispatch]);
 
   function handleEdit() {
     window.location.assign("http://localhost:3000/edit");
@@ -34,7 +32,11 @@ export default function Account({ setAuth }) {
           <Link className="orders"> Ordenes previas </Link>
           <Link className="orders"> Favoritos </Link>
           <Link className="orders"> Carrito </Link>
-          <Link to="/dashboard">dashboard</Link>
+          {user && user.role === "admin" && (
+            <Link to="/dashboard" className="orders">
+              Admin Dashboard
+            </Link>
+          )}
         </div>
         <div className="info">
           <div className="headatos">

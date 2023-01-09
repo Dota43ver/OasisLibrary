@@ -1,0 +1,71 @@
+.userCont {
+  margin: 0.7rem;
+  width: 95%;
+  display: flex;
+  background-color: #d9d9d9;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  align-content: center;
+  align-items: center;
+}
+.userCont2 {
+  width: 95%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nameLastname {
+  width: 15%;
+}
+.userEmail {
+  width: 20%;
+}
+.adminIcon {
+  max-width: 40px;
+  text-align: center;
+}
+.roleState {
+  width: 5%;
+  text-align: center;
+}
+
+.ok-button {
+  background-color: #1c555e;
+  color: white;
+  font-size: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100px;
+  height: 43px;
+}
+
+.red-button {
+  background-color: #bb2b37;
+  color: white;
+  font-size: 17px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100px;
+  height: 43px;
+}
+.active {
+  width: 8%;
+  text-align: center;
+}
+.red-button:hover {
+  background-color: #721b23;
+}
+
+.ok-button:hover {
+  background-color: #256c77;
+}
+
+.red-button:active {
+  background-color: #b6535c;
+  transform: translateY(4px);
+}
+.ok-button:active {
+  background-color: #0f3d44;
+  transform: translateY(4px);
+}

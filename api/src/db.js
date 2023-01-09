@@ -37,7 +37,7 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
-const { Book, Author, Genre, Shopping_cart, User, Reviews } = sequelize.models;
+const { Book, Author, Genre, Shopping_cart, User, Reviews, Favorites } = sequelize.models;
 
 // Aca vendrian las relaciones
 //Relacion entre Book y Genre de muchos a muchos
@@ -47,17 +47,26 @@ Genre.belongsToMany(Book, { through: "BookGenre" });
 Author.hasMany(Book, {as: "libro"})
 Book.belongsTo(Author, {as: "autor"})
 
-Shopping_cart.belongsToMany(Book, { through: 'CartBook'});
-Book.belongsToMany(Shopping_cart, { through: 'CartBook'});
+// Shopping_cart.belongsToMany(Book, { through: 'CartBook'});
+// Book.belongsToMany(Shopping_cart, { through: 'CartBook'});
 
-User.hasMany(Shopping_cart);
-Shopping_cart.belongsTo(User);
+// User.hasMany(Shopping_cart);
+// Shopping_cart.belongsTo(User);
+
+Book.belongsToMany(User, { through: Shopping_cart })
+User.belongsToMany(Book, { through: Shopping_cart })
 
 User.hasMany(Reviews);
 Reviews.belongsTo(User);
 
 Book.hasMany(Reviews);
-Reviews.belongsTo(Book)
+Reviews.belongsTo(Book);
+
+User.hasMany(Favorites, { as: "favoritos", foreignKey: "usuarioId" });
+Favorites.belongsTo(User, { as: "usuario"});
+
+Book.hasMany(Favorites, { as: "favoritos", foreignKey: "libroId" });
+Favorites.belongsTo(Book, { as: "libro"});
 
 // Product.hasMany(Reviews);
 //.

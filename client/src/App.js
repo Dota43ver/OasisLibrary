@@ -1,6 +1,6 @@
+import jwt_decode from "jwt-decode";
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
-import jwt_decode from "jwt-decode";
 import "./App.css";
 import AboutUs from "./components/About us/AboutUs";
 import Account from "./components/Account/Account";
@@ -16,11 +16,15 @@ import Favorites from "./components/Favorites/Favorites";
 import Home from "./components/Home/Home";
 import LandingPage from "./components/LandingPage/LandingPage";
 import Login from "./components/Login/Login";
+import OrderCart from "./components/Orders/Orders";
 import Register from "./components/Register/Register";
 import Reviews from "./components/Reviews/Reviews";
 import Success from "./components/Success/Success";
+
 import { AiFillGoogleCircle } from "react-icons/ai";
 
+
+import Users from "./components/Users/Users";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -43,29 +47,24 @@ function App() {
     }
   }
 
+    
+  //   function handleCallbackResponse(response) {
+  //     const userObject = jwt_decode(response.credential);
+  //   console.log(userObject)
+  // }
+
+  // useEffect(()=>{
+  //   /*global google */
+  //   google.accounts.id.initialize({
+  //     client_id: "340086857333-sbcjo4c3pta23d842q27q4fid3bnhod7.apps.googleusercontent.com",
+  //     callback: handleCallbackResponse
+  //   })
+
+  // })
 
   useEffect(() => {
     isAuth();
   });
-
-  function handleCallbackResponse(response) {
-    const userObject = jwt_decode(response.credential);
-    console.log(userObject)
-  }
-
-  useEffect(()=>{
-    isAuth()
-  })
-
-
-  useEffect(()=>{
-    /*global google */
-    google.accounts.id.initialize({
-      client_id: "340086857333-sbcjo4c3pta23d842q27q4fid3bnhod7.apps.googleusercontent.com",
-      callback: handleCallbackResponse
-    })
-
-  })
 
   return (
     <BrowserRouter>
@@ -105,9 +104,15 @@ function App() {
          
           <Route path="/dashboard/bookcreate" component={BookCreate} />
           <Route path="/dashboard/bookedit" component={BookEdit} />
+          <Route path="/dashboard/users" component={Users} />
           <Route path="/cart" component={Cart} />
           <Route path="/favorites" component={Favorites} />
           <Route path="/author/:name" component={Author} />
+          <Route path="/checkout" component={Checkout} />
+          <Route path="/about" component={AboutUs} />
+          <Route path="/success" component={Success} />
+          <Route path="/review" component={Reviews} />
+          <Route exact path="/order" component={OrderCart} />
           <Route path="/checkout" component={Checkout} />
           <Route path="/about" component={AboutUs} />
           <Route path="/success" component={Success} />
@@ -118,5 +123,10 @@ function App() {
       </div>
     </BrowserRouter>
   );
+
+
 }
+
+
+
 export default App;

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { updateUser, getUsers } from "../../actions";
 import './AccountEdit.css'
+import NavBar from "../NavBar/NavBar";
 
 export default function Edit() {
     const dispatch = useDispatch();
@@ -39,32 +40,35 @@ export default function Edit() {
     }
 
     return (
-        <div className="editAccount">
-            <form className='editForm' onSubmit={handleUpdate}>
-                <h3>Editar información personal</h3>
-                <div>
-                    <label> Nombre: </label>
-                    <input type="text" name="name" placeholder={user.name} value={updateAccount.name} onChange={handleSubmit} />
-                </div>
+        <div>
+            <NavBar></NavBar>
+            <div className="editAccount">
+                <form className='editForm' onSubmit={handleUpdate}>
+                    <h3>Editar información personal</h3>
+                    <div>
+                        <label> Nombre: </label>
+                        <input type="text" name="name" placeholder={user.name} value={updateAccount.name} onChange={handleSubmit} />
+                    </div>
 
-                <div>
-                    <label> Apellido: </label>
-                    <input type="text" name="lastName" placeholder={user.lastName} value={updateAccount.lastName} onChange={handleSubmit} />
-                </div>
+                    <div>
+                        <label> Apellido: </label>
+                        <input type="text" name="lastName" placeholder={user.lastName} value={updateAccount.lastName} onChange={handleSubmit} />
+                    </div>
 
-                <div>
-                    <label> Mail: </label>
-                    <input type='email' name="email" placeholder={user.email} value={updateAccount.email} onChange={handleSubmit} />
-                </div>
+                    <div>
+                        <label> Mail: </label>
+                        <input type='email' name="email" placeholder={user.email} value={updateAccount.email} onChange={handleSubmit} />
+                    </div>
 
-                <div>
-                    <label> Contraseña: </label>
-                    <input type='password' name="password" placeholder="Contraseña" value={updateAccount.password} onChange={handleSubmit} />
-                </div>
+                    <div>
+                        <label> Contraseña: </label>
+                        <input type='password' name="password" placeholder="Contraseña" value={updateAccount.password} onChange={handleSubmit} />
+                    </div>
 
-                <button className="guardarBtn" onClick={handleUpdate}> Guardar Cambios </button>
-            </form>
+                    <button className="guardarBtn" onClick={handleUpdate}> Guardar Cambios </button>
+                </form>
 
+            </div>
         </div>
     )
 

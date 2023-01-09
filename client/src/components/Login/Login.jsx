@@ -61,7 +61,7 @@ export default function Login({setAuth}){
             ...input,
             [e.target.name]: e.target.value
         }))
-        console.log("esto es errors",errors)
+        // console.log("esto es errors",errors)
     }
 
     const onSubmitForm = async (e) =>{
@@ -130,10 +130,12 @@ return(
             <div className={style.divisor}>
             </div>
             <div className={style.button4}>
+
             <Link to="/account">
             <GoogleSignin/>
             </Link>
             
+
             </div>
             <div className={style.button6}>
             <button className={style.button7}>¿No podes ingresar a tu cuenta?</button>

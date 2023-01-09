@@ -8,6 +8,7 @@ const { Router } = require("express");
 const {
   createUser,
   activateAccount,
+  getUserById,
   logIn,
   logOut,
   getOneUser,
@@ -143,6 +144,7 @@ usersRouter.get("/logout", verify, async (req, res) => {
     res.status(400).send("error al desloguear", error.message);
   }
 });
+
 usersRouter.get("/profile", verify, async (req, res) => {
   try {
     let id = req.userId;
@@ -246,12 +248,69 @@ usersRouter.get("/admin/users", verify, adminAuth, async (req, res) => {
 usersRouter.get("/all", async (req, res) => {
   try {
     const response = await getAllUsers();
-    res.json(response);
+    res.json(response.users);
   } catch (error) {
     console.log(error);
     res.status(400).send("Error getting all users", error.message);
   }
 });
+usersRouter.get("/all/:id", async (req, res) => {
+  // Obtener el valor del parámetro de la ruta
+  const id = req.params.id;
+  try {
+    // Obtener el usuario con el ID especificado
+    let response = await getUserById(id);
+    res.json(response.user);
+  } catch (error) {
+    console.log(error);
+    res.status(400).send(`Error getting user with ID ${userId}`, error.message);
+  }
+});
+usersRouter.patch("/all/:id", async (req, res) => {
+  // Obtener el valor del parámetro de la ruta
+  const id = req.params.id;
+  // Obtener la información del usuario a actualizar
+  const updates = req.body;
+  try {
+    // Obtener el usuario con el ID especificado
+    const user = await User.findByPk(id);
+    // Si no se encontró el usuario, devuelve un error
+    if (!user) {
+      throw new Error(`User with ID ${id} not found`);
+    }
+    // Actualizar la información del usuario
+    await user.update(updates);
+    // Devolver la información actualizada del usuario
+    res.json(user);
+  } catch (error) {
+    console.log(error);
+    res.status(400).send(`Error updating user with ID ${id}`, error.message);
+  }
+});
+usersRouter.delete("/all/:id", async (req, res) => {
+  // Obtener el valor del parámetro de la ruta
+  const id = req.params.id;
+
+  try {
+    // Obtener el usuario con el ID especificado
+    const user = await User.findByPk(id);
+
+    // Si no se encontró el usuario, devuelve un error
+    if (!user) {
+      throw new Error(`User with ID ${id} not found`);
+    }
+
+    // Eliminar el usuario
+    await user.destroy();
+
+    // Devolver un mensaje de confirmación
+    res.json({ message: "User deleted successfully" });
+  } catch (error) {
+    console.log(error);
+    res.status(400).send(`Error deleting user with ID ${id}`, error.message);
+  }
+});
+
 // usersRouter.put
 // usersRouter.post ????
 

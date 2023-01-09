@@ -130,7 +130,7 @@ async function updateUser(id, data) {
       await User.update({ password: newPassword }, { where: { id: id } });
     }
 
-    return userFound;
+    return "User update";
   }
 }
 
@@ -168,8 +168,25 @@ async function getAllUsers() {
     };
   }
 }
+async function getUserById(id) {
+  try {
+    // Obtener el usuario con el ID especificado
+    const user = await User.findByPk(id);
+
+    // Si no se encontró el usuario, devuelve un error
+    if (!user) {
+      throw new Error(`User with ID ${id} not found`);
+    }
+
+    // Devuelve el usuario
+    return { user };
+  } catch (error) {
+    throw error;
+  }
+}
 
 module.exports = {
+  getUserById,
   createUser,
   activateAccount,
   logIn,

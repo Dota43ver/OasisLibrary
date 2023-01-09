@@ -39,6 +39,10 @@ export default function Card({
       Swal.fire("Error", "Debe ingresar un autor", "error");
       return false;
     }
+    if (formData.description.trim() === "") {
+      Swal.fire("Error", "Debe ingresar una descripción", "error");
+      return false;
+    }
     if (formData.price <= 0) {
       Swal.fire("Error", "El precio debe ser mayor a 0", "error");
       return false;
@@ -175,7 +179,7 @@ export default function Card({
               ) : (
                 <textarea
                   name="description"
-                  value={descriptionn}
+                  value={formData.description}
                   onChange={(event) => setDescription(event.target.value)}
                 />
               )}

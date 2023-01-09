@@ -1,25 +1,31 @@
 import axios from "axios";
 import {
+  ACTIVE_ACCOUNT,
   ADD_FAVS,
   ADD_TO_CART,
   ALPHABETICAL_SORT,
+  AUTHOR_FILTER,
   CHECKOUT_CART,
   CLEAN_CACHE,
   CLEAR_CART,
   DECREASE_QUANTITY,
+  DELETE_ACCOUNT,
   GENRE_FILTER,
+  GET_ALL_USERS,
+  GET_AUTHORS,
   GET_AUTHOR_BOOKS,
   GET_AUTHOR_DETAILS,
   // GET_AUTHOR_DETAILS_NAME,
   GET_BOOKS,
   GET_BOOK_DETAILS,
+  GET_CART,
   GET_GENRES,
   GET_NAME_BOOKS,
+  GET_REVIEW,
   GET_USERS,
   INCREASE_QUANTITY,
   LANGUAGE_FILTER,
   LOCAL_HOST,
-  POST_REVIEW,
   PRICE_SORT,
   REMOVE_FROM_CART,
   REMOVE_FROM_FAVS,
@@ -29,7 +35,8 @@ import {
   UPDATE_BOOK_STOCK_SUCCESS,
   UPDATE_USERS,
   UPDATE_BOOK_STOCK,
-  GET_REVIEW
+  POST_REVIEW,
+  GET_FAVS
 } from "./types";
 
 export const getBooks = () => (dispatch) => {
@@ -39,6 +46,20 @@ export const getBooks = () => (dispatch) => {
       dispatch({
         type: GET_BOOKS,
         payload: books,
+      });
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+export const getAllUsers = () => (dispatch) => {
+  console.log(`${LOCAL_HOST}/users/all`);
+  return axios
+    .get(`${LOCAL_HOST}/users/all`)
+    .then((users) => {
+      dispatch({
+        type: GET_ALL_USERS,
+        payload: users,
       });
     })
     .catch((error) => {
@@ -55,6 +76,20 @@ export function cleanCache() {
 //     type: CLEAN_CACHE_AUTHOR,
 //   };
 // }
+export const getAuthors = () => (dispatch) => {
+  return axios
+    .get(`${LOCAL_HOST}/authors`)
+    .then((author) => {
+      dispatch({
+        type: GET_AUTHORS,
+        payload: author,
+      });
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+
 export function getBookDetails(id) {
   return async function (dispatch) {
     try {
@@ -148,10 +183,10 @@ export const getReview = () => (dispatch) => {
   return axios.get(`${LOCAL_HOST}/reviews`).then((review) => {
     dispatch({
       type: GET_REVIEW,
-      payload: review
-    })
-  })
-}
+      payload: review,
+    });
+  });
+};
 export function aplhabeticalSort(payload) {
   return {
     type: ALPHABETICAL_SORT,
@@ -191,13 +226,32 @@ export function languageFilter(payload) {
     payload,
   };
 }
+export function authorFilter(payload) {
+  return {
+    type: AUTHOR_FILTER,
+    payload,
+  };
+}
 export function addToCart(book) {
   return (dispatch, getState) => {
     dispatch({ type: ADD_TO_CART, payload: book });
     const currentBook = getState().bookDetails;
     const newStock = currentBook.stock - book.quantity;
-    dispatch(updateBookStock(currentBook.id, newStock));
+    // dispatch(updateBookStock(currentBook.id, newStock));
   };
+}
+
+export const getFavs = (userId) => async (dispatch) => {
+  try {
+    const favs = await axios.get(`${LOCAL_HOST}/favs/${userId}`)
+
+    return dispatch({
+      type: GET_FAVS,
+      payload: favs.data
+    })
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 export function addFavs(payload) {
@@ -240,16 +294,13 @@ export function getAuthorBooks(payload) {
   };
 }
 
-export function checkoutCart(cart, user) {
+export function checkoutCart(cart, user, cupon) {
   //pasar el user y cart
 
   const body = {
-    name: "mili",
-    email: "mili@hotmail.com",
-    shoppingCart: cart,
+    user,
+    shoppingCart: { productList: cart, cupon },
   };
-
-  console.log(body);
 
   const config = {
     headers: {
@@ -318,6 +369,77 @@ export function updateBook(book) {
     }
   };
 }
+export function activeAccount(user) {
+  return async function (dispatch) {
+    try {
+      await axios.patch(`${LOCAL_HOST}/users/all/${user.id}`, {
+        name: user.name,
+        lastName: user.lastName,
+        email: user.email,
+        role: user.role,
+        password: user.password,
+        isActive: true,
+        activationToken: user.activationToken,
+        token: user.token,
+        image: user.image,
+      });
+      dispatch({ type: ACTIVE_ACCOUNT, payload: user });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+}
+export function deactivateAccount(user) {
+  return async function (dispatch) {
+    try {
+      await axios.patch(`${LOCAL_HOST}/users/all/${user.id}`, {
+        name: user.name,
+        lastName: user.lastName,
+        email: user.email,
+        role: user.role,
+        password: user.password,
+        isActive: false,
+        activationToken: user.activationToken,
+        token: user.token,
+        image: user.image,
+      });
+      dispatch({ type: ACTIVE_ACCOUNT, payload: user });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+}
+export function makeAdmin(user) {
+  return async function (dispatch) {
+    try {
+      await axios.patch(`${LOCAL_HOST}/users/all/${user.id}`, {
+        name: user.name,
+        lastName: user.lastName,
+        email: user.email,
+        role: "admin",
+        password: user.password,
+        isActive: true,
+        activationToken: user.activationToken,
+        token: user.token,
+        image: user.image,
+      });
+      dispatch({ type: ACTIVE_ACCOUNT, payload: user });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+}
+export function deleteAccount(id) {
+  return async function (dispatch) {
+    try {
+      await axios.delete(`${LOCAL_HOST}/users/all/${id}`);
+      dispatch({ type: DELETE_ACCOUNT, payload: id });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+}
+
 // export function updateBook(
 //   id,
 //   name,
@@ -383,8 +505,6 @@ export const updateUser = (id, data) => async (dispatch) => {
       config
     );
 
-    console.log(usuarios.data);
-
     return dispatch({
       type: UPDATE_USERS,
       payload: usuarios.data,
@@ -394,18 +514,61 @@ export const updateUser = (id, data) => async (dispatch) => {
   }
 };
 
-// export const getUsers = () => async (dispatch) => {
-//   try {
-//     const usuarios = await axios.get(`/users`);
+export const getCart = (userId) => async (dispatch) => {
+  try {
+    const cart = await axios.get(`${LOCAL_HOST}/cart/${userId}`);
 
-//     return dispatch({
-//       type: 'GET_USERS',
-//       payload: usuarios.data
-//     })
-//   } catch (error) {
-//     console.log(error)
-//   }
-// }
+    console.log(cart);
+    return dispatch({
+      type: GET_CART,
+      payload: cart.data,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const addCart = (data) => async (dispatch) => {
+  try {
+    const { bookId, name, price, image, quantity, userId } = data;
+    const cart = await axios.post("http://localhost:3001/cart", {
+      userId,
+      bookId,
+      quantity,
+    });
+
+    return dispatch(
+      addToCart({
+        id: bookId,
+        name,
+        price,
+        image,
+        quantity,
+      })
+    );
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const deleteCart = (data) => async (dispatch) => {
+  try {
+    const { bookId, name, price, image, quantity } = data;
+    const response = await axios.delete("http://localhost:3001/cart", { data });
+
+    return dispatch(
+      removeFromCart({
+        id: bookId,
+        name,
+        price,
+        image,
+        quantity,
+      })
+    );
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 export function updateBookStock(id, newStock) {
   return async function (dispatch) {
@@ -421,6 +584,8 @@ export function updateBookStock(id, newStock) {
     }
   };
 }
+
+
 // export function updateBookStock(id, newStock) {
 //   return (dispatch) => {
 //     try {
