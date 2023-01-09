@@ -35,7 +35,8 @@ router.get('/', async (req, res) => {
                     model: User,
                     attributes: [
                         "name",
-                        "lastName"
+                        "lastName",
+                        "image"
                     ],
                 },
                 {
@@ -48,7 +49,7 @@ router.get('/', async (req, res) => {
                 
         })
         
-        res.status(200).send({viewReviews})
+        res.status(200).send(viewReviews)
     } catch (error) {
         console.log(error);
         res.status(401).send({error: error.message})
