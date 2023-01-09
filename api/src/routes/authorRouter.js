@@ -57,7 +57,15 @@ router.get("/", async (req, res) => {
       });
 
       const allAuthors = await Author.findAll();
-      res.status(200).send(allAuthors);
+      const authorsArray = allAuthors.map(e => e.dataValues.name)
+      const uniqueAuthors = [];
+      authorsArray.forEach(e => {
+        if (!uniqueAuthors.includes(e)) {
+          uniqueAuthors.push(e);
+      }
+      })
+      // console.log(authorsArray);
+      res.status(200).send(uniqueAuthors);
     }
   } catch (error) {
     res.status(400).send({ error: error.message });
