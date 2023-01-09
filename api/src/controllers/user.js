@@ -119,16 +119,19 @@ async function updateUser(id, data) {
       return (errorMsg = "User not found");
     }
 
-        if (data.name) await User.update({ name: data.name }, { where: { id: id } });
-        if (data.lastName) await User.update({ lastName: data.lastName }, { where: { id: id } });
-        if (data.email) await User.update({ email: data.email }, { where: { id: id } });
-        if (data.password) {
-			let newPassword = await bcrypt.hash(data.password, 8)
-			await User.update({ password: newPassword }, { where: { id: id } });
-		}
-        
-        return 'User update'
+    if (data.name)
+      await User.update({ name: data.name }, { where: { id: id } });
+    if (data.lastName)
+      await User.update({ lastName: data.lastName }, { where: { id: id } });
+    if (data.email)
+      await User.update({ email: data.email }, { where: { id: id } });
+    if (data.password) {
+      let newPassword = await bcrypt.hash(data.password, 8);
+      await User.update({ password: newPassword }, { where: { id: id } });
     }
+
+    return "User update";
+  }
 }
 
 async function adminGetUsers(id) {
@@ -165,8 +168,25 @@ async function getAllUsers() {
     };
   }
 }
+async function getUserById(id) {
+  try {
+    // Obtener el usuario con el ID especificado
+    const user = await User.findByPk(id);
+
+    // Si no se encontró el usuario, devuelve un error
+    if (!user) {
+      throw new Error(`User with ID ${id} not found`);
+    }
+
+    // Devuelve el usuario
+    return { user };
+  } catch (error) {
+    throw error;
+  }
+}
 
 module.exports = {
+  getUserById,
   createUser,
   activateAccount,
   logIn,

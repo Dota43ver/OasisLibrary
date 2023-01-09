@@ -8,6 +8,7 @@ const { Router } = require("express");
 const {
   createUser,
   activateAccount,
+  getUserById,
   logIn,
   logOut,
   getOneUser,
@@ -20,6 +21,8 @@ const { verify, adminAuth } = require("../middleware/auth");
 const usersRouter = Router();
 
 //Guest
+
+
 usersRouter.post("/signup", async (req, res) => {
   //Ruta postman: http://localhost:3001/users/signup
   try {
@@ -56,11 +59,12 @@ usersRouter.post("/signup", async (req, res) => {
       expiresIn: "1h",
     });
     await sendEmail(email, "Token Validation", Atoken);
-    return {
-      Atoken,
-      success: true,
-      msg: "Fue creado con éxito",
-    };
+    // return {
+    //   Atoken,
+    //   success: true,
+    //   msg: "Fue creado con éxito",
+    // };
+    return res.status(200).json({Atoken, success: true, msg: "fue creado con exito"})
   } catch (err) {
     console.error(err.message);
     res.status(500).send("server error");
@@ -91,23 +95,27 @@ usersRouter.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    const user = await User.findOne({
-      where: {
-        email: email,
-      },
-    });
-    if (!user) {
-      return res.status(401).send("Password or email is incorrect");
+        const user = await User.findOne({
+            where: {
+                email: email
+            },
+        });
+        if (!user) {
+            return res.status(401).send("Password or email is incorrect")
+        }
+        const validPassword = await bcrypt.compare(password, user.password)
+        if (!validPassword) {
+            return res.status(401).json("Password or email is incorrect")
+        }
+        if(user.isActive === false){
+            return res.status(401).json("your acount is inactive or has been banned")
+        }
+        const token = jwt.sign({ id: user.id }, process.env.SECRET);
+        res.json({ token })
+    } catch (err) {
+        console.error(err.message)
     }
-    const validPassword = await bcrypt.compare(password, user.password);
-    if (!validPassword) {
-      return res.status(401).json("Password or email is incorrect");
-    }
-    const token = jwt.sign({ id: user.id }, process.env.SECRET);
-    res.json({ token });
-  } catch (err) {
-    console.error(err.message);
-  }
+    
 
   // try {
   //     const { email, password } = req.body;
@@ -151,6 +159,58 @@ usersRouter.get("/profile", verify, async (req, res) => {
   }
 });
 
+usersRouter.post("/googleSignIn", async (req, res) => {
+  try {
+    const { email } = req.body;
+    const user = await User.findOne({
+      where: { email, signedInWithGoogle: true },
+    });
+    if (!user) {
+      return res.status(404).send({ errorMsg: 'User not found.' });
+    }
+    const token = jwt.sign({ id: user.id }, process.env.SECRET);
+    return  res.status(200).json({ token })
+  } catch (error) {
+    console.error(error.message)
+  }
+});
+usersRouter.post("/signUpWithGoogle", async (req, res) => {
+  try {
+    const { email, name, lastName } = req.body;
+    const isCreated = await User.findOne({
+      where: { email, signedInWithGoogle: true },
+    });
+    if (isCreated) {
+      return res.status(400).send({ errorMsg: 'User already exists.' });
+    }
+    const isActive = true;
+    const signedInWithGoogle = true;
+    const [user /*created*/] = await User.findOrCreate({
+      where: {
+        email,
+        name,
+        lastName,
+        isActive,
+        signedInWithGoogle,
+      },
+    });
+    const Atoken = jwt.sign({ id: user.id }, process.env.SECRET);
+    // await User.update(
+    //   { tokens: sequelize.fn('array_append', sequelize.col('tokens'), token) },
+    //   { where: { id: user.id } }
+    // );
+    // return {
+    //   Atoken,
+    //   success: true,
+    //   msg: "Fue creado con éxito",
+    // };
+    return res.status(200).json({Atoken, success:true, msg: "fue creado con exito"})
+
+  } catch (error) {
+    console.error(error.message)
+  }
+});
+
 usersRouter.put("/profile", verify, async (req, res) => {
   try {
     const { id } = req.query;
@@ -190,12 +250,69 @@ usersRouter.get("/admin/users", verify, adminAuth, async (req, res) => {
 usersRouter.get("/all", async (req, res) => {
   try {
     const response = await getAllUsers();
-    res.json(response);
+    res.json(response.users);
   } catch (error) {
     console.log(error);
     res.status(400).send("Error getting all users", error.message);
   }
 });
+usersRouter.get("/all/:id", async (req, res) => {
+  // Obtener el valor del parámetro de la ruta
+  const id = req.params.id;
+  try {
+    // Obtener el usuario con el ID especificado
+    let response = await getUserById(id);
+    res.json(response.user);
+  } catch (error) {
+    console.log(error);
+    res.status(400).send(`Error getting user with ID ${userId}`, error.message);
+  }
+});
+usersRouter.patch("/all/:id", async (req, res) => {
+  // Obtener el valor del parámetro de la ruta
+  const id = req.params.id;
+  // Obtener la información del usuario a actualizar
+  const updates = req.body;
+  try {
+    // Obtener el usuario con el ID especificado
+    const user = await User.findByPk(id);
+    // Si no se encontró el usuario, devuelve un error
+    if (!user) {
+      throw new Error(`User with ID ${id} not found`);
+    }
+    // Actualizar la información del usuario
+    await user.update(updates);
+    // Devolver la información actualizada del usuario
+    res.json(user);
+  } catch (error) {
+    console.log(error);
+    res.status(400).send(`Error updating user with ID ${id}`, error.message);
+  }
+});
+usersRouter.delete("/all/:id", async (req, res) => {
+  // Obtener el valor del parámetro de la ruta
+  const id = req.params.id;
+
+  try {
+    // Obtener el usuario con el ID especificado
+    const user = await User.findByPk(id);
+
+    // Si no se encontró el usuario, devuelve un error
+    if (!user) {
+      throw new Error(`User with ID ${id} not found`);
+    }
+
+    // Eliminar el usuario
+    await user.destroy();
+
+    // Devolver un mensaje de confirmación
+    res.json({ message: "User deleted successfully" });
+  } catch (error) {
+    console.log(error);
+    res.status(400).send(`Error deleting user with ID ${id}`, error.message);
+  }
+});
+
 // usersRouter.put
 // usersRouter.post ????
 

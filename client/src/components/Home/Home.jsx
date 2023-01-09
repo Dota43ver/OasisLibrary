@@ -192,11 +192,12 @@ console.log(el.target.value);
     setRefresh();
   }
   return (
+
     <div>
       <NavBar />
-      <div className="carrusel">
+      {/* <div className="carrusel"> */}
         <CarouselBook />
-      </div>
+      {/* </div> */}
       <Float />
       <ScrollToTop smooth className="scroll" />
       <div className="all">
@@ -276,7 +277,7 @@ console.log(el.target.value);
                 <option value="all">Todos</option>
                 {allAuthors?.map((author) => (
                   <option key={author.id} value={author.name}>
-                    {author.name}
+                    {author}
                   </option>
                 ))}
               </select>

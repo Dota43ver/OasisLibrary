@@ -5,6 +5,9 @@ import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {Link, useHistory} from 'react-router-dom';
 import oasis from "../NavBar/oasis.jpg"
+import GoogleRegister from "../GoogleRegister/GoogleRegister"
+import Swal from 'sweetalert2';
+
 
 const Register = ({setAuth}) => {
  
@@ -42,9 +45,16 @@ const Register = ({setAuth}) => {
         });
 
         const parseRes = await response.json()
-
+        
         localStorage.setItem("Atoken",parseRes.token)
         // setAuth(true)
+        Swal.fire({
+            title: 'Registro exitoso',
+            text: 'Has registrado con éxito tu cuenta por favor verifica tu email!',
+            icon: 'success'
+          });
+          history.push("/login")
+
             
 
         } catch (err) {
@@ -142,10 +152,7 @@ const Register = ({setAuth}) => {
             }
             </div>
             <div className={style.button4}>
-            <button className={style.button5}><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-google" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M17.788 5.108a9 9 0 1 0 3.212 6.892h-8"></path>
-</svg>login with google</button>
+            <GoogleRegister/>
             </div>
             <div className={style.button6}>
             <button className={style.button7}>¿No podes ingresar a tu cuenta?</button>

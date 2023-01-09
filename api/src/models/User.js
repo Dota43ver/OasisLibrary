@@ -49,6 +49,11 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: true
       },
+      signedInWithGoogle: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false,
+        allowNull: true,
+      },
       image: {
         type: DataTypes.STRING,
         allowNull: true
