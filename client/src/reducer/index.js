@@ -16,7 +16,6 @@ import {
   GET_USERS,
   INCREASE_QUANTITY,
   LANGUAGE_FILTER,
-  POST_REVIEW,
   PRICE_SORT,
   REMOVE_FROM_CART,
   REMOVE_FROM_FAVS,
@@ -88,10 +87,10 @@ export default function reducer(state = initialState, action) {
           state.bookDetails.author,
         ],
       };
-    case POST_BOOK:
-      return {
-        ...state,
-      };
+    // case POST_BOOK:
+    //   return {
+    //     ...state,
+    //   };
     case POST_REVIEW:
       return {
         ...state,

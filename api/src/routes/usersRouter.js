@@ -20,6 +20,8 @@ const { verify, adminAuth } = require("../middleware/auth");
 const usersRouter = Router();
 
 //Guest
+
+
 usersRouter.post("/signup", async (req, res) => {
   //Ruta postman: http://localhost:3001/users/signup
   try {
@@ -151,6 +153,57 @@ usersRouter.get("/profile", verify, async (req, res) => {
   } catch (error) {
     console.log(error);
     // res.status(401).send("error al mostrar un usuario", error.message);
+  }
+});
+
+usersRouter.post("/googleSignIn", async (req, res) => {
+  try {
+    const { email } = req.body;
+    const user = await User.findOne({
+      where: { email, signedInWithGoogle: true },
+    });
+    if (!user) {
+      return res.status(404).send({ errorMsg: 'User not found.' });
+    }
+    const token = jwt.sign({ id: user.id }, process.env.SECRET);
+    res.json({ token })
+  } catch (error) {
+    console.error(error.message)
+  }
+});
+usersRouter.post("/signUpWithGoogle", async (req, res) => {
+  try {
+    const { email, name, lastName } = req.body;
+    const isCreated = await User.findOne({
+      where: { email, signedInWithGoogle: true },
+    });
+    if (isCreated) {
+      return res.status(400).send({ errorMsg: 'User already exists.' });
+    }
+    const isActive = true;
+    const signedInWithGoogle = true;
+    const [user /*created*/] = await User.findOrCreate({
+      where: {
+        email,
+        name,
+        lastName,
+        isActive,
+        signedInWithGoogle,
+      },
+    });
+    const Atoken = jwt.sign({ id: user.id }, process.env.SECRET);
+    // await User.update(
+    //   { tokens: sequelize.fn('array_append', sequelize.col('tokens'), token) },
+    //   { where: { id: user.id } }
+    // );
+    return {
+      Atoken,
+      success: true,
+      msg: "Fue creado con éxito",
+    };
+
+  } catch (error) {
+    console.error(error.message)
   }
 });
 

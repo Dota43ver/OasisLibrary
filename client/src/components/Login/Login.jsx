@@ -4,6 +4,8 @@ import {useDispatch, useSelector} from 'react-redux';
 import {Link, useHistory} from 'react-router-dom';
 import style from "./Login.module.css"
 import oasis from "../NavBar/oasis.jpg"
+import GoogleSignin from "../GoogleSignin/GoogleSignin"
+
 
 
 
@@ -128,10 +130,10 @@ return(
             <div className={style.divisor}>
             </div>
             <div className={style.button4}>
-            <button className={style.button5}><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-google" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M17.788 5.108a9 9 0 1 0 3.212 6.892h-8"></path>
-</svg>login with google</button>
+            <Link to="/account">
+            <GoogleSignin/>
+            </Link>
+            
             </div>
             <div className={style.button6}>
             <button className={style.button7}>¿No podes ingresar a tu cuenta?</button>
