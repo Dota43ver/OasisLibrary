@@ -1,7 +1,16 @@
 .carousel {
     max-width: 1299px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .imgCarousel{
     padding-top: 10px;
 }
+
+/* .imgnormalizada img {
+    width: auto;
+    height: 225px;
+    max-height: 225px;
+  } */
