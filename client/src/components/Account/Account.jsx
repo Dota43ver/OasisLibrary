@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { getUsers } from "../../actions";
 import NavBar from "../NavBar/NavBar";
 import "./Account.css";
+import LogoutIcon from '@mui/icons-material/Logout';
+import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
 
 export default function Account({ setAuth }) {
   const dispatch = useDispatch();
@@ -28,15 +30,27 @@ export default function Account({ setAuth }) {
     <div>
       <NavBar></NavBar>
       <div className="account">
-        <div className="left">
-          <Link to={'/order'} className="orders"> Ordenes previas </Link>
-          <Link className="orders"> Favoritos </Link>
-          <Link className="orders"> Carrito </Link>
-          {user && user.role === "admin" && (
-            <Link to="/dashboard" className="orders">
-              Admin Dashboard
-            </Link>
-          )}
+        <div className="perfilBtn">
+          <div className="left1">
+            <p className="titlePerfil"> <ArchiveOutlinedIcon />
+              <p className="textPerfil"> Historial </p> </p>
+            <Link to={'/order'} className="orders"> Ordenes previas </Link>
+            <Link className="orders"> Mis opiniones </Link>
+          </div>
+          <div className="left2">
+            <p className="titlePerfil"> <LogoutIcon />
+              <p className="textPerfil"> Sesión </p>
+            </p>
+            {user && user.role === "admin" && (
+              <Link to="/dashboard" className="orders">
+                Admin Dashboard
+              </Link>
+            )}
+            <Link className="orders"> Cerrar sesión </Link>
+            <Link className="orders"> Eliminar cuenta </Link>
+          </div>
+
+
         </div>
         <div className="info">
           <div className="headatos">

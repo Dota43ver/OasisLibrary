@@ -4,12 +4,24 @@
     justify-content: space-around;
 }
 
-.left {
+.left1 {
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     width: 230px;
     height: 175px;
+    padding: 5px;
+    background: #ECEBEB;
+    box-shadow: 0 2px 3px 5px #d7d7d7a4;
+    align-items: flex-start;
+}
+
+.left2 {
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    width: 230px;
+    height: 205px;
     padding: 5px;
     background: #ECEBEB;
     box-shadow: 0 2px 3px 5px #d7d7d7a4;
