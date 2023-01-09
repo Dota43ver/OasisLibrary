@@ -1,22 +1,30 @@
 import {
+  ACTIVE_ACCOUNT,
   ADD_FAVS,
   ADD_TO_CART,
   ALPHABETICAL_SORT,
+  AUTHOR_FILTER,
   CHECKOUT_CART,
   CLEAN_CACHE,
   CLEAR_CART,
   DECREASE_QUANTITY,
+  DELETE_ACCOUNT,
   GENRE_FILTER,
+  GET_ALL_USERS,
   GET_AUTHORS,
   GET_AUTHOR_BOOKS,
   GET_AUTHOR_DETAILS,
   GET_BOOKS,
   GET_BOOK_DETAILS,
+  GET_CART,
   GET_GENRES,
   GET_NAME_BOOKS,
+  GET_REVIEW,
   GET_USERS,
   INCREASE_QUANTITY,
   LANGUAGE_FILTER,
+  POST_BOOK,
+  POST_REVIEW,
   PRICE_SORT,
   REMOVE_FROM_CART,
   REMOVE_FROM_FAVS,
@@ -24,13 +32,8 @@ import {
   SCORE_SORT,
   UPDATE_BOOK,
   UPDATE_BOOK_STOCK,
-  POST_REVIEW,
-  AUTHOR_FILTER,
   UPDATE_BOOK_STOCK_SUCCESS,
   UPDATE_USERS,
-  GET_CART,
-  GET_REVIEW,
-  POST_BOOK,
 } from "../actions/types";
 
 const initialState = {
@@ -46,7 +49,8 @@ const initialState = {
   authorBooks: [],
   user: [],
   reviews: [],
-  authors: []
+  authors: [],
+  allUsers: [],
 };
 
 export default function reducer(state = initialState, action) {
@@ -60,8 +64,13 @@ export default function reducer(state = initialState, action) {
     case GET_AUTHORS:
       return {
         ...state,
-        authors: action.payload.data
-      }
+        authors: action.payload.data,
+      };
+    case GET_ALL_USERS:
+      return {
+        ...state,
+        allUsers: action.payload.data,
+      };
     case GET_BOOK_DETAILS:
       return {
         ...state,
@@ -105,12 +114,12 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
       };
-      
+
     case GET_REVIEW:
-      return{
+      return {
         ...state,
-        reviews: action.payload
-      }
+        reviews: action.payload,
+      };
     case GET_GENRES:
       let sortedGenres = action.payload.data;
       sortedGenres = action.payload.data.sort(function (a, b) {
@@ -143,15 +152,15 @@ export default function reducer(state = initialState, action) {
       sortedBooks =
         action.payload === "atoz"
           ? state.books.sort(function (a, b) {
-            if (a.name.toLowerCase() > b.name.toLowerCase()) return 1;
-            if (a.name.toLowerCase() < b.name.toLowerCase()) return -1;
-            return 0;
-          })
+              if (a.name.toLowerCase() > b.name.toLowerCase()) return 1;
+              if (a.name.toLowerCase() < b.name.toLowerCase()) return -1;
+              return 0;
+            })
           : state.books.sort(function (a, b) {
-            if (a.name.toLowerCase() < b.name.toLowerCase()) return 1;
-            if (a.name.toLowerCase() > b.name.toLowerCase()) return -1;
-            return 0;
-          });
+              if (a.name.toLowerCase() < b.name.toLowerCase()) return 1;
+              if (a.name.toLowerCase() > b.name.toLowerCase()) return -1;
+              return 0;
+            });
       return {
         ...state,
         books: sortedBooks,
@@ -161,20 +170,20 @@ export default function reducer(state = initialState, action) {
       sortedBooksByScore =
         action.payload === "desc"
           ? state.books.sort(function (a, b) {
-            if (a.score > b.score) return 1;
-            if (a.score < b.score) return -1;
-            return 0;
-          })
+              if (a.score > b.score) return 1;
+              if (a.score < b.score) return -1;
+              return 0;
+            })
           : state.books.sort(function (a, b) {
-            if (a.score < b.score) return 1;
-            if (a.score > b.score) return -1;
-            return 0;
-          });
+              if (a.score < b.score) return 1;
+              if (a.score > b.score) return -1;
+              return 0;
+            });
       return {
         ...state,
         books: sortedBooksByScore,
       };
-      case GET_NAME_BOOKS:
+    case GET_NAME_BOOKS:
       return {
         ...state,
         books: action.payload,
@@ -185,15 +194,15 @@ export default function reducer(state = initialState, action) {
       sortedBooksByPrice =
         action.payload === "asc"
           ? state.books.sort(function (a, b) {
-            if (a.price > b.price) return 1;
-            if (a.price < b.price) return -1;
-            return 0;
-          })
+              if (a.price > b.price) return 1;
+              if (a.price < b.price) return -1;
+              return 0;
+            })
           : state.books.sort(function (a, b) {
-            if (a.price < b.price) return 1;
-            if (a.price > b.price) return -1;
-            return 0;
-          });
+              if (a.price < b.price) return 1;
+              if (a.price > b.price) return -1;
+              return 0;
+            });
       return {
         ...state,
         books: sortedBooksByPrice,
@@ -259,11 +268,12 @@ export default function reducer(state = initialState, action) {
     case REMOVE_FROM_CART:
       const deleteBook = state.cart.find((b) => b.id === action.payload.id);
       if (deleteBook) {
-        if(deleteBook.quantity < 2) {
+        if (deleteBook.quantity < 2) {
           console.log(state.cart.filter((i) => i.id !== action.payload.id));
           return {
-            ...state, cart: state.cart.filter((i) => i.id !== action.payload.id)
-          }
+            ...state,
+            cart: state.cart.filter((i) => i.id !== action.payload.id),
+          };
         }
         return {
           ...state,
@@ -363,8 +373,8 @@ export default function reducer(state = initialState, action) {
     case GET_CART:
       return {
         ...state,
-        cart: action.payload
-      }
+        cart: action.payload,
+      };
 
     case UPDATE_BOOK:
       return {
@@ -374,6 +384,19 @@ export default function reducer(state = initialState, action) {
           book.id === action.payload.id ? action.payload : book
         ),
       };
+    case ACTIVE_ACCOUNT:
+      return {
+        ...state,
+        allUsers: state.allUsers.map((user) =>
+          user.id === action.payload.id ? action.payload : user
+        ),
+      };
+    case DELETE_ACCOUNT:
+      return {
+        ...state,
+        allUsers: state.allUsers.filter((user) => user.id !== action.payload),
+      };
+
     case UPDATE_BOOK_STOCK_SUCCESS:
       return {
         ...state,

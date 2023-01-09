@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { updateBook } from "../../actions"; 
+import { updateBook } from "../../actions";
 import "./CardEdit.css";
 const Swal = require("sweetalert2");
 
@@ -37,6 +37,10 @@ export default function Card({
     }
     if (formData.author.trim() === "") {
       Swal.fire("Error", "Debe ingresar un autor", "error");
+      return false;
+    }
+    if (formData.description.trim() === "") {
+      Swal.fire("Error", "Debe ingresar una descripción", "error");
       return false;
     }
     if (formData.price <= 0) {
@@ -175,7 +179,7 @@ export default function Card({
               ) : (
                 <textarea
                   name="description"
-                  value={descriptionn}
+                  value={formData.description}
                   onChange={(event) => setDescription(event.target.value)}
                 />
               )}
