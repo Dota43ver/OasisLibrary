@@ -32,7 +32,8 @@ import {
   POST_REVIEW,
   GET_CART,
   AUTHOR_FILTER,
-  GET_REVIEW
+  GET_REVIEW,
+  GET_ORDER
 
 } from "./types";
 
@@ -211,7 +212,7 @@ export function languageFilter(payload) {
 }
 export function authorFilter(payload) {
   return {
-    type: AUTHOR_FILTER, 
+    type: AUTHOR_FILTER,
     payload
   }
 }
@@ -480,6 +481,24 @@ export function updateBookStock(id, newStock) {
     }
   };
 }
+
+export function getOrders(userId) {
+  return async function (dispatch) {
+    try {
+      const order = await axios.get(`${LOCAL_HOST}/checkout/${userId}`)
+
+      console.log(userId);
+      console.log(order.data);
+      return dispatch({
+        type: GET_ORDER,
+        payload: order.data
+      })
+    } catch (error) {
+      console.log(error);
+    }
+  }
+}
+
 // export function updateBookStock(id, newStock) {
 //   return (dispatch) => {
 //     try {

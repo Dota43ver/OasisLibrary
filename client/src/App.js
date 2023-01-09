@@ -106,7 +106,7 @@ function App() {
           <Route path="/success" component={Success}/>
           <Route exact path="/dashboard" component={Dashboard}/>
           <Route path="/review" component={Reviews}/>
-          <Route exact path='/order' component={OrderCart}/>
+          <Route path='/order' component={OrderCart}/>
           <Route path="/checkout" component={Checkout} />
           <Route path="/about" component={AboutUs} />
           <Route path="/success" component={Success} />

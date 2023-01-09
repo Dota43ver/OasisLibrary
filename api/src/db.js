@@ -44,8 +44,8 @@ const { Book, Author, Genre, Shopping_cart, User, Reviews, Favorites } = sequeli
 Book.belongsToMany(Genre, { through: "BookGenre" });
 Genre.belongsToMany(Book, { through: "BookGenre" });
 
-Author.hasMany(Book, {as: "libro"})
-Book.belongsTo(Author, {as: "autor"})
+Author.hasMany(Book, { as: "libro" })
+Book.belongsTo(Author, { as: "autor" })
 
 // Shopping_cart.belongsToMany(Book, { through: 'CartBook'});
 // Book.belongsToMany(Shopping_cart, { through: 'CartBook'});
@@ -53,8 +53,8 @@ Book.belongsTo(Author, {as: "autor"})
 // User.hasMany(Shopping_cart);
 // Shopping_cart.belongsTo(User);
 
-Book.belongsToMany(User, { through: Shopping_cart })
-User.belongsToMany(Book, { through: Shopping_cart })
+Book.belongsToMany(User, { through: { model: Shopping_cart, unique: false } })
+User.belongsToMany(Book, { through: { model: Shopping_cart, unique: false } })
 
 User.hasMany(Reviews);
 Reviews.belongsTo(User);
