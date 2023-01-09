@@ -6,6 +6,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {Link, useHistory} from 'react-router-dom';
 import oasis from "../NavBar/oasis.jpg"
 import GoogleRegister from "../GoogleRegister/GoogleRegister"
+import Swal from 'sweetalert2';
 
 
 const Register = ({setAuth}) => {
@@ -44,9 +45,16 @@ const Register = ({setAuth}) => {
         });
 
         const parseRes = await response.json()
-
+        
         localStorage.setItem("Atoken",parseRes.token)
         // setAuth(true)
+        Swal.fire({
+            title: 'Registro exitoso',
+            text: 'Has registrado con éxito tu cuenta por favor verifica tu email!',
+            icon: 'success'
+          });
+          history.push("/login")
+
             
 
         } catch (err) {

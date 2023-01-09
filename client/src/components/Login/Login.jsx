@@ -5,6 +5,7 @@ import {Link, useHistory} from 'react-router-dom';
 import style from "./Login.module.css"
 import oasis from "../NavBar/oasis.jpg"
 import GoogleSignin from "../GoogleSignin/GoogleSignin"
+import Swal from 'sweetalert2';
 
 
 
@@ -81,7 +82,12 @@ export default function Login({setAuth}){
             setAuth(true)
         }else{
             setAuth(false)
-            alert(parseRes);
+            //alert(parseRes);
+            Swal.fire({
+                title: 'algo salio mal',
+                text: parseRes,
+                icon: 'error'
+              });
         }
         } catch (err) {
             console.error(err.message)

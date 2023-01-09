@@ -59,11 +59,12 @@ usersRouter.post("/signup", async (req, res) => {
       expiresIn: "1h",
     });
     await sendEmail(email, "Token Validation", Atoken);
-    return {
-      Atoken,
-      success: true,
-      msg: "Fue creado con éxito",
-    };
+    // return {
+    //   Atoken,
+    //   success: true,
+    //   msg: "Fue creado con éxito",
+    // };
+    return res.status(200).json({Atoken, success: true, msg: "fue creado con exito"})
   } catch (err) {
     console.error(err.message);
     res.status(500).send("server error");
@@ -168,7 +169,7 @@ usersRouter.post("/googleSignIn", async (req, res) => {
       return res.status(404).send({ errorMsg: 'User not found.' });
     }
     const token = jwt.sign({ id: user.id }, process.env.SECRET);
-    res.json({ token })
+    return  res.status(200).json({ token })
   } catch (error) {
     console.error(error.message)
   }
@@ -198,11 +199,12 @@ usersRouter.post("/signUpWithGoogle", async (req, res) => {
     //   { tokens: sequelize.fn('array_append', sequelize.col('tokens'), token) },
     //   { where: { id: user.id } }
     // );
-    return {
-      Atoken,
-      success: true,
-      msg: "Fue creado con éxito",
-    };
+    // return {
+    //   Atoken,
+    //   success: true,
+    //   msg: "Fue creado con éxito",
+    // };
+    return res.status(200).json({Atoken, success:true, msg: "fue creado con exito"})
 
   } catch (error) {
     console.error(error.message)

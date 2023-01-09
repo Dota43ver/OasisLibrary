@@ -23,11 +23,10 @@ export default function GoogleSignin({setAuth}){
         });
 
         const parseRes = await response.json()
-        if(parseRes.token){
             localStorage.setItem("token",parseRes.token);
             setAuth(true)
             history.push("/account")
-        }
+        
        
        
 
