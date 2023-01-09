@@ -31,6 +31,7 @@ import {
   GET_CART,
   GET_REVIEW,
   POST_BOOK,
+  GET_FAVS
 } from "../actions/types";
 
 const initialState = {
@@ -310,6 +311,12 @@ export default function reducer(state = initialState, action) {
         ...state,
         cart: updatedCartt,
       };
+
+      case GET_FAVS:
+        return {
+          ...state,
+          favs: [...state.favs, action.payload],
+        };
 
     case ADD_FAVS:
       return {

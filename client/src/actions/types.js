@@ -33,4 +33,5 @@ export const UPDATE_BOOK_STOCK_SUCCESS = "UPDATE_BOOK_STOCK_SUCCESS";
 export const CLEAR_CART = "CLEAR_CART";
 export const BOOK_FULL_UPDATE = "BOOK_FULL_UPDATE";
 export const UPDATE_BOOK = "UPDATE_BOOK";
-export const GET_REVIEW = 'GET_REVIEW'
+export const GET_REVIEW = 'GET_REVIEW';
+export const GET_FAVS = 'GET_FAVS';

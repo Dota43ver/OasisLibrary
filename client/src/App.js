@@ -44,23 +44,25 @@ function App() {
   }
 
 
+
+    
+  //   function handleCallbackResponse(response) {
+  //     const userObject = jwt_decode(response.credential);
+  //   console.log(userObject)
+  // }
+
+  // useEffect(()=>{
+  //   /*global google */
+  //   google.accounts.id.initialize({
+  //     client_id: "340086857333-sbcjo4c3pta23d842q27q4fid3bnhod7.apps.googleusercontent.com",
+  //     callback: handleCallbackResponse
+  //   })
+
+  // })
+
   useEffect(() => {
     isAuth();
   });
-
-  function handleCallbackResponse(response) {
-    const userObject = jwt_decode(response.credential);
-    console.log(userObject)
-  }
-
-  useEffect(()=>{
-    /*global google */
-    google.accounts.id.initialize({
-      client_id: "340086857333-sbcjo4c3pta23d842q27q4fid3bnhod7.apps.googleusercontent.com",
-      callback: handleCallbackResponse
-    })
-
-  })
 
   return (
     <BrowserRouter>
@@ -118,5 +120,10 @@ function App() {
       </div>
     </BrowserRouter>
   );
+
+
 }
+
+
+
 export default App;
