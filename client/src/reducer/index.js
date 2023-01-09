@@ -33,7 +33,8 @@ import {
   UPDATE_BOOK_STOCK,
   UPDATE_BOOK_STOCK_SUCCESS,
   UPDATE_USERS,
-  GET_FAVS
+  GET_FAVS,
+  GET_CART
 } from "../actions/types";
 
 const initialState = {
