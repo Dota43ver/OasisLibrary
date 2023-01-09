@@ -1,0 +1,32 @@
+.orderItems {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #cecece;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 14px;
+
+    width: 280px;
+    height: 250px;
+    justify-items: center;
+}
+
+.orderDisplay {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    margin: 20px;
+}
+
+.orderItems > p {
+    margin: 5px;
+}
+
+.orderItems > h3 {
+    margin: 6px;
+}
+
+.ordersDiv {
+    margin: 35px;
+}

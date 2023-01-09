@@ -101,24 +101,19 @@ function App() {
               )
             }
           />
-          
-         
+            
           <Route path="/dashboard/bookcreate" component={BookCreate} />
           <Route path="/dashboard/bookedit" component={BookEdit} />
           <Route path="/dashboard/users" component={Users} />
           <Route path="/cart" component={Cart} />
           <Route path="/favorites" component={Favorites} />
           <Route path="/author/:name" component={Author} />
+          <Route path="/about" component={AboutUs}/>
+          <Route path="/success" component={Success}/>
+          <Route exact path="/dashboard" component={Dashboard}/>
+          <Route path="/review" component={Reviews}/>
+          <Route path='/order' component={OrderCart}/>
           <Route path="/checkout" component={Checkout} />
-          <Route path="/about" component={AboutUs} />
-          <Route path="/success" component={Success} />
-          <Route path="/review" component={Reviews} />
-          <Route exact path="/order" component={OrderCart} />
-          <Route path="/checkout" component={Checkout} />
-          <Route path="/about" component={AboutUs} />
-          <Route path="/success" component={Success} />
-          <Route exact path="/dashboard" component={Dashboard} />
-          <Route path="/review" component={Reviews} />
           <Route exact path="/edit" component={Edit} />
         </Switch>
       </div>

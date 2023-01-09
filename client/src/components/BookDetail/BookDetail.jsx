@@ -86,17 +86,14 @@ export default function BookDetails(props) {
   const cart = useSelector((state) => state.cart);
   const user = useSelector((state) => state.user)
  
-  
   useEffect(() => {
     dispatch(getUsers())
-  }, [dispatch])
-  
-  useEffect(() => {
     dispatch(getReview())
   }, [dispatch])
   
-  console.log(reviews);
-
+  console.log(reviews.data);
+  
+  /* console.log(reviews.data.viewReviews[1]); */
   const [stateModal1, setStateModal1] = useState(false)
 
   const [input, setInput] = useState({
@@ -202,6 +199,19 @@ export default function BookDetails(props) {
           <h2 className="bookTitle">{bookDetails.name}</h2>
           <p className="bookDescription">{bookDetails.description}</p>
         </div>
+{/*         <div>
+          {reviews.data.viewReviews.length > 0 ? (reviews.data.viewReviews.map(g => {
+            return(
+            <div>
+              {g.descript}
+              {g.votes}
+
+            </div>
+            )
+          })):(<div>Se el primero en dejar una reseña</div>)
+        }
+        </div> */}
+        
       </div>
       {stateModal1 && 
       <div className="overlay">
@@ -226,7 +236,7 @@ export default function BookDetails(props) {
                             <p className="error">{errors.votes}</p>
                         )}
                     </div>
-                    <button className="submitReview" onClick={() => setStateModal1(false)} type= 'submit' disabled={!input.descript || !input.votes}>Crear Actividad</button>
+                    <button className="submitReview" type= 'submit' disabled={!input.descript || !input.votes}>Crear Actividad</button>
                 </form>
           </div>
         </div>

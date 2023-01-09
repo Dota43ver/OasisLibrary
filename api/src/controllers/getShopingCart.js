@@ -8,8 +8,8 @@ async function addItemToCart(userId, bookId, quantity) {
             where: {
                 userId: userId,
                 bookId: bookId,
-                deletedAt: {
-                    [Op.is]: null
+                active: {
+                    [Op.is]: true
                 }
             },
             attributes: ['quantity']
@@ -20,8 +20,8 @@ async function addItemToCart(userId, bookId, quantity) {
                 where: {
                     userId: userId,
                     bookId: bookId,
-                    deletedAt: {
-                        [Op.is]: null
+                    active: {
+                        [Op.is]: true
                     }
                 }
             }
@@ -31,6 +31,7 @@ async function addItemToCart(userId, bookId, quantity) {
                 userId: userId,
                 bookId: bookId,
                 shippingCost: 0,
+                active: true,
                 quantity: quantity
             });
             return 'cart created'
@@ -46,8 +47,8 @@ async function deleteItem(userId, bookId, quantity) {
             where: {
                 userId: userId,
                 bookId: bookId,
-                deletedAt: {
-                    [Op.is]: null
+                active: {
+                    [Op.is]: true
                 }
             },
             attributes: ['quantity']
@@ -59,8 +60,8 @@ async function deleteItem(userId, bookId, quantity) {
                 where: {
                     userId: userId,
                     bookId: bookId,
-                    deletedAt: {
-                        [Op.is]: null
+                    active: {
+                        [Op.is]: true
                     }
                 }
             }
@@ -90,8 +91,8 @@ async function getCart(userId) {
             {
                 where: {
                     userId: userId,
-                    deletedAt: {
-                        [Op.is]: null
+                    active: {
+                        [Op.is]: true
                     }
                 },
                 order: [

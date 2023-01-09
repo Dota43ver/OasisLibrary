@@ -33,8 +33,9 @@ import {
   UPDATE_BOOK_STOCK,
   UPDATE_BOOK_STOCK_SUCCESS,
   UPDATE_USERS,
+  GET_CART,
+  GET_ORDER,
   GET_FAVS,
-  GET_CART
 } from "../actions/types";
 
 const initialState = {
@@ -43,6 +44,7 @@ const initialState = {
   bookDetails: [],
   genres: [],
   cart: [],
+  order: [],
   purchasedCart: [],
   favs: [],
   author: [],
@@ -412,6 +414,12 @@ export default function reducer(state = initialState, action) {
           stock: action.payload.stock,
         },
       };
+
+    case GET_ORDER:
+      return {
+        ...state,
+        order: action.payload
+      }
 
     default:
       return state;
