@@ -243,3 +243,10 @@
   display: flex;
   margin-inline: 30px;
 }
+
+.allSearch {
+  position: relative;
+  margin: auto;
+  right: 20%;
+  width: 40%;
+}

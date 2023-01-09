@@ -195,9 +195,9 @@ console.log(el.target.value);
 
     <div>
       <NavBar />
-      <div className="carrusel">
+      {/* <div className="carrusel"> */}
         <CarouselBook />
-      </div>
+      {/* </div> */}
       <Float />
       <ScrollToTop smooth className="scroll" />
       <div className="all">
