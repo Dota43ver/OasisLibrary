@@ -20,7 +20,7 @@ import OrderCart from "./components/Orders/Orders";
 import Register from "./components/Register/Register";
 import Reviews from "./components/Reviews/Reviews";
 import Success from "./components/Success/Success";
-import GoogleRegister from "./components/GoogleRegister/GoogleRegister";
+
 
 import { AiFillGoogleCircle } from "react-icons/ai";
 
@@ -71,7 +71,6 @@ function App() {
     <BrowserRouter>
       <div>
         <Switch>
-        <Route exact path="/google" component={GoogleRegister} />
           <Route
             exact
             path="/login"
