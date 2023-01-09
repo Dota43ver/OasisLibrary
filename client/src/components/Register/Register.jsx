@@ -45,9 +45,16 @@ const Register = ({setAuth}) => {
         });
 
         const parseRes = await response.json()
-
+        
         localStorage.setItem("Atoken",parseRes.token)
         // setAuth(true)
+        Swal.fire({
+            title: 'Registro exitoso',
+            text: 'Has registrado con éxito tu cuenta por favor verifica tu email!',
+            icon: 'success'
+          });
+          history.push("/login")
+
             
 
         } catch (err) {
