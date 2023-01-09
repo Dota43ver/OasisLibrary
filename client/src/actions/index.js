@@ -1,21 +1,27 @@
 import axios from "axios";
 import {
+  ACTIVE_ACCOUNT,
   ADD_FAVS,
   ADD_TO_CART,
   ALPHABETICAL_SORT,
+  AUTHOR_FILTER,
   CHECKOUT_CART,
   CLEAN_CACHE,
   CLEAR_CART,
   DECREASE_QUANTITY,
+  DELETE_ACCOUNT,
   GENRE_FILTER,
+  GET_ALL_USERS,
   GET_AUTHORS,
   GET_AUTHOR_BOOKS,
   GET_AUTHOR_DETAILS,
   // GET_AUTHOR_DETAILS_NAME,
   GET_BOOKS,
   GET_BOOK_DETAILS,
+  GET_CART,
   GET_GENRES,
   GET_NAME_BOOKS,
+  GET_REVIEW,
   GET_USERS,
   INCREASE_QUANTITY,
   LANGUAGE_FILTER,
@@ -30,9 +36,6 @@ import {
   UPDATE_USERS,
   UPDATE_BOOK_STOCK,
   POST_REVIEW,
-  GET_CART,
-  AUTHOR_FILTER,
-  GET_REVIEW,
   GET_FAVS
 } from "./types";
 
@@ -43,6 +46,20 @@ export const getBooks = () => (dispatch) => {
       dispatch({
         type: GET_BOOKS,
         payload: books,
+      });
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+export const getAllUsers = () => (dispatch) => {
+  console.log(`${LOCAL_HOST}/users/all`);
+  return axios
+    .get(`${LOCAL_HOST}/users/all`)
+    .then((users) => {
+      dispatch({
+        type: GET_ALL_USERS,
+        payload: users,
       });
     })
     .catch((error) => {
@@ -166,10 +183,10 @@ export const getReview = () => (dispatch) => {
   return axios.get(`${LOCAL_HOST}/reviews`).then((review) => {
     dispatch({
       type: GET_REVIEW,
-      payload: review
-    })
-  })
-}
+      payload: review,
+    });
+  });
+};
 export function aplhabeticalSort(payload) {
   return {
     type: ALPHABETICAL_SORT,
@@ -211,9 +228,9 @@ export function languageFilter(payload) {
 }
 export function authorFilter(payload) {
   return {
-    type: AUTHOR_FILTER, 
-    payload
-  }
+    type: AUTHOR_FILTER,
+    payload,
+  };
 }
 export function addToCart(book) {
   return (dispatch, getState) => {
@@ -352,6 +369,77 @@ export function updateBook(book) {
     }
   };
 }
+export function activeAccount(user) {
+  return async function (dispatch) {
+    try {
+      await axios.patch(`${LOCAL_HOST}/users/all/${user.id}`, {
+        name: user.name,
+        lastName: user.lastName,
+        email: user.email,
+        role: user.role,
+        password: user.password,
+        isActive: true,
+        activationToken: user.activationToken,
+        token: user.token,
+        image: user.image,
+      });
+      dispatch({ type: ACTIVE_ACCOUNT, payload: user });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+}
+export function deactivateAccount(user) {
+  return async function (dispatch) {
+    try {
+      await axios.patch(`${LOCAL_HOST}/users/all/${user.id}`, {
+        name: user.name,
+        lastName: user.lastName,
+        email: user.email,
+        role: user.role,
+        password: user.password,
+        isActive: false,
+        activationToken: user.activationToken,
+        token: user.token,
+        image: user.image,
+      });
+      dispatch({ type: ACTIVE_ACCOUNT, payload: user });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+}
+export function makeAdmin(user) {
+  return async function (dispatch) {
+    try {
+      await axios.patch(`${LOCAL_HOST}/users/all/${user.id}`, {
+        name: user.name,
+        lastName: user.lastName,
+        email: user.email,
+        role: "admin",
+        password: user.password,
+        isActive: true,
+        activationToken: user.activationToken,
+        token: user.token,
+        image: user.image,
+      });
+      dispatch({ type: ACTIVE_ACCOUNT, payload: user });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+}
+export function deleteAccount(id) {
+  return async function (dispatch) {
+    try {
+      await axios.delete(`${LOCAL_HOST}/users/all/${id}`);
+      dispatch({ type: DELETE_ACCOUNT, payload: id });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+}
+
 // export function updateBook(
 //   id,
 //   name,
@@ -391,7 +479,7 @@ export function updateBook(book) {
 export const getUsers = () => async (dispatch) => {
   try {
     const usuarios = await axios.get(`${LOCAL_HOST}/users/profile`, {
-      headers: { "token": localStorage.token },
+      headers: { token: localStorage.token },
     });
 
     return dispatch({
@@ -428,22 +516,26 @@ export const updateUser = (id, data) => async (dispatch) => {
 
 export const getCart = (userId) => async (dispatch) => {
   try {
-    const cart = await axios.get(`${LOCAL_HOST}/cart/${userId}`)
+    const cart = await axios.get(`${LOCAL_HOST}/cart/${userId}`);
 
     console.log(cart);
     return dispatch({
       type: GET_CART,
-      payload: cart.data
-    })
+      payload: cart.data,
+    });
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-}
+};
 
 export const addCart = (data) => async (dispatch) => {
   try {
     const { bookId, name, price, image, quantity, userId } = data;
-    const cart = await axios.post('http://localhost:3001/cart', { userId, bookId, quantity });
+    const cart = await axios.post("http://localhost:3001/cart", {
+      userId,
+      bookId,
+      quantity,
+    });
 
     return dispatch(
       addToCart({
@@ -455,14 +547,14 @@ export const addCart = (data) => async (dispatch) => {
       })
     );
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-}
+};
 
 export const deleteCart = (data) => async (dispatch) => {
   try {
     const { bookId, name, price, image, quantity } = data;
-    const response = await axios.delete('http://localhost:3001/cart', { data });
+    const response = await axios.delete("http://localhost:3001/cart", { data });
 
     return dispatch(
       removeFromCart({
@@ -473,11 +565,10 @@ export const deleteCart = (data) => async (dispatch) => {
         quantity,
       })
     );
-
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-}
+};
 
 export function updateBookStock(id, newStock) {
   return async function (dispatch) {
