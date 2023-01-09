@@ -89,9 +89,9 @@ export default function BookDetails(props) {
   useEffect(() => {
     dispatch(getUsers())
     dispatch(getReview())
-  }, [dispatch])
+  }, [])
   
-  console.log(reviews.data);
+  console.log(reviews);
   
   /* console.log(reviews.data.viewReviews[1]); */
   const [stateModal1, setStateModal1] = useState(false)
@@ -199,18 +199,22 @@ export default function BookDetails(props) {
           <h2 className="bookTitle">{bookDetails.name}</h2>
           <p className="bookDescription">{bookDetails.description}</p>
         </div>
-{/*         <div>
-          {reviews.data.viewReviews.length > 0 ? (reviews.data.viewReviews.map(g => {
-            return(
-            <div>
-              {g.descript}
-              {g.votes}
-
-            </div>
-            )
-          })):(<div>Se el primero en dejar una reseña</div>)
+        <div>
+          {reviews &&
+           (reviews.map(g => {
+            if(g.bookId === bookDetails.id) {
+              return (
+                <div>
+                  <div>{g.descript}</div>
+                  <div>{g.votes}</div>
+                  <img src={g.user.image}></img>
+                </div>
+              )
+            }
+          }))
+          // :(<div>Se el primero en dejar una reseña</div>)
         }
-        </div> */}
+        </div>
         
       </div>
       {stateModal1 && 

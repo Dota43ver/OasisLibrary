@@ -185,7 +185,7 @@ export const getReview = () => (dispatch) => {
   return axios.get(`${LOCAL_HOST}/reviews`).then((review) => {
     dispatch({
       type: GET_REVIEW,
-      payload: review,
+      payload: review.data,
     });
   });
 };
