@@ -32,8 +32,8 @@ import {
   POST_REVIEW,
   GET_CART,
   AUTHOR_FILTER,
-  GET_REVIEW
-
+  GET_REVIEW,
+  GET_FAVS
 } from "./types";
 
 export const getBooks = () => (dispatch) => {
@@ -222,6 +222,19 @@ export function addToCart(book) {
     const newStock = currentBook.stock - book.quantity;
     // dispatch(updateBookStock(currentBook.id, newStock));
   };
+}
+
+export const getFavs = (userId) => async (dispatch) => {
+  try {
+    const favs = await axios.get(`${LOCAL_HOST}/favs/${userId}`)
+
+    return dispatch({
+      type: GET_FAVS,
+      payload: favs.data
+    })
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 export function addFavs(payload) {
@@ -480,6 +493,8 @@ export function updateBookStock(id, newStock) {
     }
   };
 }
+
+
 // export function updateBookStock(id, newStock) {
 //   return (dispatch) => {
 //     try {
