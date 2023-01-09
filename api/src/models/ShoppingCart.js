@@ -17,6 +17,10 @@ module.exports = (sequelize) => {
       quantity: {
         type: DataTypes.INTEGER,
         allowNull: false
+      },
+      active: {
+        type: DataTypes.BOOLEAN,
+        allowNull: true
       }
     },
     {

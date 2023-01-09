@@ -29,7 +29,7 @@ export default function Account({ setAuth }) {
       <NavBar></NavBar>
       <div className="account">
         <div className="left">
-          <Link className="orders"> Ordenes previas </Link>
+          <Link to={'/order'} className="orders"> Ordenes previas </Link>
           <Link className="orders"> Favoritos </Link>
           <Link className="orders"> Carrito </Link>
           {user && user.role === "admin" && (

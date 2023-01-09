@@ -4,7 +4,6 @@ import {
   ADD_FAVS,
   ADD_TO_CART,
   ALPHABETICAL_SORT,
-  AUTHOR_FILTER,
   CHECKOUT_CART,
   CLEAN_CACHE,
   CLEAR_CART,
@@ -36,7 +35,10 @@ import {
   UPDATE_USERS,
   UPDATE_BOOK_STOCK,
   POST_REVIEW,
+  AUTHOR_FILTER,
+  GET_ORDER,
   GET_FAVS
+
 } from "./types";
 
 export const getBooks = () => (dispatch) => {
@@ -229,9 +231,10 @@ export function languageFilter(payload) {
 export function authorFilter(payload) {
   return {
     type: AUTHOR_FILTER,
-    payload,
-  };
+    payload
+  }
 }
+
 export function addToCart(book) {
   return (dispatch, getState) => {
     dispatch({ type: ADD_TO_CART, payload: book });
@@ -585,6 +588,22 @@ export function updateBookStock(id, newStock) {
   };
 }
 
+export function getOrders(userId) {
+  return async function (dispatch) {
+    try {
+      const order = await axios.get(`${LOCAL_HOST}/checkout/${userId}`)
+
+      console.log(userId);
+      console.log(order.data);
+      return dispatch({
+        type: GET_ORDER,
+        payload: order.data
+      })
+    } catch (error) {
+      console.log(error);
+    }
+  }
+}
 
 // export function updateBookStock(id, newStock) {
 //   return (dispatch) => {
