@@ -6,6 +6,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {Link, useHistory} from 'react-router-dom';
 import oasis from "../NavBar/oasis.jpg"
 import GoogleRegister from "../GoogleRegister/GoogleRegister"
+import Swal from 'sweetalert2';
 
 
 const Register = ({setAuth}) => {

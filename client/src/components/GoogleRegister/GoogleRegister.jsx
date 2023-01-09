@@ -1,8 +1,11 @@
 import React from 'react';
 import GoogleLogin from 'react-google-login';
 import { gapi } from "gapi-script";
+import Swal from 'sweetalert2';
+import {useHistory} from "react-router-dom"
 
 export default function GoogleRegister(){
+    const history = useHistory()
 
     window.gapi.load('client:auth2', () => {
         window.gapi.client.init({
@@ -24,6 +27,13 @@ export default function GoogleRegister(){
 
         localStorage.setItem("Atoken",parseRes.token)
 
+        Swal.fire({
+            title: 'Registro exitoso',
+            text: 'Has registrado con éxito tu cuenta con Google ya podes iniciar sesion',
+            icon: 'success'
+          });
+          history.push("/login")
+
         };
         const onFailure = (err) => {
             console.log('failed:', err);
@@ -43,3 +53,4 @@ export default function GoogleRegister(){
         />
         )
 }
+
