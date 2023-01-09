@@ -107,10 +107,10 @@ export default function reducer(state = initialState, action) {
           state.bookDetails.author,
         ],
       };
-    case POST_BOOK:
-      return {
-        ...state,
-      };
+    // case POST_BOOK:
+    //   return {
+    //     ...state,
+    //   };
     case POST_REVIEW:
       return {
         ...state,
