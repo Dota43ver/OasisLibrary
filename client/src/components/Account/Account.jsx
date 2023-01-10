@@ -46,7 +46,7 @@ export default function Account({ setAuth }) {
                 Admin Dashboard
               </Link>
             )}
-            <Link className="orders"> Cerrar sesión </Link>
+            <Link className="orders" onClick={(e) => logout(e)}> Cerrar sesión </Link>
             <Link className="orders"> Eliminar cuenta </Link>
           </div>
 

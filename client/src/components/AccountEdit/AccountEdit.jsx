@@ -43,6 +43,10 @@ export default function Edit() {
         <div>
             <NavBar></NavBar>
             <div className="editAccount">
+                <img
+                    src="https://img.freepik.com/vector-gratis/gestion-recursos-humanos-analisis-abastecimiento-seleccion-seleccion-puestos-personaje-dibujos-animados-femenino-leyendo-solicitudes-empleo-cv-candidatos_335657-2682.jpg?w=2000"
+                    width="40%"
+                ></img>
                 <form className='editForm' onSubmit={handleUpdate}>
                     <h3>Editar información personal</h3>
                     <div>
