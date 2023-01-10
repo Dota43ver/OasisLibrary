@@ -327,7 +327,7 @@ export default function reducer(state = initialState, action) {
       case GET_FAVS:
         return {
           ...state,
-          favs: [...state.favs, action.payload],
+          favs: action.payload,
         };
 
     case ADD_FAVS:

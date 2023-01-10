@@ -18,6 +18,7 @@ import {
   scoreSort,
   addCart,
   getUsers,
+  getFavs,
 } from "../../actions";
 import Card from "../Card/Card";
 import CarouselBook from "../Carousel/Carousel";
@@ -59,6 +60,7 @@ export default function Home() {
     dispatch(getBooks());
     dispatch(getGenres());
     dispatch(getAuthors());
+    dispatch(getFavs(user.id))
   }, [dispatch]);
 
   const handleAddToCart = (el) => {
@@ -84,38 +86,40 @@ console.log(el.target.value);
       toast: true,
     });
   };
-
   const handleFavs = (el) => {
-    const liked = allFavs.find((e) => e.id === el.target.id)
-    let book = allBooks.find((e) => e.id === el.target.id);
-    if(liked) {
-        console.log(el.target.id);
-      dispatch(
-        removeFromFavs({
-          id: el.target.id
-        })
-        );
-      } else {
-        dispatch(
-          addFavs({
-            id: el.target.id,
-            name: book.name,
-            price: book.price,
-            image: book.image,
-          })
-          );
-          Swal.fire({
-            position: "bottom-left",
-            icon: "success",
-            title: "Libro agregado a favoritos",
-            showConfirmButton: false,
-            timerProgressBar: true,
-            timer: 4000,
-            toast: true,
-          });
-        }
-    }
-
+    console.log("soy los allFavs",allFavs);
+    const bookFav = allFavs.filter(e => e.data.id === el.target.value);
+    // console.log("PK",bookFav.id);
+    // console.log("bookId", {id:el.target.value});
+    console.log(bookFav);
+    if(allFavs[0]) {
+      console.log(allFavs[0].data.id);}
+    // if(bookFav) {
+    //   console.log("Entro al remove");
+    //   const body = {
+    //     bookId: el.target.value,
+    //     userId: user.id
+    //   }
+    //   dispatch(removeFromFavs(body))
+    // } else {
+      // console.log("Entro al add");
+      const body = {
+        bookId: el.target.value,
+        userId: user.id
+      }
+      dispatch(addFavs(body))
+    // }
+  }
+  // Swal.fire({
+  //   position: "bottom-left",
+  //   icon: "success",
+  //   title: "Libro agregado a favoritos",
+  //   showConfirmButton: false,
+  //   timerProgressBar: true,
+  //   timer: 4000,
+  //   toast: true,
+  // });
+  
   function handleRandomId() {
     const randomIndex = Math.floor(Math.random() * allBooks.length);
     const productIds = allBooks[randomIndex];
@@ -346,13 +350,12 @@ console.log(el.target.value);
                         onClick={(el) => handleFavs(el)}
                         // onClick={() => setBtnActive(!btnActive)}
                         className={"borderless-button"}
-                      >                      
+                      >                  
                           {  
                           allFavs.find((e) => e.id === el.id) ? 
-                          <div className="heart"><AiFillHeart id={el.id}/></div> : 
-                          <div className="heart"><AiOutlineHeart id={el.id}/></div>
+                          <button className="heart" value={el.id}>💗</button> : 
+                          <button className="heart"  value={el.id}>🤍</button>
                           }
-
                       </button>
                     </div>
                     <Link to={`/book/${el.id}`}>
