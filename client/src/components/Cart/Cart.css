@@ -6,10 +6,12 @@
   max-width: 165vh;
   margin-left: 2rem;
 }
+
 .checkDiv {
   padding-top: 1rem;
   padding-right: 1rem;
 }
+
 .checkoutBtn {
   background-color: #1c555e;
   color: white;
@@ -19,9 +21,11 @@
   width: 163px;
   height: 43px;
 }
+
 .infoBookCart {
   display: inline-block;
 }
+
 .itemCart {
   background-color: #d9d9d9;
   /* min-width: 200vh; */
@@ -33,9 +37,11 @@
   margin: 2rem;
   box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
+
 .cant {
   padding-left: 1rem;
 }
+
 .itemImg {
   min-width: 10rem;
   min-height: 20rem;
@@ -43,10 +49,12 @@
   max-height: 20rem;
   margin: 2rem;
 }
+
 .imgDiv {
   grid-area: 1 / 1 / 2 / 2;
   background-color: #a5a5a57b;
 }
+
 .namePriceDiv {
   grid-area: 1 / 2 / 2 / 7;
   display: flex;
@@ -55,6 +63,7 @@
   padding-bottom: 4rem;
   font-size: 1.7rem;
 }
+
 .quantityTotalDiv {
   grid-area: 1 / 5 / 7 / 8;
   display: flex;
@@ -67,18 +76,33 @@
   max-height: 18rem;
   margin: 2rem;
 }
+
 .btnDelete {
-  background-color: #d54444;
-  margin-top: 3rem;
-  max-width: 4rem;
-  cursor: pointer;
+  margin: 4px;
+  width: 145px;
+  height: 28px;
+
+  text-decoration: none;
+  color: white;
+  background: #AA7446;
+  border-radius: 4px;
+  border: none;
 }
+
+.btnDelete:hover {
+  cursor: pointer;
+  color: white;
+  background: #5E3613
+}
+
 .shopTitle {
   padding-left: 4rem;
 }
+
 .detailTitle {
   padding-left: 4rem;
 }
+
 .quantBtns {
   display: flex;
   border: 2px solid #1c555e;
@@ -90,6 +114,7 @@
   text-shadow: black 0.1em 0.1em 0.2em;
   cursor: pointer;
 }
+
 .quantBtns:hover {
   background-color: rgb(80, 130, 205);
   color: white;
