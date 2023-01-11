@@ -10,17 +10,17 @@ module.exports = (sequelize) => {
             allowNull: false,
             autoIncrement: true,
           },
-        bookTitle: {
-          type: DataTypes.STRING,
-          allowNull: false
-        },
-        price: {
-          type: DataTypes.STRING,
-          allowNull: false
-        },
-        image: {
-          type: DataTypes.STRING,
-        },
+        // bookTitle: {
+        //   type: DataTypes.STRING,
+        //   allowNull: false
+        // },
+        // price: {
+        //   type: DataTypes.INTEGER,
+        //   allowNull: false
+        // },
+        // image: {
+        //   type: DataTypes.STRING,
+        // },
     },
     {
       timestamps: false,

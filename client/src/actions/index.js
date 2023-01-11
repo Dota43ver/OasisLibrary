@@ -247,28 +247,34 @@ export function addToCart(book) {
 export const getFavs = (userId) => async (dispatch) => {
   try {
     const favs = await axios.get(`${LOCAL_HOST}/favs/${userId}`)
-
+    // console.log("soy getFavs", favs);
     return dispatch({
       type: GET_FAVS,
-      payload: favs.data
+      payload: favs
     })
   } catch (error) {
     console.log(error)
   }
 }
 
-export function addFavs(payload) {
-  return {
-    type: ADD_FAVS,
-    payload,
-  };
+export function addFavs(body) {
+  return async function(dispatch) {
+    const response = await axios.post(`${LOCAL_HOST}/favs`, body)
+    dispatch({
+      type: ADD_FAVS,
+      payload: response.data,
+    });
+  }
 }
 
-export function removeFromFavs(id) {
-  return {
-    type: REMOVE_FROM_FAVS,
-    payload: id,
-  };
+export function removeFromFavs(pk) {
+  return async function(dispatch){
+  const response = await axios.delete(`${LOCAL_HOST}/favs/${pk}`)
+    dispatch ({
+      type: REMOVE_FROM_FAVS,
+      payload: response.data,
+    });
+  }
 }
 
 export function removeFromCart(id) {

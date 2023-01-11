@@ -47,13 +47,14 @@ const initialState = {
   order: [],
   purchasedCart: [],
   favs: [],
+  newFavs: [],
   author: [],
   authorDetails: [],
   authorBooks: [],
   user: [],
   reviews: [],
   authors: [],
-  allUsers: [],
+  allUsers: []
 };
 
 export default function reducer(state = initialState, action) {
@@ -333,7 +334,7 @@ export default function reducer(state = initialState, action) {
     case ADD_FAVS:
       return {
         ...state,
-        favs: [...state.favs, action.payload],
+        newFavs: action.payload
       };
 
     case REMOVE_FROM_FAVS:

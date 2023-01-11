@@ -53,6 +53,11 @@ export default function Login({setAuth}){
 
     const {email, password} = input
 
+    function handleRefresh(e){
+        e.preventDefault()
+        window.location.href = window.location.href
+    }
+
     function handleChange(e){
         setInput({
             ...input,
@@ -136,12 +141,7 @@ return(
             <div className={style.divisor}>
             </div>
             <div className={style.button4}>
-
-            <Link to="/account">
             <GoogleSignin/>
-            </Link>
-            
-
             </div>
             <div className={style.button6}>
             <button className={style.button7}>¿No podes ingresar a tu cuenta?</button>
