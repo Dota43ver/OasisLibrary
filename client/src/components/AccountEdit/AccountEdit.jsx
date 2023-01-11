@@ -27,22 +27,30 @@ export default function Edit() {
             [e.target.lastName]: e.target.value,
             [e.target.mail]: e.target.value,
             [e.target.password]: e.target.value,
+            [e.target.image]: e.target.value,
         })
         // else {
         //     alert('Wrong or missing data')
         // }
+        console.log(updateAccount)
+        
     }
 
     function handleUpdate(e) {
         e.preventDefault();
         dispatch(updateUser(user.id, updateAccount));
         history.push("/account")
+        window.location.href = window.location.href
     }
 
     return (
         <div>
             <NavBar></NavBar>
             <div className="editAccount">
+                <img
+                    src="https://img.freepik.com/vector-gratis/gestion-recursos-humanos-analisis-abastecimiento-seleccion-seleccion-puestos-personaje-dibujos-animados-femenino-leyendo-solicitudes-empleo-cv-candidatos_335657-2682.jpg?w=2000"
+                    width="40%"
+                ></img>
                 <form className='editForm' onSubmit={handleUpdate}>
                     <h3>Editar información personal</h3>
                     <div>
@@ -63,6 +71,10 @@ export default function Edit() {
                     <div>
                         <label> Contraseña: </label>
                         <input type='password' name="password" placeholder="Contraseña" value={updateAccount.password} onChange={handleSubmit} />
+                    </div>
+                    <div>
+                        <label> image: </label>
+                        <input type='url' name="image" placeholder={user.image} value={updateAccount.image} onChange={handleSubmit} />
                     </div>
 
                     <button className="guardarBtn" onClick={handleUpdate}> Guardar Cambios </button>

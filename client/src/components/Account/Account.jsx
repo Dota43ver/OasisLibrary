@@ -26,6 +26,9 @@ export default function Account({ setAuth }) {
   const imagedefault =
     "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.webp";
 
+
+    console.log("esto es user",user)
+
   return (
     <div>
       <NavBar></NavBar>
@@ -46,7 +49,7 @@ export default function Account({ setAuth }) {
                 Admin Dashboard
               </Link>
             )}
-            <Link className="orders"> Cerrar sesión </Link>
+            <Link className="orders" onClick={(e) => logout(e)}> Cerrar sesión </Link>
             <Link className="orders"> Eliminar cuenta </Link>
           </div>
 
@@ -67,7 +70,7 @@ export default function Account({ setAuth }) {
                 className="datoimg"
                 name="image"
                 value={user.image}
-                src={user.image ? user.image : imagedefault}
+                src={user.image? user.image : imagedefault}
                 width="120px"
               ></img>
               {/* <Link> <p className="editimg"> Editar foto </p></Link> */}
@@ -81,7 +84,9 @@ export default function Account({ setAuth }) {
                 {" "}
                 Apellido: {user.lastName}{" "}
               </h3>
+              
               <h3 className="dato" name="email" value={user.email}>
+                
                 {" "}
                 Mail: {user.email}{" "}
               </h3>

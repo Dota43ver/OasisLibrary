@@ -1,7 +1,8 @@
 .editAccount {
-    margin: 2%;
+    margin: 1%;
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
 }
 
 .editForm {
@@ -9,7 +10,7 @@
     flex-direction: column;
     
     border-radius: 8px;
-    width: 700px;
+    width: 650px;
     height: max-content;
 
     justify-content: space-evenly;
