@@ -9,6 +9,7 @@ import {
   CLEAR_CART,
   DECREASE_QUANTITY,
   DELETE_ACCOUNT,
+  DELETE_BOOK,
   GENRE_FILTER,
   GET_ALL_USERS,
   GET_AUTHORS,
@@ -16,13 +17,15 @@ import {
   GET_AUTHOR_DETAILS,
   GET_BOOKS,
   GET_BOOK_DETAILS,
+  GET_CART,
+  GET_FAVS,
   GET_GENRES,
   GET_NAME_BOOKS,
+  GET_ORDER,
   GET_REVIEW,
   GET_USERS,
   INCREASE_QUANTITY,
   LANGUAGE_FILTER,
-  POST_BOOK,
   POST_REVIEW,
   PRICE_SORT,
   REMOVE_FROM_CART,
@@ -33,9 +36,6 @@ import {
   UPDATE_BOOK_STOCK,
   UPDATE_BOOK_STOCK_SUCCESS,
   UPDATE_USERS,
-  GET_CART,
-  GET_ORDER,
-  GET_FAVS,
 } from "../actions/types";
 
 const initialState = {
@@ -324,11 +324,11 @@ export default function reducer(state = initialState, action) {
         cart: updatedCartt,
       };
 
-      case GET_FAVS:
-        return {
-          ...state,
-          favs: [...state.favs, action.payload],
-        };
+    case GET_FAVS:
+      return {
+        ...state,
+        favs: [...state.favs, action.payload],
+      };
 
     case ADD_FAVS:
       return {
@@ -405,7 +405,11 @@ export default function reducer(state = initialState, action) {
         ...state,
         allUsers: state.allUsers.filter((user) => user.id !== action.payload),
       };
-
+    case DELETE_BOOK:
+      return {
+        ...state,
+        allBooks: state.allBooks.filter((book) => book.id !== action.payload),
+      };
     case UPDATE_BOOK_STOCK_SUCCESS:
       return {
         ...state,
@@ -418,8 +422,8 @@ export default function reducer(state = initialState, action) {
     case GET_ORDER:
       return {
         ...state,
-        order: action.payload
-      }
+        order: action.payload,
+      };
 
     default:
       return state;

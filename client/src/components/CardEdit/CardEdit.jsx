@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { updateBook } from "../../actions";
+import { destroyBook, updateBook } from "../../actions";
 import "./CardEdit.css";
 const Swal = require("sweetalert2");
 
@@ -71,6 +71,28 @@ export default function Card({
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
+  function handleDelete(id, formData) {
+    Swal.fire({
+      title: `Estás seguro de que quieres eliminar el libro: ${formData.name}?`,
+      icon: "`warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Sí, Eliminar",
+    }).then((result) => {
+      if (result.value) {
+        destroyBook(id);
+        Swal.fire(
+          "Hecho",
+          `${formData.name} fue eliminado correctamente`,
+          "success"
+        );
+      }
+      setTimeout(() => {
+        window.location.reload(false);
+      }, 2000);
+    });
+  }
   const handleSubmit = (event) => {
     event.preventDefault();
     if (validateForm()) {
@@ -184,12 +206,12 @@ export default function Card({
                 />
               )}
             </h3>
-            <h3>
-              Idioma:
+            <h3 style={{ paddingLeft: "2rem" }}>
               <select
                 name="language"
                 value={formData.language}
                 onChange={handleChange}
+                className="custom-select"
               >
                 <option value="" disabled>
                   Seleccione un idioma
@@ -199,8 +221,13 @@ export default function Card({
               </select>
             </h3>
             <h3>
-              Saga:
-              <select name="saga" value={formData.saga} onChange={handleChange}>
+              Saga: <span></span>
+              <select
+                name="saga"
+                value={formData.saga}
+                onChange={handleChange}
+                className="custom-select"
+              >
                 <option value="" disabled>
                   Seleccione una saga
                 </option>
@@ -216,6 +243,27 @@ export default function Card({
           </div>
         </div>
       </form>
+      <div className="delButDiv">
+        <button
+          className="deleteBut"
+          onClick={() => handleDelete(id, formData)}
+        >
+          <svg
+            width="1em"
+            height="1em"
+            viewBox="0 0 16 16"
+            class="bi bi-trash"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+            <path
+              fill-rule="evenodd"
+              d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
   );
 }

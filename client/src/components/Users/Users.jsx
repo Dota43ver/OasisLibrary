@@ -35,8 +35,6 @@ export default function Users() {
     dispatch(getAllUsers());
   }
   function handleMakeAdmin(user) {
-    dispatch(makeAdmin(user));
-
     Swal.fire({
       title: `¿Quieres hacer a ${user.email} administrador?`,
       icon: "`warning",
@@ -44,13 +42,17 @@ export default function Users() {
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
       confirmButtonText: "Sí, hacer administrador",
-    }).then((result) => {
-      if (result.value) {
-        handleMakeAdmin(user);
-        Swal.fire("Hecho", `${user.EMAIL} ahora es administrador`, "success");
-      }
-      dispatch(getAllUsers());
-    });
+    }).then(
+      (result) => {
+        if (result.value) {
+          makeAdmin(user);
+          Swal.fire("Hecho", `${user.EMAIL} ahora es administrador`, "success");
+        }
+      },
+      setTimeout(() => {
+        window.location.reload(false);
+      }, 2000)
+    );
   }
   function handleDeactivateAcc(user) {
     dispatch(deactivateAccount(user));

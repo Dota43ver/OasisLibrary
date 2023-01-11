@@ -26,3 +26,91 @@
 .nameEdit input {
   width: auto;
 }
+
+/* From uiverse.io by @alexruix */
+.dataEdit input {
+  line-height: 28px;
+  border: 2px solid transparent;
+  border-bottom-color: #777;
+  padding: 0.2rem 0;
+  outline: none;
+  background-color: transparent;
+  color: #0d0c22;
+  transition: 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.dataEdit input:focus,
+input:hover {
+  outline: none;
+  padding: 0.1rem 0.2rem;
+  border-radius: 1rem;
+  border-color: #7a9cc6;
+}
+
+.dataEdit input::placeholder {
+  color: #777;
+}
+
+.dataEdit input:focus::placeholder {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.dataEdit button {
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: 0;
+  background-color: rgb(56, 103, 255);
+  letter-spacing: 1.5px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  box-shadow: rgb(100, 46, 201) 0px 10px 0px 0px;
+  color: hsl(0, 0%, 100%);
+}
+
+.dataEdit button:hover {
+  box-shadow: rgb(65, 39, 179) 0px 7px 0px 0px;
+}
+.custom-select {
+  background-color: #f5f5f5;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  font-size: 1rem;
+  padding: 0.5rem;
+  width: 70%;
+}
+.dataEdit button:active {
+  background-color: rgb(56, 136, 255);
+  /*50, 168, 80*/
+  box-shadow: rgb(40, 114, 175) 0px 0px 0px 0px;
+  transform: translateY(5px);
+  transition: 200ms;
+}
+.delButDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.deleteBut {
+  padding: 8px 5px;
+  border-radius: 7px;
+  border: 0;
+  background-color: rgb(255, 56, 86);
+  letter-spacing: 1.5px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  box-shadow: rgb(201, 46, 70) 0px 5px 0px 0px;
+  color: hsl(0, 0%, 100%);
+}
+
+.deleteBut:hover {
+  box-shadow: rgb(201, 46, 70) 0px 7px 0px 0px;
+}
+
+.deleteBut:active {
+  background-color: rgb(255, 56, 86);
+  /*50, 168, 80*/
+  box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;
+  transform: translateY(5px);
+  transition: 200ms;
+}
