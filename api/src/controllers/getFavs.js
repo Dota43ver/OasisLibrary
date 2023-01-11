@@ -2,7 +2,6 @@ const { getBooks } = require('../controllers/getBooks');
 const { Favorites, Book } = require("../db")
 
 const getFavs = async (id) => {
-    const filteredBooks = [];
     const response = await Favorites.findAll({
         where: {
             usuarioId: id
@@ -11,7 +10,7 @@ const getFavs = async (id) => {
             {
                 model: Book,
                 as: "libro",
-                // attributes: ["name", "price", "image"]
+                attributes: ["name", "price", "image"]
             }
         ]
         // where: {
@@ -39,16 +38,7 @@ const getFavs = async (id) => {
         //     }
         // ],
     });
-
-    const favsId = response.map(e => e.dataValues.libroId);
-
-    const books = await getBooks();
-
-    for (let i = 0; i < favsId.length; i++) {
-        filteredBooks.push(books.filter(e => e.dataValues.id === favsId[i]))
-    }
-
-    return filteredBooks.flat(1)
+return  response
   };
 
   module.exports = getFavs;
