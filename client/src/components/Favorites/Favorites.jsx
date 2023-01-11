@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {useHistory} from "react-router-dom"
-import { addToCart, removeFromFavs, getUsers, getFavs } from "../../actions";
+import { addCart, removeFromFavs, getUsers, getFavs, priceSortFavs } from "../../actions";
 import NavBar from "../NavBar/NavBar";
 import "./Favorites.css";
 const Swal = require("sweetalert2");
@@ -9,10 +9,12 @@ const Swal = require("sweetalert2");
 export default function Favorites() {
   const user = useSelector((state) => state.user);
   const allFavs = useSelector((state) => state.favs);
+  const filteredFavs = useSelector((state) => state.filteredFavs);
   const history = useHistory();
   const dispatch = useDispatch();
   
   const [quantity, setQuantity] = useState(1);
+  const [refresh, setRefresh] = useState();
   
   useEffect( () => {
     dispatch(getUsers())
@@ -20,22 +22,27 @@ export default function Favorites() {
     // allFavs.length > 0 ? history.push("/favorites") : null
   },[dispatch, user.id]);
   
-  console.log("allFavs ", allFavs);
+  // console.log("allFavs ", allFavs);
   // let totalFavs;
 
+  const ultimo = allFavs.length - 1
+  console.log("allFavs ultimo: ",allFavs[ultimo]);
 
   const handleAddToCart = (i) => {
-    const addBooks = allFavs[ultimo].data.find((e) => e.id === i.target.value);
+    const addBooks = allFavs[ultimo].data.filter((e) => e.libroId === i.target.value);
+    console.log("soy cart",addBooks);
+    console.log("soy libroId",i.target.value);
     dispatch(
-      addToCart({
-        id: i.target.value,
-        name: addBooks.name,
-        price: addBooks.price,
-        image: addBooks.image,
+      addCart({
+        bookId: addBooks[0].libroId,
+        name: addBooks[0].libro.name,
+        price: addBooks[0].libro.price,
+        image: addBooks[0].libro.image,
         quantity: quantity,
+        userId: addBooks[0].usuarioId
       })
     );
-    console.log(i.target.value);
+    // console.log(i.target.value);
     Swal.fire({
       position: "bottom-left",
       icon: "success",
@@ -49,8 +56,7 @@ export default function Favorites() {
 
 
 
-  const ultimo = allFavs.length - 1
-  console.log("allFavs ultimo: ",allFavs[ultimo]);
+
   // console.log("punto data",allFavs[0].data);
   
   
@@ -61,6 +67,12 @@ export default function Favorites() {
     window.location.href = window.location.href;
   };
 
+  function handlePriceSort(e) {
+    e.preventDefault();
+    dispatch(priceSortFavs(e.target.value));
+    setRefresh();
+  }
+
   return (
     <div>
       <NavBar></NavBar>
@@ -69,15 +81,20 @@ export default function Favorites() {
         <h1> {user.name} tus favoritos son: </h1>
         <h4> Cantidad: {allFavs.length !== 0 ? allFavs[ultimo].data.length : null} </h4>
 
-        <div className="selectFavs">
+        {/* <div className="selectFavs">
           <h4> Ordenar items por: </h4>
 
-          <select>
-            <option> Agregados recientemente </option>
-            <option> Precio mayor a menor </option>
-            <option> Precio menor a mayor </option>
+          <select                 
+                className="select"
+                name="price"
+                onChange={(e) => handlePriceSort(e)}
+                value={refresh}
+          >
+            <option disabled selected value="default"> Agregados recientemente </option>
+            <option value="desc"> Precio mayor a menor </option>
+            <option value="asc"> Precio menor a mayor </option>
           </select>
-        </div>
+        </div> */}
       </div>
 
       <div className="cardFavs">
@@ -172,7 +189,7 @@ export default function Favorites() {
 
                   <button class="material-symbols-outlined">add</button>
                   <button
-                    value={i.id}
+                    value={i.libroId}
                     onClick={(i) => handleAddToCart(i)}
                     className="addAndDelete"
                   >
