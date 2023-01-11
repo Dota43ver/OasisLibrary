@@ -36,9 +36,9 @@ export default function NavBarDash() {
                     <Link to="/dashboard/bookedit">
                         <button className='createBtn'> <EditIcon/> Editar libros</button>
                     </Link>
-                    <Link to="/dashboard/users">
+                    {/* <Link to="/dashboard/users">
                         <button className='createBtn'> <PersonOutlineIcon/> Usuarios</button>
-                    </Link>
+                    </Link> */}
                 </div>
         </div>
     );

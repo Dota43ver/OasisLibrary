@@ -111,7 +111,7 @@ export default function Users() {
 
   return (
     <div>
-      <NavBarDash></NavBarDash>
+      {/* <NavBarDash></NavBarDash> */}
       {user && user.role === "admin" ? (
         <div>
           {allUsers.length > 0 ? (

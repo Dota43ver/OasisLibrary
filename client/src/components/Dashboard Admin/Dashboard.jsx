@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUsers } from "../../actions";
 import NavBarDash from "../NavBarDash/NavBarDash";
 import style from "./Dashboard.module.css";
+import Users from "../Users/Users"
 
 export default function Dashboard() {
   const dispatch = useDispatch();
@@ -19,6 +20,7 @@ export default function Dashboard() {
       {user && user.role === "admin" ? (
         <div>
           <NavBarDash></NavBarDash>
+          <Users></Users>
         </div>
       ) : (
         <div className={style.content}>
