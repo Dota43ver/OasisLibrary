@@ -114,6 +114,7 @@
 }
 
 .topCards>h4 {
+    min-height: 3rem;
     color:#5E3613;
     font-size: medium;
     font-weight: 500;
@@ -339,4 +340,5 @@
     display: flex;
     justify-content: center;
     font-size: 40px;
+    border: none;
 }
