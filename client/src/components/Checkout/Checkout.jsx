@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { checkoutCart, checkoutStock, getUsers } from "../../actions/index";
+import { checkoutCart, getUsers } from "../../actions/index";
 import NavBar from "../NavBar/NavBar";
 import "./Checkout.css";
 const Swal = require("sweetalert2");
@@ -12,23 +12,23 @@ export default function Checkout() {
   const purchasedCart = useSelector((state) => state.purchasedCart);
   const user = useSelector((state) => state.user);
 
-  const [couponCode, setCouponCode] = useState('');
+  const [couponCode, setCouponCode] = useState("");
   const [total, setTotal] = useState(0);
 
   const totalPrice = cart.reduce(
     (total, item) => total + item.price * item.quantity,
     0
   );
-  const handleCheckoutStock = () => {
-    dispatch(checkoutStock(cart, user));
-  };
+  // const handleCheckoutStock = () => {
+  //   dispatch(checkoutStock(cart, user));
+  // };
   useEffect(() => {
     if (purchasedCart.redirectURL)
       window.location.replace(purchasedCart.redirectURL);
   }, [purchasedCart]);
 
   let cupon = 0;
-  if (total !== 0) cupon = 0.2
+  if (total !== 0) cupon = 0.2;
 
   const handleCheckout = () => {
     dispatch(checkoutCart(cart, user, cupon));
@@ -57,7 +57,6 @@ export default function Checkout() {
       <NavBar />
 
       <div className="checkTitulo">
-        <button onClick={handleCheckoutStock}>stock</button>
         <h2> Checkout</h2>
         {
           <link
@@ -72,13 +71,13 @@ export default function Checkout() {
       <div className="checkInfo">
         <div className="checkUsuario">
           <h3> Información personal </h3>
-          {user ?
+          {user ? (
             <div>
               <p> Nombre: {user.name} </p>
               <p> Apellido: {user.lastName} </p>
               <p> Email: {user.email} </p>
             </div>
-            :
+          ) : (
             <div className="checkerror">
               <div>
                 <p> Registrate para poder continuar con la compra </p>
@@ -87,7 +86,7 @@ export default function Checkout() {
                 <button className="buttoncheck"> Sing In </button>
               </Link>
             </div>
-          }
+          )}
         </div>
 
         <div className="checkCompra">

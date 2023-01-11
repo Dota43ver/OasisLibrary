@@ -112,6 +112,7 @@ export default function Card({
             title: "¡Listo!",
             text: "Se ha actualizado el libro correctamente.",
           });
+          setIsEditable(true);
         }
       });
     }
@@ -124,6 +125,9 @@ export default function Card({
   const toggleDescription = () => {
     setDescriptionVisible(!descriptionVisible);
   };
+
+  const [isEditable, setIsEditable] = useState(true);
+
   return (
     <div className="cardEdits">
       <form className="cardEdit" onSubmit={handleSubmit}>
@@ -137,7 +141,9 @@ export default function Card({
             ></img>
 
             <h3 className="nameEdit">
+              Titulo:
               <input
+                disabled={isEditable}
                 type="text"
                 name="name"
                 value={formData.name}
@@ -147,6 +153,7 @@ export default function Card({
             <h3 className="nameEdit">
               Autor:
               <input
+                disabled={isEditable}
                 type="text"
                 name="author"
                 value={formData.author}
@@ -155,8 +162,9 @@ export default function Card({
             </h3>
 
             <h3 className="priceEdit">
-              $
+              Precio:
               <input
+                disabled={isEditable}
                 type="number"
                 name="price"
                 value={formData.price}
@@ -166,6 +174,7 @@ export default function Card({
             <h3 className="scoreEdit">
               Puntuación:
               <input
+                disabled={isEditable}
                 type="number"
                 name="score"
                 value={formData.score}
@@ -176,6 +185,7 @@ export default function Card({
             <h3>
               Stock:
               <input
+                disabled={isEditable}
                 type="number"
                 name="stock"
                 value={formData.stock}
@@ -185,6 +195,7 @@ export default function Card({
             <h3>
               Año:
               <input
+                disabled={isEditable}
                 type="number"
                 name="year"
                 value={formData.year}
@@ -195,7 +206,11 @@ export default function Card({
             <h3>
               {/* Muestra un botón si el textarea no está visible, o el textarea si está visible */}
               {!descriptionVisible ? (
-                <button type="button" onClick={toggleDescription}>
+                <button
+                  type="button"
+                  onClick={toggleDescription}
+                  disabled={isEditable}
+                >
                   Mostrar Descripción
                 </button>
               ) : (
@@ -208,6 +223,7 @@ export default function Card({
             </h3>
             <h3 style={{ paddingLeft: "2rem" }}>
               <select
+                disabled={isEditable}
                 name="language"
                 value={formData.language}
                 onChange={handleChange}
@@ -216,17 +232,17 @@ export default function Card({
                 <option value="" disabled>
                   Seleccione un idioma
                 </option>
-                <option value="español">Español</option>
-                <option value="ingles">Inglés</option>
+                <option value="Español">Español</option>
+                <option value="Ingles">Inglés</option>
               </select>
             </h3>
             <h3>
-              Saga: <span></span>
+              Saga:
               <select
                 name="saga"
                 value={formData.saga}
                 onChange={handleChange}
-                className="custom-select"
+                disabled={isEditable}
               >
                 <option value="" disabled>
                   Seleccione una saga
@@ -239,7 +255,21 @@ export default function Card({
                 </option>
               </select>
             </h3>
-            <button type="submit">Guardar</button>
+
+            {isEditable ? (
+              <button
+                onClick={() => setIsEditable(false)}
+                type="button"
+                key={`edit-${id}`}
+              >
+                {" "}
+                Editar{" "}
+              </button>
+            ) : (
+              <button type="submit" key={`save-${id}`}>
+                Guardar
+              </button>
+            )}
           </div>
         </div>
       </form>

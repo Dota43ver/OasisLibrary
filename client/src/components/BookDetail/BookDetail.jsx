@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { AiFillStar, AiOutlineStar } from "react-icons/ai";
+import React, { useEffect, useState, useRef } from "react";
+import { AiFillStar, AiOutlineStar} from "react-icons/ai";
+import {SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { addToCart, cleanCache, getBookDetails, postReview, getUsers, getReview} from "../../actions";
 import "../BookDetail/BookDetail.css";
 import NavBar from "../NavBar/NavBar.jsx";
@@ -21,7 +22,9 @@ function validate(input) {
 }
 
 export default function BookDetails(props) {
+  let reviewfilter;
   const dispatch = useDispatch();
+  const history = useHistory();
   const id = props.match.params.id;
   const [errors, setErrors] = useState({})
   const [quantity, setQuantity] = useState(1);
@@ -91,7 +94,50 @@ export default function BookDetails(props) {
     dispatch(getReview())
   }, [])
   
-  console.log(reviews);
+  const slideshow = useRef(null)
+
+  const next = () => {
+    if(slideshow.current.children.length > 0){
+      const primerElemento = slideshow.current.children[0];
+      slideshow.current.style.transition = `300ms ease-out all`
+
+      const sizeSlide = slideshow.current.children[0].offsetWidth;
+      slideshow.current.style.transform = `translateX(-${sizeSlide}px)`
+
+      const transition = () => {
+        slideshow.current.style.transition = 'none'
+        slideshow.current.style.transform = `translateX(0)`
+
+        slideshow.current.appendChild(primerElemento)
+        slideshow.current.removeEventListener('transitionend', transition)
+      }
+      slideshow.current.addEventListener('transitionend', transition)
+      console.log("next");
+    }
+  }
+
+  const back = () => {
+    if(slideshow.current.children.length > 0){
+      const index = slideshow.current.children.length - 1;
+      const ultimoElemento = slideshow.current.children[index];
+      slideshow.current.insertBefore(ultimoElemento, slideshow.current.firstChild);
+
+      const sizeSlide = slideshow.current.children[0].offsetWidth;
+      slideshow.current.style.transition = 'none';
+      slideshow.current.style.transform = `translateX(-${sizeSlide}px)`
+
+      setTimeout(() => {
+        slideshow.current.style.transition = `300ms ease-out all`;
+        slideshow.current.style.transform = `translateX(0)`
+      }, 30)
+    }
+  }
+
+  /* useEffect(() => {
+    setInterval(() => {
+      next()
+    }, 5000)
+  }, []) */
   
   /* console.log(reviews.data.viewReviews[1]); */
   const [stateModal1, setStateModal1] = useState(false)
@@ -115,7 +161,7 @@ export default function BookDetails(props) {
       [g.target.name]: g.target.value
   }))
   }
-  
+  console.log(reviews);
 
   function handleSubmit(g){
     g.preventDefault();
@@ -127,7 +173,14 @@ export default function BookDetails(props) {
       bookId:bookDetails.id
     }
     dispatch(postReview(review))
-    alert('Reseña Creada')
+    Swal.fire({
+      icon: "success",
+      title: "Review añadida correctamente",
+    });
+    setTimeout(() => {
+      window.location.href = window.location.href
+    }, 1500);
+    
   }
   
   let genreString;
@@ -142,7 +195,6 @@ export default function BookDetails(props) {
 
       <div className="allDetails">
         <div className="firstCont">
-          <button onClick={(g) => setStateModal1(!stateModal1)}>Reseña</button>
           <img className="bookImg" src={bookDetails.image} alt="" />
           <h3 className="score1">
             {" "}
@@ -199,24 +251,74 @@ export default function BookDetails(props) {
           <h2 className="bookTitle">{bookDetails.name}</h2>
           <p className="bookDescription">{bookDetails.description}</p>
         </div>
-        <div>
-          {reviews &&
-           (reviews.map(g => {
-            if(g.bookId === bookDetails.id) {
-              return (
-                <div>
-                  <div>{g.descript}</div>
-                  <div>{g.votes}</div>
-                  <img src={g.user.image}></img>
-                </div>
-              )
-            }
-          }))
-          // :(<div>Se el primero en dejar una reseña</div>)
-        }
-        </div>
-        
+       
       </div>
+      {
+          reviews?.map(e =>  {
+            if(e.bookId === bookDetails.id){
+              reviewfilter = true
+            }})
+          }{reviewfilter?
+          
+              (<div className="cajita">
+              <h1 className="tituloReview">Comentarios</h1>
+              <button className="cartButton" onClick={(g) => setStateModal1(!stateModal1)}>Añadir Reseña</button>
+              <main className="holasxd">
+          
+              <div ref={slideshow} className="contenederTotalSlide"> 
+                {reviews &&
+                 (reviews.map(g => {
+                   if(g.bookId === bookDetails.id) {
+                     return (
+                       <div className="contenderReview1">
+                        
+                        
+                          <div className="contenderReview">
+                            <img className="imagePerfil1" src={g.user.image}></img>
+                            <h2 className="nameUser">{g.user.name + " " + g.user.lastName}</h2>
+                            <h3 className="textReview">{g.descript}</h3>
+                            
+                            <h3 className="score1">
+                              {" "}
+                              {[...new Array(5)].map((star, index) => {
+                                return index < g.votes ? (
+                                  <AiFillStar />
+                                ) : (
+                                  <AiOutlineStar />
+                                );
+                              })}{" "}
+                            </h3>
+                          </div>
+                        
+                        <div className="buttonReview">
+                          <button onClick={back} className="button2Re">◀</button>
+                          <button onClick={next} className="button2ReDerecha">▶</button>
+                        </div>
+                      </div>
+                    )
+                  }
+                }))
+                // :(<div>Se el primero en dejar una reseña</div>)
+              }
+      
+              </div>
+              </main>
+            </div>): 
+              
+             (
+              <div className="cajita">
+              <h1 className="tituloReview">Comentarios</h1>
+              <button className="cartButton" onClick={(g) => setStateModal1(!stateModal1)}>Añadir Reseña</button>
+              <div>
+                <h1 className="nameUser">Se el primero en dejar una reseña.</h1>
+              </div>
+              </div>
+              )
+            
+
+
+        }
+      
       {stateModal1 && 
       <div className="overlay">
         
@@ -240,7 +342,7 @@ export default function BookDetails(props) {
                             <p className="error">{errors.votes}</p>
                         )}
                     </div>
-                    <button className="submitReview" type= 'submit' disabled={!input.descript || !input.votes}>Crear Actividad</button>
+                    <button className="submitReview" type= 'submit' disabled={!input.descript || !input.votes}>Crear Reseña</button>
                 </form>
           </div>
         </div>
