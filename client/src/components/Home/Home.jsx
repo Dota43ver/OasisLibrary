@@ -36,6 +36,7 @@ export default function Home() {
   const user = useSelector((state) => state.user);
   const allAuthors = useSelector((state) => state.authors);
   const allFavs = useSelector((state) => state.favs);
+  const newFavs = useSelector((state) => state.newFavs);
   const dispatch = useDispatch();
   const [currentPage, setCurrentPage] = useState(1);
   const [booksPerPage, setBooksPerPage] = useState(20);
@@ -61,7 +62,7 @@ export default function Home() {
     dispatch(getGenres());
     dispatch(getAuthors());
     dispatch(getFavs(user.id))
-  }, [dispatch]);
+  }, [dispatch, user.id]);
 
   const handleAddToCart = (el) => {
     const addBooks = allBooks.find((e) => e.id === el.target.value);
@@ -86,14 +87,15 @@ console.log(el.target.value);
       toast: true,
     });
   };
+  console.log("soy los allFavs",allFavs);
+  console.log("soy los allFavs",newFavs);
+
   const handleFavs = (el) => {
-    console.log("soy los allFavs",allFavs);
-    const bookFav = allFavs.filter(e => e.data.id === el.target.value);
-    // console.log("PK",bookFav.id);
-    // console.log("bookId", {id:el.target.value});
-    console.log(bookFav);
+    // const bookFav = newFavs.length > 0 ? newFavs.data.filter(e => e.data.id === el.target.value) : "filter roto";
+
     if(allFavs[0]) {
-      console.log(allFavs[0].data.id);}
+      console.log(allFavs[0].data.id);
+    }
     // if(bookFav) {
     //   console.log("Entro al remove");
     //   const body = {
@@ -108,6 +110,7 @@ console.log(el.target.value);
         userId: user.id
       }
       dispatch(addFavs(body))
+      dispatch(getFavs(user.id))
     // }
   }
   // Swal.fire({
@@ -352,8 +355,8 @@ console.log(el.target.value);
                         className={"borderless-button"}
                       >                  
                           {  
-                          allFavs.find((e) => e.id === el.id) ? 
-                          <button className="heart" value={el.id}>💗</button> : 
+                          // allFavs?.find((e) => e.id === el.id) ? 
+                          // <button className="heart" value={el.id}>💗</button> : 
                           <button className="heart"  value={el.id}>🤍</button>
                           }
                       </button>
