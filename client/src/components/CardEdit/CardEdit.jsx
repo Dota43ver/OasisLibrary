@@ -47,8 +47,12 @@ export default function Card({
       Swal.fire("Error", "El precio debe ser mayor a 0", "error");
       return false;
     }
-    if (formData.score < 0) {
-      Swal.fire("Error", "La puntuación debe ser mayor o igual a 0", "error");
+    if (formData.score < 0 || formData.score > 5) {
+      Swal.fire(
+        "Error",
+        "La puntuación debe ser mayor o igual a 0 y menor que 5",
+        "error"
+      );
       return false;
     }
     if (formData.stock < 0) {
