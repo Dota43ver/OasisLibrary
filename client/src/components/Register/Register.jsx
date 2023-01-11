@@ -119,7 +119,7 @@ const Register = ({setAuth}) => {
             </div>
             <div className={style.text}>
             <h3 className={style.text1}>Hola!</h3>
-            <h4 className={style.text2}>crea tu cuenta</h4>
+            <h4 className={style.text2}>Creá tu cuenta...</h4>
             </div>
             <div className={style.inputContainer}>
             <input type="text" name="name" value={inputs.name} id="" placeholder='Nombre' onChange={(e)=>onChange(e)} className={style.inputs}></input>

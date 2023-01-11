@@ -49,7 +49,7 @@ export default function GoogleSignin({setAuth}){
 
         <GoogleLogin
         clientId="643207090110-euugpdnslg50a08q6blb58ah3vi3b2l2.apps.googleusercontent.com"
-        buttonText="Login with google"
+        buttonText="Login with Google"
         onSuccess={onSuccess}
         onFailure={onFailure}
         cookiePolicy={'single_host_origin'}

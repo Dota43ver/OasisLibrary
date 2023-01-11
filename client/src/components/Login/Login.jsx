@@ -119,7 +119,7 @@ return(
             </div>
             <div className={style.text}>
             <h3 className={style.text1}>Hola!</h3>
-            <h4 className={style.text2}>Inicia tu sesión debajo</h4>
+            <h4 className={style.text2}>Inicia sesión debajo...</h4>
             </div>
             <div className={style.inputContainer}>
             <input type="text" name="email" value={input.email} id="" placeholder='Email' onChange={(e)=>handleChange(e)} className={style.inputs}></input>

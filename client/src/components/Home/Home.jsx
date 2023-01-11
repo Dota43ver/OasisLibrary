@@ -249,7 +249,7 @@ console.log(el.target.value);
                 value={refresh}
               >
                 <option disabled selected value="default">
-                  Alphabetical
+                  Alfabetico
                 </option>
                 <option value="atoz">A - Z</option>
                 <option value="ztoa">Z - A</option>
