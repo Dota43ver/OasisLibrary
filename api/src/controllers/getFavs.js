@@ -3,7 +3,9 @@ const { Favorites, Book } = require("../db")
 
 const getFavs = async (id) => {
     const response = await Favorites.findAll({
-
+        where: {
+            usuarioId: id
+        },
         include: [
             {
                 model: Book,
