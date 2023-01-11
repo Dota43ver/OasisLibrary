@@ -36,6 +36,7 @@ import {
   UPDATE_BOOK_STOCK,
   UPDATE_BOOK_STOCK_SUCCESS,
   UPDATE_USERS,
+  FAV_PRICE_SORT
 } from "../actions/types";
 
 const initialState = {
@@ -54,7 +55,8 @@ const initialState = {
   user: [],
   reviews: [],
   authors: [],
-  allUsers: []
+  allUsers: [],
+  filteredFavs: []
 };
 
 export default function reducer(state = initialState, action) {
@@ -211,6 +213,26 @@ export default function reducer(state = initialState, action) {
         ...state,
         books: sortedBooksByPrice,
       };
+    
+      case FAV_PRICE_SORT:
+        let sortedFavsByPrice = state.favs[0].data;
+        sortedFavsByPrice =
+          action.payload === "asc"
+            ? state.books.sort(function (a, b) {
+                if (a.price > b.price) return 1;
+                if (a.price < b.price) return -1;
+                return 0;
+              })
+            : state.books.sort(function (a, b) {
+                if (a.price < b.price) return 1;
+                if (a.price > b.price) return -1;
+                return 0;
+              });
+        return {
+          ...state,
+          filteredFavs: sortedFavsByPrice,
+        };
+
     case GENRE_FILTER:
       const allBooksGenre = state.allBooks;
       if (action.payload === "all") return { ...state, books: state.allBooks };
