@@ -46,6 +46,7 @@
   }
 
   .buttonsDerecha {
+    display: flex;
     width: 60%
   }
 
@@ -57,14 +58,30 @@
 
 
 .main_container {
-  display: flex;
+  /* display: flex;
   align-items: center;
   background-color: #ECEBEB;
   height: 120px;
   justify-content: space-between;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   position: relative;
+  z-index: +1; */
+  /* Nuevos cambios 🔽 */
+  display: grid;
+  grid-template-columns: 10rem auto 30rem;
+  align-items: center;
+  background-color: #ECEBEB;
+  height: 120px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  position: relative;
   z-index: +1;
+  /* border: 3px solid pink; */
+}
+
+.main_container > a {
+  grid-column-start: 1;
+    grid-column-end: 2;
+    display: grid;
 }
 
 .container_image {
@@ -244,8 +261,6 @@
 }
 
 .allSearch {
-  position: relative;
-  margin: auto;
-  right: 20%;
+  display: grid;
   width: 40%;
 }
