@@ -31,13 +31,13 @@ export default function NavBarDash() {
 
                 <div className='linkCreate'>
                     <Link to="/dashboard/bookcreate">
-                        <button className='createBtn'> <AddIcon/> Add Books</button>
+                        <button className='createBtn'> <AddIcon/> Agregar Libros</button>
                     </Link>
                     <Link to="/dashboard/bookedit">
-                        <button className='createBtn'> <EditIcon/> Edit book</button>
+                        <button className='createBtn'> <EditIcon/> Editar libros</button>
                     </Link>
                     <Link to="/dashboard/users">
-                        <button className='createBtn'> <PersonOutlineIcon/> Users</button>
+                        <button className='createBtn'> <PersonOutlineIcon/> Usuarios</button>
                     </Link>
                 </div>
         </div>

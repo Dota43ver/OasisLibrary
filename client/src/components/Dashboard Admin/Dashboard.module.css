@@ -1,0 +1,9 @@
+.advertisment{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    font-size:xx-large;
+    margin-top: 10%;
+    color: red;
+    text-shadow: 4px 4px 5px rgba(255, 0, 0, 0.322), 0 0 1em rgba(0, 0, 255, 0), 0 0 0.2em rgba(0, 0, 255, 0);
+}

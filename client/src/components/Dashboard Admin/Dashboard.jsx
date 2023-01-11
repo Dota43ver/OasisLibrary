@@ -15,13 +15,14 @@ export default function Dashboard() {
 
   return (
     <div>
-      <NavBarDash></NavBarDash>
       {" "}
       {user && user.role === "admin" ? (
-        <div> admin </div>
+        <div>
+          <NavBarDash></NavBarDash>
+        </div>
       ) : (
         <div className={style.content}>
-          <h3>Registered Users Only</h3>
+          <h3 className={style.advertisment}>Acceso Restringido a Administradores</h3>
         </div>
       )}
     </div>
