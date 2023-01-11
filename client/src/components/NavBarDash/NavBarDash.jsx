@@ -25,8 +25,9 @@ export default function NavBarDash() {
                     </div>
                 </Link>
 
-
-                <h2 className='titleDash'>Dashboard Admin</h2>
+                <Link to='/dashboard'>
+                    <h2 className='titleDash'>Dashboard Admin</h2>
+                </Link>
 
 
                 <div className='linkCreate'>
