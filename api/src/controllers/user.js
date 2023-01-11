@@ -125,6 +125,8 @@ async function updateUser(id, data) {
       await User.update({ lastName: data.lastName }, { where: { id: id } });
     if (data.email)
       await User.update({ email: data.email }, { where: { id: id } });
+    if(data.image)
+      await User.update({image: data.image}, { where: { id: id } })
     if (data.password) {
       let newPassword = await bcrypt.hash(data.password, 8);
       await User.update({ password: newPassword }, { where: { id: id } });

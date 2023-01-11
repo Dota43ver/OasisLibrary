@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import { getBooks, getGenres, postBook } from "../../actions";
+import NavBarDash from "../NavBarDash/NavBarDash";
 import "./BookCreate.css";
 import oasis from "./oasis.jpg";
 const Swal = require("sweetalert2");
@@ -155,16 +156,7 @@ export default function BookCreate() {
 
   return (
     <div>
-      <div className="barra">
-        <div className="barraContent">
-          <Link to="/home">
-            <img src={oasis} alt="" width="114px" height="105px" />
-          </Link>
-          <Link to="/dashboard">
-            <h2 className="title">Dashboard Admin</h2>
-          </Link>
-        </div>
-      </div>
+      <NavBarDash></NavBarDash>
       <div className="container">
         <img
           src="https://1.bp.blogspot.com/-hSPeHtslH-g/YEXh0nET5yI/AAAAAAAAA64/CedWFXdcmeQHL2QcbpKLZkMRg23Ly2mEACLcBGAsYHQ/s900/1576518279-1576518279_goodreads_misc.gif"

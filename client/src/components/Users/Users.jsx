@@ -9,6 +9,7 @@ import {
   getUsers,
   makeAdmin,
 } from "../../actions";
+import NavBarDash from "../NavBarDash/NavBarDash";
 import adminIcon from "./adminIcon.png";
 import oasis from "./oasis.jpg";
 import "./Users.css";
@@ -108,19 +109,7 @@ export default function Users() {
 
   return (
     <div>
-      <div className="barra">
-        <div className="barraContent">
-          <Link to="/home">
-            <img src={oasis} alt="" width="114px" height="105px" />
-          </Link>
-          <Link to="/dashboard">
-            <h2 className="title">Dashboard Admin</h2>
-          </Link>
-          <button className="ok-button" onClick={handleRefreshUsers}>
-            Refrescar
-          </button>
-        </div>
-      </div>
+      <NavBarDash></NavBarDash>
       {user && user.role === "admin" ? (
         <div>
           {allUsers.length > 0 ? (
