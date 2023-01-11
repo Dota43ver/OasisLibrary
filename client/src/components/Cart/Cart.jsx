@@ -171,7 +171,7 @@ export default function Cart() {
                 <div className="namePriceDiv">
                   <h3 className="itemName">{item.name}</h3>
                   <h3 className="itemPrice">Precio: ${item.price}</h3>
-                  <h3 className="itemStock">Stock:{item.stock}</h3>
+                  {/* <h3 className="itemStock">Stock:{item.stock}</h3> */}
                 </div>
                 <div className="quantityTotalDiv">
                   <h3 className="itemQuantity">Cantidad: {item.quantity}</h3>
