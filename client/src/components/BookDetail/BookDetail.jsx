@@ -3,7 +3,7 @@ import { AiFillStar, AiOutlineStar} from "react-icons/ai";
 import {SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
-import { addToCart, cleanCache, getBookDetails, postReview, getUsers, getReview} from "../../actions";
+import { addCart, cleanCache, getBookDetails, postReview, getUsers, getReview} from "../../actions";
 import "../BookDetail/BookDetail.css";
 import NavBar from "../NavBar/NavBar.jsx";
 const Swal = require("sweetalert2");
@@ -26,6 +26,7 @@ export default function BookDetails(props) {
   const dispatch = useDispatch();
   const history = useHistory();
   const id = props.match.params.id;
+  
   const [errors, setErrors] = useState({})
   const [quantity, setQuantity] = useState(1);
   useEffect(() => {
@@ -61,13 +62,22 @@ export default function BookDetails(props) {
       possible = false;
     } else if (possible === true) {
       dispatch(
-        addToCart({
-          id: bookDetails.id,
+        // addToCart({
+        //   id: bookDetails.id,
+        //   name: bookDetails.name,
+        //   price: bookDetails.price,
+        //   image: bookDetails.image,
+        //   stock: bookDetails.stock,
+        //   quantity: quantity,
+        // })
+        addCart({
+          bookId: bookDetails.id,
           name: bookDetails.name,
           price: bookDetails.price,
           image: bookDetails.image,
           stock: bookDetails.stock,
           quantity: quantity,
+          userId: user.id
         })
       );
       Swal.fire({
