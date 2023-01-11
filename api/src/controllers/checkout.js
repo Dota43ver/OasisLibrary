@@ -42,8 +42,8 @@ const checkoutMP = async (data) => {
             items: totalPurchase,
 
             back_urls: {
-                "success": "http://localhost:3000/success",
-                "failure": "http://localhost:3000/failure", //agregar pag de error
+                "success": "https://oasis-library.vercel.app/success",
+                "failure": "https://oasis-library.vercel.app/failure", //agregar pag de error
             },
         };
 

@@ -20,7 +20,7 @@ export default function Account({ setAuth }) {
   };
 
   function handleEdit() {
-    window.location.assign("http://localhost:3000/edit");
+    window.location.assign("https://oasis-library.vercel.app/edit");
   }
 
   const imagedefault =

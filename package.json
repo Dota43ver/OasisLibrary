@@ -1,8 +1,9 @@
 {
   "dependencies": {
+    "gapi-script": "^1.2.0",
     "json": "^11.0.0",
     "react-icons": "^4.7.1",
-    "sweetalert2": "^11.6.16" 
+    "sweetalert2": "^11.6.16"
   } ,
   "engines": {
     "node": "16.x"
