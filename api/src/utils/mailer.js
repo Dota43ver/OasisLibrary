@@ -12,9 +12,9 @@ let transporter = nodemailer.createTransport({
     //   user: process.env.MAIL_USER, // generated ethereal user
     //   pass: process.env.MAIL_PASSWORD, // generated ethereal password
     // },
-    host: "smtp-mail.outlook.com", // hostname
+    host: "smtp.mail.yahoo.com", // hostname
     port: 587, // port for secure SMTP
-    secureConnection: false,
+    secure: false,
     tls: {
        ciphers:'SSLv3'
     },
