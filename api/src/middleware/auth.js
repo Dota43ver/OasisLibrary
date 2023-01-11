@@ -6,8 +6,7 @@ async function verify(req, res, next) {
     try {
         // const token = req.header("auth-token");
 
-        let token = req.headers['x-access-token'] || req.headers['authorization'];
-        token = token.slice(7, token.length);
+        let token = req.header("token");
         if(!token) {
             res.status(404).send("There is no token");
         }
@@ -25,10 +24,21 @@ async function verify(req, res, next) {
         next();
         
     } catch (error) {
-        res.status(500).send({ errorMsg: error.message });
+
+       console.error(error)
+
     }
 }
 
+async function adminAuth(){
+    let user = await User.findOne({ where: { id: req.userID } });
+    if (user.role !== "admin") {
+      throw new Error({message: "El usuario no es administrador"});
+    }
+    next();
+}
+
 module.exports = {
-    verify
+    verify,
+    adminAuth
 }

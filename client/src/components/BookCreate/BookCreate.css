@@ -1,3 +1,26 @@
+.barra{
+    display: flex;
+    align-items:center;
+    background-color: #ECEBEB;
+    height: 130px;
+    justify-content: space-around;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    width: -webkit-fill-available;
+    z-index: +1;
+    position: relative;
+}
+
+.error {
+    color: red;
+}
+
+.barraContent{
+    display: flex;
+    align-items:center;
+    gap: 40px;
+    margin-left: 35px;
+}
+
 .container {
     display: flex;
     flex-direction: row;

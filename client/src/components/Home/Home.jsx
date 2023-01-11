@@ -1,28 +1,43 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import ScrollToTop from "react-scroll-to-top";
 import {
+  addFavs,
+  removeFromFavs,
+  addToCart,
   aplhabeticalSort,
+  authorFilter,
   genreFilter,
+  getAuthors,
   getBooks,
   getGenres,
   languageFilter,
   priceSort,
   sagaFilter,
   scoreSort,
-  addToCart,
-  addFavs,
+  addCart,
+  getUsers,
+  getFavs,
 } from "../../actions";
 import Card from "../Card/Card";
+import CarouselBook from "../Carousel/Carousel";
+import Float from "../FloatWApp/Float";
 import NavBar from "../NavBar/NavBar";
 import Paginated from "../Paginated/Paginated";
 import "./Home.css";
 
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+const Swal = require("sweetalert2");
+
 export default function Home() {
   const allBooks = useSelector((state) => state.books);
   const allGenres = useSelector((state) => state.genres);
+  const user = useSelector((state) => state.user);
+  const allAuthors = useSelector((state) => state.authors);
+  const allFavs = useSelector((state) => state.favs);
+  const newFavs = useSelector((state) => state.newFavs);
   const dispatch = useDispatch();
-
   const [currentPage, setCurrentPage] = useState(1);
   const [booksPerPage, setBooksPerPage] = useState(20);
   const indexLast = currentPage * booksPerPage;
@@ -39,37 +54,107 @@ export default function Home() {
   const [order, setOrder] = useState("");
   const [quantity, setQuantity] = useState(1);
 
+  const [productIds, setProductIds] = useState([]); // lista de IDs de productos
+
+  const [lastFaved, setLastFaved] = useState([]); // aca se guarda el ultimo fav localmente
+
   useEffect(() => {
+    dispatch(getUsers())
     dispatch(getBooks());
     dispatch(getGenres());
-  }, [dispatch]);
+    dispatch(getAuthors());
+    dispatch(getFavs(user.id))
+  }, [dispatch, user.id]);
 
   const handleAddToCart = (el) => {
-    const addBooks = allBooks.find(e => e.id === el.target.value)
+    const addBooks = allBooks.find((e) => e.id === el.target.value);
+console.log(el.target.value);
     dispatch(
-      addToCart({
-        id: el.target.value,
+      addCart({
+        userId: user.id,
+        bookId: addBooks.id,
         name: addBooks.name,
         price: addBooks.price,
         image: addBooks.image,
         quantity: quantity,
-
       })
     );
-    alert('Item agregado')
+    Swal.fire({
+      position: "bottom-left",
+      icon: "success",
+      title: "Libro agregado al carrito",
+      showConfirmButton: false,
+      timerProgressBar: true,
+      timer: 4000,
+      toast: true,
+    });
   };
+  console.log("soy los allFavs",allFavs);
+  console.log("soy los lastFaved",lastFaved);
 
-  const handleAddFavs = (el) => {
-    const favsBooks = allBooks.find(e => e.id === el.target.id)
-    dispatch(
-      addFavs({
-        id: el.target.id,
-        name: favsBooks.name,
-        price: favsBooks.price,
-        image: favsBooks.image,
-      })
-    );
+  const handleFavs = (el) => {
+    let bookFav;
+   if(allFavs.length > 0){
+     bookFav = allFavs[allFavs.length - 1].data.filter(e => e.libroId === el.target.value);
+    }
+
+      if (!user) {
+        Swal.fire({
+          position: "bottom-left",
+          icon: "error",
+          title: "Por favor, inicia sesión",
+          showConfirmButton: false,
+          timerProgressBar: true,
+          timer: 4000,
+          toast: true,
+        })
+      } else if (bookFav.length){
+        Swal.fire({
+          position: "bottom-left",
+          icon: "error",
+          title: "Ya se ha añadido a favoritos",
+          showConfirmButton: false,
+          timerProgressBar: true,
+          timer: 4000,
+          toast: true,
+        });
+      } else if(lastFaved[0] === el.target.value) {
+        Swal.fire({
+          position: "bottom-left",
+          icon: "error",
+          title: "Ya se ha añadido a favoritos",
+          showConfirmButton: false,
+          timerProgressBar: true,
+          timer: 4000,
+          toast: true,
+        });
+      } else if(user && !bookFav.length) {
+      const body = {
+        bookId: el.target.value,
+        userId: user.id
+      }
+
+      dispatch(addFavs(body))
+      dispatch(getFavs(user.id))
+        Swal.fire({
+          position: "bottom-left",
+          icon: "success",
+          title: "Libro agregado a favoritos",
+          showConfirmButton: false,
+          timerProgressBar: true,
+          timer: 4000,
+          toast: true,
+        });
+      setLastFaved([el.target.value])
+      }
   }
+  
+  function handleRandomId() {
+    const randomIndex = Math.floor(Math.random() * allBooks.length);
+    const productIds = allBooks[randomIndex];
+    setProductIds(productIds); // guarda el ID seleccionado al azar en el estado
+  }
+
 
   function handleClick(e) {
     e.preventDefault();
@@ -132,125 +217,186 @@ export default function Home() {
     setOrder(`Order ${e.target.value}`);
     setRefresh();
   }
+  function handleFilterByAuthor(e) {
+    e.preventDefault();
+    dispatch(authorFilter(e.target.value));
+    setCurrentPage(1);
+    setOrder(`Order ${e.target.value}`);
+    setRefresh();
+  }
   return (
+
     <div>
       <NavBar />
+      {/* <div className="carrusel"> */}
+        <CarouselBook />
+      {/* </div> */}
+      <Float />
+      <ScrollToTop smooth className="scroll" />
       <div className="all">
-        <div className="filtersDiv">
-          <h2> Filter by: </h2>
-          <button className="refreshButton" onClick={handleClick}>
-            Refresh books
-          </button>
-          <div>
-            <label>Ordenamieto</label>
-            <select
-              className="select"
-              name="alphabetical"
-              onChange={(e) => handleAlphabeticalSort(e)}
-              value={refresh}
-            >
-              <option disabled selected value="default">
-                Alphabetical
-              </option>
-              <option value="atoz">A - Z</option>
-              <option value="ztoa">Z - A</option>
-            </select>
-          </div>
-          <div>
-            <label> Precio </label>
-            <select
-              className="select"
-              name="price"
-              onChange={(e) => handlePriceSort(e)}
-              value={refresh}
-            >
-              <option disabled selected value="default">
-                Precio
-              </option>
-              <option value="asc">Menor</option>
-              <option value="desc">Mayor</option>
-            </select>
-          </div>
-          <div>
-            <label> Puntuación </label>
-            <select
-              className="select"
-              name="score"
-              onChange={(e) => handleScoreSort(e)}
-              value={refresh}
-            >
-              <option disabled selected value="default">
-                Puntuación
-              </option>
-              <option value="desc">Menor</option>
-              <option value="asc">Mayor</option>
-            </select>
-          </div>
-          <div>
-            <label>Géneros </label>
-            <select
-              className="select"
-              onChange={(e) => handlerFilterByGenre(e)}
-              value={refresh}
-            >
-              <option value="all">Todos</option>
-              {allGenres?.map((genre) => (
-                <option key={genre.id} value={genre.name}>
-                  {genre.name}
+        <div className="side">
+          <div className="filtersDiv">
+            <h2> Filtrar por: </h2>
+            <button className="refreshButton" onClick={handleClick}>
+              Refrescar libros
+            </button>
+            <div>
+              <label>Ordenamieto</label>
+              <select
+                className="select"
+                name="alphabetical"
+                onChange={(e) => handleAlphabeticalSort(e)}
+                value={refresh}
+              >
+                <option disabled selected value="default">
+                  Alphabetical
                 </option>
-              ))}
-            </select>
+                <option value="atoz">A - Z</option>
+                <option value="ztoa">Z - A</option>
+              </select>
+            </div>
+            <div>
+              <label> Precio </label>
+              <select
+                className="select"
+                name="price"
+                onChange={(e) => handlePriceSort(e)}
+                value={refresh}
+              >
+                <option disabled selected value="default">
+                  Precio
+                </option>
+                <option value="asc">Menor</option>
+                <option value="desc">Mayor</option>
+              </select>
+            </div>
+            <div>
+              <label> Puntuación </label>
+              <select
+                className="select"
+                name="score"
+                onChange={(e) => handleScoreSort(e)}
+                value={refresh}
+              >
+                <option disabled selected value="default">
+                  Puntuación
+                </option>
+                <option value="desc">Menor</option>
+                <option value="asc">Mayor</option>
+              </select>
+            </div>
+            <div>
+              <label>Géneros </label>
+              <select
+                className="select"
+                onChange={(e) => handlerFilterByGenre(e)}
+                value={refresh}
+              >
+                <option value="all">Todos</option>
+                {allGenres?.map((genre) => (
+                  <option key={genre.id} value={genre.name}>
+                    {genre.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label>Autores</label>
+              <select
+                className="select"
+                onChange={(e) => handleFilterByAuthor(e)}
+                value={refresh}
+              >
+                <option value="all">Todos</option>
+                {allAuthors?.map((author) => (
+                  <option key={author.id} value={author.name}>
+                    {author}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label>Saga </label>
+              <select
+                className="select"
+                onChange={(e) => handlerFilterBySaga(e)}
+                value={refresh}
+              >
+                <option value="all">Ninguna</option>
+                <option value="El señor de los anillos">
+                  Señor de los anillos
+                </option>
+                <option value="Harry Potter">Harry Potter</option>
+                <option value="Juego de Tronos">Juego de tronos</option>
+                <option value="Los Juegos Del Hambre">
+                  Los Juegos Del Hambre
+                </option>
+              </select>
+            </div>
+            <div>
+              <label>Idioma </label>
+              <select
+                className="select"
+                onChange={(e) => handlerFilterByLanguage(e)}
+                value={refresh}
+              >
+                <option value="all">Todos</option>
+                <option value="Español">Español</option>
+                <option value="Ingles">Inglés</option>
+              </select>
+            </div>
           </div>
-          <div>
-            <label>Saga </label>
-            <select
-              className="select"
-              onChange={(e) => handlerFilterBySaga(e)}
-              value={refresh}
-            >
-              <option value="all">Ninguna</option>
-              <option value="El señor de los anillos">
-                Señor de los anillos
-              </option>
-              <option value="Harry Potter">Harry Potter</option>
-              <option value="Juego de Tronos">Juego de tronos</option>
-            </select>
-          </div>
-          <div>
-            <label>Idioma </label>
-            <select
-              className="select"
-              onChange={(e) => handlerFilterByLanguage(e)}
-              value={refresh}
-            >
-              <option value="all">Todos</option>
-              <option value="Español">Español</option>
-              <option value="Ingles">Inglés</option>
-            </select>
+
+          <div className="azarAll">
+            <p> ¿No sabes qué leer? </p>
+            <button onClick={handleRandomId} className="azarButton">
+              {" "}
+              Encontrá un libro al azar{" "}
+            </button>
+            {productIds ? (
+              <div className="azar">
+                <a href={`/book/${productIds.id}`}>{productIds.name}</a>
+                {/* <p>{productIds.genre}</p> */}
+                <img src={productIds.image} width="150px" />
+              </div>
+            ) : null}
           </div>
         </div>
         <div className="home">
-          {currentBooks.length > 0
-            ? currentBooks.map((el) => {
+          {currentBooks.length > 0 ? (
+            currentBooks.map((el) => {
               return (
                 <div className="linkDetail">
                   <div className="content">
                     <div className="topCards">
-                      <h4>{el.name}</h4>
-                      {
-                        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
-                      }
-                      <button value={el.id} 
-                      onClick={(el) => handleAddFavs(el)} 
-                      // onClick={() => setBtnActive(!btnActive)} 
-                      className={btnActive ? 'borderless-button' : 'borderless-button'}>
-                        <i id={el.id} class="material-icons">favorite</i>
+                      <h4>
+                        {el.name.length > 32
+                          ? el.name.substr(0, 33) + "..."
+                          : el.name}
+                      </h4>
+                      <button
+                        value={el.id}
+                        onClick={(el) => handleFavs(el)}
+                        // onClick={() => setBtnActive(!btnActive)}
+                        className={"borderless-button"}
+                      >                  
+                          {  
+                          // allFavs?.find((e) => e.id === el.id) ? 
+                          // <button className="heart" value={el.id}>💗</button> : 
+                          <button className="heart"  value={el.id}>♡</button>
+                          }
                       </button>
                     </div>
                     <Link to={`/book/${el.id}`}>
                       <button className="detailButton"> Ver detalles </button>
                     </Link>
-                    <button value={el.id} onClick={(el) => handleAddToCart(el)} className="addButton">Agregar al carrito</button>
+                    <button
+                      value={el.id}
+                      onClick={(el) => handleAddToCart(el)}
+                      className="addButton"
+                    >
+                      Agregar al carrito
+                    </button>
                   </div>
                   <div className="cards">
                     <Card
@@ -263,7 +409,17 @@ export default function Home() {
                 </div>
               );
             })
-            : <div className="loading"><div><img src="https://media.tenor.com/nuCeLTABSTsAAAAM/jalan-book.gif" height="300px" width="200px"/></div></div>}
+          ) : (
+            <div className="loading">
+              <div>
+                <img
+                  src="https://media.tenor.com/nuCeLTABSTsAAAAM/jalan-book.gif"
+                  height="300px"
+                  width="200px"
+                />
+              </div>
+            </div>
+          )}
         </div>
         {/* <div onClick={e => prevPage(e)}>Previous</div> */}
 
@@ -277,10 +433,10 @@ export default function Home() {
         />
       </div>
       <div className="about">
-        <div >
-            <Link to = '/about'>
-              <p className="aboutBtn">About Us</p>
-            </Link>
+        <div>
+          <Link to="/about">
+            <p className="aboutBtn">About Us</p>
+          </Link>
         </div>
       </div>
     </div>

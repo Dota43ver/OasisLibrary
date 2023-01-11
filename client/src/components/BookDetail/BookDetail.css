@@ -1,14 +1,17 @@
 .allDetails {
-  margin-top: 6rem;
+  margin-top: 3rem;
   display: grid;
   grid-row-start: auto;
   grid-template-areas:
     "first second second"
     "first third third"
     "first third third";
-
-  /* box-shadow: ; */
 }
+
+.author:hover {
+  color: #1c555e;
+}
+
 .firstCont {
   background-color: #aa7446;
   max-width: 18rem;
@@ -42,6 +45,16 @@ a {
   display: flex;
   justify-content: center;
 }
+.reviewImg{
+  min-width: 5rem;
+  min-height: 15rem;
+  max-width: 10rem;
+  max-height: 20rem;
+  padding: 2rem;
+  padding-bottom: 15px;
+  display: flex;
+  justify-content: center;
+}
 .secondCont {
   background-color: #d9d9d9;
   grid-area: second;
@@ -67,7 +80,8 @@ a {
   padding-left: 2rem;
 }
 .bookDescription {
-  font-size: 1.4rem;
+  /* font-size: 1.4rem; */
+  font-size: 1.3rem;
   padding-left: 2rem;
   margin-right: 3rem;
 }
@@ -91,29 +105,39 @@ a {
   margin-top: 5px;
   cursor: pointer;
 }
+.backButton:hover {
+  background: #ba804e;
+}
 .cartButton {
   background-color: #1c555e;
   color: white;
-  font-size: 25px;
+  font-size: 20px;
   border-radius: 5px;
-  cursor: pointer;
+  cursor: pointer;  
   width: 163px;
   height: 43px;
 }
+.cartButton:hover {
+  background-color: #256c77;
+}
 .quantityControls {
-  border: 2px solid #1c555e;
+  /* border: 2px solid #1c555e95; */
   padding: 4px;
   border-radius: 6px;
   color: rgb(0, 0, 0);
   /* background-color: white; */
   font-weight: 500;
   text-shadow: black 0.1em 0.1em 0.2em;
-  cursor: pointer;
 }
 
 .quantityControls:hover {
-  background-color: rgb(80, 130, 205);
+  /* background-color: #1c555e95; */
   color: white;
+}
+
+.quantityBtn {
+  cursor: pointer;
+  font-size: larger;
 }
 
 .score1 {
@@ -122,3 +146,219 @@ a {
   justify-content: center;
   color: #1c555e;
 }
+
+.reviewContent{
+  display: flex;
+  z-index: 1;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: relative;
+  transform: none;
+  background-color: #d9d9d9;
+  width: 40%;
+  margin-block: 1%;
+  padding-right: 10%;
+  padding-left: 25%;
+  padding-inline: 2%;
+  grid-gap: 10px;
+  border-radius: 20px;
+  filter: drop-shadow(5px 5px 10px black);
+  padding-bottom: 10px;
+}
+.forms{
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.forms h1{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: #040d24;
+}
+.forms h2{
+  font-size: 21px;
+  font-family: "Pacifico",cursive;
+  color: rgb(37, 145, 162);
+}
+.formss{
+  position: initial;
+    transform: none;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    margin-block: 2%;
+    margin-right: 10%;
+    margin-left: 5%;
+    padding-inline: 5%;
+    grid-gap: 10px;
+    gap: 10px;
+    border-radius: 20px;
+    filter: drop-shadow(5px 5px 10px black);
+    background-color: #d9d9d9;
+    padding-bottom: 20px;
+    height: 100%;
+}
+
+.overlay{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0,.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeWindow{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  width: 30px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: #5e3614;
+}
+
+.closeWindow:hover{
+  background-color: #aa7446;
+}
+
+.dates{
+  font-size: 20px;
+}
+
+.date{
+  display: grid;
+  grid-gap: 25px;
+  gap: 25px;
+  padding: 5px;
+  width: 95%;
+}
+
+.submitReview{
+  display: grid;
+  grid-gap: 25px;
+  gap: 25px;
+  padding: 5px;
+  width: 100%;
+}
+
+.contenderReview1{
+  min-width: 100%;
+  overflow: hidden;
+  transition: 3.s ease all;
+  z-index: 10;
+  max-height: 500px;
+  position: relative;
+}
+
+.textReview{
+  padding-left: 3rem;
+  padding-right: 3rem;
+  min-width: 40rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.textPrueba{
+  background-color: red;
+}
+.contenderReview{
+  min-width: 100%;
+  vertical-align: top;
+  border-radius: 20px;
+  background-color: #d9d9d9;
+  align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-evenly;
+  align-content: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  
+}
+
+.tituloReview{
+  font-family: cursive;
+  margin: 0.3em 0;
+  font-size: 40px;
+  color: #2c95a5;
+}
+.imagePerfil1{
+  border-radius: 45px;
+  width: 90px;
+  border-radius: 50px;
+  width: 80px;
+  margin-top: 10px;
+}
+.contenederTotalSlide{
+  display: flex;
+  flex-wrap: nowrap;
+   
+}
+.nameUser{
+  font-family: "Pacifico",cursive;
+  color: #1c555e;
+}
+.holasxd{
+  max-width: 1000px;
+  margin: 50px auto;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.buttonReview{
+  position: absolute;
+  top: 0;
+  z-index: 20;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.button2Re{
+  pointer-events: all;
+  background: none;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  width: 50px;
+  height: 350px;
+  text-align: center;
+  position: absolute;
+  transition: 3s ease all;
+  
+
+  left: 0;
+}
+
+.button2ReDerecha{
+  pointer-events: all;
+  background: none;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  width: 50px;
+  height: 350px;
+  text-align: center;
+  position: absolute;
+  transition: 3s ease all;
+
+  right: 0;
+}
+
+.cajita{
+  background-color: rgb(57, 54, 54);
+  display: flex;
+  /* margin-bottom: 15px; */
+  flex-direction: column;
+  align-items: center;
+}
+

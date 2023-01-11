@@ -1,0 +1,140 @@
+@media screen and (max-width: 600px) {
+
+  .main_container {
+    width: fit-content;
+  }
+
+  .allSearch {
+    width: 40%;
+  }
+
+  .searchinner {
+    width: 50%;
+  }
+
+  .buscar {
+    width: 20%
+  }
+
+  .inputs1 {
+    width: 20%;
+  }
+
+  .button {
+    width: 50%;
+  }
+
+  .micuenta {
+    display: none;
+  }
+
+  .container_image {
+    margin-inline: 0px;
+  }
+
+  .container_image>img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .container_favs>button {
+    display: none;
+  }
+
+  .container_cart>button {
+    display: none;
+  }
+
+  .buttonsDerecha {
+    width: 60%
+  }
+
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  /* estilos para pantallas de tamaño entre 601px y 900px */
+}
+
+
+.main_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #ECEBEB;
+  height: 120px;
+  justify-content: space-between;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  position: relative;
+  z-index: +1;
+}
+
+.container_image {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-inline: 30px
+}
+
+.container_image>img {
+  padding-right: 10px;
+}
+
+
+.titleDash {
+  font-family: "Roboto";
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.linkCreate {
+  display: flex;
+  align-items: flex-end;
+  margin-inline: 51px;
+}
+
+.createBtn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 40px;
+  width: 120px;
+  margin: 10px;
+  background-color: #1c555e48;
+  border: none;
+  font-size: 14px;
+  font-family: "Roboto";
+}
+
+.createBtn:hover {
+  background-color: #1c555eb5;
+}
+
+.content {
+  /* background-color: rgba(255, 0, 0, 0.455); */
+  display: flex;
+  /* align-items: center; */
+  /* align-content: center; */
+  justify-content: center;
+  /* justify-items: center; */
+}
+
+.button {
+  font-family: "Roboto";
+  background-color: #1C555E;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 105px;
+  height: 30px;
+}
+
+.button:hover {
+  background-color: #14383d;
+  color: white
+}

@@ -1,6 +1,5 @@
 .authorInfo {
   background-color: #a5a5a5d3;
-
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
@@ -22,7 +21,11 @@
   align-items: center;
   padding-top: 4rem;
 }
-
+.imgDivv img {
+  max-width: 20rem;
+  max-height: 20rem;
+  border: solid black;
+}
 .authorBio {
   grid-area: 1 / 2 / 4 / 4;
   background-color: #d9d9d9;

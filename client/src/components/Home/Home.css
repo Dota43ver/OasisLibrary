@@ -1,8 +1,18 @@
+@media screen and (max-width: 600px) {
+    .carrusel {
+        display: none;
+    }
+}
+
 .home {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(205px, 1fr));
     width: 100%;
     margin: 20px;
+}
+
+.scroll{
+    margin-right: 4%;
 }
 
 .cards {
@@ -33,10 +43,11 @@
 .borderless-button {
     background-color: transparent;
     border: none;
-    outline: none;
     cursor: pointer;
+    align-self: center;
+    /* outline: none;
     color: #AA7446;
-    padding: 3px;
+    padding: 3px; */
 }
 
 .borderless-button:active i {
@@ -52,7 +63,8 @@
     display: flex;
     margin-inline: 10px;
     margin-top: 15px;
-    margin-bottom: 110px;
+    margin-bottom: 50px;
+    flex-direction: column;
 }
 
 .content {
@@ -102,6 +114,7 @@
 }
 
 .topCards>h4 {
+    min-height: 3rem;
     color:#5E3613;
     font-size: medium;
     font-weight: 500;
@@ -172,6 +185,62 @@
     justify-content: space-between;
 }
 
+.side {
+    display: flex;
+    flex-direction: column;
+}
+
+.azarAll {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-block-start: 31px;
+    margin-left: 10px;
+    padding-block: 18px;
+    padding-inline: 20px;
+
+    
+    background-color: #ECEBEB;
+    border-radius: 4px;
+    
+    max-width: 200px
+}
+
+.azar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.azar > a{
+    display: flex;
+    justify-content: center;
+
+    padding-block: 20px;
+    margin: 0px;
+
+    text-decoration: underline;
+
+    font-family: 'Roboto';
+    font-size: 16px;
+}
+
+.azar > a:hover {
+    color: #5E3613;
+    font-weight: 600;
+}
+
+.azar > p {
+    padding-bottom: 15px;
+    margin: 0px;
+
+    font-family: 'Roboto';
+    font-size: 14px;
+}
+
 .filtersDiv h2 {
     font-size: 20px;
     font-weight: 500;
@@ -215,6 +284,17 @@
     height: 28px;
 }
 
+.azarButton {
+    background-color: #1C555E;
+    border: none;
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    height: 30px;
+}
+
 .select {
     width: 150px;
 }
@@ -249,18 +329,23 @@
     border-radius: 5px;
     font-size:xx-large;
 }
-/* .div-imagen {
-    display: inline-block;
-    position: relative;
-    width: 170px;
-    height: 259px;
+
+.carrusel {
+    display: flex;
+    justify-content: center;
+    /* background-color: red; */
 }
 
-.div-imagen>div {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    padding: 10px;
-    margin: 0;
-} */
+.heart {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.heart:hover {
+    /* font-size: 50px; */
+    color: #AA7446
+}

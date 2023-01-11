@@ -1,0 +1,105 @@
+.checkTitulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.checkInfo {
+    display: flex;
+    margin-inline: 40px;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+
+.checkUsuario {
+    background-color: #ECEBEB;
+    border-radius: 8px; 
+    width: 60%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.checkCompra {
+    background-color: #ECEBEB;
+    border-radius: 8px;
+    width: 30%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.checkItems {
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    background-color: #cecece;
+    border-radius: 4px;
+    margin: 10px;
+    padding: 14px;
+    
+    font-size: 12px;
+    
+    width: 85%;
+    height: 80px;
+}
+
+.checkItems > div {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.checkItems > div > p {
+    margin-inline: 0px;
+    margin-block: 1px;
+}
+
+.checkItems > div > h3 {
+    margin-inline: 0px;
+    margin-block: 1px;
+}
+
+.buttoncheck {
+    cursor: pointer;
+    width: 150px;
+    height: 28px;
+
+    background: #AA7446;
+    border-radius: 4px;
+    border: none;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+
+    color: #FFFFFF;
+}
+
+.buttonCompra {
+    width: 90%;
+    height: 50px;
+
+    font-size:18px;
+    border-radius: 6px;
+    border: none;
+    background-color: #AA7446;
+    color: #FFFFFF;
+}
+
+.buttonCompra:hover {
+    cursor: pointer;
+    background-color: #5E3613;
+    color: #FFFFFF;
+}
+
+.checkerror {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

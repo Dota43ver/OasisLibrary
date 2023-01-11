@@ -8,6 +8,7 @@ module.exports = (sequelize) => {
     {
       name: {
         type: DataTypes.STRING,
+        unique: true,
         allowNull: false,
       },
       id: {
@@ -41,14 +42,21 @@ module.exports = (sequelize) => {
         type: DataTypes.TEXT,
         allowNull: false,
       },
+      authorDescription: {
+        type: DataTypes.TEXT,
+      },
+      authorImg: {
+        type: DataTypes.TEXT,
+      },
       language: {
         type: DataTypes.STRING,
         // allowNull: false,                  //Algunos libros no tienen language.
       },
       stock: {
-        type: DataTypes.BOOLEAN,
-        // allowNull: false,                  //Algunos libros no tienen score.
+        type: DataTypes.INTEGER,
+        defaultValue: 5,
       },
+
       image: {
         type: DataTypes.STRING,
         /* allowNull: false, */
