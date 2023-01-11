@@ -176,7 +176,7 @@ usersRouter.post("/googleSignIn", async (req, res) => {
 });
 usersRouter.post("/signUpWithGoogle", async (req, res) => {
   try {
-    const { email, name, lastName } = req.body;
+    const { email, name, lastName, image } = req.body;
     const isCreated = await User.findOne({
       where: { email, signedInWithGoogle: true },
     });
@@ -192,6 +192,7 @@ usersRouter.post("/signUpWithGoogle", async (req, res) => {
         lastName,
         isActive,
         signedInWithGoogle,
+        image
       },
     });
     const Atoken = jwt.sign({ id: user.id }, process.env.SECRET);
