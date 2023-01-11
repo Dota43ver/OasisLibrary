@@ -22,6 +22,7 @@ function validate(input) {
 }
 
 export default function BookDetails(props) {
+  let reviewfilter;
   const dispatch = useDispatch();
   const history = useHistory();
   const id = props.match.params.id;
@@ -160,7 +161,7 @@ export default function BookDetails(props) {
       [g.target.name]: g.target.value
   }))
   }
-  
+  console.log(reviews);
 
   function handleSubmit(g){
     g.preventDefault();
@@ -252,56 +253,72 @@ export default function BookDetails(props) {
         </div>
        
       </div>
-      <div className="cajita">
-        <h1 className="tituloReview">Comentarios</h1>
-        <button className="cartButton" onClick={(g) => setStateModal1(!stateModal1)}>Añadir Reseña</button>
-        <main className="holasxd">
-    
-        <div ref={slideshow} className="contenederTotalSlide"> 
-          {reviews &&
-           (reviews.map(g => {
-             if(g.bookId === bookDetails.id) {
-               return (
-                 <div className="contenderReview1">
-                  
-                  
-                    <div className="contenderReview">
-                      <img className="imagePerfil1" src={g.user.image}></img>
-                      <h2 className="nameUser">{g.user.name + " " + g.user.lastName}</h2>
-                      <h3 className="textReview">{g.descript}</h3>
-                      
-                      <h3 className="score1">
-                        {" "}
-                        {[...new Array(5)].map((star, index) => {
-                          return index < g.votes ? (
-                            <AiFillStar />
-                          ) : (
-                            <AiOutlineStar />
-                          );
-                        })}{" "}
-                      </h3>
-                    </div>
-                  
-                  <div className="buttonReview">
-                    <button onClick={back} className="button2Re">◀</button>
-                    <button onClick={next} className="button2ReDerecha">▶</button>
-                  </div>
-                </div>
+      {
+          reviews?.map(e =>  {
+            if(e.bookId === bookDetails.id){
+              reviewfilter = true
+            }})
+          }{reviewfilter?
+          
+              (<div className="cajita">
+              <h1 className="tituloReview">Comentarios</h1>
+              <button className="cartButton" onClick={(g) => setStateModal1(!stateModal1)}>Añadir Reseña</button>
+              <main className="holasxd">
+          
+              <div ref={slideshow} className="contenederTotalSlide"> 
+                {reviews &&
+                 (reviews.map(g => {
+                   if(g.bookId === bookDetails.id) {
+                     return (
+                       <div className="contenderReview1">
+                        
+                        
+                          <div className="contenderReview">
+                            <img className="imagePerfil1" src={g.user.image}></img>
+                            <h2 className="nameUser">{g.user.name + " " + g.user.lastName}</h2>
+                            <h3 className="textReview">{g.descript}</h3>
+                            
+                            <h3 className="score1">
+                              {" "}
+                              {[...new Array(5)].map((star, index) => {
+                                return index < g.votes ? (
+                                  <AiFillStar />
+                                ) : (
+                                  <AiOutlineStar />
+                                );
+                              })}{" "}
+                            </h3>
+                          </div>
+                        
+                        <div className="buttonReview">
+                          <button onClick={back} className="button2Re">◀</button>
+                          <button onClick={next} className="button2ReDerecha">▶</button>
+                        </div>
+                      </div>
+                    )
+                  }
+                }))
+                // :(<div>Se el primero en dejar una reseña</div>)
+              }
+      
+              </div>
+              </main>
+            </div>): 
+              
+             (
+              <div className="cajita">
+              <h1 className="tituloReview">Comentarios</h1>
+              <button className="cartButton" onClick={(g) => setStateModal1(!stateModal1)}>Añadir Reseña</button>
+              <div>
+                <h1 className="nameUser">Se el primero en dejar una reseña.</h1>
+              </div>
+              </div>
               )
-            }
-          }))
-          // :(<div>Se el primero en dejar una reseña</div>)
+            
+
+
         }
-        {
-          reviews.length !== 0 && (
-            <div>
-              <h1 className="nameUser">Se el primero en dejar una reseña.</h1>
-            </div>
-          )
-        }
-        </div>
-        </main>
-      </div>
+      
       {stateModal1 && 
       <div className="overlay">
         

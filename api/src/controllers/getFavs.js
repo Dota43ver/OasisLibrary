@@ -10,11 +10,11 @@ const getFavs = async (id) => {
                 as: "libro",
                 attributes: ["name", "price", "image"]
             }
-        ]
+        ]})
 
     return response;
 
 
-  };
+    };
 
   module.exports = getFavs;
