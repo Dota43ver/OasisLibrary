@@ -42,3 +42,5 @@ export const MAKE_ADMIN = "MAKE_ADMIN";
 export const DELETE_ACCOUNT = "DELETE_ACCOUNT";
 export const GET_FAVS = "GET_FAVS";
 export const DELETE_BOOK = "DELETE_BOOK";
+export const FAV_PRICE_SORT = "FAV_PRICE_SORT";
+

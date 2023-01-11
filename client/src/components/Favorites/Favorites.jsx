@@ -1,7 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {useHistory} from "react-router-dom"
-import { addCart, removeFromFavs, getUsers, getFavs } from "../../actions";
+import { useHistory } from "react-router-dom";
+import {
+  addCart,
+  getFavs,
+  getUsers,
+  priceSortFavs,
+  removeFromFavs,
+} from "../../actions";
 import NavBar from "../NavBar/NavBar";
 import "./Favorites.css";
 const Swal = require("sweetalert2");
@@ -9,26 +15,31 @@ const Swal = require("sweetalert2");
 export default function Favorites() {
   const user = useSelector((state) => state.user);
   const allFavs = useSelector((state) => state.favs);
+  const filteredFavs = useSelector((state) => state.filteredFavs);
   const history = useHistory();
   const dispatch = useDispatch();
-  
+
   const [quantity, setQuantity] = useState(1);
   const [refresh, setRefresh] = useState();
-  
-  useEffect( () => {
-    dispatch(getUsers())
-    dispatch(getFavs(user.id))
+
+  useEffect(() => {
+    dispatch(getUsers());
+    dispatch(getFavs(user.id));
     // allFavs.length > 0 ? history.push("/favorites") : null
-  },[dispatch, user.id]);
-  
-  console.log("allFavs ", allFavs);
+  }, [dispatch, user.id]);
+
+  // console.log("allFavs ", allFavs);
   // let totalFavs;
 
-  const ultimo = allFavs.length - 1
-  console.log("allFavs ultimo: ",allFavs[ultimo]);
+  const ultimo = allFavs.length - 1;
+  console.log("allFavs ultimo: ", allFavs[ultimo]);
 
   const handleAddToCart = (i) => {
-    const addBooks = allFavs[ultimo].data.filter((e) => e.libroId === i.target.value);
+    const addBooks = allFavs[ultimo].data.filter(
+      (e) => e.libroId === i.target.value
+    );
+    console.log("soy cart", addBooks);
+    console.log("soy libroId", i.target.value);
     dispatch(
       addCart({
         bookId: addBooks[0].libroId,
@@ -36,10 +47,10 @@ export default function Favorites() {
         price: addBooks[0].libro.price,
         image: addBooks[0].libro.image,
         quantity: quantity,
-        userId: addBooks[0].usuarioId
+        userId: addBooks[0].usuarioId,
       })
     );
-    console.log(i.target.value);
+    // console.log(i.target.value);
     Swal.fire({
       position: "bottom-left",
       icon: "success",
@@ -51,18 +62,20 @@ export default function Favorites() {
     });
   };
 
-
-
-  
   // console.log("punto data",allFavs[0].data);
-  
-  
+
   const handleRemoveFavs = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     dispatch(removeFromFavs(e.target.value));
     dispatch(getFavs(user.id));
     window.location.href = window.location.href;
   };
+
+  function handlePriceSort(e) {
+    e.preventDefault();
+    dispatch(priceSortFavs(e.target.value));
+    setRefresh();
+  }
 
   return (
     <div>
@@ -70,32 +83,40 @@ export default function Favorites() {
 
       <div className="infoTop">
         <h1> {user.name} tus favoritos son: </h1>
-        <h4> Cantidad: {allFavs.length !== 0 ? allFavs[ultimo].data.length : null} </h4>
+        <h4>
+          {" "}
+          Cantidad: {allFavs.length !== 0
+            ? allFavs[ultimo].data.length
+            : null}{" "}
+        </h4>
 
         {/* <div className="selectFavs">
           <h4> Ordenar items por: </h4>
 
-          <select>
-            <option> Agregados recientemente </option>
-            <option> Precio mayor a menor </option>
-            <option> Precio menor a mayor </option>
+          <select                 
+                className="select"
+                name="price"
+                onChange={(e) => handlePriceSort(e)}
+                value={refresh}
+          >
+            <option disabled selected value="default"> Agregados recientemente </option>
+            <option value="desc"> Precio mayor a menor </option>
+            <option value="asc"> Precio menor a mayor </option>
           </select>
         </div> */}
       </div>
 
       <div className="cardFavs">
+        {allFavs.length !== 0
+          ? allFavs[ultimo].data.map((i) => (
+              <div className="detailFavs">
+                <img src={i.libro.image} width="150px"></img>
+                <div className="infoFavs">
+                  <h3>{i.libro.name}</h3>
+                  <h3>Precio: ${i.libro.price}</h3>
+                </div>
 
-        {allFavs.length !== 0 ?
-        allFavs[ultimo].data.map((i) => (
-          
-          <div className="detailFavs">
-            <img src={i.libro.image} width="150px"></img>
-            <div className="infoFavs">
-              <h3>{i.libro.name}</h3>
-              <h3>Precio: ${i.libro.price}</h3>
-            </div>
-
-            {/* <div className="buttonFav">
+                {/* <div className="buttonFav">
               {
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
               }
@@ -105,7 +126,7 @@ export default function Favorites() {
               <button value={i.id} onClick={(i) => handleAddToCart(i)} className="addAndDelete"> Agregar al carrito </button>
             </div> */}
 
-            {/* <div className="btnStyles">
+                {/* <div className="btnStyles">
               <div className="buttonFav">
                 {
                   <link
@@ -157,12 +178,20 @@ export default function Favorites() {
 
                 <div className="buttonFav">
                   {
-                    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+                    <link
+                      rel="stylesheet"
+                      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+                    />
                   }
-                  <button class="material-symbols-outlined">
-                    delete
+                  <button class="material-symbols-outlined">delete</button>
+                  <button
+                    value={i.id}
+                    onClick={(e) => handleRemoveFavs(e)}
+                    className="addAndDelete"
+                  >
+                    {" "}
+                    Eliminar{" "}
                   </button>
-                  <button value={i.id} onClick={(e) => handleRemoveFavs(e)} className="addAndDelete" > Eliminar </button>
                 </div>
 
                 <div className="buttonFav">
@@ -183,10 +212,11 @@ export default function Favorites() {
                     Agregar al carrito{" "}
                   </button>
                 </div>
-              {/* </div> */}
-            {/* </div> */}
-          </div> 
-        )): null} 
+                {/* </div> */}
+                {/* </div> */}
+              </div>
+            ))
+          : null}
       </div>
     </div>
   );

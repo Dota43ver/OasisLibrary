@@ -62,6 +62,7 @@ export default function Cart() {
         );
       }
     });
+    window.location.href = window.location.href;
   };
 
   const handleIncreaseQuantity = (id) => {

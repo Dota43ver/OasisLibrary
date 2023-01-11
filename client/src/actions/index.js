@@ -36,6 +36,7 @@ import {
   UPDATE_BOOK,
   UPDATE_BOOK_STOCK_SUCCESS,
   UPDATE_USERS,
+  FAV_PRICE_SORT
 } from "./types";
 
 export const getBooks = () => (dispatch) => {
@@ -203,6 +204,13 @@ export function scoreSort(payload) {
 export function priceSort(payload) {
   return {
     type: PRICE_SORT,
+    payload,
+  };
+}
+
+export function priceSortFavs(payload) {
+  return {
+    type: FAV_PRICE_SORT,
     payload,
   };
 }
