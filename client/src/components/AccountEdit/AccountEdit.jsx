@@ -27,16 +27,20 @@ export default function Edit() {
             [e.target.lastName]: e.target.value,
             [e.target.mail]: e.target.value,
             [e.target.password]: e.target.value,
+            [e.target.image]: e.target.value,
         })
         // else {
         //     alert('Wrong or missing data')
         // }
+        console.log(updateAccount)
+        
     }
 
     function handleUpdate(e) {
         e.preventDefault();
         dispatch(updateUser(user.id, updateAccount));
         history.push("/account")
+        window.location.href = window.location.href
     }
 
     return (
@@ -63,6 +67,10 @@ export default function Edit() {
                     <div>
                         <label> Contraseña: </label>
                         <input type='password' name="password" placeholder="Contraseña" value={updateAccount.password} onChange={handleSubmit} />
+                    </div>
+                    <div>
+                        <label> image: </label>
+                        <input type='url' name="image" placeholder={user.image} value={updateAccount.image} onChange={handleSubmit} />
                     </div>
 
                     <button className="guardarBtn" onClick={handleUpdate}> Guardar Cambios </button>
