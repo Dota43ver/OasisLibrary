@@ -1,23 +1,20 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import {
+  addCart,
   decreaseQuantity,
+  deleteCart,
+  getBooks,
   getCart,
   getUsers,
-  addCart,
-  deleteCart,
-  increaseQuantity,
-  removeFromCart,
-  getBooks,
 } from "../../actions";
 import NavBar from "../NavBar/NavBar";
 import "./Cart.css";
 const Swal = require("sweetalert2");
 export default function Cart() {
-  const user = useSelector((state) => state.user)
-  const allBooks = useSelector((state => state.books))
+  const user = useSelector((state) => state.user);
+  const allBooks = useSelector((state) => state.books);
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const history = useHistory();
@@ -26,12 +23,10 @@ export default function Cart() {
   const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
-    if (user.length === 0)
-      dispatch(getUsers())
-    else
-      dispatch(getCart(user.id))
-    dispatch(getBooks())
-  }, [user])
+    if (user.length === 0) dispatch(getUsers());
+    else dispatch(getCart(user.id));
+    dispatch(getBooks());
+  }, [user]);
 
   console.log(cart);
 
@@ -41,7 +36,6 @@ export default function Cart() {
     0
   );
   const handleRemoveFromCart = (id) => {
-
     Swal.fire({
       title: "¿Estás seguro de querer eliminar este libro del carrito?",
       text: "Esta acción no se puede deshacer",
@@ -54,11 +48,13 @@ export default function Cart() {
     }).then((result) => {
       if (result.value) {
         const deleteBook = cart.find((e) => e.id === id);
-        dispatch(deleteCart({
-          userId: user.id,
-          bookId: id,
-          quantity: deleteBook.quantity,
-        }));
+        dispatch(
+          deleteCart({
+            userId: user.id,
+            bookId: id,
+            quantity: deleteBook.quantity,
+          })
+        );
         Swal.fire(
           "Eliminado",
           "El libro ha sido eliminado del carrito.",
@@ -78,14 +74,17 @@ export default function Cart() {
       });
     } else {
       const addBooks = allBooks.find((e) => e.id === id);
-      dispatch(addCart({
-        bookId: id,
-        name: addBooks.name,
-        price: addBooks.price,
-        image: addBooks.image,
-        quantity: quantity,
-        userId: user.id
-      }));
+      dispatch(
+        addCart({
+          bookId: id,
+          name: addBooks.name,
+          price: addBooks.price,
+          image: addBooks.image,
+          stock: addBooks.stock,
+          quantity: quantity,
+          userId: user.id,
+        })
+      );
     }
   };
 
@@ -108,8 +107,7 @@ export default function Cart() {
   };
 
   const handleDecreaseQuantity = (id) => {
-
-const deleteBooks = cart.find((e) => e.id === id);
+    const deleteBooks = cart.find((e) => e.id === id);
     if (deleteBooks.quantity <= 1) {
       Swal.fire({
         title: "¿Estás seguro de querer eliminar este libro del carrito?",
@@ -122,14 +120,16 @@ const deleteBooks = cart.find((e) => e.id === id);
         cancelButtonText: "Cancelar",
       }).then((result) => {
         if (result.value) {
-          dispatch(deleteCart({
-            bookId: id,
-            name: deleteBooks.name,
-            price: deleteBooks.price,
-            image: deleteBooks.image,
-            quantity: quantity,
-            userId: user.id
-          }));
+          dispatch(
+            deleteCart({
+              bookId: id,
+              name: deleteBooks.name,
+              price: deleteBooks.price,
+              image: deleteBooks.image,
+              quantity: quantity,
+              userId: user.id,
+            })
+          );
           Swal.fire(
             "Eliminado",
             "El libro ha sido eliminado del carrito.",

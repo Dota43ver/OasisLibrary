@@ -4,6 +4,7 @@ import {
   ADD_FAVS,
   ADD_TO_CART,
   ALPHABETICAL_SORT,
+  AUTHOR_FILTER,
   CHECKOUT_CART,
   CLEAN_CACHE,
   CLEAR_CART,
@@ -18,8 +19,10 @@ import {
   GET_BOOKS,
   GET_BOOK_DETAILS,
   GET_CART,
+  GET_FAVS,
   GET_GENRES,
   GET_NAME_BOOKS,
+  GET_ORDER,
   GET_REVIEW,
   GET_USERS,
   INCREASE_QUANTITY,
@@ -33,12 +36,6 @@ import {
   UPDATE_BOOK,
   UPDATE_BOOK_STOCK_SUCCESS,
   UPDATE_USERS,
-  UPDATE_BOOK_STOCK,
-  POST_REVIEW,
-  AUTHOR_FILTER,
-  GET_ORDER,
-  GET_FAVS
-
 } from "./types";
 
 export const getBooks = () => (dispatch) => {
@@ -231,8 +228,8 @@ export function languageFilter(payload) {
 export function authorFilter(payload) {
   return {
     type: AUTHOR_FILTER,
-    payload
-  }
+    payload,
+  };
 }
 
 export function addToCart(book) {
@@ -246,35 +243,35 @@ export function addToCart(book) {
 
 export const getFavs = (userId) => async (dispatch) => {
   try {
-    const favs = await axios.get(`${LOCAL_HOST}/favs/${userId}`)
+    const favs = await axios.get(`${LOCAL_HOST}/favs/${userId}`);
     // console.log("soy getFavs", favs);
     return dispatch({
       type: GET_FAVS,
-      payload: favs
-    })
+      payload: favs,
+    });
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-}
+};
 
 export function addFavs(body) {
-  return async function(dispatch) {
-    const response = await axios.post(`${LOCAL_HOST}/favs`, body)
+  return async function (dispatch) {
+    const response = await axios.post(`${LOCAL_HOST}/favs`, body);
     dispatch({
       type: ADD_FAVS,
       payload: response.data,
     });
-  }
+  };
 }
 
 export function removeFromFavs(pk) {
-  return async function(dispatch){
-  const response = await axios.delete(`${LOCAL_HOST}/favs/${pk}`)
-    dispatch ({
+  return async function (dispatch) {
+    const response = await axios.delete(`${LOCAL_HOST}/favs/${pk}`);
+    dispatch({
       type: REMOVE_FROM_FAVS,
       payload: response.data,
     });
-  }
+  };
 }
 
 export function removeFromCart(id) {
@@ -378,6 +375,38 @@ export function updateBook(book) {
     }
   };
 }
+// export function destroyBook(id) {
+//   console.log(`${LOCAL_HOST}/books/${id}`);
+//   return async function (dispatch) {
+//     try {
+//       await axios.delete(`${LOCAL_HOST}/books/${id}`);
+//       dispatch({ type: DELETE_BOOK, payload: id });
+//     } catch (error) {
+//       console.error(error);
+//     }
+//   };
+// } NO SE COMO ESTO NO FUNCIONA
+// export function destroyBook(id) {
+//   return async function (dispatch) {
+//     try {
+//       const res = await axios.delete(`${LOCAL_HOST}/books/${id}`);
+//       dispatch({ type: DELETE_BOOK, id });
+//       return Promise.resolve(res);
+//     } catch (error) {
+//       console.log(error);
+//       return Promise.reject(error);
+//     }
+//   };
+// }
+
+export function destroyBook(id) {
+  // ESTO FUNCIONA PERO NO UTILIZA PROMESAS
+  try {
+    axios.delete(`${LOCAL_HOST}/books/${id}`);
+  } catch (error) {
+    console.error(error);
+  }
+}
 export function activeAccount(user) {
   return async function (dispatch) {
     try {
@@ -419,25 +448,42 @@ export function deactivateAccount(user) {
   };
 }
 export function makeAdmin(user) {
-  return async function (dispatch) {
-    try {
-      await axios.patch(`${LOCAL_HOST}/users/all/${user.id}`, {
-        name: user.name,
-        lastName: user.lastName,
-        email: user.email,
-        role: "admin",
-        password: user.password,
-        isActive: true,
-        activationToken: user.activationToken,
-        token: user.token,
-        image: user.image,
-      });
-      dispatch({ type: ACTIVE_ACCOUNT, payload: user });
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  try {
+    axios.patch(`${LOCAL_HOST}/users/all/${user.id}`, {
+      name: user.name,
+      lastName: user.lastName,
+      email: user.email,
+      role: "admin",
+      password: user.password,
+      isActive: true,
+      activationToken: user.activationToken,
+      token: user.token,
+      image: user.image,
+    });
+  } catch (error) {
+    console.error(error);
+  }
 }
+// export function makeAdmin(user) {
+//   return async function (dispatch) {
+//     try {
+//       await axios.patch(`${LOCAL_HOST}/users/all/${user.id}`, {
+//         name: user.name,
+//         lastName: user.lastName,
+//         email: user.email,
+//         role: "admin",
+//         password: user.password,
+//         isActive: true,
+//         activationToken: user.activationToken,
+//         token: user.token,
+//         image: user.image,
+//       });
+//       dispatch({ type: ACTIVE_ACCOUNT, payload: user });
+//     } catch (error) {
+//       console.error(error);
+//     }
+//   };
+// }
 export function deleteAccount(id) {
   return async function (dispatch) {
     try {
@@ -597,18 +643,18 @@ export function updateBookStock(id, newStock) {
 export function getOrders(userId) {
   return async function (dispatch) {
     try {
-      const order = await axios.get(`${LOCAL_HOST}/checkout/${userId}`)
+      const order = await axios.get(`${LOCAL_HOST}/checkout/${userId}`);
 
       console.log(userId);
       console.log(order.data);
       return dispatch({
         type: GET_ORDER,
-        payload: order.data
-      })
+        payload: order.data,
+      });
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 }
 
 // export function updateBookStock(id, newStock) {
