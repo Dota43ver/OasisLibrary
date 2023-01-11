@@ -20,7 +20,7 @@ export default function GoogleSignin({setAuth}){
          setTimeout(() => {
             window.location.href = window.location.href
          }, 50); 
-          const response = await fetch("http://localhost:3001/users/googleSignIn",{
+          const response = await fetch("https://oasislibrary-production.up.railway.app/users/googleSignIn",{
             method: "POST",
             headers: {"Content-Type" : "application/json"}
             ,

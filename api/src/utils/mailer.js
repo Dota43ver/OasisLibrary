@@ -41,7 +41,7 @@ let transporter = nodemailer.createTransport({
                   Click the link below to verify your e-mail and start browsing our web !</p>
                   <br>
                   <div style="width: 100%; text-align: center">
-                    <a style="text-decoration: none; border-radius: 5px; padding: 11px 23px; color: white; background-color: #3498db" href= "http://localhost:3001/users/activateAccount/${token}">Verify e-mail</a>	
+                    <a style="text-decoration: none; border-radius: 5px; padding: 11px 23px; color: white; background-color: #3498db" href= "https://oasislibrary-production.up.railway.app/${token}">Verify e-mail</a>	
                   </div>
                   <p style="color: #b3b3b3; font-size: 12px; text-align: center;margin: 30px 0 0">Oasis Library 2022</p> 
                 </div>

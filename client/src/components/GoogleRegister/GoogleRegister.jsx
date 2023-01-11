@@ -16,7 +16,7 @@ export default function GoogleRegister(){
         const onSuccess = async (res) => {
           console.log(res)
           const body = {name:res.profileObj.givenName , lastName:res.profileObj.familyName, email:res.profileObj.email, image: res.profileObj.imageUrl}
-          const response = await fetch("http://localhost:3001/users/signUpWithGoogle",{
+          const response = await fetch("https://oasislibrary-production.up.railway.app/users/signUpWithGoogle",{
             method: "POST",
             headers: {"Content-Type" : "application/json"}
             ,

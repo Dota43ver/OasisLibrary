@@ -35,7 +35,7 @@ function App() {
 
   async function isAuth() {
     try {
-      const response = await fetch("http://localhost:3001/users/is-verify", {
+      const response = await fetch("https://oasislibrary-production.up.railway.app/users/is-verify", {
         method: "GET",
         headers: { token: localStorage.token },
       });
