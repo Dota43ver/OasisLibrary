@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getBooks, getGenres, getUsers } from "../../actions";
 import CardEdit from "../CardEdit/CardEdit";
+import NavBarDash from "../NavBarDash/NavBarDash";
 import "./BookEdit.css";
 import oasis from "./oasis.jpg";
 export default function BookEdit() {
@@ -91,16 +92,8 @@ export default function BookEdit() {
   // }
   return (
     <div>
-      <div className="barra">
-        <div className="barraContent">
-          <Link to="/home">
-            <img src={oasis} alt="" width="114px" height="105px" />
-          </Link>
-          <Link to="/dashboard">
-            <h2 className="title">Dashboard Admin</h2>
-          </Link>
-        </div>
-      </div>
+
+      <NavBarDash/>
 
       {user && user.role === "admin" ? (
         <div className="homeEdit">

@@ -250,7 +250,7 @@ export const getFavs = (userId) => async (dispatch) => {
     // console.log("soy getFavs", favs);
     return dispatch({
       type: GET_FAVS,
-      payload: favs.data
+      payload: favs
     })
   } catch (error) {
     console.log(error)
@@ -267,9 +267,9 @@ export function addFavs(body) {
   }
 }
 
-export function removeFromFavs(body) {
+export function removeFromFavs(pk) {
   return async function(dispatch){
-  const response = await axios.delete(`${LOCAL_HOST}/favs`, body)
+  const response = await axios.delete(`${LOCAL_HOST}/favs/${pk}`)
     dispatch ({
       type: REMOVE_FROM_FAVS,
       payload: response.data,

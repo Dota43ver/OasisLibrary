@@ -36,6 +36,7 @@ export default function Home() {
   const user = useSelector((state) => state.user);
   const allAuthors = useSelector((state) => state.authors);
   const allFavs = useSelector((state) => state.favs);
+  const newFavs = useSelector((state) => state.newFavs);
   const dispatch = useDispatch();
   const [currentPage, setCurrentPage] = useState(1);
   const [booksPerPage, setBooksPerPage] = useState(20);
@@ -55,13 +56,15 @@ export default function Home() {
 
   const [productIds, setProductIds] = useState([]); // lista de IDs de productos
 
+  const [lastFaved, setLastFaved] = useState([]); // aca se guarda el ultimo fav localmente
+
   useEffect(() => {
     dispatch(getUsers())
     dispatch(getBooks());
     dispatch(getGenres());
     dispatch(getAuthors());
     dispatch(getFavs(user.id))
-  }, [dispatch]);
+  }, [dispatch, user.id]);
 
   const handleAddToCart = (el) => {
     const addBooks = allBooks.find((e) => e.id === el.target.value);
@@ -86,39 +89,65 @@ console.log(el.target.value);
       toast: true,
     });
   };
+  console.log("soy los allFavs",allFavs);
+  console.log("soy los lastFaved",lastFaved);
+
   const handleFavs = (el) => {
-    console.log("soy los allFavs",allFavs);
-    const bookFav = allFavs.filter(e => e.data.id === el.target.value);
-    // console.log("PK",bookFav.id);
-    // console.log("bookId", {id:el.target.value});
-    console.log(bookFav);
-    if(allFavs[0]) {
-      console.log(allFavs[0].data.id);}
-    // if(bookFav) {
-    //   console.log("Entro al remove");
-    //   const body = {
-    //     bookId: el.target.value,
-    //     userId: user.id
-    //   }
-    //   dispatch(removeFromFavs(body))
-    // } else {
-      // console.log("Entro al add");
+    let bookFav;
+   if(allFavs.length > 0){
+     bookFav = allFavs[allFavs.length - 1].data.filter(e => e.libroId === el.target.value);
+    }
+
+      if (!user) {
+        Swal.fire({
+          position: "bottom-left",
+          icon: "error",
+          title: "Por favor, inicia sesión",
+          showConfirmButton: false,
+          timerProgressBar: true,
+          timer: 4000,
+          toast: true,
+        })
+      } else if (bookFav.length){
+        Swal.fire({
+          position: "bottom-left",
+          icon: "error",
+          title: "Ya se ha añadido a favoritos",
+          showConfirmButton: false,
+          timerProgressBar: true,
+          timer: 4000,
+          toast: true,
+        });
+      } else if(lastFaved[0] === el.target.value) {
+        Swal.fire({
+          position: "bottom-left",
+          icon: "error",
+          title: "Ya se ha añadido a favoritos",
+          showConfirmButton: false,
+          timerProgressBar: true,
+          timer: 4000,
+          toast: true,
+        });
+      } else if(user && !bookFav.length) {
       const body = {
         bookId: el.target.value,
         userId: user.id
       }
+
       dispatch(addFavs(body))
-    // }
+      dispatch(getFavs(user.id))
+        Swal.fire({
+          position: "bottom-left",
+          icon: "success",
+          title: "Libro agregado a favoritos",
+          showConfirmButton: false,
+          timerProgressBar: true,
+          timer: 4000,
+          toast: true,
+        });
+      setLastFaved([el.target.value])
+      }
   }
-  // Swal.fire({
-  //   position: "bottom-left",
-  //   icon: "success",
-  //   title: "Libro agregado a favoritos",
-  //   showConfirmButton: false,
-  //   timerProgressBar: true,
-  //   timer: 4000,
-  //   toast: true,
-  // });
   
   function handleRandomId() {
     const randomIndex = Math.floor(Math.random() * allBooks.length);
@@ -352,9 +381,9 @@ console.log(el.target.value);
                         className={"borderless-button"}
                       >                  
                           {  
-                          allFavs.find((e) => e.id === el.id) ? 
-                          <button className="heart" value={el.id}>💗</button> : 
-                          <button className="heart"  value={el.id}>🤍</button>
+                          // allFavs?.find((e) => e.id === el.id) ? 
+                          // <button className="heart" value={el.id}>💗</button> : 
+                          <button className="heart"  value={el.id}>♡</button>
                           }
                       </button>
                     </div>

@@ -5,6 +5,8 @@ import {useHistory} from "react-router-dom"
 
 export default function GoogleSignin({setAuth}){
 
+   
+
     const history = useHistory()
     window.gapi.load('client:auth2', () => {
         window.gapi.client.init({
@@ -15,17 +17,22 @@ export default function GoogleSignin({setAuth}){
         const onSuccess = async (res) => {
           console.log(res)
           const body = {email:res.profileObj.email}
+         setTimeout(() => {
+            window.location.href = window.location.href
+         }, 50); 
           const response = await fetch("http://localhost:3001/users/googleSignIn",{
             method: "POST",
             headers: {"Content-Type" : "application/json"}
             ,
             body: JSON.stringify(body)
+            
         });
 
         const parseRes = await response.json()
             localStorage.setItem("token",parseRes.token);
             setAuth(true)
             history.push("/account")
+            window.location.href = window.location.href
         
        
        
