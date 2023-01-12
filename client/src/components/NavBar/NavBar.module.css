@@ -227,9 +227,11 @@
 .dropdown {
   font-family: "Roboto";
   background-color: white;
-  display: flex;
-  flex-direction: column;
-  position: fixed;
+  /* display: flex;
+  flex-direction: column; */
+  /* position: fixed; */
+  position: absolute;
+  margin-top: 32px;
   border-radius: 4px;
 }
 
