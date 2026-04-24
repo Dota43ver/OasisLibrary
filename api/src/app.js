@@ -12,7 +12,7 @@ const server = express();
 server.name = 'API';
 
 const corsOptions = {
-  origin: 'https://oasis-library.vercel.app',
+  origin: '*',
   methods: ['GET', 'POST', 'OPTIONS', 'PUT', 'DELETE', 'PATCH'],
   allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'token', 'Authorization'],
   credentials: true,
