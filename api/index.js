@@ -27,6 +27,6 @@ conn.sync({ force: false }).then(() => {
     // cargo las dietas en la BBDD cuando se inicia el servidor
     //await preCharge();
 
-    console.log("%s listening at", process.env.PORT); // eslint-disable-line no-console
+    console.log(`Server raised on port: ${process.env.PORT}`);
   });
 });
