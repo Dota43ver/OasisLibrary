@@ -25,7 +25,7 @@ require('dotenv').config()
 conn.sync({ force: false }).then(() => {
   server.listen(process.env.PORT, async () => {
     // cargo las dietas en la BBDD cuando se inicia el servidor
-    //await preCharge();
+    await preCharge();
 
     console.log(`Server raised on port: ${process.env.PORT}`);
   });
