@@ -74,7 +74,7 @@ export default function Login({setAuth}){
         e.preventDefault()
         try {
          const body = {email , password}
-        const response = await fetch("https://oasislibrary-production.up.railway.app/users/login",{
+        const response = await fetch("https://oasis-api.facudev.xyz/users/login",{
             method: "POST",
             headers: {"Content-type" : "application/json"}
             ,

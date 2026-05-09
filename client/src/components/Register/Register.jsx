@@ -37,7 +37,7 @@ const Register = ({setAuth}) => {
 
         try {
         const body = {name , lastName, email, password}
-        const response = await fetch("https://oasislibrary-production.up.railway.app/users/signup",{
+        const response = await fetch("https://oasis-api.facudev.xyz/users/signup",{
             method: "POST",
             headers: {"Content-Type" : "application/json"}
             ,

@@ -586,7 +586,7 @@ export const getCart = (userId) => async (dispatch) => {
 export const addCart = (data) => async (dispatch) => {
   try {
     const { bookId, name, price, image, quantity, userId } = data;
-    const cart = await axios.post("https://oasislibrary-production.up.railway.app/cart", {
+    const cart = await axios.post("https://oasis-api.facudev.xyz/cart", {
       userId,
       bookId,
       quantity,
@@ -609,7 +609,7 @@ export const addCart = (data) => async (dispatch) => {
 export const deleteCart = (data) => async (dispatch) => {
   try {
     const { bookId, name, price, image, quantity } = data;
-    const response = await axios.delete("https://oasislibrary-production.up.railway.app/cart", { data });
+    const response = await axios.delete("https://oasis-api.facudev.xyz/cart", { data });
 
     return dispatch(
       removeFromCart({
